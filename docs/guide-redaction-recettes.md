@@ -108,6 +108,7 @@ Une recette est un fichier `content/recipes/<slug>/index.ts` typé (`RecipeSourc
 | `difficulty`, `cost`                        | voir §7                                                                                                                         |                                                          |
 | `season`                                    | mois ou saisons, en toutes lettres                                                                                              | `["Automne", "Hiver"]`                                   |
 | `tags`                                      | occasions et saisons où le plat est un choix évident (vocabulaire de `lib/tags.ts`) ; ils alimentent les collections **[auto]** | `["hiver", "noel"]`                                      |
+| `easy`                                      | facultatif : la version facile avec un produit tout prêt, voir §8 **[auto]**                                                    | `{ shortcut: "pâte à pizza fraîche du commerce", … }`    |
 | `equipment`                                 | **[auto]** ≥ 2 ; en minuscules (affichés en une phrase) ; précis                                                                | `moule à tarte de 26 cm`                                 |
 | `ingredients`                               | voir §5                                                                                                                         |                                                          |
 | `method`                                    | voir §6                                                                                                                         |                                                          |
@@ -179,6 +180,16 @@ Une recette est un fichier `content/recipes/<slug>/index.ts` typé (`RecipeSourc
 
 ---
 
+### La version facile (`easy`)
+
+Quand une étape de la recette est couramment remplacée par un produit tout prêt (pâte à pizza, pâte brisée ou feuilletée, fond de tarte, bouillon, compote, biscuits), on écrit aussi la **version facile**. Le site affiche un sélecteur « Fait maison / Version facile » au-dessus des ingrédients : la liste, les étapes, les minuteurs et le mode cuisine basculent ensemble.
+
+- **On ne l’écrit que si le raccourci est honnête** : le plat reste reconnaissable et bon. Pas de version facile pour un bœuf bourguignon (il n’y a rien à acheter tout prêt qui le remplace) ni pour une mayonnaise.
+- `shortcut` : ce qu’on achète, en minuscules, sans marque (« pâte brisée pur beurre du commerce ») **[auto ≤ 60 caractères]**.
+- `note` : ce qu’on gagne et ce qu’on perd, et comment bien choisir le produit (« pur beurre », « chez le boulanger », « en rouleau rond de 230 g ») **[auto : 60 à 320 caractères]**.
+- `times`, `ingredients`, `method` : une recette complète en soi, au gramme près, avec les mêmes règles que la version maison (étapes et minuteurs annoncés dans le texte **[auto]**, 2 à 10 étapes **[auto]**). Elle doit être **plus courte** que la recette complète **[auto]**.
+- Les sections éditoriales (science, astuces, FAQ…) restent communes : si la version facile change un point de sécurité (une pâte crue du commerce, par exemple), la FAQ le dit.
+
 ## 9. FAQ
 
 - **4 à 8 questions** **[auto]**, celles que les gens tapent vraiment (« Peut-on congeler… ? », « Pourquoi ma … est liquide ? », « Par quoi remplacer… ? »).
@@ -226,7 +237,7 @@ Non négociable. À vérifier pour chaque recette :
 
 ## 13. Photos, notes manuscrites et crédits
 
-- **Source** : photos libres de droits ou photos maison. On cherche d’abord sur Pexels (licence Pexels, sans mention obligatoire) ; si aucune photo n’est fidèle, on élargit à Unsplash, Pixabay et Wikimedia Commons, en ne gardant que des licences qui autorisent l’usage commercial (CC0, domaine public, CC BY, CC BY-SA). Jamais d’image dont on ignore la licence, jamais d’image générée présentée comme une vraie photo.
+- **Source** : photos libres de droits ou photos maison. On cherche d’abord sur Pexels et Pixabay (licences Pexels et Pixabay : usage commercial, sans mention obligatoire, on crédite quand même) ; si aucune photo n’est fidèle, on élargit à Wikimedia Commons et Flickr via Openverse, en ne gardant que des licences qui autorisent l’usage commercial (CC0, domaine public, CC BY, CC BY-SA). Unsplash est écarté : son API impose d’afficher les images depuis ses serveurs, ce qui ne colle pas avec nos recadrages. Jamais d’image dont on ignore la licence, jamais d’image générée présentée comme une vraie photo.
 - **Fidélité** : la photo montre **ce plat-là** (une tartiflette n’est pas illustrée par un gratin quelconque). Si aucune photo fidèle n’existe, on ne publie pas, ou on attend une photo maison.
 - **Deux photos** :
   - `hero` : le plat fini, net, appétissant, cadrage qui supporte un recadrage en arche (sujet centré, un peu d’air autour). Format portrait de préférence.

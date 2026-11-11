@@ -97,6 +97,7 @@ export default defineRecipe({
   ],
   storage: "${TODO}", // durées précises, réfrigérateur / congélateur
   pairing: "${TODO}",
+  // easy: { … } si un produit tout prêt remplace honnêtement une étape (docs/recette-brief.md, « Version facile »)
   faq: [
     // 4–8 vraies questions (« Peut-on… ? »), réponses ≤ 75 mots
     { q: "${TODO} ?", a: "${TODO}" },

@@ -10,6 +10,7 @@ pnpm recipes:images tartiflette 3 7 --from tartiflette --focus "50% 45%"   # pho
 pnpm recipes:new tartiflette --category Plat --tags hiver        # gabarit content/recipes/tartiflette/index.ts
 # remplir chaque « À ÉCRIRE »
 pnpm recipes:check -t tartiflette                                 # jusqu’à 0 erreur, 0 avertissement
+pnpm recipes:todo                                                 # coche la liste docs/a-ajouter.md et montre la suite
 ```
 
 Regarder la planche (une seule image) pour choisir. La photo principale montre **ce plat-là**, fini, net, sujet centré (recadrage en arche portrait). Celle de détail montre une texture, une part coupée ou un geste. Si rien n’est fidèle, chercher en anglais (`--en`) ou avec une autre formulation ; ne jamais publier une photo d’un autre plat. Vérifier le recadrage en ouvrant `public/images/recipes/<slug>/1x1.jpg`.
@@ -48,6 +49,10 @@ Dans l’ordre d’utilisation. Groupes titrés dès qu’il y a plusieurs prép
 ## Étapes et minuteurs
 
 4 à 14 étapes, en sections au-delà. Titre : verbe à l’infinitif, ≤ 5 mots. Texte : impératif, ≤ 85 mots, avec l’action, le réglage (feu, °C), la durée et le **repère sensoriel** de fin (« quand il tremble à peine au centre »). Toute attente de plus d’une minute a un `timer` (libellé ≤ 32 car.), et **le texte annonce la même durée** (exacte, fourchette qui la contient, ou somme). 2 à 4 `tip` sur les gestes critiques. Le four se préchauffe au bon moment.
+
+## Version facile (si un raccourci existe)
+
+Quand une étape se remplace couramment par un produit tout prêt (pâte à pizza, pâte brisée ou feuilletée, bouillon, compote), ajouter `easy` : `shortcut` (ce qu’on achète, ≤ 60 car., sans marque), `note` (ce qu’on gagne, ce qu’on perd, comment choisir le produit ; 60–320 car.), puis `times`, `ingredients` et `method` complets (2 à 10 étapes, mêmes règles de minuteurs). Plus courte que la recette maison. Pas de version facile si aucun raccourci honnête n’existe. Exemple : `content/recipes/pizza-margherita/index.ts`.
 
 ## Temps, difficulté, coût
 

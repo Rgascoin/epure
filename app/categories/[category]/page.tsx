@@ -7,12 +7,11 @@ import { breadcrumb, graph, organization, recipeList, webPage, website } from "@
 import { absoluteUrl } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
-import { RecipeCard } from "@/components/recipe-card";
 import { RecipeIndex } from "@/components/home/recipe-index";
 import { RecipeBrowser } from "@/components/recipe-browser";
+import { browsable } from "@/components/browsable";
 import { PhotoStrip } from "@/components/photo-strip";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { recipeHaystack } from "@/lib/search";
 
 const filled = categories.filter((c) => recipesIn(c).length > 0);
 
@@ -138,16 +137,7 @@ export default async function CategoryPage({ params }: PageProps<"/categories/[c
         <RecipeBrowser
           categories={[{ slug: category.slug, label: category.label, href: path }]}
           placeholder={`Chercher dans les ${category.label.toLowerCase()}…`}
-          items={list.map((r) => ({
-            slug: r.slug,
-            title: r.title,
-            category: category.slug,
-            haystack: recipeHaystack(r, category.label),
-            vegetarian: Boolean(r.diet?.includes("vegetarian") || r.diet?.includes("vegan")),
-            quick: r.totalMinutes < 60,
-            easy: r.difficulty === "Facile",
-            node: <RecipeCard recipe={r} />,
-          }))}
+          items={list.map((r) => browsable(r))}
         />
       </section>
 

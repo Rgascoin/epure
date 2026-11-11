@@ -67,6 +67,30 @@ export function recipeToMarkdown(r: Recipe): string {
     push("");
   }
 
+  if (r.easy) {
+    const e = r.easy;
+    push(
+      "## Version facile",
+      "",
+      `On achète : ${e.shortcut}. ${e.note} Prête en ${formatDuration(e.times.prep + e.times.cook + (e.times.rest ?? 0))}.`,
+      "",
+    );
+    for (const g of e.ingredients) {
+      if (g.title) push(`### ${g.title}`, "");
+      for (const i of g.items) push(`- ${ingredientPhrase(i)}${i.note ? ` (${i.note})` : ""}`);
+      push("");
+    }
+    let k = 0;
+    for (const section of e.method) {
+      if (e.method.length > 1) push(`### ${section.title}`, "");
+      for (const s of section.steps) {
+        k += 1;
+        push(`${k}. **${s.title}.** ${s.text}`);
+      }
+      push("");
+    }
+  }
+
   push("## Pourquoi ça marche", "", ...r.science.flatMap((s) => [`### ${s.title}`, "", s.text, ""]));
   push("## Ce qui aide", "", ...r.tips.map((t) => `- ${t}`), "");
   push("## Ce qui fait rater", "", ...r.mistakes.map((t) => `- ${t}`), "");

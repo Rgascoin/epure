@@ -85,13 +85,22 @@ public/images/recipes/    recadrages 1:1, 4:3, 16:9 pour les données structuré
 La fiche mémo **[`docs/recette-brief.md`](docs/recette-brief.md)** suffit pour écrire ; le **[guide complet](docs/guide-redaction-recettes.md)** reste la référence (voix, sécurité alimentaire, SEO, photos, couleurs, typographie).
 
 ```bash
-pnpm recipes:photos "tartiflette" --en "tartiflette reblochon"        # planche numérotée de photos libres (Openverse, Wikimedia Commons, Pexels si PEXELS_API_KEY)
+pnpm recipes:photos "tartiflette" --en "tartiflette reblochon"        # planche numérotée de photos libres (Openverse, Wikimedia Commons ; Pexels, Pixabay et Openverse authentifié si leurs clés sont définies)
 pnpm recipes:images tartiflette 3 7 --from tartiflette --focus "50% 45%"   # photos, recadrages 1:1 4:3 16:9, crédits prêts à coller
 pnpm recipes:new tartiflette --category Plat --tags hiver               # gabarit avec chaque champ et sa règle
 pnpm recipes:check -t tartiflette                                        # liste complète des écarts au guide
+pnpm recipes:todo                                                        # tient à jour docs/a-ajouter.md (plats, catégories, versions faciles, photos)
 ```
 
 Le build de production refuse une recette qui enfreint une règle obligatoire. Le registre, les catégories, les collections, la recherche, le sitemap, le flux RSS, `llms.txt`, les images Open Graph et Pinterest, et le JSON-LD suivent automatiquement.
+
+### Version facile
+
+Une recette peut proposer une **version facile** (`easy`) : le même plat avec un produit tout prêt (pâte à pizza, pâte brisée, bouillon…). Un sélecteur « Fait maison / Version facile » bascule les ingrédients, les étapes, les minuteurs et le mode cuisine ; le lien `?version=facile` se partage, la recherche a un filtre « Version facile » et la version Markdown la reprend.
+
+### Liste de travail
+
+[`docs/a-ajouter.md`](docs/a-ajouter.md) recense les plats à écrire par catégorie et par priorité, les catégories à créer, les événements du calendrier à nourrir, les versions faciles et les photos à remplacer. `pnpm recipes:todo` coche ce qui est publié.
 
 ### Collections de saison
 

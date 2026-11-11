@@ -16,7 +16,8 @@
     "test": "pnpm recipes:index && vitest run",
     "recipes:photos": "node scripts/photo-search.mjs",
     "recipes:new": "node scripts/new-recipe.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "recipes:todo": "node scripts/backlog.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

@@ -5,8 +5,17 @@ import { AnimatePresence } from "motion/react";
 import * as m from "motion/react-m";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
-import type { IngredientGroup, MethodSection } from "@/lib/types";
-import { capitalize, displayQty, fr, ingredientName, ingredientPhrase, plural, scaleQty } from "@/lib/format";
+import type { EasyVersion, IngredientGroup, MethodSection } from "@/lib/types";
+import {
+  capitalize,
+  displayQty,
+  formatDuration,
+  fr,
+  ingredientName,
+  ingredientPhrase,
+  plural,
+  scaleQty,
+} from "@/lib/format";
 import { Check, ChefHat, Copy, Minus, Plus, Reset } from "../icons";
 import { CookingMode, type FlatStep } from "./cooking-mode";
 import { TimerButton, TimersProvider } from "./timers";
@@ -22,6 +31,9 @@ interface Props {
   hero: StaticImageData;
   heroAlt: string;
 }
+
+type Version = "maison" | "facile";
+const VERSION_EVENT = "epure:version";
 
 /* Persist checked ingredients/steps per recipe, without hydration mismatch. */
 function usePersistentSet(key: string) {
@@ -53,11 +65,139 @@ function usePersistentSet(key: string) {
   return [set, update] as const;
 }
 
-export function RecipeInteractive(props: Props) {
+/**
+ * Ingredients, steps and cooking mode. When the recipe has a « version
+ * facile » (a ready-made shortcut), a switch swaps the ingredients, the steps
+ * and the timers. The choice is shareable: ?version=facile.
+ */
+export function RecipeInteractive({
+  easy,
+  totalMinutes,
+  ...props
+}: Props & { easy?: EasyVersion; totalMinutes: number }) {
+  const [version, setVersion] = useState<Version>("maison");
+
+  useEffect(() => {
+    if (!easy) return;
+    // One-time read of an external source (the address bar), after hydration.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (new URLSearchParams(window.location.search).get("version") === "facile") setVersion("facile");
+    const onEvent = (e: Event) => setVersion((e as CustomEvent<Version>).detail);
+    window.addEventListener(VERSION_EVENT, onEvent);
+    return () => window.removeEventListener(VERSION_EVENT, onEvent);
+  }, [easy]);
+
+  // Keep the address shareable, whichever control changed the version.
+  useEffect(() => {
+    if (!easy) return;
+    const url = new URL(window.location.href);
+    if (version === "facile") url.searchParams.set("version", "facile");
+    else url.searchParams.delete("version");
+    if (url.href !== window.location.href) window.history.replaceState(null, "", url);
+  }, [version, easy]);
+
+  const isEasy = Boolean(easy && version === "facile");
   return (
     <TimersProvider>
-      <RecipeInteractiveInner {...props} />
+      <div id="recette" className="scroll-mt-[calc(var(--header-h)+1rem)]">
+        {easy && <VersionSwitch version={version} onChange={setVersion} easy={easy} fullMinutes={totalMinutes} />}
+        <RecipeInteractiveInner
+          key={version}
+          {...props}
+          slug={isEasy ? `${props.slug}-facile` : props.slug}
+          ingredients={isEasy ? easy!.ingredients : props.ingredients}
+          method={isEasy ? easy!.method : props.method}
+        />
+      </div>
     </TimersProvider>
+  );
+}
+
+const easyMinutes = (e: EasyVersion) => e.times.prep + e.times.cook + (e.times.rest ?? 0);
+
+function VersionSwitch({
+  version,
+  onChange,
+  easy,
+  fullMinutes,
+}: {
+  version: Version;
+  onChange: (v: Version) => void;
+  easy: EasyVersion;
+  fullMinutes: number;
+}) {
+  const options: Array<[Version, string, number]> = [
+    ["maison", "Fait maison", fullMinutes],
+    ["facile", "Version facile", easyMinutes(easy)],
+  ];
+  return (
+    <div className="container-page mb-14" data-print="hide">
+      <div
+        role="group"
+        aria-label="Version de la recette"
+        className="inline-flex rounded-[14px] border-[1.5px] border-fg p-1"
+      >
+        {options.map(([v, label, minutes]) => {
+          const on = version === v;
+          return (
+            <button
+              key={v}
+              type="button"
+              aria-pressed={on}
+              onClick={() => onChange(v)}
+              className={clsx(
+                "relative flex min-h-11 items-baseline gap-2 rounded-[10px] px-4 py-2 text-[0.9375rem] font-semibold transition-colors duration-300",
+                on ? "text-bg" : "text-fg-2 hover:text-fg",
+              )}
+            >
+              {on && (
+                <m.span
+                  layoutId="version-pill"
+                  className="absolute inset-0 rounded-[10px] bg-fg"
+                  transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                />
+              )}
+              <span className="relative">{label}</span>
+              <span
+                className={clsx("relative font-mono text-[0.8125rem] font-normal", on ? "text-bg/75" : "text-fg-3")}
+              >
+                {formatDuration(minutes)}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+      <AnimatePresence initial={false}>
+        {version === "facile" && (
+          <m.p
+            key="note"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="mt-5 max-w-2xl rounded-[var(--radius-card)] bg-tint px-5 py-4 text-[1.0625rem] leading-relaxed text-fg"
+          >
+            <span className="font-semibold">On achète&#8239;: {easy.shortcut}.</span> {fr(easy.note)}
+          </m.p>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+/** « Version facile » shortcut for the top of the page: switches and scrolls to the recipe. */
+export function EasyVersionLink({ minutes }: { minutes: number }) {
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        window.dispatchEvent(new CustomEvent<Version>(VERSION_EVENT, { detail: "facile" }));
+        document.getElementById("recette")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }}
+      className="btn btn-ghost h-11 px-4 text-[0.9375rem]"
+    >
+      Version facile <span className="font-mono text-[0.8125rem] text-fg-3">{formatDuration(minutes)}</span>
+    </button>
   );
 }
 
@@ -134,7 +274,7 @@ function RecipeInteractiveInner({
 
   return (
     <>
-      <div id="recette" className="container-page grid gap-x-20 gap-y-16 lg:grid-cols-12">
+      <div className="container-page grid gap-x-20 gap-y-16 lg:grid-cols-12">
         {/* ---------------------------------------------------------------- */}
         {/* Ingredients, set like a bistro menu                              */}
         {/* ---------------------------------------------------------------- */}

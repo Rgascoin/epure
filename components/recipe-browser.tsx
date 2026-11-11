@@ -19,6 +19,8 @@ export interface BrowsableRecipe {
   vegetarian: boolean;
   quick: boolean;
   easy: boolean;
+  /** Has a « version facile » with a ready-made shortcut. */
+  shortcut: boolean;
   node: ReactNode;
 }
 
@@ -32,6 +34,7 @@ const TOGGLES = [
   { id: "vegetarian", label: "Végétarien" },
   { id: "quick", label: "Moins d’une heure" },
   { id: "easy", label: "Facile" },
+  { id: "shortcut", label: "Version facile" },
 ] as const;
 type Toggle = (typeof TOGGLES)[number]["id"];
 

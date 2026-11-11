@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { categories, categoryOf, categoryPath, recipes, recipesIn } from "@/lib/recipes";
+import { categories, categoryPath, recipes, recipesIn } from "@/lib/recipes";
 import { fr } from "@/lib/format";
 import { breadcrumb, graph, organization, recipeList, webPage, website } from "@/lib/schema";
 import { absoluteUrl } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
-import { RecipeCard } from "@/components/recipe-card";
 import { RecipeBrowser } from "@/components/recipe-browser";
+import { browsable } from "@/components/browsable";
 import { InSeasonLinks } from "@/components/in-season";
-import { recipeHaystack } from "@/lib/search";
 
 const title = "Toutes les recettes du carnet";
 const description = `Les ${recipes.length} recettes d’Épure, des crêpes au bœuf bourguignon : à chercher par plat, par ingrédient ou par catégorie, toutes au gramme près.`;
@@ -75,19 +74,7 @@ export default function RecipesPage() {
             categories={categories
               .filter((c) => recipesIn(c).length)
               .map((c) => ({ slug: c.slug, label: c.label, href: categoryPath(c) }))}
-            items={recipes.map((r) => {
-              const c = categoryOf(r);
-              return {
-                slug: r.slug,
-                title: r.title,
-                category: c.slug,
-                haystack: recipeHaystack(r, c.label),
-                vegetarian: Boolean(r.diet?.includes("vegetarian") || r.diet?.includes("vegan")),
-                quick: r.totalMinutes < 60,
-                easy: r.difficulty === "Facile",
-                node: <RecipeCard recipe={r} />,
-              };
-            })}
+            items={recipes.map((r) => browsable(r))}
           />
         </div>
       </section>

@@ -6,7 +6,10 @@
  *   pnpm recipes:photos "tartiflette" [--n 15] [--en "tartiflette potatoes reblochon"]
  *
  * Sources: Openverse (Flickr, Wikimedia… CC0 / public domain / CC BY / CC BY-SA only),
- * Wikimedia Commons, and Pexels when PEXELS_API_KEY is set (free key: pexels.com/api).
+ * Wikimedia Commons, plus, when their free keys are set in the environment:
+ *   PEXELS_API_KEY                               pexels.com/api (best food photos)
+ *   PIXABAY_API_KEY                              pixabay.com/api/docs (1280 px max without full access)
+ *   OPENVERSE_CLIENT_ID + OPENVERSE_CLIENT_SECRET  api.openverse.org (higher limits, fewer 5xx)
  *
  * Writes .cache/photos/<query>.jpg (numbered thumbnails) and .cache/photos/<query>.json
  * (one entry per number: the argument to pass to `pnpm recipes:images`, credit, licence).
@@ -44,9 +47,25 @@ function smallVersion(url) {
   return undefined;
 }
 
+let openverseAuth;
+async function openverseHeaders() {
+  const { OPENVERSE_CLIENT_ID: id, OPENVERSE_CLIENT_SECRET: secret } = process.env;
+  if (!id || !secret) return {};
+  openverseAuth ??= fetch("https://api.openverse.org/v1/auth_tokens/token/", {
+    method: "POST",
+    headers: { ...UA, "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ grant_type: "client_credentials", client_id: id, client_secret: secret }),
+  })
+    .then((r) => (r.ok ? r.json() : {}))
+    .then((t) => (t.access_token ? { Authorization: `Bearer ${t.access_token}` } : {}));
+  return openverseAuth;
+}
+
 async function openverse(q) {
-  const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(q)}&license=cc0,pdm,by,by-sa&page_size=20`;
-  const data = await get(url);
+  const headers = await openverseHeaders();
+  const size = headers.Authorization ? 40 : 20; // anonymous requests are capped at 20
+  const url = `https://api.openverse.org/v1/images/?q=${encodeURIComponent(q)}&license=cc0,pdm,by,by-sa&page_size=${size}`;
+  const data = await get(url, headers);
   return data.results
     .filter((r) => OK_LICENCES.has(r.license) && (r.width ?? 0) >= MIN_WIDTH)
     .map((r) => ({
@@ -93,6 +112,24 @@ async function commons(q) {
     .filter((r) => r.licenceOk);
 }
 
+async function pixabay(q) {
+  if (!process.env.PIXABAY_API_KEY) return [];
+  const data = await get(
+    `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&q=${encodeURIComponent(q)}&image_type=photo&safesearch=true&per_page=40`,
+  );
+  // The free API serves up to 1280 px (largeImageURL); the original size is only for reference.
+  return data.hits
+    .filter((h) => h.imageWidth >= MIN_WIDTH)
+    .map((h) => ({
+      arg: h.largeImageURL,
+      thumb: h.webformatURL,
+      width: Math.min(1280, h.imageWidth),
+      height: Math.round((Math.min(1280, h.imageWidth) / h.imageWidth) * h.imageHeight),
+      credit: { photographer: h.user, url: h.pageURL, source: "Pixabay" },
+      title: h.tags,
+    }));
+}
+
 async function pexels(q) {
   if (!process.env.PEXELS_API_KEY) return [];
   const data = await get(`https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&per_page=40`, {
@@ -111,7 +148,7 @@ async function pexels(q) {
 }
 
 const queries = [query, en].filter(Boolean);
-const settled = await Promise.allSettled(queries.flatMap((q) => [pexels(q), openverse(q), commons(q)]));
+const settled = await Promise.allSettled(queries.flatMap((q) => [pexels(q), pixabay(q), openverse(q), commons(q)]));
 for (const s of settled) if (s.status === "rejected") console.warn(`(source ignorée : ${s.reason.message})`);
 const seen = new Set();
 const results = settled
