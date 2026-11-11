@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Exigeant",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["fete-des-meres", "printemps"],
   equipment: [
     "moule à tarte de 24 cm, idéalement à fond amovible",
     "rouleau à pâtisserie et papier sulfurisé",

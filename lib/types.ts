@@ -1,3 +1,4 @@
+import type { Tag } from "./tags";
 import type { StaticImageData } from "next/image";
 
 /**
@@ -81,7 +82,7 @@ export interface Credit {
   /** Page of the photo on its source site. */
   url: string;
   /** Where the photo comes from (default « Pexels »). */
-  source?: "Pexels" | "Unsplash" | "Pixabay" | "Wikimedia Commons";
+  source?: "Pexels" | "Unsplash" | "Pixabay" | "Wikimedia Commons" | "Flickr";
   /** Licence to cite when the source requires it, e.g. « CC BY 4.0 ». */
   license?: string;
 }
@@ -128,6 +129,11 @@ export interface RecipeContent {
   difficulty: "Facile" | "Intermédiaire" | "Exigeant";
   cost: "€" | "€€" | "€€€";
   season: string[];
+  /**
+   * Occasions and seasons the dish is a natural choice for (lib/tags.ts).
+   * They drive the seasonal collections; leave empty for an all-year dish.
+   */
+  tags?: Tag[];
   equipment: string[];
   ingredients: IngredientGroup[];
   method: MethodSection[];

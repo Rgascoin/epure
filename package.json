@@ -12,7 +12,11 @@
     "format:check": "prettier --check .",
     "recipes:index": "node scripts/generate-recipe-index.mjs",
     "recipes:images": "node scripts/recipe-images.mjs",
-    "recipes:check": "pnpm recipes:index && vitest run tests/recipes.test.ts"
+    "recipes:check": "pnpm recipes:index && vitest run tests/recipes.test.ts",
+    "test": "pnpm recipes:index && vitest run",
+    "recipes:photos": "node scripts/photo-search.mjs",
+    "recipes:new": "node scripts/new-recipe.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

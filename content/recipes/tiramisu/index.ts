@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["fete-des-meres"],
   equipment: [
     "plat de 20 × 30 cm",
     "batteur électrique",

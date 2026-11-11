@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["saint-valentin"],
   equipment: [
     "6 ramequins de 9 à 10 cm de diamètre",
     "grand plat à bords hauts pour le bain-marie",

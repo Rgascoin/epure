@@ -1,3 +1,4 @@
+import { isTag } from "./tags";
 import type { Recipe } from "./types";
 
 /**
@@ -251,6 +252,8 @@ export function auditRecipe(r: Recipe): { errors: string[]; warnings: string[] }
     err(e.charAt(0) === e.charAt(0).toLowerCase(), `ustensile « ${e} » : en minuscules (affichés en phrase)`),
   );
   err(r.season.length >= 1, "season : au moins une saison");
+  for (const t of r.tags ?? []) err(isTag(t), `tags : « ${t} » n’est pas dans le vocabulaire (lib/tags.ts)`);
+  err(new Set(r.tags ?? []).size === (r.tags ?? []).length, "tags : doublon");
 
   /* Nutrition */
   const n = r.nutrition;
@@ -280,13 +283,14 @@ export function auditRecipe(r: Recipe): { errors: string[]; warnings: string[] }
         "unsplash.com": "Unsplash",
         "pixabay.com": "Pixabay",
         "commons.wikimedia.org": "Wikimedia Commons",
+        "flickr.com": "Flickr",
       }[host];
       err(
         (c.source ?? "Pexels") === expected,
         `images.credits.${k}.source : « ${c.source ?? "Pexels"} » ne correspond pas à l’URL (${host})`,
       );
-      if (c.source === "Wikimedia Commons")
-        err(Boolean(c.license), `images.credits.${k}.license : licence requise pour Wikimedia Commons`);
+      if (c.source === "Wikimedia Commons" || c.source === "Flickr")
+        err(Boolean(c.license), `images.credits.${k}.license : licence requise pour ${c.source}`);
       warn(c.photographer !== "Pexels", `images.credits.${k}.photographer : nom du photographe à retrouver`);
     }
   }

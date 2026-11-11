@@ -14,8 +14,9 @@ const slugs = new Set<string>();
 describe.each(allRecipes.map((r) => [r.slug, r] as const))("%s", (slug, recipe) => {
   it("respecte les règles obligatoires du guide", () => {
     const { errors, warnings } = auditRecipe(recipe);
+    if (errors.length) process.stdout.write(`\n✗ ${slug} (${errors.length})\n  - ${errors.join("\n  - ")}\n`);
     if (warnings.length) process.stdout.write(`\n⚠ ${slug}\n  - ${warnings.join("\n  - ")}\n`);
-    expect(errors, errors.join("\n")).toEqual([]);
+    expect(errors.length, `${errors.length} erreur(s), liste ci-dessus`).toBe(0);
   });
 
   it("a un slug unique, identique à son dossier", () => {

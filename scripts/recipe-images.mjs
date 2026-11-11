@@ -6,6 +6,8 @@
  *
  * <hero> / <detail>: a Pexels photo id (e.g. 30628819), a direct image URL
  * (Wikimedia Commons, Pixabay, Unsplash…) or a path to a local JPEG.
+ * With --from <search>, they are numbers from `pnpm recipes:photos` and the
+ * script prints the credits block to paste in the recipe.
  *
  * Writes:
  *   content/recipes/<slug>/hero.jpg      (2000 px max, the page photo)
@@ -18,10 +20,23 @@ import { mkdirSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 
-const [slug, heroArg, detailArg, ...rest] = process.argv.slice(2);
+let [slug, heroArg, detailArg, ...rest] = process.argv.slice(2);
 if (!slug || !heroArg || !detailArg) {
-  console.error('Usage : pnpm recipes:images <slug> <hero> <detail> [--focus "50% 40%"]');
+  console.error('Usage : pnpm recipes:images <slug> <hero> <detail> [--from <recherche>] [--focus "50% 40%"]');
   process.exit(1);
+}
+const fromIdx = rest.indexOf("--from");
+let picked = {};
+if (fromIdx >= 0) {
+  const list = JSON.parse(readFileSync(join(process.cwd(), ".cache/photos", `${rest[fromIdx + 1]}.json`), "utf8"));
+  const pick = (n) => {
+    const entry = list[Number(n) - 1];
+    if (!entry) throw new Error(`Pas de photo n° ${n} dans la recherche « ${rest[fromIdx + 1]} »`);
+    return entry;
+  };
+  picked = { hero: pick(heroArg), detail: pick(detailArg) };
+  heroArg = picked.hero.arg;
+  detailArg = picked.detail.arg;
 }
 const focusIdx = rest.indexOf("--focus");
 const [fx, fy] = (focusIdx >= 0 ? rest[focusIdx + 1] : "50% 50%").split(/\s+/).map((v) => parseFloat(v) / 100);
@@ -84,3 +99,14 @@ await crop(hero, 16 / 9, 1600, join(publicDir, "16x9.jpg"));
 
 const m = await sharp(join(contentDir, "hero.jpg")).metadata();
 console.log(`${slug} : hero ${m.width}×${m.height}, detail + 3 recadrages écrits.`);
+
+if (picked.hero) {
+  const fmt = (c) => {
+    const extra =
+      c.source && c.source !== "Pexels" ? `, source: "${c.source}"${c.license ? `, license: "${c.license}"` : ""}` : "";
+    return `{ photographer: "${c.photographer}", url: "${c.url}"${extra} }`;
+  };
+  console.log(
+    `\nCrédits à coller dans images.credits :\n  hero: ${fmt(picked.hero.credit)},\n  detail: ${fmt(picked.detail.credit)},`,
+  );
+}

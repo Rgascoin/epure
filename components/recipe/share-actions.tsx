@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Printer, Share } from "../icons";
+import { Check, Pin, Printer, Share } from "../icons";
 
-export function ShareActions({ title, text }: { title: string; text: string }) {
+export function ShareActions({ title, text, pinterest }: { title: string; text: string; pinterest?: string }) {
   const [copied, setCopied] = useState(false);
 
   const share = async () => {
@@ -37,6 +37,18 @@ export function ShareActions({ title, text }: { title: string; text: string }) {
         {copied ? <Check size={18} /> : <Share size={18} />}
         <span>{copied ? "Lien copié" : "Partager"}</span>
       </button>
+      {pinterest && (
+        <a
+          href={pinterest}
+          target="_blank"
+          rel="noopener"
+          className="btn btn-ghost h-11 w-11 px-0"
+          aria-label="Épingler sur Pinterest (nouvel onglet)"
+          title="Épingler sur Pinterest"
+        >
+          <Pin size={18} />
+        </a>
+      )}
       <button
         type="button"
         onClick={() => window.print()}

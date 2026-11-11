@@ -164,3 +164,9 @@ export const Search = (p: IconProps) => (
     <path d="m20 20-3.5-3.5" />
   </svg>
 );
+export const Pin = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M9 3h6l-1 6 3 3v2H7v-2l3-3-1-6Z" />
+    <path d="M12 14v7" />
+  </svg>
+);

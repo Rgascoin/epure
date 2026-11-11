@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["pique-nique"],
   equipment: [
     "moule à tarte de 26 cm à bords hauts",
     "rouleau à pâtisserie",

@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€€€",
   season: ["Toute l’année"],
+  tags: ["ete"],
   equipment: [
     "poêle à paella de 34 à 38 cm (ou grande sauteuse de 32 cm)",
     "casserole avec couvercle",

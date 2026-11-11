@@ -36,6 +36,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["chandeleur", "mardi-gras"],
   equipment: [
     "gaufrier électrique",
     "2 saladiers",

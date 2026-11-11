@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€€",
   season: ["Toute l’année"],
+  tags: ["fete-des-peres"],
   equipment: [
     "plat à rôtir à peine plus grand que le poulet",
     "thermomètre de cuisson à sonde (sinon, la pointe d’un couteau)",

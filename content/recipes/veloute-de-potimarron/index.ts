@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Automne", "Hiver"],
+  tags: ["automne", "hiver", "halloween"],
   equipment: [
     "cocotte ou faitout de 4 l avec couvercle",
     "mixeur plongeant (ou blender)",

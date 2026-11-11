@@ -36,6 +36,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Été", "Début d’automne"],
+  tags: ["ete"],
   equipment: [
     "grande cocotte en fonte ou faitout de 4 litres",
     "grande poêle ou sauteuse de 28 cm",

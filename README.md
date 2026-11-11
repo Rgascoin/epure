@@ -59,6 +59,7 @@ pnpm dev          # http://localhost:3000
 pnpm build        # build de production (tout est pré-rendu)
 pnpm lint && pnpm typecheck && pnpm format:check
 pnpm recipes:check  # chaque recette contre le guide de rédaction (vitest)
+pnpm test           # tous les tests (guide + calendrier des collections)
 ```
 
 > Next.js 16.4 embarque sa documentation dans `node_modules/next/dist/docs/` (voir `AGENTS.md`).
@@ -81,13 +82,25 @@ public/images/recipes/    recadrages 1:1, 4:3, 16:9 pour les données structuré
 
 ### Ajouter une recette
 
-Tout est détaillé dans **[`docs/guide-redaction-recettes.md`](docs/guide-redaction-recettes.md)** (voix, anatomie de la fiche, ingrédients, minuteurs, sécurité alimentaire, SEO, photos, couleurs, typographie). En bref :
+La fiche mémo **[`docs/recette-brief.md`](docs/recette-brief.md)** suffit pour écrire ; le **[guide complet](docs/guide-redaction-recettes.md)** reste la référence (voix, sécurité alimentaire, SEO, photos, couleurs, typographie).
 
-1. `pnpm recipes:images <slug> <photo-hero> <photo-détail> --focus "50% 45%"` : télécharge deux photos Pexels (ou prend deux fichiers locaux), écrit `hero.jpg`, `detail.jpg` et les recadrages 1:1, 4:3, 16:9.
-2. Écrire `content/recipes/<slug>/index.ts` avec `defineRecipe({ ... })` (type `RecipeSource`, `lib/types.ts`), en choisissant la catégorie et le thème couleur.
-3. `pnpm recipes:check` : la recette est confrontée aux règles du guide (longueurs, minuteurs annoncés dans le texte, contrastes du thème, typographie, expressions interdites…). **Le build de production refuse une recette qui enfreint une règle obligatoire.**
+```bash
+pnpm recipes:photos "tartiflette" --en "tartiflette reblochon"        # planche numérotée de photos libres (Openverse, Wikimedia Commons, Pexels si PEXELS_API_KEY)
+pnpm recipes:images tartiflette 3 7 --from tartiflette --focus "50% 45%"   # photos, recadrages 1:1 4:3 16:9, crédits prêts à coller
+pnpm recipes:new tartiflette --category Plat --tags hiver               # gabarit avec chaque champ et sa règle
+pnpm recipes:check -t tartiflette                                        # liste complète des écarts au guide
+```
 
-Le registre, les pages catégories, la recherche, le sitemap, le flux RSS, `llms.txt`, les images Open Graph et le JSON-LD suivent automatiquement.
+Le build de production refuse une recette qui enfreint une règle obligatoire. Le registre, les catégories, les collections, la recherche, le sitemap, le flux RSS, `llms.txt`, les images Open Graph et Pinterest, et le JSON-LD suivent automatiquement.
+
+### Collections de saison
+
+`lib/collections.ts` décrit le calendrier (Noël, Nouvel An, galette des rois, Chandeleur, Saint-Valentin, Mardi gras, Pâques, fêtes des mères et des pères, Halloween, rentrée, saisons), avec les fêtes mobiles calculées chaque année. Une recette entre dans une collection par ses `tags` (`lib/tags.ts`). Rien n’est jamais masqué : chaque collection d’au moins 3 recettes a sa page toute l’année, et l’accueil (« En ce moment ») et l’index mettent en avant celles de la période, à l’heure de Paris. Ces blocs sont mis en cache une heure (`use cache` + `cacheLife("hours")`) : les pages restent statiques et Vercel les régénère au fil du calendrier.
+
+### Diffusion
+
+- **IndexNow** : après chaque déploiement de production, `.github/workflows/indexnow.yml` signale à Bing (et Yandex, Seznam, Naver) les recettes modifiées par le dernier commit. Envoi complet : `pnpm indexnow --all`.
+- **Pinterest** : chaque recette a une épingle verticale `/recettes/<slug>/pin.png` (1000 × 1500), un bouton « Épingler » et les attributs `data-pin-media` sur la photo. Vérification du site par enregistrement TXT ou `NEXT_PUBLIC_PINTEREST_VERIFICATION`.
 
 ## Déploiement sur Vercel
 

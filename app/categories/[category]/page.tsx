@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import { categories, categoryBySlug, categoryPath, recipesIn } from "@/lib/recipes";
@@ -11,6 +9,10 @@ import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
 import { RecipeCard } from "@/components/recipe-card";
 import { RecipeIndex } from "@/components/home/recipe-index";
+import { RecipeBrowser } from "@/components/recipe-browser";
+import { PhotoStrip } from "@/components/photo-strip";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { recipeHaystack } from "@/lib/search";
 
 const filled = categories.filter((c) => recipesIn(c).length > 0);
 
@@ -75,27 +77,13 @@ export default async function CategoryPage({ params }: PageProps<"/categories/[c
     <PageTransition>
       <JsonLd data={data} />
       <section className="container-page pt-[calc(var(--header-h)+clamp(2rem,6vh,4rem))]">
-        <nav aria-label="Fil d’Ariane" className="intro-fade" style={{ "--d": "0ms" } as CSSProperties}>
-          <ol className="flex flex-wrap items-center gap-2 font-mono text-[0.8125rem] text-fg-3">
-            <li className="inline-flex items-center gap-2">
-              <Link href="/" className="underline-offset-2 transition-colors hover:text-fg hover:underline">
-                Accueil
-              </Link>
-              <span aria-hidden>/</span>
-            </li>
-            <li className="inline-flex items-center gap-2">
-              <Link href="/recettes" className="underline-offset-2 transition-colors hover:text-fg hover:underline">
-                Recettes
-              </Link>
-              <span aria-hidden>/</span>
-            </li>
-            <li>
-              <span aria-current="page" className="text-fg-2">
-                {category.label}
-              </span>
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumbs
+          items={[
+            { name: "Accueil", path: "/" },
+            { name: "Recettes", path: "/recettes" },
+            { name: category.label, path },
+          ]}
+        />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
@@ -137,49 +125,30 @@ export default async function CategoryPage({ params }: PageProps<"/categories/[c
           </dl>
         </div>
 
-        {/* A row of arched photos, like pages fanned out on the table. */}
-        <div aria-hidden className="mt-14 flex items-end gap-3 overflow-hidden pb-10 md:gap-5">
-          {strip.map((r, i) => (
-            <div
-              key={r.slug}
-              className="intro-fade relative aspect-[3/4] w-[clamp(6.5rem,17vw,15rem)] flex-none overflow-hidden rounded-[999px_999px_14px_14px] bg-fill shadow-[var(--shadow-card)] max-sm:[&:nth-child(n+4)]:hidden"
-              style={
-                {
-                  "--d": `${200 + i * 90}ms`,
-                  transform: `translateY(${[0, 28, 8, 36, 14][i]}px) rotate(${[-2, 1.5, -1, 2, -1.5][i]}deg)`,
-                } as CSSProperties
-              }
-            >
-              <Image
-                src={r.hero}
-                alt=""
-                fill
-                sizes="(max-width: 640px) 30vw, 240px"
-                quality={70}
-                priority={i < 3}
-                placeholder="blur"
-                className="object-cover"
-                style={{ objectPosition: r.theme.focus }}
-              />
-            </div>
-          ))}
-        </div>
+        <PhotoStrip recipes={strip} />
       </section>
 
       <section
-        className="container-page pt-[clamp(5rem,12vh,8rem)] pb-[clamp(4rem,10vh,7rem)]"
+        className="container-page pt-[clamp(3rem,8vh,5rem)] pb-[clamp(4rem,10vh,7rem)]"
         aria-labelledby="list-title"
       >
         <h2 id="list-title" className="sr-only">
-          Les recettes
+          Les recettes de la catégorie
         </h2>
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {list.map((r) => (
-            <li key={r.slug}>
-              <RecipeCard recipe={r} />
-            </li>
-          ))}
-        </ul>
+        <RecipeBrowser
+          categories={[{ slug: category.slug, label: category.label, href: path }]}
+          placeholder={`Chercher dans les ${category.label.toLowerCase()}…`}
+          items={list.map((r) => ({
+            slug: r.slug,
+            title: r.title,
+            category: category.slug,
+            haystack: recipeHaystack(r, category.label),
+            vegetarian: Boolean(r.diet?.includes("vegetarian") || r.diet?.includes("vegan")),
+            quick: r.totalMinutes < 60,
+            easy: r.difficulty === "Facile",
+            node: <RecipeCard recipe={r} />,
+          }))}
+        />
       </section>
 
       <section className="container-page pb-[clamp(5rem,14vh,10rem)]" aria-labelledby="others-title">
