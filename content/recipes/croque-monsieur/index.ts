@@ -10,7 +10,7 @@ export default defineRecipe({
   description:
     "Le croque-monsieur à la béchamel : jambon, comté, béchamel à l’intérieur et pain beurré doré au four. Pour 4, prêt en 35 minutes, croque-madame en variante.",
   summary:
-    "Pour 4 croque-monsieur, un par personne, préparez une béchamel épaisse avec 20 g de beurre, 20 g de farine et 200 ml de lait. Tartinez-en 8 tranches de pain de mie, garnissez de 4 tranches de jambon et de 120 g de comté râpé, beurrez l’extérieur avec 40 g de beurre et enfournez 12 minutes à 220 °C en retournant à mi-cuisson. Il faut 35 minutes en tout.",
+    "Pour 4 croque-monsieur, un par personne, préparez une béchamel épaisse avec 20 g de beurre, 20 g de farine et 200 ml de lait. Tartinez-en 8 tranches de pain de mie, garnissez de 4 tranches de jambon et de 120 g de comté râpé, beurrez l’extérieur avec 40 g de beurre et enfournez 12 minutes à 220 °C, en les retournant au bout de 8 minutes. Il faut 35 minutes en tout.",
   intro: [
     "Le croque-monsieur, c’est du pain de mie, du jambon blanc et du fromage, dorés au beurre. Il existe deux grandes écoles : la béchamel à l’intérieur, ou gratinée sur le dessus comme en brasserie. On a choisi la première pour la version de base : le croque reste croustillant dehors, fondant dedans, et il se coupe proprement.",
     "La béchamel ne prend que 5 minutes et elle change tout. Elle garde la mie moelleuse pendant que l’extérieur dore, et elle lie le fromage fondu. Il faut juste la laisser tiédir avant de l’étaler, sinon le pain s’imbibe.",

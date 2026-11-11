@@ -142,7 +142,7 @@ export default defineRecipe({
   science: [
     {
       title: "Pourquoi saisir en deux fois",
-      text: "La réaction de Maillard, qui donne le brun et le goût de grillé, démarre vraiment au-dessus de 140 °C environ. Si on met 800 g de viande froide d’un coup, la cocotte refroidit, la viande rend son eau et cuit dans ce jus, autour de 100 °C : elle reste grise.",
+      text: "La réaction de Maillard, qui donne le brun et le goût de grillé, ne devient rapide qu’au-dessus de 140 °C environ. Si on met 800 g de viande froide d’un coup, la cocotte refroidit, la viande rend son eau et cuit dans ce jus, autour de 100 °C : elle reste grise.",
     },
     {
       title: "Les épices dans le gras",

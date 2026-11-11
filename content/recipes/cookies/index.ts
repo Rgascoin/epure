@@ -117,7 +117,7 @@ export default defineRecipe({
         },
         {
           title: "Cuire les cookies",
-          text: "Posez 8 boules par plaque, encore froides, espacées de 6 cm. Enfournez une seule plaque à la fois, 10 à 12 minutes : les bords sont dorés et pris, le centre est encore pâle, gonflé et brillant. Il a l’air presque cru, c’est le bon moment pour les sortir.",
+          text: "Posez 8 boules par plaque, encore froides, espacées de 6 cm. Enfournez une seule plaque à la fois, 10 à 12 minutes : les bords sont dorés et pris, le centre est encore pâle et gonflé. Il a l’air presque cru, c’est le bon moment pour les sortir.",
           timer: { minutes: 11, label: "Cuisson des cookies" },
           tip: "Ils finissent de cuire sur la plaque chaude et se raffermissent en refroidissant. Une minute de trop, et le cœur moelleux devient sec.",
         },

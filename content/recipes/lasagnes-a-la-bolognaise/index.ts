@@ -10,7 +10,7 @@ export default defineRecipe({
   description:
     "Lasagnes à la bolognaise dans les règles : un ragù au vin blanc et au lait mijoté 2 heures, une béchamel maison, du parmesan et 40 minutes de four.",
   summary:
-    "Pour 6 personnes, les lasagnes à la bolognaise demandent d’abord un ragù : 600 g de bœuf haché et 100 g de pancetta revenus avec oignon, carotte et céleri, déglacés au vin blanc puis mijotés 2 heures avec 400 g de coulis de tomate et 20 cl de lait. Montez 4 couches de pâtes, ragù, béchamel (1 l de lait) et parmesan dans un plat de 30 × 22 cm, enfournez 40 à 45 minutes à 180 °C et laissez reposer 15 minutes avant de couper.",
+    "Pour 6 personnes, les lasagnes à la bolognaise demandent d’abord un ragù : 600 g de bœuf haché et 100 g de pancetta revenus avec oignon, carotte et céleri, déglacés au vin blanc puis mijotés 2 heures avec 400 g de coulis de tomate et 20 cl de lait. Montez 4 couches de pâtes, ragù, béchamel (1 l de lait) et parmesan dans un plat de 30 × 22 cm, enfournez 40 à 45 minutes à 180 °C et laissez reposer 15 minutes. Comptez un peu plus de 4 heures, dont 45 minutes de travail.",
   intro: [
     "Les lasagnes à la bolognaise sont d’abord une histoire de ragù. Pas une sauce tomate avec de la viande dedans, mais de la viande qui a mijoté deux heures avec un peu de tomate, du vin blanc et du lait, jusqu’à devenir tendre et brillante.",
     "Le reste, c’est du montage : une béchamel nappante, des feuilles de pâtes, du parmesan, quatre fois de suite. Ce qui fait rater des lasagnes, c’est un ragù trop sec (les pâtes restent dures sur les bords) ou trop d’impatience à la sortie du four. Coupées tout de suite, les couches glissent les unes sur les autres.",

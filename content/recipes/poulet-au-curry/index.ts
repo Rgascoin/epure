@@ -181,7 +181,7 @@ export default defineRecipe({
   ],
   mistakes: [
     "Verser les épices moulues à feu vif. Elles brûlent en quelques secondes et toute la sauce devient amère.",
-    "Arrêter les oignons quand ils sont juste fondus. La sauce reste pâle, liquide et trop sucrée.",
+    "Arrêter les oignons quand ils sont juste fondus. La sauce reste pâle et trop sucrée.",
     "Faire bouillir fort après avoir ajouté le yaourt. Il tranche en petits grains blancs.",
     "Remplacer les cuisses par des blancs sans changer la cuisson. Après 20 minutes de mijotage, ils sont secs et filandreux.",
   ],
@@ -192,7 +192,11 @@ export default defineRecipe({
     },
     {
       title: "À la française, au curry en poudre et à la crème",
-      text: "La version qu’on mange souvent en France : 1,5 cuillerée à soupe de curry en poudre à la place de la coriandre, du cumin moulu et du garam masala, et 20 cl de crème liquide à la place du yaourt, ajoutée pour le mijotage. Ce n’est plus un curry indien, mais c’est un bon plat de semaine.",
+      text: "La version qu’on mange souvent en France : pas de marinade, 1,5 cuillerée à soupe de curry en poudre à la place de la coriandre, du cumin moulu et du garam masala, et 20 cl de crème liquide à la place de l’eau, versée pour le mijotage. Ce n’est plus un curry indien, mais c’est un bon plat de semaine.",
+    },
+    {
+      title: "Avec des morceaux sur l’os",
+      text: "Prenez 1,2 kg de hauts de cuisse et de pilons non désossés, sans la peau, entaillés jusqu’à l’os pour que la marinade pénètre. Comptez 30 à 35 minutes de mijotage à couvert, jusqu’à 74 °C près de l’os. La sauce y gagne en profondeur.",
     },
     {
       title: "Avec des blancs de poulet",

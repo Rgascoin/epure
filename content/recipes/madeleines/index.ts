@@ -82,7 +82,7 @@ export default defineRecipe({
         },
         {
           title: "Ajouter farine et beurre",
-          text: "Tamisez la farine et la levure au-dessus du saladier et mélangez au fouet, juste le temps qu’il ne reste plus de traces sèches. Versez le beurre tiède en filet en mélangeant doucement : la pâte devient lisse, épaisse et brillante.",
+          text: "Tamisez la farine et la levure au-dessus du saladier et mélangez au fouet, juste le temps qu’il ne reste plus de traces sèches. Versez le beurre tiède en filet en mélangeant doucement : la pâte devient lisse et brillante.",
         },
         {
           title: "Reposer au froid",
@@ -97,7 +97,7 @@ export default defineRecipe({
       steps: [
         {
           title: "Préparer le moule",
-          text: "Vingt minutes avant la fin du repos, préchauffez le four à 220 °C, chaleur statique. Beurrez les empreintes au pinceau avec le beurre mou, farinez-les, puis retournez le moule et tapotez-le pour retirer l’excès de farine. Mettez-le au réfrigérateur jusqu’à la cuisson.",
+          text: "Préchauffez le four à 220 °C, chaleur statique, 20 minutes avant la fin du repos. Beurrez les empreintes au pinceau avec le beurre mou, farinez-les, puis retournez le moule et tapotez-le pour retirer l’excès de farine. Mettez-le au réfrigérateur jusqu’à la cuisson.",
           timer: { minutes: 20, label: "Préchauffage du four" },
         },
         {

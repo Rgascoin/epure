@@ -13,7 +13,7 @@ export default defineRecipe({
     "Pour un banana bread de 10 tranches, écrasez 3 bananes très mûres (350 g), mélangez-les avec 100 g de beurre fondu, 120 g de vergeoise, 2 œufs et la vanille, puis ajoutez 220 g de farine, 1 c. à café de bicarbonate et une pincée de sel. Faites cuire 55 à 65 minutes à 170 °C dans un moule à cake de 25 cm, et laissez refroidir au moins 1 heure avant de trancher.",
   intro: [
     "Le banana bread est un cake américain fait pour les bananes trop mûres, celles dont la peau est presque noire et que plus personne ne veut manger. Plus elles sont tachées, plus elles sont sucrées et parfumées, et plus le cake est moelleux.",
-    "Il se fait sans batteur, à la fourchette et à la maryse, en 15 minutes. Le bicarbonate réagit avec l’acidité des bananes et de la vergeoise pour le faire lever, et lui donne sa croûte brun foncé.",
+    "Il se fait sans batteur, à la fourchette et à la maryse, en 15 minutes. Le bicarbonate réagit avec l’acidité des bananes pour le faire lever, et lui donne sa croûte brun foncé.",
     "Ce qui peut rater : une pâte trop travaillée qui donne un cake dense et creusé de tunnels, ou un centre encore cru sous une croûte trop cuite. Et si vous ajoutez des noix, pensez à le dire à ceux qui sont allergiques aux fruits à coque.",
   ],
   category: "Goûter",
@@ -110,11 +110,11 @@ export default defineRecipe({
     },
     {
       title: "Ce que fait le bicarbonate",
-      text: "Le bicarbonate est une base : au contact d’un acide, ici la banane et la vergeoise, il libère du gaz carbonique qui fait lever la pâte. Il rend aussi la pâte moins acide, ce qui accélère la réaction de Maillard : la croûte et la mie brunissent davantage.",
+      text: "Le bicarbonate est une base : au contact d’un acide, ici surtout celui des bananes, il libère du gaz carbonique qui fait lever la pâte. Il rend aussi la pâte moins acide, ce qui accélère la réaction de Maillard : la croûte et la mie brunissent davantage.",
     },
     {
       title: "Mélanger le moins possible",
-      text: "Dès que la farine est mouillée, chaque coup de maryse développe le gluten. Dans un pain, c’est utile. Dans un cake, trop de gluten donne une mie élastique, serrée, creusée de tunnels où le gaz s’est engouffré.",
+      text: "Dès que la farine est mouillée, chaque coup de maryse développe le gluten. Dans un pain, c’est utile. Dans un cake, trop de gluten donne une mie élastique et serrée, creusée de tunnels où le gaz s’est engouffré.",
     },
   ],
   tips: [
@@ -169,7 +169,7 @@ export default defineRecipe({
     },
     {
       q: "Le banana bread contient-il des fruits à coque ?",
-      a: "Pas dans la version de base. Mais on y ajoute souvent des noix ou des noix de pécan : si vous en mettez, prévenez les personnes allergiques, et ne les cachez pas dans un banana bread servi à des enfants que vous connaissez mal.",
+      a: "Pas dans la version de base. Mais on y ajoute souvent des noix ou des noix de pécan : si vous en mettez, prévenez vos invités, en particulier les personnes allergiques aux fruits à coque, car elles ne se voient pas toujours dans la mie.",
     },
     {
       q: "Peut-on congeler le banana bread ?",

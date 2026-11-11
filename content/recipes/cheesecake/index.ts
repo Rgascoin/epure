@@ -8,7 +8,7 @@ export default defineRecipe({
   seoTitle: "Cheesecake new-yorkais au Philadelphia, sans fissure",
   tagline: "À faire la veille, sans tricher.",
   description:
-    "Un cheesecake new-yorkais au Philadelphia, cuit doucement au bain-marie à 160 °C puis pris une nuit au frais : dense, crémeux et sans fissure.",
+    "Un cheesecake new-yorkais au Philadelphia, cuit doucement au bain-marie à 160 °C puis pris une nuit au frais : une texture dense et une surface sans fissure.",
   summary:
     "Pour un cheesecake de 12 parts, tassez 200 g de biscuits mixés avec 80 g de beurre fondu dans un moule de 23 cm et cuisez 12 minutes à 160 °C. Battez à vitesse lente 900 g de Philadelphia, 200 g de sucre, 20 g de farine, 4 œufs et 150 g de crème aigre, puis faites cuire 65 à 75 minutes au bain-marie. Laissez-le 1 heure dans le four éteint, 2 heures à température ambiante, puis au moins 8 heures au réfrigérateur.",
   intro: [
@@ -154,7 +154,7 @@ export default defineRecipe({
         },
         {
           title: "Laisser prendre au froid",
-          text: "Couvrez le moule d’une assiette, sans toucher la surface, et laissez-le au réfrigérateur au moins 8 heures, idéalement une nuit. Il devient dense, crémeux, et se tranche net.",
+          text: "Couvrez le moule d’une assiette, sans toucher la surface, et laissez-le au réfrigérateur au moins 8 heures, idéalement une nuit. Il devient dense et se tranche net.",
           timer: { minutes: 480, label: "Prise au froid" },
         },
         {

@@ -107,7 +107,7 @@ export default defineRecipe({
         },
         {
           title: "Servir bien chaud",
-          text: "Répartissez le velouté dans des bols chauds. Ajoutez un filet de crème, les graines grillées et un tour de poivre au moment de servir.",
+          text: "Répartissez le velouté dans des bols chauds. Au moment de servir, ajoutez un filet de crème et les graines grillées, si vous en mettez, puis un tour de poivre.",
         },
       ],
     },
@@ -123,7 +123,7 @@ export default defineRecipe({
     },
     {
       title: "Suer, pas dorer",
-      text: "À feu doux, l’oignon cuit dans son eau et dans le beurre, sans dépasser 100 °C en surface : il s’adoucit et perd son piquant. À feu vif, il brunit par réaction de Maillard et caramélisation, ce qui donne un goût grillé et une teinte terne au velouté.",
+      text: "À feu doux, l’oignon cuit dans son eau et dans le beurre : tant qu’il rend de l’humidité, sa surface reste autour de 100 °C. Il s’adoucit et perd son piquant. À feu vif, il brunit par réaction de Maillard et caramélisation, ce qui donne un goût grillé et une teinte terne au velouté.",
     },
   ],
   tips: [

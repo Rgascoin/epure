@@ -82,7 +82,7 @@ export default defineRecipe({
         },
         {
           title: "Ajouter le chocolat",
-          text: "Versez le chocolat sur les œufs quand il n’est plus chaud au doigt, juste tiède. Mélangez au fouet, doucement, jusqu’à ce que la pâte soit homogène, épaisse et brillante.",
+          text: "Versez le chocolat sur les œufs quand il n’est plus chaud au doigt, juste tiède. Mélangez au fouet, doucement, jusqu’à ce que la pâte soit homogène et brillante.",
         },
         {
           title: "Incorporer la farine",
@@ -174,7 +174,7 @@ export default defineRecipe({
     },
     {
       q: "Peut-on goûter la pâte à brownie crue ?",
-      a: "Mieux vaut s’en abstenir : elle contient des œufs crus et de la farine crue, qui peuvent porter des salmonelles et des bactéries E. coli. C’est à éviter pour les femmes enceintes, les jeunes enfants, les personnes âgées et les personnes immunodéprimées. Une fois cuit, il n’y a plus de risque.",
+      a: "Non, mieux vaut s’en abstenir : elle contient des œufs crus et de la farine crue, qui peuvent porter des salmonelles et des bactéries E. coli. C’est à éviter pour les femmes enceintes, les jeunes enfants, les personnes âgées et les personnes immunodéprimées. Une fois cuit, il n’y a plus de risque.",
     },
   ],
   nutrition: {

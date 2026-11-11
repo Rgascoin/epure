@@ -85,7 +85,7 @@ export default defineRecipe({
         },
         {
           title: "Cuire à blanc",
-          text: "Couvrez la pâte d’un papier cuisson, remplissez-la de billes de cuisson ou de haricots secs et enfournez 15 minutes. Retirez papier et billes, puis prolongez 5 à 8 minutes : le fond doit être sec, mat et blond.",
+          text: "Couvrez la pâte d’un papier cuisson, remplissez-la de billes de cuisson ou de haricots secs et enfournez 15 minutes. Retirez papier et billes, puis prolongez 5 à 8 minutes : le fond doit être sec et blond, sans zone brillante.",
           timer: { minutes: 20, label: "Cuisson à blanc" },
           tip: "Une fissure après la cuisson ? Bouchez-la avec la chute de pâte crue : l’appareil ne passera pas dessous.",
         },

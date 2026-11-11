@@ -10,7 +10,7 @@ export default defineRecipe({
   description:
     "Pâte à crêpes classique pour 15 crêpes : 250 g de farine, 4 œufs, 55 cl de lait et du beurre noisette, sans grumeaux. Une heure de repos et c’est parti.",
   summary:
-    "Pour 15 crêpes, la pâte à crêpes se fait avec 250 g de farine, une pincée de sel, 30 g de sucre, 4 œufs, 55 cl de lait versé petit à petit et 50 g de beurre noisette. Laissez-la reposer 1 heure, puis cuisez chaque crêpe dans une poêle de 24 cm bien chaude avec une petite louche de pâte : environ 1 minute sur la première face, 30 secondes sur la seconde.",
+    "Pour 15 crêpes, la pâte à crêpes se fait avec 250 g de farine, une pincée de sel, 30 g de sucre, 4 œufs, 55 cl de lait versé petit à petit et 50 g de beurre noisette. Laissez-la reposer 1 heure, puis cuisez chaque crêpe dans une poêle de 24 cm bien chaude avec une petite louche de pâte : environ 1 minute sur la première face, 30 secondes sur la seconde. Comptez 1 h 50 en tout, repos compris.",
   intro: [
     "Une bonne pâte à crêpes, c’est 250 g de farine, 4 œufs, du lait, du beurre, et deux gestes. On verse le lait petit à petit pour éviter les grumeaux, puis on laisse la pâte reposer une heure. Elle devient fluide comme une crème liquide et donne des crêpes fines, qui se plient sans casser.",
     "On met du beurre noisette dans la pâte : il la parfume et empêche les crêpes de coller, si bien qu’on graisse à peine la poêle. Pour le reste, tout se joue sur la chaleur de la poêle, qu’on règle sur les deux premières crêpes.",

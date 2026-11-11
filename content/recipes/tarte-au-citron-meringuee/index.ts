@@ -160,7 +160,7 @@ export default defineRecipe({
     },
     {
       title: "Meringue suisse ou italienne",
-      text: "Ce sont deux meringues cuites : le sucre y est entièrement dissous et les protéines du blanc en partie coagulées, ce qui donne une mousse dense et stable, qui ne retombe pas comme une meringue crue. L’italienne se fait en versant un sirop à 118 °C sur des blancs montés. La suisse chauffe blancs et sucre ensemble : plus simple à la maison, aussi stable, à peine plus dense.",
+      text: "Ce sont deux meringues cuites : le sucre y est entièrement dissous et les protéines du blanc en partie coagulées, ce qui donne une mousse dense et stable, qui ne retombe pas comme une meringue crue. L’italienne se fait en versant un sirop à 118 °C sur des blancs montés. La suisse chauffe blancs et sucre ensemble : plus simple à la maison, et tout aussi stable.",
     },
     {
       title: "Dorée dehors, moelleuse dedans",

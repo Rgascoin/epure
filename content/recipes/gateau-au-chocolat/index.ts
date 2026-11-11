@@ -10,7 +10,7 @@ export default defineRecipe({
   description:
     "Gâteau au chocolat fondant : 200 g de chocolat noir, 150 g de beurre, 4 œufs et très peu de farine, cuit 22 à 25 minutes à 180 °C. Dense et humide à cœur.",
   summary:
-    "Pour 8 parts, ce gâteau au chocolat fondant se fait avec 200 g de chocolat noir fondu avec 150 g de beurre, 4 œufs fouettés avec 140 g de sucre et seulement 50 g de farine. Versez dans un moule de 22 cm et enfournez 22 à 25 minutes à 180 °C : sortez-le quand le centre tremble encore un peu. Il prend en refroidissant ; comptez 1 heure de repos avant de servir.",
+    "Pour 8 parts, ce gâteau au chocolat fondant se fait avec 200 g de chocolat noir fondu avec 150 g de beurre, 4 œufs fouettés avec 140 g de sucre et seulement 50 g de farine. Versez dans un moule de 22 cm et enfournez 22 à 25 minutes à 180 °C : sortez-le quand le centre tremble encore un peu. Il prend en refroidissant : comptez 1 heure de repos, soit 1 h 50 en tout.",
   intro: [
     "Le gâteau au chocolat fondant tient en quelques ingrédients du placard, et presque toute sa réussite se joue à la sortie du four. On l’arrête quand les bords sont pris et que le centre tremble encore, comme une gelée. En refroidissant, il se tient, et l’intérieur reste dense et humide, quelque part entre le gâteau et la truffe.",
     "Ce qui le rate, c’est la peur de ne pas assez cuire. Laissé au four jusqu’à ce que la lame ressorte sèche, il sera bon, mais ce sera un gâteau au chocolat ordinaire, un peu sec. Cinq minutes de trop font toute la différence.",
@@ -195,7 +195,7 @@ export default defineRecipe({
   },
   images: {
     heroAlt:
-      "Part de gâteau au chocolat fondant saupoudrée de sucre glace et de groseilles, le reste du gâteau derrière",
+      "Part de gâteau au chocolat fondant au sucre glace, garnie de groseilles, le reste du gâteau en arrière-plan",
     detailAlt: "Gâteau au chocolat fondant entier dans son papier de cuisson, croûte craquelée et sucre glace",
     credits: {
       hero: {

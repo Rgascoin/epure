@@ -104,7 +104,7 @@ export default defineRecipe({
         },
         {
           title: "Caraméliser l’autre face",
-          text: "Retournez les tranches et faites cuire l’autre face 2 à 3 minutes : le sucre fond et caramélise contre la poêle. Le pain perdu est prêt quand il est gonflé, doré des deux côtés et ferme au centre sous le doigt. Gardez-le au four, posé sur une grille.",
+          text: "Retournez les tranches et faites cuire l’autre face 2 à 3 minutes : le sucre fond et caramélise contre la poêle. Le pain perdu est prêt quand il est doré des deux côtés et ferme au centre sous le doigt. Gardez-le au four, posé sur une grille.",
           timer: { minutes: 3, label: "Deuxième face" },
         },
         {
@@ -113,7 +113,7 @@ export default defineRecipe({
         },
         {
           title: "Servir",
-          text: "Servez aussitôt, tiède, avec un voile de sucre glace si vous en mettez. Le pain perdu n’attend pas : au bout d’un quart d’heure, la croûte ramollit.",
+          text: "Servez aussitôt, tiède, avec un voile de sucre glace si vous en mettez. Le pain perdu n’attend pas : en refroidissant, sa croûte ramollit.",
         },
       ],
     },
