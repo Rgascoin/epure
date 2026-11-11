@@ -45,7 +45,13 @@ export default defineRecipe({
     {
       title: "Le pain",
       items: [
-        { qty: 800, unit: "g", name: "pain de campagne rassis", note: "de la veille, en cubes de 3 cm avec un côté de croûte", step: 50 },
+        {
+          qty: 800,
+          unit: "g",
+          name: "pain de campagne rassis",
+          note: "de la veille, en cubes de 3 cm avec un côté de croûte",
+          step: 50,
+        },
       ],
     },
     {
@@ -182,11 +188,22 @@ export default defineRecipe({
   nutrition: { calories: 1110, protein: 65, fat: 64, saturatedFat: 40, carbs: 67, sugar: 3, fiber: 4, sodium: 1200 },
   annotations: { hero: "jamais d’ébullition, même au réchaud", detail: "trois fromages, à parts égales" },
   images: {
-    heroAlt: "Fondue savoyarde dans un caquelon orange, une cuillère en bois soulève le fromage filant, corbeille de pain derrière",
+    heroAlt:
+      "Fondue savoyarde dans un caquelon orange, une cuillère en bois soulève le fromage filant, corbeille de pain derrière",
     detailAlt: "Dés de fromage pour la fondue savoyarde dans une assiette sombre, prêts à fondre",
     credits: {
-      hero: { photographer: "Camille Gévaudan", url: "https://commons.wikimedia.org/wiki/File:Fondue_savoyarde.JPG", source: "Wikimedia Commons", license: "CC BY-SA 3.0" },
-      detail: { photographer: "Caroline Léna Becker", url: "https://commons.wikimedia.org/wiki/File:Fondue_Savoyarde.JPG", source: "Wikimedia Commons", license: "CC BY 3.0" },
+      hero: {
+        photographer: "Camille Gévaudan",
+        url: "https://commons.wikimedia.org/wiki/File:Fondue_savoyarde.JPG",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 3.0",
+      },
+      detail: {
+        photographer: "Caroline Léna Becker",
+        url: "https://commons.wikimedia.org/wiki/File:Fondue_Savoyarde.JPG",
+        source: "Wikimedia Commons",
+        license: "CC BY 3.0",
+      },
     },
   },
   datePublished: "2026-11-11",

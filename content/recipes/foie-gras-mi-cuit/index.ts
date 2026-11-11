@@ -197,11 +197,22 @@ export default defineRecipe({
   nutrition: { calories: 265, protein: 4, fat: 27, saturatedFat: 11, carbs: 1, sugar: 0.5, fiber: 0, sodium: 330 },
   annotations: { hero: "sortie du four à 55 °C", detail: "l’eau du bain-marie à 70 °C" },
   images: {
-    heroAlt: "Terrine de foie gras mi-cuit maison dans un plat ovale bleu, entamée, sous une fine couche de graisse jaune",
+    heroAlt:
+      "Terrine de foie gras mi-cuit maison dans un plat ovale bleu, entamée, sous une fine couche de graisse jaune",
     detailAlt: "Terrine de foie gras mi-cuit posée dans son bain-marie au moment d’entrer au four",
     credits: {
-      hero: { photographer: "DC", url: "https://commons.wikimedia.org/wiki/File:Foie_gras_mi-cuit_%22maison%22.JPG", source: "Wikimedia Commons", license: "CC BY-SA 3.0" },
-      detail: { photographer: "Alpes de Haute Provence", url: "https://commons.wikimedia.org/wiki/File:23_Foie_gras_mi-cuit.jpg", source: "Wikimedia Commons", license: "CC BY 2.0" },
+      hero: {
+        photographer: "DC",
+        url: "https://commons.wikimedia.org/wiki/File:Foie_gras_mi-cuit_%22maison%22.JPG",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 3.0",
+      },
+      detail: {
+        photographer: "Alpes de Haute Provence",
+        url: "https://commons.wikimedia.org/wiki/File:23_Foie_gras_mi-cuit.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
     },
   },
   datePublished: "2026-11-11",

@@ -34,13 +34,7 @@ export default defineRecipe({
   cost: "€€€",
   season: ["Automne", "Hiver"],
   tags: ["hiver", "automne"],
-  equipment: [
-    "faitout de 6 l",
-    "écumoire",
-    "petite sauteuse avec couvercle",
-    "passoire fine",
-    "fouet",
-  ],
+  equipment: ["faitout de 6 l", "écumoire", "petite sauteuse avec couvercle", "passoire fine", "fouet"],
   ingredients: [
     {
       title: "La viande et son bouillon",
@@ -53,7 +47,13 @@ export default defineRecipe({
         { qty: 1, name: "branche de céleri", plural: "branches de céleri", step: 1 },
         { qty: 1, name: "oignon", plural: "oignons", note: "pelé, entier", fixed: true },
         { qty: 2, name: "clou de girofle", plural: "clous de girofle", fixed: true },
-        { qty: 1, name: "bouquet garni", plural: "bouquets garnis", note: "thym, laurier, queues de persil", fixed: true },
+        {
+          qty: 1,
+          name: "bouquet garni",
+          plural: "bouquets garnis",
+          note: "thym, laurier, queues de persil",
+          fixed: true,
+        },
         { qty: 1, unit: "cas", name: "gros sel", fixed: true },
         { qty: 10, name: "grain de poivre", plural: "grains de poivre", fixed: true },
       ],
@@ -62,7 +62,13 @@ export default defineRecipe({
       title: "La garniture",
       items: [
         { qty: 200, unit: "g", name: "oignons grelots", note: "pelés", step: 10 },
-        { qty: 250, unit: "g", name: "petits champignons de Paris", note: "coupés en quatre s’ils sont gros", step: 10 },
+        {
+          qty: 250,
+          unit: "g",
+          name: "petits champignons de Paris",
+          note: "coupés en quatre s’ils sont gros",
+          step: 10,
+        },
         { qty: 20, unit: "g", name: "beurre", step: 5 },
       ],
     },
@@ -203,11 +209,23 @@ export default defineRecipe({
   nutrition: { calories: 655, protein: 51, fat: 43, saturatedFat: 21, carbs: 15, sugar: 5, fiber: 2, sodium: 750 },
   annotations: { hero: "carottes fondantes, sauce ivoire", detail: "grelots et champignons restent pâles" },
   images: {
-    heroAlt: "Assiette de blanquette de veau, morceaux de veau et dés de carotte nappés de sauce blanche crémeuse, riz blanc derrière",
-    detailAlt: "Blanquette de veau en gros plan, veau, oignons, champignons et rondelles de carotte dans une sauce à la crème",
+    heroAlt:
+      "Assiette de blanquette de veau, morceaux de veau et dés de carotte nappés de sauce blanche crémeuse, riz blanc derrière",
+    detailAlt:
+      "Blanquette de veau en gros plan, veau, oignons, champignons et rondelles de carotte dans une sauce à la crème",
     credits: {
-      hero: { photographer: "Dr. Bernd Gross", url: "https://commons.wikimedia.org/w/index.php?curid=72837783", source: "Wikimedia Commons", license: "CC BY-SA 3.0" },
-      detail: { photographer: "Arnaud 25", url: "https://commons.wikimedia.org/w/index.php?curid=74032299", source: "Wikimedia Commons", license: "CC BY-SA 4.0" },
+      hero: {
+        photographer: "Dr. Bernd Gross",
+        url: "https://commons.wikimedia.org/w/index.php?curid=72837783",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 3.0",
+      },
+      detail: {
+        photographer: "Arnaud 25",
+        url: "https://commons.wikimedia.org/w/index.php?curid=74032299",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
     },
   },
   datePublished: "2026-11-11",

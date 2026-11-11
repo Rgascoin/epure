@@ -21,17 +21,7 @@ import { ArrowRight } from "./icons";
  * this only decides what is put forward.
  */
 
-/** Recipes to put forward: tagged for this very occasion first, then the newest. */
-function picks(c: Collection, count: number): Recipe[] {
-  const main = c.tags?.[0];
-  return [...recipesInCollection(c)]
-    .sort(
-      (a, b) =>
-        Number(Boolean(main && b.tags?.includes(main))) - Number(Boolean(main && a.tags?.includes(main))) ||
-        b.datePublished.localeCompare(a.datePublished),
-    )
-    .slice(0, count);
-}
+const picks = (c: Collection, count: number): Recipe[] => recipesInCollection(c).slice(0, count);
 
 const hasPage = (c: Collection) => recipesInCollection(c).length >= MIN_RECIPES_FOR_PAGE;
 

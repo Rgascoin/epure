@@ -44,7 +44,14 @@ export default defineRecipe({
     {
       title: "La purée",
       items: [
-        { qty: 1500, unit: "g", name: "pomme de terre farineuse", plural: "pommes de terre farineuses", note: "bintje, agria ou manon", step: 100 },
+        {
+          qty: 1500,
+          unit: "g",
+          name: "pomme de terre farineuse",
+          plural: "pommes de terre farineuses",
+          note: "bintje, agria ou manon",
+          step: 100,
+        },
         { qty: 1, unit: "cas", name: "gros sel", fixed: true },
         { qty: 30, unit: "cl", name: "lait entier", step: 1 },
         { qty: 80, unit: "g", name: "beurre", note: "froid, en morceaux", step: 5 },
@@ -169,8 +176,7 @@ export default defineRecipe({
   ],
   storage:
     "Il se garde 3 jours au réfrigérateur, filmé ou en boîte fermée, une fois refroidi en moins de 2 heures. Il se congèle aussi, en parts, pendant 3 mois. Réchauffez-le au four à 180 °C, 20 à 30 minutes, jusqu’à ce qu’il soit brûlant au centre, et ne le recongelez pas.",
-  pairing:
-    "Une salade verte ou de la mâche, et un rouge souple : un côtes-du-rhône, un chinon ou un bourgueil.",
+  pairing: "Une salade verte ou de la mâche, et un rouge souple : un côtes-du-rhône, un chinon ou un bourgueil.",
   faq: [
     {
       q: "Quelles pommes de terre pour un hachis parmentier ?",
@@ -200,11 +206,22 @@ export default defineRecipe({
   nutrition: { calories: 725, protein: 34, fat: 43, saturatedFat: 19, carbs: 50, sugar: 5, fiber: 5, sodium: 700 },
   annotations: { hero: "les sillons dorés, la meilleure part", detail: "la purée enferme le bœuf" },
   images: {
-    heroAlt: "Hachis parmentier dans un plat ovale en céramique, purée gratinée à la chapelure et au fromage, bien dorée sur les bords",
+    heroAlt:
+      "Hachis parmentier dans un plat ovale en céramique, purée gratinée à la chapelure et au fromage, bien dorée sur les bords",
     detailAlt: "Hachis parmentier entamé, la purée gratinée au-dessus et le bœuf haché en dessous",
     credits: {
-      hero: { photographer: "Bycro", url: "https://commons.wikimedia.org/w/index.php?curid=103288950", source: "Wikimedia Commons", license: "CC BY-SA 4.0" },
-      detail: { photographer: "Bycro", url: "https://commons.wikimedia.org/w/index.php?curid=103288957", source: "Wikimedia Commons", license: "CC BY-SA 4.0" },
+      hero: {
+        photographer: "Bycro",
+        url: "https://commons.wikimedia.org/w/index.php?curid=103288950",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
+      detail: {
+        photographer: "Bycro",
+        url: "https://commons.wikimedia.org/w/index.php?curid=103288957",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
     },
   },
   datePublished: "2026-11-11",

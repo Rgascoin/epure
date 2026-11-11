@@ -52,13 +52,7 @@ export default async function CollectionPage({ params }: PageProps<"/collections
   if (!collection) notFound();
   const all = recipesInCollection(collection);
   if (all.length < MIN_RECIPES_FOR_PAGE) notFound();
-  // The occasion's own recipes first (a bûche before a gratin for Christmas), then the newest.
-  const main = collection.tags?.[0];
-  const list = [...all].sort(
-    (a, b) =>
-      Number(Boolean(main && b.tags?.includes(main))) - Number(Boolean(main && a.tags?.includes(main))) ||
-      b.datePublished.localeCompare(a.datePublished),
-  );
+  const list = all;
   const path = collectionPath(collection);
   const fastest = Math.min(...list.map((r) => r.totalMinutes));
   const crumbs = [

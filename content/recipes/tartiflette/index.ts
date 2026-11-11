@@ -35,16 +35,19 @@ export default defineRecipe({
   cost: "€€",
   season: ["Hiver"],
   tags: ["hiver"],
-  equipment: [
-    "grande casserole",
-    "sauteuse de 28 cm",
-    "plat à gratin de 30 × 22 cm environ",
-  ],
+  equipment: ["grande casserole", "sauteuse de 28 cm", "plat à gratin de 30 × 22 cm environ"],
   ingredients: [
     {
       title: "Les pommes de terre",
       items: [
-        { qty: 1500, unit: "g", name: "pomme de terre à chair ferme", plural: "pommes de terre à chair ferme", note: "charlotte, amandine ou ratte, de taille moyenne", step: 100 },
+        {
+          qty: 1500,
+          unit: "g",
+          name: "pomme de terre à chair ferme",
+          plural: "pommes de terre à chair ferme",
+          note: "charlotte, amandine ou ratte, de taille moyenne",
+          step: 100,
+        },
         { qty: 1, unit: "cas", name: "gros sel", fixed: true },
       ],
     },
@@ -191,11 +194,23 @@ export default defineRecipe({
   nutrition: { calories: 565, protein: 27, fat: 30, saturatedFat: 17, carbs: 46, sugar: 4, fiber: 4, sodium: 950 },
   annotations: { hero: "le reblochon coule jusqu’au fond", detail: "lardons, oignons, pommes de terre" },
   images: {
-    heroAlt: "Tartiflette vue de dessus dans une poêle noire, deux moitiés de reblochon fondues et dorées sur les pommes de terre et les lardons",
-    detailAlt: "Tartiflette dans un plat en verre, le reblochon fondu au centre entouré de pommes de terre et de lardons",
+    heroAlt:
+      "Tartiflette vue de dessus dans une poêle noire, deux moitiés de reblochon fondues et dorées sur les pommes de terre et les lardons",
+    detailAlt:
+      "Tartiflette dans un plat en verre, le reblochon fondu au centre entouré de pommes de terre et de lardons",
     credits: {
-      hero: { photographer: "Benoît Prieur", url: "https://commons.wikimedia.org/w/index.php?curid=95436241", source: "Wikimedia Commons", license: "CC0" },
-      detail: { photographer: "Rémi Guillot", url: "https://commons.wikimedia.org/wiki/File:Tartiflette_reblochon.jpg", source: "Wikimedia Commons", license: "CC BY-SA 3.0" },
+      hero: {
+        photographer: "Benoît Prieur",
+        url: "https://commons.wikimedia.org/w/index.php?curid=95436241",
+        source: "Wikimedia Commons",
+        license: "CC0",
+      },
+      detail: {
+        photographer: "Rémi Guillot",
+        url: "https://commons.wikimedia.org/wiki/File:Tartiflette_reblochon.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 3.0",
+      },
     },
   },
   datePublished: "2026-11-11",

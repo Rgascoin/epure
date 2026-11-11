@@ -8,7 +8,7 @@ export default defineRecipe({
   seoTitle: "Chapon rôti au four : temps de cuisson par kilo et jus",
   tagline: "Le four fait presque tout le travail.",
   description:
-    "Un chapon de 3,5 kg rôti à 160 °C sur un flanc, l’autre, puis le dos, environ 45 minutes par kilo, jusqu’à 74 °C dans la cuisse. Pour 8 personnes.",
+    "Un chapon de 3,5 kg rôti à 160 °C sur chaque flanc puis sur le dos, environ 45 minutes par kilo, jusqu’à 74 °C dans la cuisse. Pour 8 personnes.",
   summary:
     "Pour 8 personnes, comptez un chapon de 3,5 kg prêt à cuire, beurré sous la peau et rôti à 160 °C environ 45 minutes par kilo : 45 minutes sur chaque cuisse, 45 minutes sur le dos, puis 20 minutes à 220 °C pour dorer la peau. Il est cuit quand la sonde affiche 74 °C au cœur de la cuisse, puis il repose 30 minutes sous une feuille d’aluminium. Comptez 4 h 40 en tout, dont 1 h de mise à température et 30 minutes de travail.",
   intro: [
@@ -59,7 +59,9 @@ export default defineRecipe({
     },
     {
       title: "Le jus",
-      items: [{ qty: 40, unit: "cl", name: "bouillon de volaille", note: "20 cl au départ, 20 cl pour déglacer", step: 5 }],
+      items: [
+        { qty: 40, unit: "cl", name: "bouillon de volaille", note: "20 cl au départ, 20 cl pour déglacer", step: 5 },
+      ],
     },
   ],
   method: [
@@ -209,7 +211,10 @@ export default defineRecipe({
     heroAlt: "Chapon rôti doré dans un plat en verre, entouré de citrons, d’oignons rouges, de carottes et de grenades",
     detailAlt: "Chapon rôti en cours de découpe sur une table de fête, entouré de ses garnitures",
     credits: {
-      hero: { photographer: "Tim Douglas", url: "https://www.pexels.com/photo/grilled-whole-chicken-with-vegetables-and-fruits-in-glass-bowl-6210876/" },
+      hero: {
+        photographer: "Tim Douglas",
+        url: "https://www.pexels.com/photo/grilled-whole-chicken-with-vegetables-and-fruits-in-glass-bowl-6210876/",
+      },
       detail: { photographer: "Kaboompics.com", url: "https://www.pexels.com/photo/foods-on-the-table-5718025/" },
     },
   },

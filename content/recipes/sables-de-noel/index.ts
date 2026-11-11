@@ -187,11 +187,20 @@ export default defineRecipe({
   nutrition: { calories: 57, protein: 0.8, fat: 2.8, saturatedFat: 1.7, carbs: 7, sugar: 2.5, fiber: 0.3, sodium: 7 },
   annotations: { hero: "4 mm, ni plus ni moins", detail: "sortis du four, encore souples" },
   images: {
-    heroAlt: "Sablés de Noël aux épices glacés de blanc, en forme de sapins, de maisons et de bonshommes, sur une table grise",
+    heroAlt:
+      "Sablés de Noël aux épices glacés de blanc, en forme de sapins, de maisons et de bonshommes, sur une table grise",
     detailAlt: "Sablés de Noël découpés à l’emporte-pièce et tout juste cuits, étalés sur une planche avant le glaçage",
     credits: {
-      hero: { photographer: "Katrin Bolovtsova", url: "https://www.pexels.com/photo/homemade-christmas-cookies-5702980/" },
-      detail: { photographer: "Pethrus", url: "https://commons.wikimedia.org/wiki/File:Fr_Alsace_Plaque_bredele_2.jpg", source: "Wikimedia Commons", license: "CC BY-SA 4.0" },
+      hero: {
+        photographer: "Katrin Bolovtsova",
+        url: "https://www.pexels.com/photo/homemade-christmas-cookies-5702980/",
+      },
+      detail: {
+        photographer: "Pethrus",
+        url: "https://commons.wikimedia.org/wiki/File:Fr_Alsace_Plaque_bredele_2.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
     },
   },
   datePublished: "2026-11-11",
@@ -199,7 +208,7 @@ export default defineRecipe({
   hero,
   detail,
   theme: {
-    accent: "#B06A32",
+    accent: "#BE7840",
     onAccent: "#1C120A",
     ink: "#7A4519",
     tint: "#F8EEE4",

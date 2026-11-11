@@ -207,13 +207,23 @@ export default defineRecipe({
     },
   ],
   nutrition: { calories: 415, protein: 7, fat: 27, saturatedFat: 16, carbs: 36, sugar: 25, fiber: 3, sodium: 70 },
-  annotations: { hero: "roulée pendant qu’il est chaud", detail: "la spirale, sans une fissure" },
+  annotations: { hero: "biscuit roulé pendant qu’il est chaud", detail: "la spirale, sans une fissure" },
   images: {
     heroAlt: "Bûche de Noël roulée au chocolat sur une planche en bois, le bout coupé montrant la spirale du biscuit",
     detailAlt: "Tranche de bûche de Noël vue de près, la spirale de biscuit au chocolat et de crème bien visible",
     credits: {
-      hero: { photographer: "Mitantig", url: "https://commons.wikimedia.org/wiki/File:Buche_de_Noel_(Yule_Log).jpg", source: "Wikimedia Commons", license: "CC BY-SA 4.0" },
-      detail: { photographer: "HarshLight from San Jose, CA, USA", url: "https://commons.wikimedia.org/wiki/File:Yule_Log_(35531614301).jpg", source: "Wikimedia Commons", license: "CC BY 2.0" },
+      hero: {
+        photographer: "Mitantig",
+        url: "https://commons.wikimedia.org/wiki/File:Buche_de_Noel_(Yule_Log).jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
+      detail: {
+        photographer: "HarshLight from San Jose, CA, USA",
+        url: "https://commons.wikimedia.org/wiki/File:Yule_Log_(35531614301).jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
     },
   },
   datePublished: "2026-11-11",

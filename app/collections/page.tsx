@@ -78,7 +78,7 @@ export default function CollectionsPage() {
           <RecipeIndex
             rows={list.map((c) => {
               const items = recipesInCollection(c);
-              const cover = items.find((r) => c.tags?.[0] && r.tags?.includes(c.tags[0])) ?? items[0];
+              const cover = items[0];
               return {
                 slug: `collection-${c.slug}`,
                 href: collectionPath(c),

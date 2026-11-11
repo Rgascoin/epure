@@ -35,12 +35,7 @@ export default defineRecipe({
   cost: "€€",
   season: ["Hiver"],
   tags: ["hiver"],
-  equipment: [
-    "marmite de 10 l",
-    "écumoire",
-    "ficelle de cuisine",
-    "casserole de 3 l pour les pommes de terre",
-  ],
+  equipment: ["marmite de 10 l", "écumoire", "ficelle de cuisine", "casserole de 3 l pour les pommes de terre"],
   ingredients: [
     {
       title: "Les viandes et le bouillon",
@@ -51,7 +46,13 @@ export default defineRecipe({
         { qty: 4, unit: "l", name: "eau froide", step: 0.5 },
         { qty: 1, name: "oignon", plural: "oignons", note: "non pelé, coupé en deux", fixed: true },
         { qty: 3, name: "clou de girofle", plural: "clous de girofle", fixed: true },
-        { qty: 1, name: "bouquet garni", plural: "bouquets garnis", note: "thym, laurier, vert de poireau, queues de persil", fixed: true },
+        {
+          qty: 1,
+          name: "bouquet garni",
+          plural: "bouquets garnis",
+          note: "thym, laurier, vert de poireau, queues de persil",
+          fixed: true,
+        },
         { qty: 1, unit: "cas", name: "gros sel", step: 0.5 },
         { qty: 1, unit: "cac", name: "poivre en grains", fixed: true },
       ],
@@ -64,7 +65,14 @@ export default defineRecipe({
         { qty: 3, name: "poireau", plural: "poireaux", note: "le blanc et un peu de vert, ficelés en botte", step: 1 },
         { qty: 400, unit: "g", name: "céleri-rave", note: "en 4 gros morceaux", step: 50 },
         { qty: 4, name: "os à moelle", plural: "os à moelle", note: "tronçons de 4 à 5 cm", step: 1 },
-        { qty: 800, unit: "g", name: "pomme de terre à chair ferme", plural: "pommes de terre à chair ferme", note: "épluchées", step: 100 },
+        {
+          qty: 800,
+          unit: "g",
+          name: "pomme de terre à chair ferme",
+          plural: "pommes de terre à chair ferme",
+          note: "épluchées",
+          step: 100,
+        },
       ],
     },
     {
@@ -73,7 +81,13 @@ export default defineRecipe({
         { name: "fleur de sel" },
         { name: "moutarde forte" },
         { name: "cornichons" },
-        { qty: 6, name: "tranche de pain de campagne", plural: "tranches de pain de campagne", note: "grillées", step: 1 },
+        {
+          qty: 6,
+          name: "tranche de pain de campagne",
+          plural: "tranches de pain de campagne",
+          note: "grillées",
+          step: 1,
+        },
       ],
     },
   ],
@@ -168,8 +182,7 @@ export default defineRecipe({
   ],
   storage:
     "Viande, légumes et bouillon se gardent 3 jours au réfrigérateur, refroidis en moins de 2 heures et rangés dans des boîtes fermées. Le bouillon dégraissé se congèle 3 mois, la viande dans un peu de bouillon aussi. Une fois décongelés, ne les recongelez pas.",
-  pairing:
-    "Un rouge léger et fruité, servi un peu frais : un beaujolais, un saumur-champigny ou un côtes-du-rhône.",
+  pairing: "Un rouge léger et fruité, servi un peu frais : un beaujolais, un saumur-champigny ou un côtes-du-rhône.",
   faq: [
     {
       q: "Quels morceaux de viande pour un pot-au-feu ?",
@@ -199,11 +212,23 @@ export default defineRecipe({
   nutrition: { calories: 715, protein: 61, fat: 34, saturatedFat: 14, carbs: 40, sugar: 10, fiber: 8, sodium: 1100 },
   annotations: { hero: "la viande se défait à la fourchette", detail: "trois morceaux, des os, des racines" },
   images: {
-    heroAlt: "Pot-au-feu servi dans une assiette creuse blanche, plat de côtes sur l’os, pomme de terre, légumes et brin de persil",
-    detailAlt: "Ingrédients du pot-au-feu sur papier kraft : jarret de bœuf avec son os à moelle, carottes, poireaux, céleri, navets et oignon",
+    heroAlt:
+      "Pot-au-feu servi dans une assiette creuse blanche, plat de côtes sur l’os, pomme de terre, légumes et brin de persil",
+    detailAlt:
+      "Ingrédients du pot-au-feu sur papier kraft : jarret de bœuf avec son os à moelle, carottes, poireaux, céleri, navets et oignon",
     credits: {
-      hero: { photographer: "[puamelia]", url: "https://commons.wikimedia.org/wiki/File:Pot-au-feu_au_plat_de_c%C3%B4te.jpg", source: "Wikimedia Commons", license: "CC BY-SA 2.0" },
-      detail: { photographer: "Andrea_Nguyen", url: "https://commons.wikimedia.org/wiki/File:Pot-au-feu_ingr%C3%A9dients.jpg", source: "Wikimedia Commons", license: "CC BY 2.0" },
+      hero: {
+        photographer: "[puamelia]",
+        url: "https://commons.wikimedia.org/wiki/File:Pot-au-feu_au_plat_de_c%C3%B4te.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 2.0",
+      },
+      detail: {
+        photographer: "Andrea_Nguyen",
+        url: "https://commons.wikimedia.org/wiki/File:Pot-au-feu_ingr%C3%A9dients.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
     },
   },
   datePublished: "2026-11-11",

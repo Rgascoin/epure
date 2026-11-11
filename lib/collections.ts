@@ -37,6 +37,8 @@ export interface Collection {
   window: (year: number) => [Day, Day];
   /** Higher wins when several collections are in season. */
   priority: number;
+  /** Slugs to show first (the dishes that best carry the occasion). */
+  lead?: string[];
 }
 
 /* ------------------------------------------------------------------------ */
@@ -114,6 +116,7 @@ export const collections: Collection[] = [
     tags: ["noel"],
     window: (y) => [day(y, 11, 1), day(y, 12, 25)],
     priority: 90,
+    lead: ["buche-de-noel", "chapon-roti", "sables-de-noel", "foie-gras-mi-cuit"],
   },
   {
     slug: "nouvel-an",
@@ -305,8 +308,24 @@ export const MIN_RECIPES_FOR_PAGE = 3;
 export const collectionBySlug = (slug: string) => collections.find((c) => c.slug === slug);
 export const collectionPath = (c: Collection) => `/collections/${c.slug}` as const;
 
+/**
+ * Recipes of a collection, in display order: the `lead` dishes, then those
+ * tagged for this very occasion, then the newest.
+ */
 export function recipesInCollection(c: Collection): Recipe[] {
-  return recipes.filter((r) => c.match?.(r) || (c.tags ?? []).some((t) => r.tags?.includes(t)));
+  const main = c.tags?.[0];
+  const lead = (slug: string) => {
+    const i = c.lead?.indexOf(slug) ?? -1;
+    return i < 0 ? Infinity : i;
+  };
+  return recipes
+    .filter((r) => c.match?.(r) || (c.tags ?? []).some((t) => r.tags?.includes(t)))
+    .sort(
+      (a, b) =>
+        lead(a.slug) - lead(b.slug) ||
+        Number(Boolean(main && b.tags?.includes(main))) - Number(Boolean(main && a.tags?.includes(main))) ||
+        b.datePublished.localeCompare(a.datePublished),
+    );
 }
 
 /** Collections that have a page (enough recipes). */
