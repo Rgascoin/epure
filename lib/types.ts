@@ -78,7 +78,12 @@ export interface Nutrition {
 
 export interface Credit {
   photographer: string;
+  /** Page of the photo on its source site. */
   url: string;
+  /** Where the photo comes from (default « Pexels »). */
+  source?: "Pexels" | "Unsplash" | "Pixabay" | "Wikimedia Commons";
+  /** Licence to cite when the source requires it, e.g. « CC BY 4.0 ». */
+  license?: string;
 }
 
 export interface RecipeTheme {

@@ -4,7 +4,8 @@
  *
  *   pnpm recipes:images <slug> <hero> <detail> [--focus "50% 40%"]
  *
- * <hero> / <detail>: a Pexels photo id (e.g. 30628819) or a path to a local JPEG.
+ * <hero> / <detail>: a Pexels photo id (e.g. 30628819), a direct image URL
+ * (Wikimedia Commons, Pixabay, Unsplash…) or a path to a local JPEG.
  *
  * Writes:
  *   content/recipes/<slug>/hero.jpg      (2000 px max, the page photo)
@@ -32,6 +33,11 @@ async function load(arg) {
     if (!res.ok) throw new Error(`Pexels ${arg} : HTTP ${res.status}`);
     return Buffer.from(await res.arrayBuffer());
   }
+  if (/^https?:\/\//.test(arg)) {
+    const res = await fetch(arg, { headers: { "User-Agent": "epure-recipe-images/1.0" } });
+    if (!res.ok) throw new Error(`${arg} : HTTP ${res.status}`);
+    return Buffer.from(await res.arrayBuffer());
+  }
   if (!existsSync(arg)) throw new Error(`Fichier introuvable : ${arg}`);
   return readFileSync(arg);
 }
@@ -41,12 +47,21 @@ const jpeg = { quality: 80, mozjpeg: true, progressive: true };
 /** Crop to a ratio around the focus point. */
 async function crop(input, ratio, width, out) {
   const meta = await sharp(input).metadata();
-  const W = meta.width, H = meta.height;
-  let w = W, h = Math.round(W / ratio);
-  if (h > H) { h = H; w = Math.round(H * ratio); }
+  const W = meta.width,
+    H = meta.height;
+  let w = W,
+    h = Math.round(W / ratio);
+  if (h > H) {
+    h = H;
+    w = Math.round(H * ratio);
+  }
   const left = Math.min(W - w, Math.max(0, Math.round(fx * W - w / 2)));
   const top = Math.min(H - h, Math.max(0, Math.round(fy * H - h / 2)));
-  await sharp(input).extract({ left, top, width: w, height: h }).resize(width).jpeg({ ...jpeg, quality: 78 }).toFile(out);
+  await sharp(input)
+    .extract({ left, top, width: w, height: h })
+    .resize(width)
+    .jpeg({ ...jpeg, quality: 78 })
+    .toFile(out);
 }
 
 const contentDir = join(process.cwd(), "content/recipes", slug);
@@ -55,8 +70,14 @@ mkdirSync(contentDir, { recursive: true });
 mkdirSync(publicDir, { recursive: true });
 
 const [hero, detail] = await Promise.all([load(heroArg), load(detailArg)]);
-await sharp(hero).resize({ width: 2000, height: 2000, fit: "inside", withoutEnlargement: true }).jpeg(jpeg).toFile(join(contentDir, "hero.jpg"));
-await sharp(detail).resize({ width: 1400, height: 1400, fit: "inside", withoutEnlargement: true }).jpeg(jpeg).toFile(join(contentDir, "detail.jpg"));
+await sharp(hero)
+  .resize({ width: 2000, height: 2000, fit: "inside", withoutEnlargement: true })
+  .jpeg(jpeg)
+  .toFile(join(contentDir, "hero.jpg"));
+await sharp(detail)
+  .resize({ width: 1400, height: 1400, fit: "inside", withoutEnlargement: true })
+  .jpeg(jpeg)
+  .toFile(join(contentDir, "detail.jpg"));
 await crop(hero, 1, 1200, join(publicDir, "1x1.jpg"));
 await crop(hero, 4 / 3, 1200, join(publicDir, "4x3.jpg"));
 await crop(hero, 16 / 9, 1600, join(publicDir, "16x9.jpg"));

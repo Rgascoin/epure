@@ -390,18 +390,15 @@ export function Byline({ recipe }: { recipe: Recipe }) {
       </p>
       <p>
         Photos&#8239;:{" "}
-        <a href={hero.url} rel="noopener" className="underline underline-offset-2">
-          {hero.photographer}
-        </a>
-        {detail.photographer !== hero.photographer && (
-          <>
-            ,{" "}
-            <a href={detail.url} rel="noopener" className="underline underline-offset-2">
-              {detail.photographer}
-            </a>
-          </>
-        )}{" "}
-        (Pexels)
+        {[hero, ...(detail.url !== hero.url ? [detail] : [])].map((c, i) => (
+          <span key={c.url}>
+            {i > 0 && ", "}
+            <a href={c.url} rel="noopener" className="underline underline-offset-2">
+              {c.photographer}
+            </a>{" "}
+            ({[c.source ?? "Pexels", c.license].filter(Boolean).join(", ")})
+          </span>
+        ))}
       </p>
     </div>
   );

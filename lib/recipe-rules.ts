@@ -272,6 +272,23 @@ export function auditRecipe(r: Recipe): { errors: string[]; warnings: string[] }
       `images.credits.${k}.url : URL de la page source`,
     );
     err(r.images.credits[k].photographer.length > 0, `images.credits.${k}.photographer : requis`);
+    {
+      const c = r.images.credits[k];
+      const host = c.url.replace(/^https:\/\/(www\.)?/, "").split("/")[0];
+      const expected = {
+        "pexels.com": "Pexels",
+        "unsplash.com": "Unsplash",
+        "pixabay.com": "Pixabay",
+        "commons.wikimedia.org": "Wikimedia Commons",
+      }[host];
+      err(
+        (c.source ?? "Pexels") === expected,
+        `images.credits.${k}.source : « ${c.source ?? "Pexels"} » ne correspond pas à l’URL (${host})`,
+      );
+      if (c.source === "Wikimedia Commons")
+        err(Boolean(c.license), `images.credits.${k}.license : licence requise pour Wikimedia Commons`);
+      warn(c.photographer !== "Pexels", `images.credits.${k}.photographer : nom du photographe à retrouver`);
+    }
   }
   for (const k of ["hero", "detail"] as const) {
     const a = r.annotations[k];

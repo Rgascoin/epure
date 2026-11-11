@@ -63,16 +63,16 @@ Une recette d’Épure doit permettre à quelqu’un qui ne l’a jamais faite d
 
 ### Ce qu’on ne fait jamais
 
-| Interdit | Pourquoi | À la place |
-|---|---|---|
-| Le tiret cadratin « — » **[auto]** | tic d’écriture automatique | virgule, deux-points, parenthèses, point |
-| Les slogans symétriques (« Cinq ingrédients. Zéro crème. ») | ton publicitaire | une phrase naturelle : « Sans crème, et c’est tant mieux. » |
-| Les superlatifs creux **[auto]** : sublime, incontournable, magique, un régal, irrésistible, explosion de saveurs, délicieusement… | n’apportent aucune information | un fait : « le caramel colle aux dents, juste ce qu’il faut » |
-| Les formules de magazine **[auto]** : le secret, le tour est joué, en un rien de temps, à coup sûr, tout simplement, « plongez au cœur de », « découvrez notre recette », laissez-vous tenter, succomber, réconfortant (au sens culinaire, « plongez les pâtes » ou « découvrez la cocotte » restent permis) | clichés | dire concrètement ce qui se passe |
-| Les questions d’accroche (« Et si on… ? ») | remplissage | entrer dans le sujet |
-| Les listes de trois adjectifs | effet de style automatique | un seul adjectif précis |
-| Les paragraphes qui finissent sur une morale | sentencieux | finir sur une information |
-| Les faits inventés (histoire, chefs, chiffres, tests) | malhonnête, risqué | rien, ou une opinion assumée |
+| Interdit                                                                                                                                                                                                                                                                                                     | Pourquoi                       | À la place                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------- |
+| Le tiret cadratin « — » **[auto]**                                                                                                                                                                                                                                                                           | tic d’écriture automatique     | virgule, deux-points, parenthèses, point                      |
+| Les slogans symétriques (« Cinq ingrédients. Zéro crème. »)                                                                                                                                                                                                                                                  | ton publicitaire               | une phrase naturelle : « Sans crème, et c’est tant mieux. »   |
+| Les superlatifs creux **[auto]** : sublime, incontournable, magique, un régal, irrésistible, explosion de saveurs, délicieusement…                                                                                                                                                                           | n’apportent aucune information | un fait : « le caramel colle aux dents, juste ce qu’il faut » |
+| Les formules de magazine **[auto]** : le secret, le tour est joué, en un rien de temps, à coup sûr, tout simplement, « plongez au cœur de », « découvrez notre recette », laissez-vous tenter, succomber, réconfortant (au sens culinaire, « plongez les pâtes » ou « découvrez la cocotte » restent permis) | clichés                        | dire concrètement ce qui se passe                             |
+| Les questions d’accroche (« Et si on… ? »)                                                                                                                                                                                                                                                                   | remplissage                    | entrer dans le sujet                                          |
+| Les listes de trois adjectifs                                                                                                                                                                                                                                                                                | effet de style automatique     | un seul adjectif précis                                       |
+| Les paragraphes qui finissent sur une morale                                                                                                                                                                                                                                                                 | sentencieux                    | finir sur une information                                     |
+| Les faits inventés (histoire, chefs, chiffres, tests)                                                                                                                                                                                                                                                        | malhonnête, risqué             | rien, ou une opinion assumée                                  |
 
 ### Avant / après
 
@@ -90,36 +90,36 @@ Une recette d’Épure doit permettre à quelqu’un qui ne l’a jamais faite d
 
 Une recette est un fichier `content/recipes/<slug>/index.ts` typé (`RecipeSource`, voir `lib/types.ts`). Exemple complet : `content/recipes/spaghetti-carbonara/index.ts`.
 
-| Champ | Règle | Exemple |
-|---|---|---|
-| `slug` | **[auto]** minuscules, chiffres, tirets ; identique au dossier ; mot-clé principal | `quiche-lorraine` |
-| `title` | nom usuel du plat, **[auto]** ≤ 60 caractères, sans adjectif marketing | `Quiche lorraine` |
-| `seoTitle` | **[auto]** 30 à 60 caractères ; mot-clé principal en tête ; une promesse concrète | `Quiche lorraine : la vraie recette, pâte croustillante` |
-| `tagline` | **[auto]** ≤ 7 mots ; humaine, un peu pince-sans-rire ; pas deux phrases symétriques | `Sans gruyère, et elle s’en porte bien.` |
-| `description` | **[auto]** 120 à 160 caractères ; phrase naturelle ; mot-clé tôt ; temps ou chiffre clé | voir §12 |
-| `summary` (« En bref ») | **[auto]** 150 à 480 caractères ; contient des chiffres et le nombre de portions ; répond directement à « comment faire X » | voir §12 |
-| `intro` | **[auto]** 2 ou 3 paragraphes, ≤ 90 mots chacun : ce qu’est le plat, ce qui le rend réussi, ce qui peut rater | |
-| `category` | `Entrée`, `Plat`, `Accompagnement`, `Dessert`, `Goûter` | |
-| `cuisine` | adjectif au singulier, majuscule : `Française`, `Italienne`, `Espagnole`… | |
-| `keywords` | **[auto]** 5 à 12 requêtes réelles, en minuscules, telles que tapées | `quiche lorraine sans gruyère` |
-| `diet` | seulement si c’est vrai pour la recette telle qu’écrite (vérifier bouillons, fromages, gélatine) | `["vegetarian"]` |
-| `servings`, `servingsLabel` | voir §7 | `{ one: "part", other: "parts" }` |
-| `times` | voir §7 | |
-| `difficulty`, `cost` | voir §7 | |
-| `season` | mois ou saisons, en toutes lettres | `["Automne", "Hiver"]` |
-| `equipment` | **[auto]** ≥ 2 ; en minuscules (affichés en une phrase) ; précis | `moule à tarte de 26 cm` |
-| `ingredients` | voir §5 | |
-| `method` | voir §6 | |
-| `science`, `tips`, `mistakes`, `variations` | voir §8 | |
-| `storage` | 1 à 2 phrases : où, combien de temps, comment réchauffer ; cohérent avec §10 | |
-| `pairing` | une suggestion de boisson simple et accessible (appellations en minuscules : un bourgogne, un frascati) | |
-| `faq` | voir §9 | |
-| `nutrition` | voir §11 | |
-| `annotations` | notes manuscrites, voir §13 | |
-| `images` | alt et crédits, voir §13 | |
-| `datePublished`, `dateModified` | **[auto]** `AAAA-MM-JJ`, modification ≥ publication ; mettre à jour `dateModified` à chaque correction de fond | |
-| `theme` | voir §14 | |
-| `featured` | `true` seulement pour les quelques recettes du carnet de la page d’accueil | |
+| Champ                                       | Règle                                                                                                                       | Exemple                                                  |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `slug`                                      | **[auto]** minuscules, chiffres, tirets ; identique au dossier ; mot-clé principal                                          | `quiche-lorraine`                                        |
+| `title`                                     | nom usuel du plat, **[auto]** ≤ 60 caractères, sans adjectif marketing                                                      | `Quiche lorraine`                                        |
+| `seoTitle`                                  | **[auto]** 30 à 60 caractères ; mot-clé principal en tête ; une promesse concrète                                           | `Quiche lorraine : la vraie recette, pâte croustillante` |
+| `tagline`                                   | **[auto]** ≤ 7 mots ; humaine, un peu pince-sans-rire ; pas deux phrases symétriques                                        | `Sans gruyère, et elle s’en porte bien.`                 |
+| `description`                               | **[auto]** 120 à 160 caractères ; phrase naturelle ; mot-clé tôt ; temps ou chiffre clé                                     | voir §12                                                 |
+| `summary` (« En bref »)                     | **[auto]** 150 à 480 caractères ; contient des chiffres et le nombre de portions ; répond directement à « comment faire X » | voir §12                                                 |
+| `intro`                                     | **[auto]** 2 ou 3 paragraphes, ≤ 90 mots chacun : ce qu’est le plat, ce qui le rend réussi, ce qui peut rater               |                                                          |
+| `category`                                  | `Entrée`, `Plat`, `Accompagnement`, `Dessert`, `Goûter`                                                                     |                                                          |
+| `cuisine`                                   | adjectif au singulier, majuscule : `Française`, `Italienne`, `Espagnole`…                                                   |                                                          |
+| `keywords`                                  | **[auto]** 5 à 12 requêtes réelles, en minuscules, telles que tapées                                                        | `quiche lorraine sans gruyère`                           |
+| `diet`                                      | seulement si c’est vrai pour la recette telle qu’écrite (vérifier bouillons, fromages, gélatine)                            | `["vegetarian"]`                                         |
+| `servings`, `servingsLabel`                 | voir §7                                                                                                                     | `{ one: "part", other: "parts" }`                        |
+| `times`                                     | voir §7                                                                                                                     |                                                          |
+| `difficulty`, `cost`                        | voir §7                                                                                                                     |                                                          |
+| `season`                                    | mois ou saisons, en toutes lettres                                                                                          | `["Automne", "Hiver"]`                                   |
+| `equipment`                                 | **[auto]** ≥ 2 ; en minuscules (affichés en une phrase) ; précis                                                            | `moule à tarte de 26 cm`                                 |
+| `ingredients`                               | voir §5                                                                                                                     |                                                          |
+| `method`                                    | voir §6                                                                                                                     |                                                          |
+| `science`, `tips`, `mistakes`, `variations` | voir §8                                                                                                                     |                                                          |
+| `storage`                                   | 1 à 2 phrases : où, combien de temps, comment réchauffer ; cohérent avec §10                                                |                                                          |
+| `pairing`                                   | une suggestion de boisson simple et accessible (appellations en minuscules : un bourgogne, un frascati)                     |                                                          |
+| `faq`                                       | voir §9                                                                                                                     |                                                          |
+| `nutrition`                                 | voir §11                                                                                                                    |                                                          |
+| `annotations`                               | notes manuscrites, voir §13                                                                                                 |                                                          |
+| `images`                                    | alt et crédits, voir §13                                                                                                    |                                                          |
+| `datePublished`, `dateModified`             | **[auto]** `AAAA-MM-JJ`, modification ≥ publication ; mettre à jour `dateModified` à chaque correction de fond              |                                                          |
+| `theme`                                     | voir §14                                                                                                                    |                                                          |
+| `featured`                                  | `true` seulement pour les quelques recettes du carnet de la page d’accueil                                                  |                                                          |
 
 ---
 
@@ -225,14 +225,14 @@ Non négociable. À vérifier pour chaque recette :
 
 ## 13. Photos, notes manuscrites et crédits
 
-- **Source** : photos libres de droits (Pexels, licence Pexels) ou photos maison. Jamais d’image dont on ignore la licence, jamais d’image générée présentée comme une vraie photo.
+- **Source** : photos libres de droits ou photos maison. On cherche d’abord sur Pexels (licence Pexels, sans mention obligatoire) ; si aucune photo n’est fidèle, on élargit à Unsplash, Pixabay et Wikimedia Commons, en ne gardant que des licences qui autorisent l’usage commercial (CC0, domaine public, CC BY, CC BY-SA). Jamais d’image dont on ignore la licence, jamais d’image générée présentée comme une vraie photo.
 - **Fidélité** : la photo montre **ce plat-là** (une tartiflette n’est pas illustrée par un gratin quelconque). Si aucune photo fidèle n’existe, on ne publie pas, ou on attend une photo maison.
 - **Deux photos** :
   - `hero` : le plat fini, net, appétissant, cadrage qui supporte un recadrage en arche (sujet centré, un peu d’air autour). Format portrait de préférence.
   - `detail` : un détail ou un autre angle (texture, part coupée, geste).
 - **Préparation** : `pnpm recipes:images <slug> <idHero> <idDétail> --focus "50% 45%"` crée `hero.jpg`, `detail.jpg` et les recadrages 1:1, 4:3, 16:9 **[auto : présence et poids]**. `theme.focus` reprend le même point focal.
 - **Texte alternatif** **[auto : 30 à 140 caractères]** : ce qu’on voit, avec le nom du plat, sans « image de » (« Quiche lorraine dorée dans un moule en céramique, une part découpée »).
-- **Crédits** : nom du photographe tel qu’affiché sur la page source et URL de la page de la photo **[auto]**. Si le nom est introuvable : `photographer: "Pexels"`.
+- **Crédits** : nom du photographe tel qu’affiché sur la page source et URL de la page de la photo **[auto]**. Hors Pexels, on renseigne aussi `source` (« Unsplash », « Pixabay », « Wikimedia Commons ») et, si la licence demande une mention, `license` (« CC BY 4.0 », « CC BY-SA 4.0 ») **[auto]** : le site affiche alors l’auteur, la source et la licence sous la recette et sur la page À propos. `photographer: "Pexels"` n’est toléré qu’en dernier recours.
 - **Notes manuscrites** (`annotations`) : ce qu’un cuisinier griffonnerait au crayon à côté de la photo ; **≤ 7 mots** **[auto]**, en minuscules **[auto]**, utiles (« le fond cuit seul d’abord », « pas de gruyère, promis »). Pas deux notes sur le même tic (« …, toujours »).
 
 ---
@@ -241,14 +241,14 @@ Non négociable. À vérifier pour chaque recette :
 
 Chaque recette a une couleur, tirée de la photo (le jaune d’un jaune d’œuf, le rouge d’une sauce tomate). Les contrastes sont vérifiés **[auto]** :
 
-| Champ | Rôle | Règle |
-|---|---|---|
-| `accent` | couleur vive du plat (boutons, tampon) | |
-| `onAccent` | texte posé sur `accent` | contraste ≥ 4,5 **[auto]** |
-| `ink` | accent lisible en texte sur le papier `#F2EDE4` | contraste ≥ 4,5 sur le papier et sur `tint` **[auto]** |
-| `tint` | fond très clair (note « En bref ») | |
-| `deep` | fond très sombre (« Pourquoi ça marche ») | contraste ≥ 10 avec le papier **[auto]** |
-| `focus` | point focal de la photo (`object-position`) | |
+| Champ      | Rôle                                            | Règle                                                  |
+| ---------- | ----------------------------------------------- | ------------------------------------------------------ |
+| `accent`   | couleur vive du plat (boutons, tampon)          |                                                        |
+| `onAccent` | texte posé sur `accent`                         | contraste ≥ 4,5 **[auto]**                             |
+| `ink`      | accent lisible en texte sur le papier `#F2EDE4` | contraste ≥ 4,5 sur le papier et sur `tint` **[auto]** |
+| `tint`     | fond très clair (note « En bref »)              |                                                        |
+| `deep`     | fond très sombre (« Pourquoi ça marche »)       | contraste ≥ 10 avec le papier **[auto]**               |
+| `focus`    | point focal de la photo (`object-position`)     |                                                        |
 
 En mode sombre, le site éclaircit `ink` et assombrit `tint` automatiquement.
 
@@ -275,7 +275,7 @@ En mode sombre, le site éclaircit `ink` et assombrit `tint` automatiquement.
 mkdir content/recipes/quiche-lorraine
 cp content/recipes/spaghetti-carbonara/index.ts content/recipes/quiche-lorraine/index.ts
 
-# 2. Préparer les photos (ids Pexels ou fichiers locaux)
+# 2. Préparer les photos (ids Pexels, URL directes d’images ou fichiers locaux)
 pnpm recipes:images quiche-lorraine 33433982 288264 --focus "50% 50%"
 
 # 3. Rédiger la fiche en suivant ce guide, puis vérifier
@@ -296,6 +296,7 @@ L’index des recettes (`content/recipes/index.ts`), le sitemap, les catégories
 À cocher avant chaque publication, en plus de `pnpm recipes:check`.
 
 **Fond**
+
 - [ ] La recette est la version de référence ; les écarts sont dans les variantes.
 - [ ] Quantités identiques entre résumé, ingrédients et étapes ; aucun ingrédient fantôme.
 - [ ] Chaque cuisson a un réglage, une durée et un repère sensoriel.
@@ -305,6 +306,7 @@ L’index des recettes (`content/recipes/index.ts`), le sitemap, les catégories
 - [ ] La science est exacte (sources sérieuses si doute).
 
 **Forme**
+
 - [ ] Ton d’Épure : concret, « vous » / « on », aucune formule interdite (§3).
 - [ ] Le résumé répond seul à « comment faire » avec les chiffres.
 - [ ] Les titres d’étapes sont des verbes à l’infinitif.
@@ -312,10 +314,12 @@ L’index des recettes (`content/recipes/index.ts`), le sitemap, les catégories
 - [ ] Typographie française (§15).
 
 **Visuel**
+
 - [ ] Les photos montrent bien ce plat ; crédits et alt remplis.
 - [ ] Le recadrage en arche et les vignettes rondes gardent le plat au centre (vérifier dans `pnpm dev`).
 - [ ] La couleur de la recette est jolie en clair et en sombre.
 
 **Technique**
+
 - [ ] `pnpm recipes:check` sans erreur, et avertissements lus.
 - [ ] `pnpm build` réussi.

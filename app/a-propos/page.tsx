@@ -169,7 +169,7 @@ export default function AboutPage() {
         </h2>
         <p className="mt-3 max-w-2xl text-fg-2">
           {fr(
-            "Les photos viennent de Pexels et sont utilisées selon leur licence. Les caractères sont Fraunces, Instrument Sans, IBM Plex Mono et Caveat, tous sous licence libre.",
+            "Les photos viennent de Pexels et, pour quelques-unes, d’autres banques d’images libres ; chacune est utilisée selon sa licence, indiquée quand elle demande une mention. Les caractères sont Fraunces, Instrument Sans, IBM Plex Mono et Caveat, tous sous licence libre.",
           )}
         </p>
         <details className="group mt-8 border-t border-line-strong">
@@ -193,6 +193,11 @@ export default function AboutPage() {
                   >
                     {r.images.credits[k].photographer}
                   </a>
+                  {r.images.credits[k].source && r.images.credits[k].source !== "Pexels" && (
+                    <span className="ml-1.5 font-mono text-[0.75rem] text-fg-3">
+                      {[r.images.credits[k].source, r.images.credits[k].license].filter(Boolean).join(", ")}
+                    </span>
+                  )}
                 </li>
               )),
             )}
