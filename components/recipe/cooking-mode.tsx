@@ -126,7 +126,7 @@ export function CookingMode({
           {/* Top bar */}
           <div className="relative flex items-start justify-between gap-4 px-5 pt-[max(1rem,env(safe-area-inset-top))] md:px-10 md:pt-8">
             <div className="min-w-0">
-              <p className="truncate font-mono text-[0.75rem] tracking-wider text-[#f2ede4]/50 uppercase">{title}</p>
+              <p className="truncate font-mono text-[0.75rem] tracking-wider text-[#f2ede4]/65 uppercase">{title}</p>
               <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Étapes">
                 {steps.map((s, i) => (
                   <li key={s.n}>
@@ -139,12 +139,12 @@ export function CookingMode({
                       aria-label={`Aller à l’étape ${s.n}`}
                       aria-current={i === index ? "step" : undefined}
                       className={clsx(
-                        "grid size-8 place-items-center rounded-full font-mono text-[0.75rem] transition-colors duration-300",
+                        "grid size-9 place-items-center rounded-full font-mono text-[0.8125rem] transition-colors duration-300",
                         i === index && !finished
                           ? "bg-accent text-on-accent"
                           : i < index || finished
                             ? "bg-[#f2ede4]/15 text-[#f2ede4]/70 line-through"
-                            : "border border-[#f2ede4]/25 text-[#f2ede4]/60",
+                            : "border border-[#f2ede4]/25 text-[#f2ede4]/70",
                       )}
                     >
                       {s.n}
@@ -194,11 +194,11 @@ export function CookingMode({
                   <div className="relative aspect-[4/5] w-[min(52vw,260px)] overflow-hidden rounded-[999px_999px_16px_16px] shadow-[6px_6px_0_var(--accent)]">
                     <Image src={hero} alt={heroAlt} fill sizes="260px" className="object-cover" />
                   </div>
-                  <p className="mt-10 font-display text-[clamp(3rem,8vw,6rem)] leading-none font-[380] [font-variation-settings:'SOFT'_100]">
+                  <p className="mt-10 font-display text-[clamp(3rem,8vw,6rem)] leading-none [font-weight:calc(380+var(--dw))] [font-variation-settings:'SOFT'_100]">
                     Bon <span className="serif-accent text-accent-bright">appétit</span>.
                   </p>
                   <p className="mt-4 hand text-[1.6rem] text-[#f2ede4]/70">
-                    {servingsText.toLowerCase()}, et pas une miette de reste.
+                    {servingsText.toLowerCase()}. S’il en reste, la conservation est expliquée sur la page.
                   </p>
                   <button type="button" onClick={() => ref.current?.close()} className="btn btn-accent mt-8">
                     Fermer le mode cuisine
@@ -225,7 +225,7 @@ export function CookingMode({
                   aria-live="polite"
                 >
                   <div className="my-auto">
-                    <p className="text-eyebrow text-[#f2ede4]/50">
+                    <p className="text-eyebrow text-[#f2ede4]/65">
                       Étape {step.n} sur {total} · {step.section}
                     </p>
                     <div className="mt-4 flex items-baseline gap-4">
@@ -236,7 +236,7 @@ export function CookingMode({
                     </div>
                     <p
                       className={clsx(
-                        "mt-6 max-w-[38ch] font-display leading-[1.18] font-[380] text-balance [font-variation-settings:'SOFT'_80]",
+                        "mt-6 max-w-[38ch] font-display leading-[1.18] [font-weight:calc(380+var(--dw))] text-balance [font-variation-settings:'SOFT'_80]",
                         step.text.length > 240
                           ? "text-[clamp(1.5rem,3.4vw,2.75rem)]"
                           : "text-[clamp(1.75rem,4.2vw,3.4rem)]",
@@ -278,7 +278,7 @@ export function CookingMode({
                   className="absolute inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#f2ede4] px-6 py-6 text-[#1b1712] shadow-[-20px_0_60px_rgba(0,0,0,0.5)] sm:w-[400px]"
                   aria-label="Ingrédients"
                 >
-                  <p className="font-display text-[1.75rem] font-[450]">Ingrédients</p>
+                  <p className="font-display text-[1.75rem] [font-weight:calc(450+var(--dw))]">Ingrédients</p>
                   <p className="hand text-[1.35rem] text-[#b23d24]">{servingsText.toLowerCase()}</p>
                   {ingredients.map((g, gi) => (
                     <div key={gi} className="mt-5">
@@ -321,9 +321,9 @@ export function CookingMode({
               disabled={index === 0}
               className="inline-flex h-14 items-center gap-2 rounded-[14px] border-[1.5px] border-[#f2ede4]/30 px-5 text-[1rem] font-medium transition-[border-color,opacity] hover:border-[#f2ede4] disabled:opacity-30"
             >
-              <ArrowLeft size={20} /> <span className="sr-only sm:not-sr-only">Précédente</span>
+              <ArrowLeft size={20} /> <span className="sr-only sm:not-sr-only">Étape précédente</span>
             </button>
-            <p className="hidden font-mono text-[0.75rem] text-[#f2ede4]/40 md:block">
+            <p className="hidden font-mono text-[0.75rem] text-[#f2ede4]/65 md:block">
               flèches ← → pour tourner les pages · Échap pour sortir
             </p>
             {!finished && (

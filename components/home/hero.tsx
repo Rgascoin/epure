@@ -26,7 +26,7 @@ export function Hero({ pills }: { pills: [Pill, Pill, Pill] }) {
     <section className="relative overflow-hidden pt-[calc(var(--header-h)+clamp(2.5rem,8vh,6rem))] pb-[clamp(4rem,10vh,7rem)]">
       <div className="relative container-page">
         <p className="intro-fade text-eyebrow text-fg-3" style={{ "--d": "0ms" } as CSSProperties}>
-          Recettes françaises &amp; italiennes
+          Quatre recettes françaises, une italienne
         </p>
 
         <h1 className="mt-6 max-w-[14ch] text-hero text-balance md:max-w-[15ch]">

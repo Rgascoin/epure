@@ -61,7 +61,7 @@ export default function RecipesPage() {
         </h1>
         <p className="intro-fade mt-6 max-w-2xl text-lede text-fg-2" style={{ ["--d" as string]: "380ms" }}>
           {fr(
-            "Trois plats, deux desserts. Chacune apprend un geste qui resservira ailleurs : lier une sauce aux œufs, mijoter, confire des légumes, foncer une pâte, monter des blancs.",
+            "Trois plats, deux desserts. Chaque recette apprend un geste qui resservira ailleurs : lier une sauce aux œufs, mijoter, confire des légumes, foncer une pâte, monter des blancs.",
           )}
         </p>
 

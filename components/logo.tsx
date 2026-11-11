@@ -20,7 +20,7 @@ export function LogoMark({ className, title }: { className?: string; title?: str
 
 export function Wordmark({ className }: { className?: string }) {
   return (
-    <span className={`font-display-tuned font-[450] tracking-[-0.03em] ${className ?? ""}`}>
+    <span className={`font-display-tuned [font-weight:calc(450+var(--dw))] tracking-[-0.03em] ${className ?? ""}`}>
       Ép<span className="serif-accent">ure</span>
     </span>
   );

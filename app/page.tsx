@@ -61,7 +61,7 @@ export default function HomePage() {
             "oignons grelots",
             "huile d’olive",
             "compote maison",
-            "blancs fermes",
+            "blancs en neige",
             "bouquet garni",
             "beurre doux",
           ],
@@ -81,7 +81,7 @@ export default function HomePage() {
           alt: r.images.heroAlt,
           focus: r.theme.focus,
           note: r.annotations.hero,
-          basket: r.ingredients.flatMap((g) => g.items.map((i) => i.name)).slice(0, 5),
+          basket: r.ingredients.flatMap((g) => g.items.map((i) => i.plural ?? i.name)).slice(0, 5),
           accent: r.theme.ink,
           time: formatDuration(r.totalMinutes),
           difficulty: r.difficulty,
@@ -113,10 +113,11 @@ export default function HomePage() {
             alt: r.images.heroAlt,
             focus: r.theme.focus,
             accent: r.theme.ink,
+            accentRaw: r.theme.accent,
           }))}
         />
         <p className="mt-8 -rotate-1 hand text-[1.6rem] text-ink">
-          Si vous hésitez, la carbonara&#8239;: vingt-cinq minutes, et vous saurez si la maison vous plaît.
+          Si vous hésitez, la carbonara&#8239;: vingt-cinq minutes, et si la sauce graine, on vous dit comment la rattraper.
         </p>
       </section>
     </PageTransition>

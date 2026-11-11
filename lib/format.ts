@@ -38,7 +38,9 @@ export function durationParts(minutes: number): { value: string; unit: string } 
   if (minutes < 60) return { value: String(minutes), unit: "min" };
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
-  return m === 0 ? { value: String(h), unit: "h" } : { value: `${h}h${String(m).padStart(2, "0")}`, unit: "" };
+  return m === 0
+    ? { value: String(h), unit: "h" }
+    : { value: `${h}${NBSP}h${NBSP}${String(m).padStart(2, "0")}`, unit: "" };
 }
 
 /** ISO 8601 duration for schema.org: 95 → "PT1H35M" */

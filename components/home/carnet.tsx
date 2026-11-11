@@ -37,7 +37,9 @@ export function Carnet({ pages }: { pages: CarnetPage[] }) {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
+    // Pin only on wide screens, and never for people who asked for less motion:
+    // they get the plain horizontal scroll used on phones.
+    const mq = window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)");
     const measure = () => {
       setPinned(mq.matches);
       const track = trackRef.current;
@@ -96,7 +98,20 @@ export function Carnet({ pages }: { pages: CarnetPage[] }) {
           className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto px-[var(--gutter)] pb-14 md:flex-1 md:snap-none md:items-center md:gap-10 md:overflow-visible md:pb-10"
         >
           {pages.map((p, i) => (
-            <Page key={p.slug} page={p} index={i} />
+            <Page
+              key={p.slug}
+              page={p}
+              index={i}
+              onFocusPage={() => {
+                // Keyboard users: bring the focused page into view by scrolling
+                // the window to the matching point of the pinned section.
+                const section = sectionRef.current;
+                if (!pinned || !section) return;
+                const travel = section.offsetHeight - window.innerHeight;
+                const top = section.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({ top: top + (travel * i) / Math.max(1, pages.length - 1), behavior: "instant" });
+              }}
+            />
           ))}
           <div className="w-px shrink-0 md:w-[8vw]" aria-hidden />
         </m.div>
@@ -105,27 +120,28 @@ export function Carnet({ pages }: { pages: CarnetPage[] }) {
   );
 }
 
-function Page({ page, index }: { page: CarnetPage; index: number }) {
+function Page({ page, index, onFocusPage }: { page: CarnetPage; index: number; onFocusPage: () => void }) {
   const tilt = index % 2 ? 1.1 : -0.9;
   return (
     <article
+      onFocus={onFocusPage}
       className="relative w-[86vw] shrink-0 snap-center md:h-[min(70svh,640px)] md:w-[min(78vw,1100px)]"
       style={{ transform: `rotate(${tilt}deg)` }}
     >
-      <div className="grid h-full overflow-hidden rounded-[18px] bg-[#faf6ef] text-charcoal shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] md:grid-cols-12">
+      <div className="grid h-full overflow-hidden rounded-[18px] bg-paper-sheet text-charcoal shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] md:grid-cols-12">
         <div className="order-2 flex flex-col justify-between gap-8 p-6 md:order-1 md:col-span-5 md:p-10">
           <div>
             <p className="text-eyebrow text-[#6b6155]">
               N°&nbsp;0{index + 1} · {page.category}
             </p>
-            <h3 className="mt-4 font-display text-[clamp(2rem,3.8vw,3.6rem)] leading-[0.98] font-[420] tracking-[-0.025em] [font-variation-settings:'SOFT'_60]">
+            <h3 className="mt-4 font-display text-[clamp(2rem,3.8vw,3.6rem)] leading-[0.98] [font-weight:calc(420+var(--dw))] tracking-[-0.025em] [font-variation-settings:'SOFT'_60]">
               {page.title}
             </h3>
             <p className="mt-3 serif-accent text-[clamp(1.2rem,1.8vw,1.6rem)] leading-snug text-[#4f473e]">
               {page.tagline}
             </p>
             <p className="mt-6 hidden max-w-[22rem] text-[0.9375rem] leading-relaxed text-[#4f473e] md:block">
-              <span className="font-mono text-[0.6875rem] tracking-wider text-[#6b6155] uppercase">
+              <span className="font-mono text-[0.75rem] tracking-wider text-[#6b6155] uppercase">
                 Dans le panier ·{" "}
               </span>
               {page.basket.join(", ")}…
@@ -139,7 +155,7 @@ function Page({ page, index }: { page: CarnetPage; index: number }) {
                 ["Pour", page.servings],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <dt className="font-mono text-[0.6875rem] tracking-wider text-[#6b6155] uppercase">{k}</dt>
+                  <dt className="font-mono text-[0.75rem] tracking-wider text-[#6b6155] uppercase">{k}</dt>
                   <dd className="mt-1 font-semibold">{v}</dd>
                 </div>
               ))}
@@ -170,7 +186,7 @@ function Page({ page, index }: { page: CarnetPage; index: number }) {
             />
           </div>
           <p
-            className="absolute bottom-6 left-6 max-w-[14rem] -rotate-[5deg] rounded-md bg-[#faf6ef] px-3 py-1.5 hand text-[1.45rem] shadow-md md:bottom-10 md:-left-6 md:text-[1.8rem]"
+            className="absolute bottom-6 left-6 max-w-[14rem] -rotate-[5deg] rounded-md bg-paper-sheet px-3 py-1.5 hand text-[1.45rem] shadow-md md:bottom-10 md:-left-6 md:text-[1.8rem]"
             style={{ color: page.accent }}
           >
             {page.note}
