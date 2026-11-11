@@ -1,15 +1,19 @@
+/** The production origin. Vercel redirects the bare domain to www. */
+export const PRODUCTION_URL = "https://www.epure-cuisine.fr";
+
 /**
  * Single source of truth for site-wide identity.
  *
  * The canonical origin resolves, in order:
- * 1. NEXT_PUBLIC_SITE_URL (set this once you own a custom domain)
- * 2. VERCEL_PROJECT_PRODUCTION_URL (injected automatically by Vercel at build)
- * 3. localhost for development
+ * 1. NEXT_PUBLIC_SITE_URL (explicit override)
+ * 2. PRODUCTION_URL for production deployments on Vercel
+ * 3. the deployment's own URL (previews), then localhost for development
  */
 function resolveSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL;
   if (explicit) return explicit.replace(/\/$/, "");
-  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (process.env.VERCEL_ENV === "production") return PRODUCTION_URL;
+  const vercel = process.env.VERCEL_URL;
   if (vercel) return `https://${vercel}`;
   return "http://localhost:3000";
 }
