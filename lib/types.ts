@@ -78,7 +78,12 @@ export interface Nutrition {
 
 export interface Credit {
   photographer: string;
+  /** Page of the photo on its source site. */
   url: string;
+  /** Where the photo comes from (default « Pexels »). */
+  source?: "Pexels" | "Unsplash" | "Pixabay" | "Wikimedia Commons";
+  /** Licence to cite when the source requires it, e.g. « CC BY 4.0 ». */
+  license?: string;
 }
 
 export interface RecipeTheme {
@@ -96,21 +101,24 @@ export interface RecipeTheme {
   focus?: string;
 }
 
+/** Editorial categories. Each one has its own page: /categories/<slug>. */
+export type Category = "Entrée" | "Plat" | "Accompagnement" | "Dessert" | "Goûter";
+
 export interface RecipeContent {
   slug: string;
   /** Display title, e.g. "Spaghetti alla carbonara". */
   title: string;
   /** <title> optimised for search (≤ 60 chars, primary keyword first). */
   seoTitle: string;
-  /** Keynote style one-liner, ≤ 6 words. e.g. "Cinq ingrédients. Zéro crème." */
+  /** Short human one-liner, ≤ 7 words, e.g. "Sans crème, et c’est tant mieux." */
   tagline: string;
   /** Meta description, 140–160 chars, answer-first. */
   description: string;
-  /** "L’essentiel": 2–3 sentence direct answer, written for humans and LLMs. */
+  /** "En bref": 2–3 sentence answer-first summary with the key numbers (quoted by AI engines). */
   summary: string;
   /** Editorial intro, 2–3 short paragraphs. */
   intro: string[];
-  category: "Entrée" | "Plat" | "Dessert";
+  category: Category;
   cuisine: string;
   keywords: string[];
   diet?: Array<"vegetarian" | "vegan" | "glutenFree" | "lowLactose">;
@@ -146,10 +154,17 @@ export interface RecipeContent {
   dateModified: string;
 }
 
-export interface Recipe extends RecipeContent {
+/** What a recipe file declares (content/recipes/<slug>/index.ts). */
+export interface RecipeSource extends RecipeContent {
   theme: RecipeTheme;
   hero: StaticImageData;
   detail: StaticImageData;
+  /** Shown in the home page "carnet". Keep it to a handful. */
+  featured?: boolean;
+}
+
+/** A recipe as used by the site, with derived fields. */
+export interface Recipe extends RecipeSource {
   /** Absolute-path images in 1:1, 4:3, 16:9 for structured data. */
   seoImages: string[];
   totalMinutes: number;

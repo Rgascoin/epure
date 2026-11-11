@@ -1,15 +1,17 @@
-# Épure — cinq recettes, à l’essentiel
+# Épure — des recettes au gramme près
 
-Un petit carnet de cuisine en ligne : **cinq grands classiques**, écrits au gramme près, avec le pourquoi de chaque geste. Direction artistique éditoriale (papier, encre, notes à la main) plutôt que « tech ».
-La qualité plutôt que la quantité, sur deux axes : **référencement (moteurs + IA)** et **expérience (motion design, mobile-first)**.
+Un carnet de cuisine en ligne : **les grands classiques que tout le monde cherche**, écrits au gramme près, avec le pourquoi de chaque geste et quoi faire quand ça rate. Direction artistique éditoriale (papier, encre, notes à la main) plutôt que « tech ».
+Deux priorités : **référencement (moteurs + IA)** et **expérience (motion design, mobile-first)**.
 
-| Recette                  | Catégorie | Temps total |
-| ------------------------ | --------- | ----------- |
-| Spaghetti alla carbonara | Plat      | 25 min      |
-| Bœuf bourguignon         | Plat      | 4 h 10      |
-| Tian provençal           | Plat      | 2 h         |
-| Tarte aux pommes         | Dessert   | 3 h 05      |
-| Mousse au chocolat       | Dessert   | 6 h 30      |
+Le carnet est pensé pour grossir : chaque recette vit dans son dossier, suit un **guide de rédaction** vérifié automatiquement, et les pages (catégories, recherche, sitemap, `llms.txt`, flux) se construisent seules.
+
+| Catégorie                  | Exemples                                                   |
+| -------------------------- | ---------------------------------------------------------- |
+| Entrées & soupes           | soupe à l’oignon, velouté de potimarron                    |
+| Plats                      | bœuf bourguignon, lasagnes, poulet rôti, paella, carbonara |
+| Accompagnements            | gratin dauphinois                                          |
+| Desserts                   | tiramisu, crème brûlée, tarte au citron meringuée, mousse  |
+| Goûters & petits-déjeuners | crêpes, pancakes, gaufres, cookies, banana bread           |
 
 ## Stack
 
@@ -42,6 +44,7 @@ Tout le site est **pré-rendu statiquement** au build (pages, images Open Graph,
 ## Expérience
 
 - **Direction artistique** : papier et encre, Fraunces (serif à tailles optiques) pour les titres, Instrument Sans pour le texte, IBM Plex Mono pour les étiquettes, Caveat pour les notes manuscrites. Boutons à ombre « imprimée », photos en arche de boulangerie, traits dessinés à la main.
+- **Navigation à l’échelle** : page « Toutes les recettes » avec **recherche instantanée** (titres, ingrédients, mots-clés, sans accents ni pluriels), filtres par catégorie et critères (végétarien, moins d’une heure, facile), état partageable dans l’URL (`?q=chocolat&categorie=desserts`) ; **pages catégories** (`/categories/<slug>`) ; menu « Recettes » par catégories dans l’en-tête ; fil d’Ariane et « Dans la même veine » sur chaque recette.
 - **Accueil** : titre avec des photos de plats glissées entre les mots, tampon rotatif, bandeau d’ingrédients, manifeste surligné au feutre, **carnet horizontal** dont les pages défilent au scroll (swipe sur mobile), ticket de cuisine qui « s’imprime », sommaire typographique avec photo qui suit le curseur.
 - **Fiche recette** : photo en arche avec tampon et note, « En bref » sur une note scotchée, ingrédients façon menu de bistrot (pointillés, rature à la main quand on coche), portions ajustables (arrondis « de cuisinier », conversion g → kg), étapes numérotées entourées au stylo une fois faites, **minuteurs intégrés** (son, vibration, titre d’onglet), variantes sur fiches bristol, étiquette nutritionnelle, polaroïd, version imprimable.
 - **Mode cuisine plein écran** : `<dialog>` natif, Wake Lock (l’écran reste allumé), swipe et clavier, ingrédients en tiroir, minuteurs visibles en bas de l’écran.
@@ -55,6 +58,7 @@ pnpm install
 pnpm dev          # http://localhost:3000
 pnpm build        # build de production (tout est pré-rendu)
 pnpm lint && pnpm typecheck && pnpm format:check
+pnpm recipes:check  # chaque recette contre le guide de rédaction (vitest)
 ```
 
 > Next.js 16.4 embarque sa documentation dans `node_modules/next/dist/docs/` (voir `AGENTS.md`).
@@ -62,22 +66,28 @@ pnpm lint && pnpm typecheck && pnpm format:check
 ### Structure
 
 ```
-app/                      routes (accueil, /recettes, /recettes/[slug], /a-propos)
+app/                      routes (accueil, /recettes, /recettes/[slug], /categories/[category], /a-propos)
   llms.txt/ llms-full.txt/ feed.xml/ markdown/[slug]/   routes texte pour machines
   sitemap.ts robots.ts manifest.ts opengraph-image.tsx
 components/               UI (home/, recipe/, header, footer, icônes)
-content/recipes/          les 5 recettes (TypeScript typé) + photos
-lib/                      types, registre des recettes, schema.org, formatage FR, Markdown
+content/recipes/<slug>/   une recette = un dossier : index.ts + hero.jpg + detail.jpg
+content/recipes/index.ts  registre généré (pnpm recipes:index, lancé par dev et build)
+docs/                     guide de rédaction des recettes
+lib/                      types, catégories, règles du guide, schema.org, recherche, formatage FR, Markdown
+scripts/                  génération du registre, préparation des photos
+tests/                    contrôle des recettes contre le guide
 public/images/recipes/    recadrages 1:1, 4:3, 16:9 pour les données structurées
 ```
 
 ### Ajouter une recette
 
-1. Créer `content/recipes/<slug>.ts` en respectant le type `RecipeContent` (`lib/types.ts`).
-2. Ajouter la photo `content/recipes/images/<slug>.jpg` (+ `-detail.jpg`) et les recadrages `public/images/recipes/<slug>/{1x1,4x3,16x9}.jpg`.
-3. Déclarer le thème couleur et l’import dans `lib/recipes.ts`.
+Tout est détaillé dans **[`docs/guide-redaction-recettes.md`](docs/guide-redaction-recettes.md)** (voix, anatomie de la fiche, ingrédients, minuteurs, sécurité alimentaire, SEO, photos, couleurs, typographie). En bref :
 
-Le sitemap, le flux RSS, `llms.txt`, les images Open Graph et le JSON-LD suivent automatiquement.
+1. `pnpm recipes:images <slug> <photo-hero> <photo-détail> --focus "50% 45%"` : télécharge deux photos Pexels (ou prend deux fichiers locaux), écrit `hero.jpg`, `detail.jpg` et les recadrages 1:1, 4:3, 16:9.
+2. Écrire `content/recipes/<slug>/index.ts` avec `defineRecipe({ ... })` (type `RecipeSource`, `lib/types.ts`), en choisissant la catégorie et le thème couleur.
+3. `pnpm recipes:check` : la recette est confrontée aux règles du guide (longueurs, minuteurs annoncés dans le texte, contrastes du thème, typographie, expressions interdites…). **Le build de production refuse une recette qui enfreint une règle obligatoire.**
+
+Le registre, les pages catégories, la recherche, le sitemap, le flux RSS, `llms.txt`, les images Open Graph et le JSON-LD suivent automatiquement.
 
 ## Déploiement sur Vercel
 

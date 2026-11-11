@@ -3,6 +3,7 @@ import { Caveat, Fraunces, IBM_Plex_Mono, Instrument_Sans } from "next/font/goog
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteHeader } from "@/components/site-header";
+import { categories, categoryPath, recipes, recipesIn } from "@/lib/recipes";
 import { SiteFooter } from "@/components/site-footer";
 import { Providers } from "@/components/providers";
 import { site } from "@/lib/site";
@@ -114,7 +115,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-dvh">
         <Providers>
-          <SiteHeader />
+          <SiteHeader
+            total={recipes.length}
+            categories={categories
+              .filter((c) => recipesIn(c).length)
+              .map((c) => ({ label: c.label, href: categoryPath(c), count: recipesIn(c).length }))}
+          />
           <main id="contenu">{children}</main>
           <SiteFooter />
         </Providers>

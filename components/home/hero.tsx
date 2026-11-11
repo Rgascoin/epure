@@ -14,7 +14,7 @@ interface Pill {
  * Editorial hero: the headline carries little photos of the dishes between
  * its words. Everything animates in CSS, from the first paint.
  */
-export function Hero({ pills }: { pills: [Pill, Pill, Pill] }) {
+export function Hero({ pills, count }: { pills: [Pill, Pill, Pill]; count: number }) {
   let i = 0;
   const w = (text: string) => (
     <span className="intro-word" style={{ "--i": i++ } as CSSProperties}>
@@ -26,11 +26,11 @@ export function Hero({ pills }: { pills: [Pill, Pill, Pill] }) {
     <section className="relative overflow-hidden pt-[calc(var(--header-h)+clamp(2.5rem,8vh,6rem))] pb-[clamp(4rem,10vh,7rem)]">
       <div className="relative container-page">
         <p className="intro-fade text-eyebrow text-fg-3" style={{ "--d": "0ms" } as CSSProperties}>
-          Quatre recettes françaises, une italienne
+          {count} recettes, et ça continue
         </p>
 
         <h1 className="mt-6 max-w-[14ch] text-hero text-balance md:max-w-[15ch]">
-          {w("Cinq")} <PhotoPill pill={pills[0]} delay={450} /> {w("recettes")} {w("qu’on")} {w("a")} {w("pris")}{" "}
+          {w("Des")} <PhotoPill pill={pills[0]} delay={450} /> {w("recettes")} {w("qu’on")} {w("a")} {w("pris")}{" "}
           <PhotoPill pill={pills[1]} delay={600} /> {w("le")} {w("temps")}{" "}
           <span className="relative inline-block">
             {w("d’écrire")}
@@ -48,18 +48,18 @@ export function Hero({ pills }: { pills: [Pill, Pill, Pill] }) {
             className="intro-fade max-w-[34rem] text-lede text-fg-2 md:col-span-6"
             style={{ "--d": "650ms" } as CSSProperties}
           >
-            Une carbonara, un bœuf bourguignon, un tian, une tarte aux pommes et une mousse au chocolat. Pour
-            chacune&#8239;: les grammes, les temps, les gestes, et quoi faire quand ça tourne mal.
+            Les grands classiques, du bœuf bourguignon aux crêpes du dimanche. Pour chacun&#8239;: les grammes, les
+            temps, les gestes, et quoi faire quand ça tourne mal.
           </p>
           <div
             className="intro-fade flex flex-wrap items-center gap-x-6 gap-y-4 md:col-span-6 md:justify-end"
             style={{ "--d": "800ms" } as CSSProperties}
           >
-            <Link href="#carnet" className="btn btn-primary">
-              Ouvrir le carnet
+            <Link href="/recettes" className="btn btn-primary">
+              Voir toutes les recettes
             </Link>
             <Link href="/a-propos" className="link-arrow">
-              Pourquoi seulement cinq&#8239;?
+              Comment on les écrit
             </Link>
           </div>
         </div>
@@ -68,7 +68,7 @@ export function Hero({ pills }: { pills: [Pill, Pill, Pill] }) {
           className="intro-fade absolute top-0 right-[var(--gutter)] hidden w-36 lg:block xl:w-40"
           style={{ "--d": "900ms" } as CSSProperties}
         >
-          <Stamp text="cinq recettes · pas de pub · pas de pop-up · ">
+          <Stamp text="au gramme près · pas de pub · pas de pop-up · ">
             <LogoMark className="size-11 text-on-accent [--bg:var(--accent)]" />
           </Stamp>
         </div>

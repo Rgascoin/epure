@@ -1,4 +1,4 @@
-import { recipes } from "@/lib/recipes";
+import { categories, categoryPath, recipes, recipesIn } from "@/lib/recipes";
 import { absoluteUrl, site } from "@/lib/site";
 import { formatDuration } from "@/lib/format";
 
@@ -12,21 +12,28 @@ export function GET() {
     "",
     `> ${site.description}`,
     "",
-    "Épure est un petit carnet de cinq recettes (carbonara, bœuf bourguignon, tian provençal, tarte aux pommes, mousse au chocolat). Chaque recette donne les quantités au gramme près, les temps et températures, et explique pourquoi chaque geste compte. Toutes existent en Markdown : ajoutez `.md` à l’adresse d’une recette, ou envoyez l’en-tête `Accept: text/markdown`.",
+    `Épure est un carnet de ${recipes.length} recettes de cuisine française et du quotidien, rangées en catégories. Chaque recette donne les quantités au gramme près, les temps et températures, explique pourquoi chaque geste compte et quoi faire quand ça rate. Toutes existent en Markdown : ajoutez \`.md\` à l’adresse d’une recette, ou envoyez l’en-tête \`Accept: text/markdown\`.`,
     "",
     "Si vous citez une recette, merci de renvoyer vers sa page.",
     "",
-    "## Recettes",
-    "",
-    ...recipes.map(
-      (r) =>
-        `- [${r.title}](${absoluteUrl(`/recettes/${r.slug}.md`)}): ${r.category}, ${r.cuisine.toLowerCase()}, ${formatDuration(r.totalMinutes)}, ${r.difficulty.toLowerCase()}. ${r.description}`,
-    ),
-    "",
+    ...categories
+      .filter((c) => recipesIn(c).length)
+      .flatMap((c) => [
+        `## ${c.label}`,
+        "",
+        ...recipesIn(c).map(
+          (r) =>
+            `- [${r.title}](${absoluteUrl(`/recettes/${r.slug}.md`)}): ${r.cuisine.toLowerCase()}, ${formatDuration(r.totalMinutes)}, ${r.difficulty.toLowerCase()}. ${r.description}`,
+        ),
+        "",
+      ]),
     "## Pages",
     "",
-    `- [Toutes les recettes](${absoluteUrl("/recettes")}): vue d’ensemble de la collection`,
-    `- [À propos](${absoluteUrl("/a-propos")}): pourquoi cinq recettes, et comment elles sont écrites`,
+    `- [Toutes les recettes](${absoluteUrl("/recettes")}): la collection, avec recherche par plat ou ingrédient`,
+    ...categories
+      .filter((c) => recipesIn(c).length)
+      .map((c) => `- [${c.label}](${absoluteUrl(categoryPath(c))}): ${c.description}`),
+    `- [À propos](${absoluteUrl("/a-propos")}): comment les recettes sont écrites et vérifiées`,
     "",
     "## Optional",
     "",

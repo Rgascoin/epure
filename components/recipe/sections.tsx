@@ -4,6 +4,8 @@ import { ViewTransition } from "react";
 import type { Recipe } from "@/lib/types";
 import { durationParts, formatDateFr, formatDuration, fr, isoDuration } from "@/lib/format";
 import { ArrowRight, Check, Plus, Warning } from "../icons";
+import { RecipeCard } from "../recipe-card";
+import type { CategoryInfo } from "@/lib/recipes";
 
 /* -------------------------------------------------------------------------- */
 /*  Key facts — an editorial table                                             */
@@ -12,7 +14,9 @@ import { ArrowRight, Check, Plus, Warning } from "../icons";
 export function KeyFacts({ recipe }: { recipe: Recipe }) {
   const facts: Array<{ label: string; value: string; unit?: string; dateTime?: string }> = [
     { label: "Préparation", ...durationParts(recipe.times.prep), dateTime: isoDuration(recipe.times.prep) },
-    { label: "Cuisson", ...durationParts(recipe.times.cook), dateTime: isoDuration(recipe.times.cook) },
+    ...(recipe.times.cook
+      ? [{ label: "Cuisson", ...durationParts(recipe.times.cook), dateTime: isoDuration(recipe.times.cook) }]
+      : [{ label: "Cuisson", value: "aucune" }]),
     ...(recipe.times.rest
       ? [{ label: "Repos", ...durationParts(recipe.times.rest), dateTime: isoDuration(recipe.times.rest) }]
       : []),
@@ -329,7 +333,7 @@ export function NextRecipe({ next }: { next: Recipe }) {
                 src={next.hero}
                 alt={next.images.heroAlt}
                 fill
-                quality={75}
+                quality={70}
                 placeholder="blur"
                 sizes="(max-width: 768px) 70vw, 400px"
                 className="object-cover"
@@ -339,6 +343,33 @@ export function NextRecipe({ next }: { next: Recipe }) {
           </ViewTransition>
         </div>
       </Link>
+    </section>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Related recipes                                                            */
+/* -------------------------------------------------------------------------- */
+
+export function RelatedRecipes({ recipes, category }: { recipes: Recipe[]; category: CategoryInfo }) {
+  if (!recipes.length) return null;
+  return (
+    <section aria-labelledby="related-title" className="container-page" data-print="hide">
+      <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+        <h2 id="related-title" className="text-headline">
+          Dans la même <span className="serif-accent text-ink">veine</span>.
+        </h2>
+        <Link href={`/categories/${category.slug}`} className="link-arrow">
+          {category.label} <ArrowRight size={18} />
+        </Link>
+      </div>
+      <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        {recipes.map((r) => (
+          <li key={r.slug}>
+            <RecipeCard recipe={r} />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
@@ -361,18 +392,15 @@ export function Byline({ recipe }: { recipe: Recipe }) {
       </p>
       <p>
         Photos&#8239;:{" "}
-        <a href={hero.url} rel="noopener" className="underline underline-offset-2">
-          {hero.photographer}
-        </a>
-        {detail.photographer !== hero.photographer && (
-          <>
-            ,{" "}
-            <a href={detail.url} rel="noopener" className="underline underline-offset-2">
-              {detail.photographer}
-            </a>
-          </>
-        )}{" "}
-        (Pexels)
+        {[hero, ...(detail.url !== hero.url ? [detail] : [])].map((c, i) => (
+          <span key={c.url}>
+            {i > 0 && ", "}
+            <a href={c.url} rel="noopener" className="underline underline-offset-2">
+              {c.photographer}
+            </a>{" "}
+            ({[c.source ?? "Pexels", c.license].filter(Boolean).join(", ")})
+          </span>
+        ))}
       </p>
     </div>
   );

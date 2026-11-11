@@ -20,10 +20,10 @@ export const site = {
   url: resolveSiteUrl(),
   locale: "fr_FR",
   lang: "fr",
-  title: "Épure · Cinq recettes de cuisine, au gramme près",
-  tagline: "Un carnet de cinq recettes.",
+  title: "Épure · Recettes de cuisine au gramme près, expliquées",
+  tagline: "Un carnet de recettes, écrites au gramme près.",
   description:
-    "Carbonara, bœuf bourguignon, tian provençal, tarte aux pommes et mousse au chocolat : cinq recettes au gramme près, avec les gestes expliqués et un mode cuisine.",
+    "Les grands classiques de la cuisine, écrits au gramme près : temps exacts, gestes expliqués, ce qu’il faut faire quand ça rate, et un mode cuisine.",
   keywords: [
     "recettes de cuisine",
     "recette facile",

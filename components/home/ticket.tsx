@@ -15,7 +15,7 @@ const NOPE: Array<[string, string]> = [
 ];
 
 /** What the site does, printed on a kitchen order ticket. */
-export function Ticket() {
+export function Ticket({ count }: { count: number }) {
   return (
     <section aria-labelledby="ticket-title" className="container-page py-[clamp(5rem,14vh,10rem)]">
       <div className="grid items-center gap-14 md:grid-cols-12">
@@ -69,7 +69,7 @@ export function Ticket() {
               </ul>
               <p className="mt-3 flex justify-between border-t-2 border-[#1b1712] pt-3 text-[0.9375rem] font-medium">
                 <span>TOTAL</span>
-                <span>5 recettes</span>
+                <span>{count} recettes</span>
               </p>
               <p className="mt-6 -rotate-2 text-center hand text-[1.75rem] text-[#c6462b]">merci, et bon appétit !</p>
             </div>

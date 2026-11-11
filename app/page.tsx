@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { recipes } from "@/lib/recipes";
+import { categories, categoryPath, featuredRecipes, latestRecipes, recipes, recipesIn } from "@/lib/recipes";
 import { site } from "@/lib/site";
 import { formatDuration, plural } from "@/lib/format";
 import { graph, organization, recipeList, webPage, website } from "@/lib/schema";
@@ -12,6 +12,7 @@ import { Manifesto } from "@/components/home/manifesto";
 import { Carnet } from "@/components/home/carnet";
 import { Ticket } from "@/components/home/ticket";
 import { RecipeIndex } from "@/components/home/recipe-index";
+import { RecipeCard } from "@/components/recipe-card";
 import { ArrowRight } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -42,7 +43,10 @@ export default function HomePage() {
     <PageTransition>
       <JsonLd data={data} />
 
-      <Hero pills={[pill("spaghetti-carbonara"), pill("tian-provencal"), pill("tarte-aux-pommes")]} />
+      <Hero
+        pills={[pill("spaghetti-carbonara"), pill("tian-provencal"), pill("tarte-aux-pommes")]}
+        count={recipes.length}
+      />
 
       <Marquee
         rows={[
@@ -66,13 +70,13 @@ export default function HomePage() {
             "beurre doux",
           ],
         ]}
-        thumbs={recipes.map((r) => ({ image: r.hero, focus: r.theme.focus }))}
+        thumbs={featuredRecipes.map((r) => ({ image: r.hero, focus: r.theme.focus }))}
       />
 
       <Manifesto />
 
       <Carnet
-        pages={recipes.map((r) => ({
+        pages={featuredRecipes.map((r) => ({
           slug: r.slug,
           title: r.title,
           tagline: r.tagline,
@@ -89,9 +93,9 @@ export default function HomePage() {
         }))}
       />
 
-      <Ticket />
+      <Ticket count={recipes.length} />
 
-      <section id="recettes" className="container-page pb-[clamp(5rem,14vh,10rem)]" aria-labelledby="index-title">
+      <section id="recettes" className="container-page pb-[clamp(4rem,10vh,7rem)]" aria-labelledby="index-title">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6 md:mb-14">
           <div>
             <p className="text-eyebrow text-fg-3">Sommaire</p>
@@ -104,19 +108,47 @@ export default function HomePage() {
           </Link>
         </div>
         <RecipeIndex
-          rows={recipes.map((r) => ({
-            slug: r.slug,
-            title: r.title,
-            category: r.category,
-            time: formatDuration(r.totalMinutes),
-            image: r.hero,
-            alt: r.images.heroAlt,
-            focus: r.theme.focus,
-            accent: r.theme.ink,
-            accentRaw: r.theme.accent,
-          }))}
+          rows={categories
+            .filter((c) => recipesIn(c).length > 0)
+            .map((c) => {
+              const list = recipesIn(c);
+              const cover = list.find((r) => r.featured) ?? list[0];
+              return {
+                slug: `categorie-${c.slug}`,
+                href: categoryPath(c),
+                title: c.label,
+                category: `${list.length} recette${list.length > 1 ? "s" : ""}`,
+                time: `dès ${formatDuration(Math.min(...list.map((r) => r.totalMinutes)))}`,
+                image: cover.hero,
+                alt: cover.images.heroAlt,
+                focus: cover.theme.focus,
+                accent: cover.theme.ink,
+                accentRaw: cover.theme.accent,
+              };
+            })}
         />
-        <p className="mt-8 -rotate-1 hand text-[1.6rem] text-ink">
+      </section>
+
+      <section className="container-page pb-[clamp(5rem,14vh,10rem)]" aria-labelledby="latest-title">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="text-eyebrow text-fg-3">Derniers ajouts</p>
+            <h2 id="latest-title" className="mt-3 text-headline">
+              Tout juste écrites.
+            </h2>
+          </div>
+          <Link href="/recettes" className="link-arrow">
+            Voir les {recipes.length} recettes <ArrowRight size={18} />
+          </Link>
+        </div>
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {latestRecipes.slice(0, 6).map((r) => (
+            <li key={r.slug}>
+              <RecipeCard recipe={r} />
+            </li>
+          ))}
+        </ul>
+        <p className="mt-10 -rotate-1 hand text-[1.6rem] text-ink">
           Si vous hésitez, la carbonara&#8239;: vingt-cinq minutes, et si la sauce graine, on vous dit comment la
           rattraper.
         </p>

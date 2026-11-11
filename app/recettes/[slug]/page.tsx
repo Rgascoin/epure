@@ -2,7 +2,7 @@ import type { Metadata, Route } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
-import { getNeighbours, getRecipe, recipes } from "@/lib/recipes";
+import { categoryOf, categoryPath, getNeighbours, getRecipe, recipes, relatedRecipes } from "@/lib/recipes";
 import { absoluteUrl } from "@/lib/site";
 import { formatDuration, plural } from "@/lib/format";
 import { breadcrumb, faqSchema, graph, organization, recipeSchema, webPage, website } from "@/lib/schema";
@@ -19,6 +19,7 @@ import {
   KeyFacts,
   NextRecipe,
   Pantry,
+  RelatedRecipes,
   Science,
   TipsAndMistakes,
   Variations,
@@ -62,13 +63,16 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
   const recipe = getRecipe(slug);
   if (!recipe) notFound();
   const { next } = getNeighbours(recipe.slug);
-  const number = recipes.findIndex((r) => r.slug === recipe.slug) + 1;
+  const related = relatedRecipes(recipe.slug, 3);
+  const category = categoryOf(recipe);
+  const number = String(recipes.findIndex((r) => r.slug === recipe.slug) + 1).padStart(2, "0");
   const path = `/recettes/${recipe.slug}`;
   const t = recipe.theme;
 
   const crumbs = [
     { name: "Accueil", path: "/" },
     { name: "Recettes", path: "/recettes" },
+    { name: category.label, path: categoryPath(category) },
     { name: recipe.title, path },
   ];
   const crumbsLd = breadcrumb(path, crumbs);
@@ -211,7 +215,7 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
                 <Stamp text={`prêt en ${formatDuration(recipe.totalMinutes)} · ${recipe.difficulty} · `}>
                   <span className="flex flex-col items-center leading-none">
                     <span className="font-mono text-[0.625rem] tracking-widest">N°</span>
-                    <span className="serif-accent text-[2rem]">0{number}</span>
+                    <span className="serif-accent text-[2rem]">{number}</span>
                   </span>
                 </Stamp>
               }
@@ -281,6 +285,7 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
           <Faq recipe={recipe} />
           <Byline recipe={recipe} />
           <NextRecipe next={next} />
+          <RelatedRecipes recipes={related} category={category} />
         </div>
         <div className="h-[clamp(4rem,12vh,8rem)]" />
       </article>

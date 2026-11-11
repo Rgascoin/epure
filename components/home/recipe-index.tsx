@@ -5,11 +5,16 @@ import Link from "next/link";
 import { useMotionValue, useSpring } from "motion/react";
 import * as m from "motion/react-m";
 import { useEffect, useState, ViewTransition, type CSSProperties } from "react";
+import type { Route } from "next";
 import clsx from "clsx";
 import { ArrowRight } from "../icons";
 
 export interface IndexRow {
+  /** Unique key; for recipes, the slug (enables the photo morph). */
   slug: string;
+  href: string;
+  /** Set for recipe rows: the thumbnail morphs into the recipe hero. */
+  morph?: boolean;
   title: string;
   category: string;
   time: string;
@@ -57,7 +62,7 @@ export function RecipeIndex({ rows }: { rows: IndexRow[] }) {
         {rows.map((r, i) => (
           <li key={r.slug} className="border-b border-line-strong">
             <Link
-              href={`/recettes/${r.slug}`}
+              href={r.href as Route}
               transitionTypes={["nav-forward"]}
               onPointerEnter={() => {
                 setArmed(true);
@@ -67,20 +72,10 @@ export function RecipeIndex({ rows }: { rows: IndexRow[] }) {
               onBlur={() => setActive(null)}
               className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 py-5 md:grid-cols-[4rem_auto_1fr_auto_auto] md:gap-8 md:py-7"
             >
-              <span className="hidden font-mono text-[0.8125rem] text-fg-3 tabular md:block">0{i + 1}</span>
-              <ViewTransition name={`photo-${r.slug}`} share="morph" default="none">
-                <span className="relative block h-16 w-12 overflow-hidden rounded-[999px_999px_8px_8px] md:h-20 md:w-16">
-                  <Image
-                    src={r.image}
-                    alt=""
-                    fill
-                    sizes="64px"
-                    quality={70}
-                    className="object-cover"
-                    style={{ objectPosition: r.focus }}
-                  />
-                </span>
-              </ViewTransition>
+              <span className="hidden font-mono text-[0.8125rem] text-fg-3 tabular md:block">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <Thumb row={r} />
               <span className="min-w-0">
                 <span
                   className={clsx(
@@ -136,5 +131,28 @@ export function RecipeIndex({ rows }: { rows: IndexRow[] }) {
         </m.div>
       )}
     </div>
+  );
+}
+
+function Thumb({ row }: { row: IndexRow }) {
+  const img = (
+    <span className="relative block h-16 w-12 overflow-hidden rounded-[999px_999px_8px_8px] md:h-20 md:w-16">
+      <Image
+        src={row.image}
+        alt=""
+        fill
+        sizes="64px"
+        quality={70}
+        className="object-cover"
+        style={{ objectPosition: row.focus }}
+      />
+    </span>
+  );
+  return row.morph ? (
+    <ViewTransition name={`photo-${row.slug}`} share="morph" default="none">
+      {img}
+    </ViewTransition>
+  ) : (
+    img
   );
 }

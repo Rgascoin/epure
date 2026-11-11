@@ -409,6 +409,11 @@
   .row-title {
     --row-ink: color-mix(in oklab, var(--row) 60%, white);
   }
+  @supports (color: oklch(from red l c h)) {
+    .row-title {
+      --row-ink: oklch(from color-mix(in oklab, var(--row) 60%, white) max(l, 0.76) c h);
+    }
+  }
 }
 
 /* Native <details> with animated height (progressive enhancement) */
@@ -439,6 +444,13 @@ details.faq summary {
   .recipe-theme {
     --ink: color-mix(in oklab, var(--accent) 65%, white);
     --tint: color-mix(in oklab, var(--accent) 14%, #14110e);
+  }
+  /* Very dark dishes (chocolate, red wine) need a floor on lightness to stay readable.
+     Guarded: a custom property holding unsupported syntax would break every use of it. */
+  @supports (color: oklch(from red l c h)) {
+    .recipe-theme {
+      --ink: oklch(from color-mix(in oklab, var(--accent) 65%, white) max(l, 0.76) c h);
+    }
   }
 }
 

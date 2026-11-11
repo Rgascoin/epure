@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { recipes } from "@/lib/recipes";
+import { categories, categoryPath, recipes, recipesIn } from "@/lib/recipes";
 import { absoluteUrl } from "@/lib/site";
 
 /** XML sitemap with image extensions (Google Images is a major entry point for recipes). */
@@ -20,6 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...categories
+      .filter((c) => recipesIn(c).length)
+      .map((c) => ({
+        url: absoluteUrl(categoryPath(c)),
+        lastModified: recipesIn(c).reduce((max, r) => (r.dateModified > max ? r.dateModified : max), "2000-01-01"),
+        changeFrequency: "weekly" as const,
+        priority: 0.85,
+      })),
     ...recipes.map((r) => ({
       url: absoluteUrl(`/recettes/${r.slug}`),
       lastModified: r.dateModified,

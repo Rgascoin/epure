@@ -79,7 +79,7 @@ export function Carnet({ pages }: { pages: CarnetPage[] }) {
           <div>
             <p className="text-eyebrow text-paper/60">Le carnet</p>
             <h2 id="carnet-title" className="mt-3 text-headline">
-              Les cinq <span className="serif-accent text-[#E2765C]">pages</span>.
+              Les pages <span className="serif-accent text-[#E2765C]">du moment</span>.
             </h2>
           </div>
           <p className="hidden items-center gap-3 font-mono text-[0.8125rem] text-paper/60 tabular md:flex" aria-hidden>
@@ -179,7 +179,7 @@ function Page({ page, index, onFocusPage }: { page: CarnetPage; index: number; o
               alt={page.alt}
               fill
               sizes="(max-width: 768px) 86vw, 640px"
-              quality={75}
+              quality={80}
               placeholder="blur"
               className="object-cover"
               style={{ objectPosition: page.focus }}

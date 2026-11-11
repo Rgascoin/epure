@@ -1,13 +1,16 @@
 import { ImageResponse } from "next/og";
-import { recipes } from "@/lib/recipes";
+import { categories, featuredRecipes, recipes, recipesIn } from "@/lib/recipes";
 import { OG_COLORS, OG_SIZE, OgMark, ogFonts, ogPhotos } from "@/lib/og";
 
 export const size = OG_SIZE;
 export const contentType = "image/png";
-export const alt = "Épure, un carnet de cinq recettes au gramme près";
+export const alt = "Épure, un carnet de recettes écrites au gramme près";
 
 export default function Image() {
-  const thumbs = recipes.slice(0, 3).map((r) => ogPhotos[r.slug].square);
+  const pick = ["spaghetti-carbonara", "tarte-aux-pommes", "mousse-au-chocolat"];
+  const thumbs = pick
+    .map((slug) => featuredRecipes.find((r) => r.slug === slug) ?? recipes[0])
+    .map((r) => ogPhotos[r.slug].square);
 
   return new ImageResponse(
     <div
@@ -42,7 +45,7 @@ export default function Image() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
-          Cinq
+          Des
           <img
             src={thumbs[0]}
             alt=""
@@ -75,12 +78,13 @@ export default function Image() {
         </div>
       </div>
 
-      <div style={{ display: "flex", fontSize: 22, color: OG_COLORS.ink2, gap: 26 }}>
-        <span>carbonara</span>
-        <span>bœuf bourguignon</span>
-        <span>tian provençal</span>
-        <span>tarte aux pommes</span>
-        <span>mousse au chocolat</span>
+      <div style={{ display: "flex", fontSize: 20, color: OG_COLORS.ink2, gap: 18 }}>
+        <span style={{ color: OG_COLORS.ink }}>{recipes.length} recettes</span>
+        {categories
+          .filter((c) => recipesIn(c).length)
+          .map((c) => (
+            <span key={c.slug}>{c.label.toLowerCase()}</span>
+          ))}
       </div>
     </div>,
     { ...size, fonts: ogFonts },

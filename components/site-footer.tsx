@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { recipes } from "@/lib/recipes";
+import { categories, categoryPath, recipes, recipesIn } from "@/lib/recipes";
 import { LogoMark } from "./logo";
 import { Scribble } from "./scribble";
 
@@ -25,22 +25,29 @@ export function SiteFooter() {
           <div className="md:col-span-5">
             <LogoMark className="size-10 text-paper [--bg:#1b1712]" />
             <p className="mt-5 max-w-sm text-[0.9375rem] leading-relaxed text-paper/70">
-              Épure est un petit carnet en ligne. Cinq recettes, mises à jour quand on trouve mieux, sans publicité ni
-              compte à créer.
+              Épure est un carnet de recettes en ligne. Chacune est écrite au gramme près et reprise quand on trouve
+              mieux, sans publicité ni compte à créer.
             </p>
           </div>
 
-          <nav aria-label="Recettes" className="md:col-span-3">
-            <h2 className="text-eyebrow text-paper/60">Les recettes</h2>
+          <nav aria-label="Catégories" className="md:col-span-3">
+            <h2 className="text-eyebrow text-paper/60">Catégories</h2>
             <ul className="mt-4 space-y-2.5 text-[0.9375rem]">
-              {recipes.map((r, i) => (
-                <li key={r.slug}>
-                  <Link href={`/recettes/${r.slug}`} className="group inline-flex gap-3 text-paper/80 hover:text-paper">
-                    <span className="font-mono text-[0.8125rem] text-paper/60 tabular">0{i + 1}</span>
-                    <span className="underline-offset-4 group-hover:underline">{r.title}</span>
-                  </Link>
-                </li>
-              ))}
+              {categories
+                .filter((c) => recipesIn(c).length)
+                .map((c) => (
+                  <li key={c.slug}>
+                    <Link href={categoryPath(c)} className="group inline-flex gap-3 text-paper/80 hover:text-paper">
+                      <span className="underline-offset-4 group-hover:underline">{c.label}</span>
+                      <span className="font-mono text-[0.8125rem] text-paper/60 tabular">{recipesIn(c).length}</span>
+                    </Link>
+                  </li>
+                ))}
+              <li>
+                <Link href="/recettes" className="text-paper underline underline-offset-4">
+                  Toutes les recettes ({recipes.length})
+                </Link>
+              </li>
             </ul>
           </nav>
 

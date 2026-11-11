@@ -7,3 +7,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Recipes
+
+Every recipe lives in `content/recipes/<slug>/` and must follow `docs/guide-redaction-recettes.md` on every point.
+Prepare photos with `pnpm recipes:images`, then run `pnpm recipes:check` (a production build refuses recipes that break a mandatory rule).
