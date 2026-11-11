@@ -146,7 +146,7 @@ export function recipeSchema(r: Recipe): SchemaRecipe {
     datePublished: r.datePublished,
     dateModified: r.dateModified,
     prepTime: isoDuration(r.times.prep),
-    cookTime: isoDuration(r.times.cook),
+    ...(r.times.cook ? { cookTime: isoDuration(r.times.cook) } : {}),
     totalTime: isoDuration(r.totalMinutes),
     recipeYield: [String(r.servings), `${r.servings} ${r.servings > 1 ? r.servingsLabel.other : r.servingsLabel.one}`],
     recipeCategory: r.category,

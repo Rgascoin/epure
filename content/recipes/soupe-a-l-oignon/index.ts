@@ -163,8 +163,7 @@ export default defineRecipe({
   ],
   storage:
     "Sans le pain ni le fromage, la soupe se garde 3 jours au réfrigérateur en boîte fermée et 3 mois au congélateur. Réchauffez-la jusqu’à ébullition, puis gratinez au dernier moment : une soupe déjà gratinée se réchauffe mal.",
-  pairing:
-    "Le vin blanc qui a servi à la soupe, ou un côtes-du-jura blanc, qui va bien avec le comté.",
+  pairing: "Le vin blanc qui a servi à la soupe, ou un côtes-du-jura blanc, qui va bien avec le comté.",
   faq: [
     {
       q: "Quel fromage pour une soupe à l’oignon gratinée ?",
@@ -206,8 +205,7 @@ export default defineRecipe({
     detail: "pain rassis, sinon c’est de la bouillie",
   },
   images: {
-    heroAlt:
-      "Soupe à l’oignon gratinée dans un bol blanc à têtes de lion, comté doré coulant sur le bord, pain à côté",
+    heroAlt: "Soupe à l’oignon gratinée dans un bol blanc à têtes de lion, comté doré coulant sur le bord, pain à côté",
     detailAlt: "Soupe à l’oignon vue de dessus, croûtons grillés et fromage fondu dans un bol blanc",
     credits: {
       hero: {

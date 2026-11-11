@@ -233,7 +233,8 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Pizza margherita vue de dessus, bord gonflé tacheté de brun, mozzarella fondue et basilic ciselé, sur du bois blanc",
-    detailAlt: "Gros plan d’une pizza margherita : mozzarella fondue en flaques blanches sur la tomate, feuilles de basilic",
+    detailAlt:
+      "Gros plan d’une pizza margherita : mozzarella fondue en flaques blanches sur la tomate, feuilles de basilic",
     credits: {
       hero: {
         photographer: "Rene Strgar",

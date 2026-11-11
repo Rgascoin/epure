@@ -242,8 +242,10 @@ export default defineRecipe({
     detail: "un fond doré, pas juste blond",
   },
   images: {
-    heroAlt: "Tarte au citron meringuée entamée, meringue en pointes dorées au chalumeau, crème au citron visible à la coupe",
-    detailAlt: "Part de tarte au citron meringuée de profil : pâte sablée, crème au citron jaune et épaisse meringue dorée",
+    heroAlt:
+      "Tarte au citron meringuée entamée, meringue en pointes dorées au chalumeau, crème au citron visible à la coupe",
+    detailAlt:
+      "Part de tarte au citron meringuée de profil : pâte sablée, crème au citron jaune et épaisse meringue dorée",
     credits: {
       hero: {
         photographer: "Unaizat Abdulgamidova",

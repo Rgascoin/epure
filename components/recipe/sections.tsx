@@ -14,7 +14,9 @@ import type { CategoryInfo } from "@/lib/recipes";
 export function KeyFacts({ recipe }: { recipe: Recipe }) {
   const facts: Array<{ label: string; value: string; unit?: string; dateTime?: string }> = [
     { label: "Préparation", ...durationParts(recipe.times.prep), dateTime: isoDuration(recipe.times.prep) },
-    { label: "Cuisson", ...durationParts(recipe.times.cook), dateTime: isoDuration(recipe.times.cook) },
+    ...(recipe.times.cook
+      ? [{ label: "Cuisson", ...durationParts(recipe.times.cook), dateTime: isoDuration(recipe.times.cook) }]
+      : [{ label: "Cuisson", value: "aucune" }]),
     ...(recipe.times.rest
       ? [{ label: "Repos", ...durationParts(recipe.times.rest), dateTime: isoDuration(recipe.times.rest) }]
       : []),

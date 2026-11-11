@@ -203,7 +203,8 @@ export default defineRecipe({
   },
   images: {
     heroAlt: "Tranches épaisses de pain perdu dorées et caramélisées sur une assiette, une tasse de café derrière",
-    detailAlt: "Deux tranches de pain perdu au sucre glace, avec des fraises et deux coupelles de confiture et de sirop",
+    detailAlt:
+      "Deux tranches de pain perdu au sucre glace, avec des fraises et deux coupelles de confiture et de sirop",
     credits: {
       hero: {
         photographer: "Anderson Martins",

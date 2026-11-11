@@ -194,7 +194,8 @@ export default defineRecipe({
     detail: "il cuit encore hors du four",
   },
   images: {
-    heroAlt: "Pavé de saumon au four laqué à la moutarde à l’ancienne, servi avec du riz vert, du basilic et un quartier de citron",
+    heroAlt:
+      "Pavé de saumon au four laqué à la moutarde à l’ancienne, servi avec du riz vert, du basilic et un quartier de citron",
     detailAlt: "Plat en verre de pavés de saumon dorés sortant du four, avec des oignons et des pommes de terre",
     credits: {
       hero: {

@@ -58,7 +58,13 @@ export default defineRecipe({
       items: [
         { qty: 200, unit: "g", name: "lardons fumés", note: "ou poitrine fumée en bâtonnets de 5 mm", step: 10 },
         { qty: 4, name: "œuf", plural: "œufs", step: 1 },
-        { qty: 40, unit: "cl", name: "crème fraîche entière", note: "liquide, ou moitié liquide moitié épaisse", step: 1 },
+        {
+          qty: 40,
+          unit: "cl",
+          name: "crème fraîche entière",
+          note: "liquide, ou moitié liquide moitié épaisse",
+          step: 1,
+        },
         { qty: 1, unit: "pincee", name: "noix de muscade", note: "râpée", step: 1 },
         { name: "poivre du moulin" },
       ],
@@ -217,15 +223,25 @@ export default defineRecipe({
   },
   annotations: {
     hero: "le fond cuit seul d’abord",
-    detail: "lardons dorés, pas croustillants",
+    detail: "sortir quand le centre tremble",
   },
   images: {
     heroAlt:
-      "Trois petites quiches lorraines dorées sur une planche en bois, à côté d’un couteau et d’un brin de romarin",
-    detailAlt: "Petites quiches aux lardons empilées sur un comptoir, bords de pâte brisée bien dorés",
+      "Part de quiche lorraine sur une assiette blanche, lardons et appareil aux œufs bien pris, salade verte à côté",
+    detailAlt: "Quiche lorraine entière et dorée dans un plat à tarte en verre, posée sur une planche en bois",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/31882545/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/109836/" },
+      hero: {
+        photographer: "Arnaud 25",
+        url: "https://commons.wikimedia.org/wiki/File:Quiche_lorraine_04.jpg",
+        source: "Wikimedia Commons",
+        license: "CC0",
+      },
+      detail: {
+        photographer: "Claude Humbert",
+        url: "https://commons.wikimedia.org/wiki/File:54._Quiche_lorraine.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
     },
   },
   datePublished: "2026-11-05",
@@ -233,11 +249,11 @@ export default defineRecipe({
   hero,
   detail,
   theme: {
-    accent: "#D98B2B",
+    accent: "#E0A830",
     onAccent: "#1b1712",
-    ink: "#8A4A12",
-    tint: "#FAF0E2",
+    ink: "#865500",
+    tint: "#FBF3DF",
     deep: "#1a120c",
-    focus: "40% 50%",
+    focus: "36% 50%",
   },
 });

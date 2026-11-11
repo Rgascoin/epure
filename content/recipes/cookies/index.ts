@@ -218,8 +218,7 @@ export default defineRecipe({
     detail: "le chocolat encore fondant",
   },
   images: {
-    heroAlt:
-      "Cookies aux pépites de chocolat dorés sur une plaque de cuisson, l’un cassé en deux sur son cœur fondant",
+    heroAlt: "Cookies aux pépites de chocolat dorés sur une plaque de cuisson, l’un cassé en deux sur son cœur fondant",
     detailAlt: "Pile de cookies aux pépites de chocolat et cookie cassé montrant le chocolat fondu",
     credits: {
       hero: {

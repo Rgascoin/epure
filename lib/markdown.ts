@@ -20,7 +20,7 @@ export function recipeToMarkdown(r: Recipe): string {
     `cuisine: ${r.cuisine}`,
     `servings: ${r.servings} ${plural(r.servings, r.servingsLabel)}`,
     `prep_time: ${formatDuration(r.times.prep)}`,
-    `cook_time: ${formatDuration(r.times.cook)}`,
+    `cook_time: ${r.times.cook ? formatDuration(r.times.cook) : "aucune"}`,
     ...(r.times.rest ? [`rest_time: ${formatDuration(r.times.rest)}`] : []),
     `total_time: ${formatDuration(r.totalMinutes)}`,
     `difficulty: ${r.difficulty}`,

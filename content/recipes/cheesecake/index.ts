@@ -216,8 +216,7 @@ export default defineRecipe({
   ],
   storage:
     "Au réfrigérateur, couvert, 4 jours maximum. Il se congèle bien, entier ou en parts filmées, 2 mois : décongelez-le une nuit au réfrigérateur, jamais à température ambiante. Le coulis se garde 3 jours au frais.",
-  pairing:
-    "Un café filtre, ou un muscat de Beaumes-de-Venise bien frais si vous le servez avec le coulis.",
+  pairing: "Un café filtre, ou un muscat de Beaumes-de-Venise bien frais si vous le servez avec le coulis.",
   faq: [
     {
       q: "Pourquoi mon cheesecake s’est-il fendu ?",

@@ -204,8 +204,7 @@ export default defineRecipe({
     detail: "aussi bon en moule à cake",
   },
   images: {
-    heroAlt:
-      "Gâteau au yaourt rond saupoudré de sucre glace, deux parts coupées montrant une mie jaune et aérée",
+    heroAlt: "Gâteau au yaourt rond saupoudré de sucre glace, deux parts coupées montrant une mie jaune et aérée",
     detailAlt: "Tranche de gâteau au yaourt cuit en moule à cake, servie avec de la crème fouettée",
     credits: {
       hero: {

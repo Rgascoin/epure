@@ -63,7 +63,13 @@ export default defineRecipe({
     {
       title: "Le montage",
       items: [
-        { qty: 300, unit: "g", name: "biscuits à la cuillère", note: "une trentaine, des savoiardi si possible", step: 25 },
+        {
+          qty: 300,
+          unit: "g",
+          name: "biscuits à la cuillère",
+          note: "une trentaine, des savoiardi si possible",
+          step: 25,
+        },
         { qty: 20, unit: "g", name: "cacao amer en poudre", step: 5 },
       ],
     },
@@ -209,8 +215,8 @@ export default defineRecipe({
       "Part de tiramisu poudrée de cacao sur une assiette grise, couches de biscuits et de crème au mascarpone bien nettes",
     detailAlt: "Cuillère soulevant une portion de tiramisu dans le plat, biscuits imbibés de café et crème",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/27305272/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/20586637/" },
+      hero: { photographer: "Valeria Boltneva", url: "https://www.pexels.com/photo/27305272/" },
+      detail: { photographer: "Ali Dashti", url: "https://www.pexels.com/photo/20586637/" },
     },
   },
   datePublished: "2026-11-08",

@@ -35,18 +35,17 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Toute l’année"],
-  equipment: [
-    "moule à cake de 25 cm",
-    "papier sulfurisé",
-    "2 saladiers",
-    "fourchette",
-    "maryse",
-    "grille",
-  ],
+  equipment: ["moule à cake de 25 cm", "papier sulfurisé", "2 saladiers", "fourchette", "maryse", "grille"],
   ingredients: [
     {
       items: [
-        { qty: 3, name: "banane très mûre", plural: "bananes très mûres", note: "peau tachée de noir, 350 g une fois pelées", step: 1 },
+        {
+          qty: 3,
+          name: "banane très mûre",
+          plural: "bananes très mûres",
+          note: "peau tachée de noir, 350 g une fois pelées",
+          step: 1,
+        },
         { qty: 100, unit: "g", name: "beurre doux", note: "fondu et tiédi, plus un peu pour le moule", step: 10 },
         { qty: 120, unit: "g", name: "vergeoise blonde", note: "ou cassonade", step: 10 },
         { qty: 2, name: "œuf", plural: "œufs", note: "à température ambiante", step: 1 },
@@ -193,7 +192,8 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Banana bread coupé en tranches sur une planche en bois, mie dorée piquée de banane, une banane jaune en arrière-plan",
-    detailAlt: "Banana bread à la croûte brun foncé, une tranche coupée qui montre la mie moelleuse, sur du papier sulfurisé",
+    detailAlt:
+      "Banana bread à la croûte brun foncé, une tranche coupée qui montre la mie moelleuse, sur du papier sulfurisé",
     credits: {
       hero: {
         photographer: "Kerri Sam",

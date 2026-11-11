@@ -34,13 +34,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Toute l’année"],
-  equipment: [
-    "petite casserole",
-    "fouet",
-    "plaque de four et papier cuisson",
-    "spatule large",
-    "râpe à fromage",
-  ],
+  equipment: ["petite casserole", "fouet", "plaque de four et papier cuisson", "spatule large", "râpe à fromage"],
   ingredients: [
     {
       title: "La béchamel",
@@ -200,8 +194,8 @@ export default defineRecipe({
       "Croque-monsieur doré coupé en deux triangles sur une assiette blanche, jambon et fromage fondu à l’intérieur",
     detailAlt: "Croque-monsieur en gros plan, pain grillé et fromage fondu qui coule sur les côtés",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/14941252/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/26936288/" },
+      hero: { photographer: "MikeGz", url: "https://www.pexels.com/photo/14941252/" },
+      detail: { photographer: "Mel Audelo", url: "https://www.pexels.com/photo/26936288/" },
     },
   },
   datePublished: "2026-11-06",

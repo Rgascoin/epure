@@ -209,8 +209,8 @@ export default defineRecipe({
     heroAlt: "Pile de pancakes moelleux surmontée de fraises coupées, sur une assiette blanche et une table en bois",
     detailAlt: "Pancakes empilés en gros plan, nappés de sirop avec un morceau de beurre qui fond",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/37648015/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/38929325/" },
+      hero: { photographer: "Tochukwu Ekeh", url: "https://www.pexels.com/photo/37648015/" },
+      detail: { photographer: "Jahra Tasfia Reza", url: "https://www.pexels.com/photo/38929325/" },
     },
   },
   datePublished: "2026-11-09",

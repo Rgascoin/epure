@@ -25,7 +25,8 @@ describe.each(allRecipes.map((r) => [r.slug, r] as const))("%s", (slug, recipe) 
   });
 
   it("a ses photos et leurs recadrages", () => {
-    for (const f of ["hero.jpg", "detail.jpg"]) expect(existsSync(join(root, "content/recipes", slug, f)), f).toBe(true);
+    for (const f of ["hero.jpg", "detail.jpg"])
+      expect(existsSync(join(root, "content/recipes", slug, f)), f).toBe(true);
     for (const ratio of ["1x1", "4x3", "16x9"]) {
       const p = join(root, "public/images/recipes", slug, `${ratio}.jpg`);
       expect(existsSync(p), `${ratio}.jpg`).toBe(true);

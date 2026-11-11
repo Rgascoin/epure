@@ -240,7 +240,8 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Ratatouille vue de dessus dans une poêle noire : courgettes, aubergines, poivron rouge, oignon et laurier",
-    detailAlt: "Ratatouille mijotée dans un plat en terre : morceaux d’aubergine, de courgette, de poivron et de tomate",
+    detailAlt:
+      "Ratatouille mijotée dans un plat en terre : morceaux d’aubergine, de courgette, de poivron et de tomate",
     credits: {
       hero: {
         photographer: "Schnobby",

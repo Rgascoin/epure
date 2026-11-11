@@ -208,8 +208,8 @@ export default defineRecipe({
       "Velouté de potimarron orange vif dans un bol en grès, sur une table en bois sombre entourée de petits potimarrons",
     detailAlt: "Velouté de potimarron lisse en gros plan, avec des graines de courge et une cuillère dans le bol",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/5662180/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/1277483/" },
+      hero: { photographer: "KATRIN BOLOVTSOVA", url: "https://www.pexels.com/photo/5662180/" },
+      detail: { photographer: "Valeria Boltneva", url: "https://www.pexels.com/photo/1277483/" },
     },
   },
   datePublished: "2026-11-03",
