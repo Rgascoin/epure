@@ -65,6 +65,11 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/collections" className="text-paper/80 underline-offset-4 hover:text-paper hover:underline">
+                  Collections de saison
+                </Link>
+              </li>
+              <li>
                 <a href="/feed.xml" className="text-paper/80 underline-offset-4 hover:text-paper hover:underline">
                   Flux RSS
                 </a>

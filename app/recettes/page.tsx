@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
 import { RecipeCard } from "@/components/recipe-card";
 import { RecipeBrowser } from "@/components/recipe-browser";
+import { InSeasonLinks } from "@/components/in-season";
 import { recipeHaystack } from "@/lib/search";
 
 const title = "Toutes les recettes du carnet";
@@ -65,7 +66,11 @@ export default function RecipesPage() {
           )}
         </p>
 
-        <div className="intro-fade mt-12" style={{ ["--d" as string]: "500ms" }}>
+        <div className="intro-fade mt-8" style={{ ["--d" as string]: "440ms" }}>
+          <InSeasonLinks />
+        </div>
+
+        <div className="intro-fade mt-10" style={{ ["--d" as string]: "500ms" }}>
           <RecipeBrowser
             categories={categories
               .filter((c) => recipesIn(c).length)

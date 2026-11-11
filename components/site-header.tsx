@@ -28,7 +28,8 @@ export function SiteHeader({ categories, total }: { categories: NavCategory[]; t
   const [scrolled, setScrolled] = useState(false);
   const progress = useSpring(scrollYProgress, { stiffness: 220, damping: 40, restDelta: 0.001 });
   const isRecipe = pathname.startsWith("/recettes/");
-  const inRecipes = pathname.startsWith("/recettes") || pathname.startsWith("/categories/");
+  const inRecipes =
+    pathname.startsWith("/recettes") || pathname.startsWith("/categories/") || pathname.startsWith("/collections");
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
@@ -235,6 +236,13 @@ function CategoryMenu({ categories, total }: { categories: NavCategory[]; total:
             className="mt-1 flex items-center justify-between rounded-[10px] border-t border-line px-3 pt-3 pb-2.5 text-[0.9375rem] font-semibold transition-colors hover:bg-fill"
           >
             Toutes les recettes ({total})
+            <ArrowRight size={16} />
+          </Link>
+          <Link
+            href="/collections"
+            className="flex items-center justify-between rounded-[10px] px-3 pt-1.5 pb-2.5 text-[0.9375rem] font-semibold transition-colors hover:bg-fill"
+          >
+            Collections de saison
             <ArrowRight size={16} />
           </Link>
         </div>

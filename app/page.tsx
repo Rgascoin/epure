@@ -13,6 +13,7 @@ import { Carnet } from "@/components/home/carnet";
 import { Ticket } from "@/components/home/ticket";
 import { RecipeIndex } from "@/components/home/recipe-index";
 import { RecipeCard } from "@/components/recipe-card";
+import { InSeason } from "@/components/in-season";
 import { ArrowRight } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -72,6 +73,8 @@ export default function HomePage() {
         ]}
         thumbs={featuredRecipes.map((r) => ({ image: r.hero, focus: r.theme.focus }))}
       />
+
+      <InSeason />
 
       <Manifesto />
 

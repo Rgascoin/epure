@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Été", "Début d’automne"],
+  tags: ["ete"],
   equipment: [
     "plat rond à gratin de 26 à 28 cm, en terre ou en fonte",
     "mandoline",

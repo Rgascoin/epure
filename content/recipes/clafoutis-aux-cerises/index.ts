@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Mai", "Juin", "Juillet"],
+  tags: ["ete"],
   equipment: [
     "plat à four de 24 cm de diamètre (ou rectangulaire de 20 × 25 cm), en porcelaine ou en verre",
     "saladier",

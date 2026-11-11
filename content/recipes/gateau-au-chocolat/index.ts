@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["saint-valentin"],
   equipment: [
     "moule rond de 22 cm, à charnière de préférence",
     "papier sulfurisé",

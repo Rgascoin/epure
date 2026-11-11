@@ -16,7 +16,10 @@ export function RecipeHeroArch({
   focus,
   stamp,
   note,
+  pin,
 }: {
+  /** Pinterest: the vertical pin image and its text, picked by the browser extension. */
+  pin?: { media: string; description: string };
   slug: string;
   image: StaticImageData;
   alt: string;
@@ -45,6 +48,8 @@ export function RecipeHeroArch({
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
               style={{ objectPosition: focus }}
+              data-pin-media={pin?.media}
+              data-pin-description={pin?.description}
             />
           </m.div>
         </div>

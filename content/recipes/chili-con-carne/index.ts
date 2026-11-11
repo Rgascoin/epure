@@ -34,6 +34,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€€",
   season: ["Toute l’année"],
+  tags: ["hiver"],
   equipment: [
     "grande cocotte à fond épais (5 l environ)",
     "spatule en bois à bord plat",

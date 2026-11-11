@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import { categoryOf, categoryPath, getNeighbours, getRecipe, recipes, relatedRecipes } from "@/lib/recipes";
+import { collectionPath, collectionsOf } from "@/lib/collections";
 import { absoluteUrl } from "@/lib/site";
 import { formatDuration, plural } from "@/lib/format";
 import { breadcrumb, faqSchema, graph, organization, recipeSchema, webPage, website } from "@/lib/schema";
@@ -198,7 +199,15 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
               <a href="#recette" className="btn btn-accent">
                 Aller à la recette
               </a>
-              <ShareActions title={recipe.seoTitle} text={recipe.description} />
+              <ShareActions
+                title={recipe.seoTitle}
+                text={recipe.description}
+                pinterest={`https://www.pinterest.com/pin/create/button/?${new URLSearchParams({
+                  url: absoluteUrl(path),
+                  media: absoluteUrl(`${path}/pin.png`),
+                  description: `${recipe.seoTitle} · ${recipe.description}`,
+                })}`}
+              />
             </div>
           </div>
 
@@ -208,6 +217,7 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
           >
             <RecipeHeroArch
               slug={recipe.slug}
+              pin={{ media: absoluteUrl(`${path}/pin.png`), description: recipe.seoTitle }}
               image={recipe.hero}
               alt={recipe.images.heroAlt}
               focus={t.focus}
@@ -285,7 +295,11 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
           <Faq recipe={recipe} />
           <Byline recipe={recipe} />
           <NextRecipe next={next} />
-          <RelatedRecipes recipes={related} category={category} />
+          <RelatedRecipes
+            recipes={related}
+            category={category}
+            collections={collectionsOf(recipe).map((c) => ({ title: c.title, href: collectionPath(c) }))}
+          />
         </div>
         <div className="h-[clamp(4rem,12vh,8rem)]" />
       </article>

@@ -1,4 +1,5 @@
 import type { Recipe } from "./types";
+import { TAGS } from "./tags";
 
 /** Lower-case, no accents, ligatures unfolded: « Bœuf » → « boeuf ». */
 export function normalize(text: string): string {
@@ -29,6 +30,7 @@ export function recipeHaystack(r: Recipe, categoryLabel: string): string {
       r.cuisine,
       categoryLabel,
       ...r.keywords,
+      ...(r.tags ?? []).map((t) => TAGS[t]),
       ...r.ingredients.flatMap((g) => g.items.flatMap((i) => [i.name, i.plural ?? ""])),
     ].join(" · "),
   );

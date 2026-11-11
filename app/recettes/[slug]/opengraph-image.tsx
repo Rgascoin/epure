@@ -37,7 +37,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 18, letterSpacing: 2, color: r.theme.ink }}>
-            {`N° 0${n} · ${r.category.toUpperCase()} · CUISINE ${r.cuisine.toUpperCase()}`}
+            {`N° ${String(n).padStart(2, "0")} · ${r.category.toUpperCase()} · CUISINE ${r.cuisine.toUpperCase()}`}
           </div>
           <div style={{ fontFamily: "Fraunces", fontSize: 76, lineHeight: 1, letterSpacing: -2.5, marginTop: 16 }}>
             {r.title}

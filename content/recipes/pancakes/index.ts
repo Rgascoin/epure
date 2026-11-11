@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["chandeleur"],
   equipment: [
     "grand saladier et un bol",
     "fouet",

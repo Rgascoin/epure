@@ -1,4 +1,5 @@
 import { categories, categoryPath, recipes, recipesIn } from "@/lib/recipes";
+import { collectionPath, publishedCollections, recipesInCollection } from "@/lib/collections";
 import { absoluteUrl, site } from "@/lib/site";
 import { formatDuration } from "@/lib/format";
 
@@ -33,6 +34,13 @@ export function GET() {
     ...categories
       .filter((c) => recipesIn(c).length)
       .map((c) => `- [${c.label}](${absoluteUrl(categoryPath(c))}): ${c.description}`),
+    `- [Collections de saison](${absoluteUrl("/collections")}): les recettes rangées par fête et par saison`,
+    ...publishedCollections().map(
+      (c) =>
+        `- [${c.title}](${absoluteUrl(collectionPath(c))}): ${recipesInCollection(c)
+          .map((r) => r.title)
+          .join(", ")}`,
+    ),
     `- [À propos](${absoluteUrl("/a-propos")}): comment les recettes sont écrites et vérifiées`,
     "",
     "## Optional",

@@ -41,7 +41,16 @@ type Toggle = (typeof TOGGLES)[number]["id"];
  * recipes are shown grouped by category, which is also the server render
  * (every recipe link is in the HTML for crawlers).
  */
-export function RecipeBrowser({ items, categories }: { items: BrowsableRecipe[]; categories: BrowsableCategory[] }) {
+export function RecipeBrowser({
+  items,
+  categories,
+  placeholder = "Poulet, chocolat, courgette…",
+}: {
+  items: BrowsableRecipe[];
+  /** Categories to filter by; pass one (or none) on a category page to hide the chips. */
+  categories: BrowsableCategory[];
+  placeholder?: string;
+}) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string>("all");
   const [toggles, setToggles] = useState<Toggle[]>([]);
@@ -100,8 +109,9 @@ export function RecipeBrowser({ items, categories }: { items: BrowsableRecipe[];
   }, [items, toggles, words]);
 
   const visible = category === "all" ? matching : matching.filter((i) => i.category === category);
-  const grouped = category === "all" && !words.length && !toggles.length;
-  const filtering = !grouped;
+  const single = categories.length <= 1;
+  const filtering = category !== "all" || words.length > 0 || toggles.length > 0;
+  const grouped = !single && !filtering;
 
   const reset = () => {
     setQuery("");
@@ -138,7 +148,7 @@ export function RecipeBrowser({ items, categories }: { items: BrowsableRecipe[];
                 setQuery("");
               }
             }}
-            placeholder="Poulet, chocolat, courgette…"
+            placeholder={placeholder}
             className="h-16 w-full border-b-2 border-line-strong bg-transparent pr-12 pl-9 font-display text-[1.625rem] [font-weight:calc(400+var(--dw))] tracking-[-0.01em] text-fg transition-colors outline-none placeholder:text-fg-3 focus:border-fg md:text-[2rem] [&::-webkit-search-cancel-button]:hidden"
           />
           {query ? (
@@ -164,41 +174,43 @@ export function RecipeBrowser({ items, categories }: { items: BrowsableRecipe[];
         </div>
 
         {/* Categories (one at a time) */}
-        <div
-          role="group"
-          aria-label="Catégories"
-          className="-mx-[var(--gutter)] no-scrollbar flex gap-2 overflow-x-auto px-[var(--gutter)] pb-1"
-        >
-          {[{ slug: "all", label: "Tout" }, ...categories].map((c) => {
-            const count = c.slug === "all" ? matching.length : matching.filter((i) => i.category === c.slug).length;
-            const on = category === c.slug;
-            return (
-              <button
-                key={c.slug}
-                type="button"
-                aria-pressed={on}
-                onClick={() => setCategory(c.slug)}
-                className={clsx(
-                  "relative inline-flex h-11 shrink-0 items-center gap-2 rounded-[11px] border-[1.5px] px-4 text-[0.9375rem] font-medium transition-colors duration-300",
-                  on ? "border-fg text-bg" : "border-line-strong text-fg-2 hover:border-fg hover:text-fg",
-                  !on && count === 0 && "opacity-50",
-                )}
-              >
-                {on && (
-                  <m.span
-                    layoutId="category-pill"
-                    className="absolute -inset-[1.5px] rounded-[11px] bg-fg"
-                    transition={{ type: "spring", stiffness: 420, damping: 34 }}
-                  />
-                )}
-                <span className="relative">{c.label}</span>
-                <span className={clsx("relative text-[0.8125rem] tabular", on ? "text-bg/70" : "text-fg-3")}>
-                  {count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+        {!single && (
+          <div
+            role="group"
+            aria-label="Catégories"
+            className="-mx-[var(--gutter)] no-scrollbar flex gap-2 overflow-x-auto px-[var(--gutter)] pb-1"
+          >
+            {[{ slug: "all", label: "Tout" }, ...categories].map((c) => {
+              const count = c.slug === "all" ? matching.length : matching.filter((i) => i.category === c.slug).length;
+              const on = category === c.slug;
+              return (
+                <button
+                  key={c.slug}
+                  type="button"
+                  aria-pressed={on}
+                  onClick={() => setCategory(c.slug)}
+                  className={clsx(
+                    "relative inline-flex h-11 shrink-0 items-center gap-2 rounded-[11px] border-[1.5px] px-4 text-[0.9375rem] font-medium transition-colors duration-300",
+                    on ? "border-fg text-bg" : "border-line-strong text-fg-2 hover:border-fg hover:text-fg",
+                    !on && count === 0 && "opacity-50",
+                  )}
+                >
+                  {on && (
+                    <m.span
+                      layoutId="category-pill"
+                      className="absolute -inset-[1.5px] rounded-[11px] bg-fg"
+                      transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                    />
+                  )}
+                  <span className="relative">{c.label}</span>
+                  <span className={clsx("relative text-[0.8125rem] tabular", on ? "text-bg/70" : "text-fg-3")}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Toggles (combinable) */}
         <div role="group" aria-label="Affiner" className="flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -254,7 +266,9 @@ export function RecipeBrowser({ items, categories }: { items: BrowsableRecipe[];
           ? visible.length
             ? `${visible.length} recette${visible.length > 1 ? "s" : ""}${deferredQuery.trim() ? ` pour « ${deferredQuery.trim()} »` : ""}`
             : ""
-          : `${items.length} recettes, rangées par catégorie`}
+          : single
+            ? `${items.length} recettes`
+            : `${items.length} recettes, rangées par catégorie`}
       </p>
 
       {grouped ? (
@@ -283,7 +297,7 @@ export function RecipeBrowser({ items, categories }: { items: BrowsableRecipe[];
           })}
         </div>
       ) : visible.length ? (
-        <section aria-label="Résultats" className="mt-6">
+        <section aria-label={filtering ? "Résultats" : "Les recettes"} className="mt-6">
           <m.ul layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             <AnimatePresence mode="popLayout" initial={false}>
               {visible.map((item) => (

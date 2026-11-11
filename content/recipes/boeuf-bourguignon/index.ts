@@ -34,6 +34,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€€",
   season: ["Automne", "Hiver"],
+  tags: ["hiver", "automne"],
   equipment: [
     "cocotte en fonte de 5 à 6 l avec couvercle",
     "une sauteuse et une grande poêle",

@@ -88,9 +88,15 @@ export const metadata: Metadata = {
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
-      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
-      : undefined,
+    other: {
+      ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+        ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+        : {}),
+      // Pinterest « Revendiquer le site » (or add Pinterest's TXT record in the DNS instead).
+      ...(process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION
+        ? { "p:domain_verify": process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION }
+        : {}),
+    },
   },
   appleWebApp: { title: site.name, statusBarStyle: "black-translucent", capable: true },
 };

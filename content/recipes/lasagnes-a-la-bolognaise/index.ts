@@ -34,6 +34,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€€",
   season: ["Toute l’année"],
+  tags: ["hiver"],
   equipment: [
     "cocotte en fonte ou faitout à fond épais",
     "casserole de 2 l",

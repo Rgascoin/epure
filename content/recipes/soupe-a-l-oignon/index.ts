@@ -34,6 +34,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€€",
   season: ["Automne", "Hiver"],
+  tags: ["hiver", "automne", "nouvel-an"],
   equipment: [
     "cocotte en fonte ou faitout à fond épais de 24 à 28 cm",
     "spatule en bois",

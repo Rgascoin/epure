@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["saint-valentin", "paques"],
   equipment: [
     "casserole et bol résistant à la chaleur (bain-marie)",
     "batteur électrique",

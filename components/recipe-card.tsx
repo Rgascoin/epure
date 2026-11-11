@@ -9,9 +9,32 @@ import { recipes } from "@/lib/recipes";
  * A recipe as a sheet of paper: arched photo, number, title. The photo shares
  * a view-transition name with the recipe hero, so it morphs into the page.
  */
-export function RecipeCard({ recipe, headingLevel = 3 }: { recipe: Recipe; headingLevel?: 2 | 3 }) {
+export function RecipeCard({
+  recipe,
+  headingLevel = 3,
+  morph = true,
+}: {
+  recipe: Recipe;
+  headingLevel?: 2 | 3;
+  /** Photo morphs into the recipe hero. Turn off when the recipe may appear twice on a page. */
+  morph?: boolean;
+}) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   const number = String(recipes.indexOf(recipe) + 1).padStart(2, "0");
+  const photo = (
+    <div className="relative aspect-[4/5] w-[6.5rem] shrink-0 overflow-hidden rounded-[999px_999px_10px_10px] bg-fill sm:w-auto sm:rounded-[999px_999px_14px_14px]">
+      <Image
+        src={recipe.hero}
+        alt={recipe.images.heroAlt}
+        fill
+        sizes="(max-width: 640px) 104px, (max-width: 1024px) 50vw, 33vw"
+        quality={70}
+        placeholder="blur"
+        className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-out)] group-hover:scale-[1.05]"
+        style={{ objectPosition: recipe.theme.focus }}
+      />
+    </div>
+  );
   return (
     <article className="group relative h-full">
       <Link
@@ -19,20 +42,13 @@ export function RecipeCard({ recipe, headingLevel = 3 }: { recipe: Recipe; headi
         transitionTypes={["nav-forward"]}
         className="flex h-full items-center gap-1 rounded-[var(--radius-card)] bg-elevated p-2.5 shadow-[var(--shadow-card)] ring-1 ring-line transition-[transform,box-shadow] duration-500 ease-[var(--ease-out)] hover:-translate-y-1 hover:-rotate-[0.6deg] hover:shadow-[6px_6px_0_var(--accent)] sm:flex-col sm:items-stretch sm:gap-0 sm:p-3"
       >
-        <ViewTransition name={`photo-${recipe.slug}`} share="morph" default="none">
-          <div className="relative aspect-[4/5] w-[6.5rem] shrink-0 overflow-hidden rounded-[999px_999px_10px_10px] bg-fill sm:w-auto sm:rounded-[999px_999px_14px_14px]">
-            <Image
-              src={recipe.hero}
-              alt={recipe.images.heroAlt}
-              fill
-              sizes="(max-width: 640px) 104px, (max-width: 1024px) 50vw, 33vw"
-              quality={70}
-              placeholder="blur"
-              className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-out)] group-hover:scale-[1.05]"
-              style={{ objectPosition: recipe.theme.focus }}
-            />
-          </div>
-        </ViewTransition>
+        {morph ? (
+          <ViewTransition name={`photo-${recipe.slug}`} share="morph" default="none">
+            {photo}
+          </ViewTransition>
+        ) : (
+          photo
+        )}
         <div className="flex min-w-0 flex-1 flex-col px-3 py-2 sm:pt-5 sm:pb-3">
           <p className="flex flex-wrap justify-between gap-x-3 text-eyebrow text-fg-3">
             <span>

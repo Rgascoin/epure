@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€€",
   season: ["Toute l’année"],
+  tags: ["automne"],
   equipment: [
     "sauteuse large à fond épais",
     "grande poêle",

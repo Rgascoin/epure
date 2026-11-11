@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Route } from "next";
 import { ViewTransition } from "react";
 import type { Recipe } from "@/lib/types";
 import { durationParts, formatDateFr, formatDuration, fr, isoDuration } from "@/lib/format";
@@ -351,7 +352,15 @@ export function NextRecipe({ next }: { next: Recipe }) {
 /*  Related recipes                                                            */
 /* -------------------------------------------------------------------------- */
 
-export function RelatedRecipes({ recipes, category }: { recipes: Recipe[]; category: CategoryInfo }) {
+export function RelatedRecipes({
+  recipes,
+  category,
+  collections = [],
+}: {
+  recipes: Recipe[];
+  category: CategoryInfo;
+  collections?: Array<{ title: string; href: string }>;
+}) {
   if (!recipes.length) return null;
   return (
     <section aria-labelledby="related-title" className="container-page" data-print="hide">
@@ -363,6 +372,20 @@ export function RelatedRecipes({ recipes, category }: { recipes: Recipe[]; categ
           {category.label} <ArrowRight size={18} />
         </Link>
       </div>
+      {collections.length > 0 && (
+        <p className="-mt-4 mb-10 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.9375rem]">
+          <span className="font-mono text-[0.8125rem] text-fg-3">Aussi dans</span>
+          {collections.map((c) => (
+            <Link
+              key={c.href}
+              href={c.href as Route}
+              className="inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-line-strong px-3.5 py-1.5 font-medium text-fg-2 transition-colors hover:border-fg hover:text-fg"
+            >
+              {c.title}
+            </Link>
+          ))}
+        </p>
+      )}
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {recipes.map((r) => (
           <li key={r.slug}>

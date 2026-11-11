@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["chandeleur", "mardi-gras"],
   equipment: [
     "poêle à crêpes de 24 à 26 cm",
     "petite casserole",

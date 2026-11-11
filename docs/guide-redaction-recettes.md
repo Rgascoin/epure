@@ -90,36 +90,37 @@ Une recette d’Épure doit permettre à quelqu’un qui ne l’a jamais faite d
 
 Une recette est un fichier `content/recipes/<slug>/index.ts` typé (`RecipeSource`, voir `lib/types.ts`). Exemple complet : `content/recipes/spaghetti-carbonara/index.ts`.
 
-| Champ                                       | Règle                                                                                                                       | Exemple                                                  |
-| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `slug`                                      | **[auto]** minuscules, chiffres, tirets ; identique au dossier ; mot-clé principal                                          | `quiche-lorraine`                                        |
-| `title`                                     | nom usuel du plat, **[auto]** ≤ 60 caractères, sans adjectif marketing                                                      | `Quiche lorraine`                                        |
-| `seoTitle`                                  | **[auto]** 30 à 60 caractères ; mot-clé principal en tête ; une promesse concrète                                           | `Quiche lorraine : la vraie recette, pâte croustillante` |
-| `tagline`                                   | **[auto]** ≤ 7 mots ; humaine, un peu pince-sans-rire ; pas deux phrases symétriques                                        | `Sans gruyère, et elle s’en porte bien.`                 |
-| `description`                               | **[auto]** 120 à 160 caractères ; phrase naturelle ; mot-clé tôt ; temps ou chiffre clé                                     | voir §12                                                 |
-| `summary` (« En bref »)                     | **[auto]** 150 à 480 caractères ; contient des chiffres et le nombre de portions ; répond directement à « comment faire X » | voir §12                                                 |
-| `intro`                                     | **[auto]** 2 ou 3 paragraphes, ≤ 90 mots chacun : ce qu’est le plat, ce qui le rend réussi, ce qui peut rater               |                                                          |
-| `category`                                  | `Entrée`, `Plat`, `Accompagnement`, `Dessert`, `Goûter`                                                                     |                                                          |
-| `cuisine`                                   | adjectif au singulier, majuscule : `Française`, `Italienne`, `Espagnole`…                                                   |                                                          |
-| `keywords`                                  | **[auto]** 5 à 12 requêtes réelles, en minuscules, telles que tapées                                                        | `quiche lorraine sans gruyère`                           |
-| `diet`                                      | seulement si c’est vrai pour la recette telle qu’écrite (vérifier bouillons, fromages, gélatine)                            | `["vegetarian"]`                                         |
-| `servings`, `servingsLabel`                 | voir §7                                                                                                                     | `{ one: "part", other: "parts" }`                        |
-| `times`                                     | voir §7                                                                                                                     |                                                          |
-| `difficulty`, `cost`                        | voir §7                                                                                                                     |                                                          |
-| `season`                                    | mois ou saisons, en toutes lettres                                                                                          | `["Automne", "Hiver"]`                                   |
-| `equipment`                                 | **[auto]** ≥ 2 ; en minuscules (affichés en une phrase) ; précis                                                            | `moule à tarte de 26 cm`                                 |
-| `ingredients`                               | voir §5                                                                                                                     |                                                          |
-| `method`                                    | voir §6                                                                                                                     |                                                          |
-| `science`, `tips`, `mistakes`, `variations` | voir §8                                                                                                                     |                                                          |
-| `storage`                                   | 1 à 2 phrases : où, combien de temps, comment réchauffer ; cohérent avec §10                                                |                                                          |
-| `pairing`                                   | une suggestion de boisson simple et accessible (appellations en minuscules : un bourgogne, un frascati)                     |                                                          |
-| `faq`                                       | voir §9                                                                                                                     |                                                          |
-| `nutrition`                                 | voir §11                                                                                                                    |                                                          |
-| `annotations`                               | notes manuscrites, voir §13                                                                                                 |                                                          |
-| `images`                                    | alt et crédits, voir §13                                                                                                    |                                                          |
-| `datePublished`, `dateModified`             | **[auto]** `AAAA-MM-JJ`, modification ≥ publication ; mettre à jour `dateModified` à chaque correction de fond              |                                                          |
-| `theme`                                     | voir §14                                                                                                                    |                                                          |
-| `featured`                                  | `true` seulement pour les quelques recettes du carnet de la page d’accueil                                                  |                                                          |
+| Champ                                       | Règle                                                                                                                           | Exemple                                                  |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `slug`                                      | **[auto]** minuscules, chiffres, tirets ; identique au dossier ; mot-clé principal                                              | `quiche-lorraine`                                        |
+| `title`                                     | nom usuel du plat, **[auto]** ≤ 60 caractères, sans adjectif marketing                                                          | `Quiche lorraine`                                        |
+| `seoTitle`                                  | **[auto]** 30 à 60 caractères ; mot-clé principal en tête ; une promesse concrète                                               | `Quiche lorraine : la vraie recette, pâte croustillante` |
+| `tagline`                                   | **[auto]** ≤ 7 mots ; humaine, un peu pince-sans-rire ; pas deux phrases symétriques                                            | `Sans gruyère, et elle s’en porte bien.`                 |
+| `description`                               | **[auto]** 120 à 160 caractères ; phrase naturelle ; mot-clé tôt ; temps ou chiffre clé                                         | voir §12                                                 |
+| `summary` (« En bref »)                     | **[auto]** 150 à 480 caractères ; contient des chiffres et le nombre de portions ; répond directement à « comment faire X »     | voir §12                                                 |
+| `intro`                                     | **[auto]** 2 ou 3 paragraphes, ≤ 90 mots chacun : ce qu’est le plat, ce qui le rend réussi, ce qui peut rater                   |                                                          |
+| `category`                                  | `Entrée`, `Plat`, `Accompagnement`, `Dessert`, `Goûter`                                                                         |                                                          |
+| `cuisine`                                   | adjectif au singulier, majuscule : `Française`, `Italienne`, `Espagnole`…                                                       |                                                          |
+| `keywords`                                  | **[auto]** 5 à 12 requêtes réelles, en minuscules, telles que tapées                                                            | `quiche lorraine sans gruyère`                           |
+| `diet`                                      | seulement si c’est vrai pour la recette telle qu’écrite (vérifier bouillons, fromages, gélatine)                                | `["vegetarian"]`                                         |
+| `servings`, `servingsLabel`                 | voir §7                                                                                                                         | `{ one: "part", other: "parts" }`                        |
+| `times`                                     | voir §7                                                                                                                         |                                                          |
+| `difficulty`, `cost`                        | voir §7                                                                                                                         |                                                          |
+| `season`                                    | mois ou saisons, en toutes lettres                                                                                              | `["Automne", "Hiver"]`                                   |
+| `tags`                                      | occasions et saisons où le plat est un choix évident (vocabulaire de `lib/tags.ts`) ; ils alimentent les collections **[auto]** | `["hiver", "noel"]`                                      |
+| `equipment`                                 | **[auto]** ≥ 2 ; en minuscules (affichés en une phrase) ; précis                                                                | `moule à tarte de 26 cm`                                 |
+| `ingredients`                               | voir §5                                                                                                                         |                                                          |
+| `method`                                    | voir §6                                                                                                                         |                                                          |
+| `science`, `tips`, `mistakes`, `variations` | voir §8                                                                                                                         |                                                          |
+| `storage`                                   | 1 à 2 phrases : où, combien de temps, comment réchauffer ; cohérent avec §10                                                    |                                                          |
+| `pairing`                                   | une suggestion de boisson simple et accessible (appellations en minuscules : un bourgogne, un frascati)                         |                                                          |
+| `faq`                                       | voir §9                                                                                                                         |                                                          |
+| `nutrition`                                 | voir §11                                                                                                                        |                                                          |
+| `annotations`                               | notes manuscrites, voir §13                                                                                                     |                                                          |
+| `images`                                    | alt et crédits, voir §13                                                                                                        |                                                          |
+| `datePublished`, `dateModified`             | **[auto]** `AAAA-MM-JJ`, modification ≥ publication ; mettre à jour `dateModified` à chaque correction de fond                  |                                                          |
+| `theme`                                     | voir §14                                                                                                                        |                                                          |
+| `featured`                                  | `true` seulement pour les quelques recettes du carnet de la page d’accueil                                                      |                                                          |
 
 ---
 
@@ -269,6 +270,8 @@ En mode sombre, le site éclaircit `ink` et assombrit `tint` automatiquement.
 ---
 
 ## 16. Publier une recette, pas à pas
+
+Le circuit outillé (recherche de photos, gabarit, crédits automatiques) est résumé dans la [fiche mémo](recette-brief.md).
 
 ```bash
 # 1. Créer le dossier et le fichier (partir d’une recette existante)
