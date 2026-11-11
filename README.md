@@ -99,7 +99,7 @@ Le build de production refuse une recette qui enfreint une règle obligatoire. L
 
 ### Diffusion
 
-- **IndexNow** : après chaque déploiement de production, `.github/workflows/indexnow.yml` signale à Bing (et Yandex, Seznam, Naver) les recettes modifiées par le dernier commit. Envoi complet : `pnpm indexnow --all`.
+- **IndexNow** : quand des recettes changent sur `main`, `.github/workflows/indexnow.yml` attend que Vercel ait mis ce commit en ligne (`/version.txt`), puis signale à Bing (et Yandex, Seznam, Naver) les pages modifiées. Envoi complet : `pnpm indexnow --all`.
 - **Pinterest** : chaque recette a une épingle verticale `/recettes/<slug>/pin.png` (1000 × 1500), un bouton « Épingler » et les attributs `data-pin-media` sur la photo. Vérification du site par enregistrement TXT ou `NEXT_PUBLIC_PINTEREST_VERIFICATION`.
 
 ## Déploiement sur Vercel
