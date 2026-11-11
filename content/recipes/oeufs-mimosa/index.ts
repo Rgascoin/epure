@@ -76,7 +76,7 @@ export default defineRecipe({
         },
         {
           title: "Refroidir aussitôt",
-          text: "Transférez les œufs dans le saladier d’eau froide et de glaçons. Laissez-les 10 minutes, jusqu’à ce qu’ils soient froids au toucher jusqu’au cœur quand vous en prenez un dans la main.",
+          text: "Transférez les œufs dans le saladier d’eau froide et de glaçons. Laissez-les 10 minutes, jusqu’à ce qu’ils soient bien froids dans la main.",
           timer: { minutes: 10, label: "Œufs dans l’eau glacée" },
         },
       ],

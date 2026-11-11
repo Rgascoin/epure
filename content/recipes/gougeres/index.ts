@@ -8,9 +8,9 @@ export default defineRecipe({
   seoTitle: "Gougères au comté : la pâte à choux pas à pas",
   tagline: "Le fromage dans la pâte, et dessus.",
   description:
-    "Des gougères au comté pour l’apéritif : une pâte à choux au lait et au beurre, 120 g de fromage, 25 minutes à 200 °C. Elles se congèlent crues.",
+    "Des gougères au comté pour l’apéritif : une pâte à choux au lait et au beurre, 60 g de fromage, 25 minutes à 200 °C. Elles se congèlent crues.",
   summary:
-    "Pour 8 personnes (environ 40 gougères), préparez une pâte à choux avec 25 cl d’eau et de lait, 100 g de beurre, 150 g de farine et 4 œufs, puis ajoutez 100 g de comté râpé. Dressez des boules de 3 cm, parsemez des 20 g de fromage restants et faites cuire 22 à 25 minutes à 200 °C sans ouvrir le four. Elles se congèlent crues. Comptez 1 h 05 en tout.",
+    "Pour 4 personnes (environ 20 gougères), préparez une pâte à choux avec 12 cl d’eau et de lait, 50 g de beurre, 75 g de farine et 2 œufs, puis ajoutez 50 g de comté râpé. Dressez des boules de 3 cm, parsemez des 10 g de fromage restants et faites cuire 22 à 25 minutes à 200 °C sans ouvrir le four. Elles se congèlent crues. Comptez 1 h 05 en tout.",
   intro: [
     "Une gougère, c’est un petit chou salé : de la pâte à choux dans laquelle on a mélangé du comté ou du gruyère râpé. Elle sort du four gonflée, creuse, avec une croûte qui craque et un goût de fromage grillé. C’est une spécialité de Bourgogne, où on la sert volontiers avec un verre de vin.",
     "La pâte à choux a une réputation pire qu’elle ne le mérite. Elle demande deux choses : bien dessécher la panade sur le feu, puis ajouter les œufs peu à peu en regardant la texture plutôt que la liste. Ensuite, on laisse la porte du four tranquille.",
@@ -29,7 +29,7 @@ export default defineRecipe({
     "gougères bourguignonnes",
   ],
   diet: ["vegetarian"],
-  servings: 8,
+  servings: 4,
   servingsLabel: { one: "personne", other: "personnes" },
   times: { prep: 30, cook: 35 },
   difficulty: "Intermédiaire",
@@ -37,26 +37,26 @@ export default defineRecipe({
   season: ["Toute l’année"],
   tags: ["noel", "nouvel-an", "apero"],
   equipment: [
-    "casserole à fond épais de 2 l",
+    "casserole à fond épais de 1,5 l",
     "spatule en bois",
     "poche à douille unie de 10 à 12 mm",
-    "2 plaques de cuisson et papier cuisson",
+    "plaque de cuisson et papier cuisson",
     "râpe fine",
   ],
   ingredients: [
     {
       title: "Le fromage",
-      items: [{ qty: 120, unit: "g", name: "comté", note: "affiné environ 12 mois, ou gruyère, râpé finement", step: 10 }],
+      items: [{ qty: 60, unit: "g", name: "comté", note: "affiné environ 12 mois, ou gruyère, râpé finement", step: 10 }],
     },
     {
       title: "La pâte à choux",
       items: [
-        { qty: 12.5, unit: "cl", name: "eau", step: 0.5 },
-        { qty: 12.5, unit: "cl", name: "lait entier", step: 0.5 },
-        { qty: 100, unit: "g", name: "beurre", note: "en dés", step: 5 },
-        { qty: 0.5, unit: "cac", name: "sel fin", step: 0.25 },
-        { qty: 150, unit: "g", name: "farine", note: "type 55, tamisée", step: 5 },
-        { qty: 4, name: "œuf", plural: "œufs", note: "moyens, battus en omelette", step: 1 },
+        { qty: 6, unit: "cl", name: "eau", step: 1 },
+        { qty: 6, unit: "cl", name: "lait entier", note: "plus 1 cuillère à soupe pour dorer", step: 1 },
+        { qty: 50, unit: "g", name: "beurre", note: "en dés", step: 5 },
+        { qty: 1, unit: "pincee", name: "sel fin", step: 1 },
+        { qty: 75, unit: "g", name: "farine", note: "type 55, tamisée", step: 5 },
+        { qty: 2, name: "œuf", plural: "œufs", note: "gros, battus en omelette", step: 1 },
         { name: "poivre", note: "du moulin" },
         { qty: 1, unit: "pincee", name: "noix de muscade râpée", step: 1 },
       ],
@@ -68,7 +68,7 @@ export default defineRecipe({
       steps: [
         {
           title: "Préchauffer et râper",
-          text: "Préchauffez le four à 200 °C, chaleur statique, et tapissez les plaques de papier cuisson. Râpez finement le comté et mettez-en 20 g de côté pour le dessus.",
+          text: "Préchauffez le four à 200 °C, chaleur statique, et tapissez la plaque de papier cuisson. Râpez finement le comté et mettez-en 10 g de côté pour le dessus.",
         },
         {
           title: "Faire bouillir le liquide",
@@ -92,12 +92,12 @@ export default defineRecipe({
         },
         {
           title: "Incorporer les œufs",
-          text: "Gardez 1 cuillère à soupe d’œuf battu pour dorer. Versez le reste en quatre fois, en battant énergiquement à la spatule jusqu’à ce que chaque ajout soit absorbé. La pâte est prête quand elle est lisse, brillante, et tombe de la spatule en formant un V épais. Il peut rester un peu d’œuf : n’insistez pas.",
+          text: "Versez les œufs battus en quatre fois, en battant énergiquement à la spatule jusqu’à ce que chaque ajout soit absorbé. La pâte est prête quand elle est lisse, brillante, et tombe de la spatule en formant un V épais. Il peut rester un peu d’œuf : n’insistez pas.",
           tip: "Tracez un sillon au doigt dans la pâte : s’il se referme lentement, la consistance est bonne.",
         },
         {
           title: "Ajouter le fromage",
-          text: "Incorporez 100 g de comté râpé, deux tours de moulin à poivre et la muscade. Mélangez juste ce qu’il faut pour répartir le fromage.",
+          text: "Incorporez 50 g de comté râpé, deux tours de moulin à poivre et la muscade. Mélangez juste ce qu’il faut pour répartir le fromage.",
         },
       ],
     },
@@ -106,11 +106,11 @@ export default defineRecipe({
       steps: [
         {
           title: "Dresser les gougères",
-          text: "Remplissez la poche à douille et dressez des boules de 3 cm de diamètre sur les plaques, en laissant 3 cm entre elles. Badigeonnez-les de l’œuf réservé, aplatissez la pointe avec le dos d’une fourchette mouillée et parsemez du comté gardé de côté.",
+          text: "Remplissez la poche à douille et dressez des boules de 3 cm de diamètre sur la plaque, en laissant 3 cm entre elles. Badigeonnez-les d’un peu de lait au pinceau, aplatissez la pointe avec le dos d’une fourchette mouillée et parsemez du comté gardé de côté.",
         },
         {
           title: "Cuire sans ouvrir",
-          text: "Enfournez une plaque à la fois au milieu du four et faites cuire 22 à 25 minutes, sans ouvrir la porte pendant les 15 premières. Elles sont cuites quand elles sont bien gonflées, dorées jusque dans les creux, et légères dans la main.",
+          text: "Enfournez la plaque au milieu du four et faites cuire 22 à 25 minutes, sans ouvrir la porte pendant les 15 premières. Elles sont cuites quand elles sont bien gonflées, dorées jusque dans les creux, et légères dans la main.",
           timer: { minutes: 25, label: "Cuisson des gougères" },
           tip: "Une gougère pâle dans les plis n’est pas cuite : elle retombera en refroidissant. Mieux vaut 2 minutes de trop.",
         },
@@ -140,8 +140,8 @@ export default defineRecipe({
     "Râpez le fromage finement : il se répartit dans la pâte sans l’alourdir, et les gougères gonflent plus régulièrement.",
     "Le lait colore la croûte plus vite que l’eau seule, grâce à ses sucres et à ses protéines. Avec de l’eau uniquement, elles sont plus pâles mais plus croustillantes.",
     "Pour dresser, tenez la poche bien verticale, à 1 cm de la plaque, et terminez chaque boule d’un petit mouvement de côté.",
-    "Une seule plaque à la fois au milieu du four : à deux étages, la plaque du bas cuit mal et les gougères gonflent inégalement.",
-    "Pour congeler, dressez-les et dorez-les, puis passez la plaque 2 heures au congélateur avant de les mettre en sac.",
+    "Pour 8 personnes, doublez les quantités et faites cuire les deux plaques l’une après l’autre, au milieu du four : à deux étages, celle du bas cuit mal et les gougères gonflent inégalement.",
+    "Pour congeler, dressez-les sans les dorer, puis passez la plaque 2 heures au congélateur avant de les mettre en sac.",
   ],
   mistakes: [
     "Verser tous les œufs d’un coup : la pâte devient trop liquide et les gougères s’étalent au lieu de monter. Elle ne se rattrape pas ; ajoutez toujours l’œuf en plusieurs fois.",
@@ -152,15 +152,15 @@ export default defineRecipe({
   variations: [
     {
       title: "En couronne, à la bourguignonne",
-      text: "Dressez toute la pâte en couronne de boules serrées sur un cercle de 22 cm de diamètre, dorez et parsemez de fromage. Faites cuire 35 à 40 minutes à 190 °C, sans ouvrir le four pendant les 25 premières, et servez-la à partager.",
+      text: "Dressez toute la pâte en couronne de boules qui se touchent, sur un cercle de 18 cm de diamètre, dorez au lait et parsemez de fromage. Faites cuire 30 à 35 minutes à 190 °C, sans ouvrir le four pendant les 20 premières, et servez-la à partager.",
     },
     {
       title: "Au jambon cru",
-      text: "Ajoutez 50 g de jambon cru haché très finement avec le fromage et réduisez le sel de moitié. Le jambon dore légèrement à la cuisson.",
+      text: "Ajoutez 30 g de jambon cru haché très finement avec le fromage et supprimez le sel. Le jambon dore légèrement à la cuisson.",
     },
     {
       title: "Au comté et aux noix",
-      text: "Incorporez 40 g de cerneaux de noix hachés grossièrement avec le fromage. Attention, la recette contient alors des fruits à coque : prévenez vos invités.",
+      text: "Incorporez 25 g de cerneaux de noix hachés grossièrement avec le fromage. Attention, la recette contient alors des fruits à coque : prévenez vos invités.",
     },
   ],
   storage:
@@ -170,7 +170,7 @@ export default defineRecipe({
   faq: [
     {
       q: "Peut-on congeler les gougères crues ?",
-      a: "Oui, c’est la meilleure façon de les préparer à l’avance. Dressez-les et dorez-les sur une plaque, congelez-les 2 heures jusqu’à ce qu’elles soient dures, puis mettez-les en sac. Elles se gardent 2 mois. Enfournez-les encore congelées à 200 °C et comptez 5 minutes de cuisson en plus.",
+      a: "Oui, c’est la meilleure façon de les préparer à l’avance. Dressez-les sur une plaque, congelez-les 2 heures jusqu’à ce qu’elles soient dures, puis mettez-les en sac. Elles se gardent 2 mois. Enfournez-les encore congelées, dorées au lait, à 200 °C et comptez 5 minutes de cuisson en plus.",
     },
     {
       q: "Pourquoi mes gougères retombent-elles à la sortie du four ?",
@@ -190,7 +190,7 @@ export default defineRecipe({
     },
     {
       q: "Combien de gougères prévoir par personne ?",
-      a: "5 à 6 à l’apéritif, s’il y a d’autres bouchées à côté. Cette recette en donne une quarantaine, de quoi servir 8 personnes.",
+      a: "5 à l’apéritif, s’il y a d’autres bouchées à côté. Cette recette en donne une vingtaine, pour 4 personnes ; doublez-la pour 8.",
     },
   ],
   nutrition: {
@@ -201,7 +201,7 @@ export default defineRecipe({
     carbs: 14,
     sugar: 1,
     fiber: 0.5,
-    sodium: 240,
+    sodium: 170,
   },
   annotations: { hero: "dorées jusque dans les plis", detail: "le four fermé, au moins 15 minutes" },
   images: {
