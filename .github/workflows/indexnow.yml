@@ -1,25 +1,35 @@
-# After each successful production deployment on Vercel, tell Bing & co.
-# which recipes changed (scripts/indexnow.mjs).
+# When recipes change on main, wait for Vercel to put that commit online,
+# then tell Bing & co. which pages changed (scripts/indexnow.mjs).
 name: IndexNow
 
 on:
-  deployment_status:
+  push:
+    branches: [main]
+    paths: ["content/recipes/**"]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   ping:
-    if: >-
-      github.event.deployment_status.state == 'success' &&
-      startsWith(github.event.deployment.environment, 'Production')
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SITE_URL: https://www.epure-cuisine.fr
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.deployment.sha }}
           fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Wait for the deployment of this commit
+        run: |
+          for i in $(seq 1 50); do
+            live=$(curl -fsS "$SITE_URL/version.txt" || true)
+            if [ "$live" = "$GITHUB_SHA" ]; then echo "Online: $live"; exit 0; fi
+            echo "Waiting ($live)…"; sleep 30
+          done
+          echo "The deployment did not show up in time." >&2; exit 1
       - run: node scripts/indexnow.mjs --since HEAD~1
