@@ -4,6 +4,7 @@ import {
   collections,
   easter,
   fathersDay,
+  grandmothersDay,
   formatWindow,
   mothersDay,
   nextWindow,
@@ -22,6 +23,9 @@ describe("calendrier", () => {
     expect(mothersDay(2026)).toBe("2026-05-31");
     expect(mothersDay(2027)).toBe("2027-05-30");
     expect(mothersDay(2024)).toBe("2024-05-26");
+  });
+  it("calcule la fête des grands-mères", () => {
+    expect(grandmothersDay(2027)).toBe("2027-03-07");
   });
   it("calcule la fête des pères", () => {
     expect(fathersDay(2026)).toBe("2026-06-21");

@@ -34,7 +34,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€€",
   season: ["Hiver"],
-  tags: ["hiver"],
+  tags: ["hiver", "montagne"],
   equipment: ["grande casserole", "sauteuse de 28 cm", "plat à gratin de 30 × 22 cm environ"],
   ingredients: [
     {

@@ -35,7 +35,7 @@ export default defineRecipe({
   difficulty: "Intermédiaire",
   cost: "€",
   season: ["Automne", "Hiver"],
-  tags: ["automne", "hiver"],
+  tags: ["automne", "hiver", "fete-des-grands-meres"],
   equipment: [
     "moule à tarte de 26 à 28 cm, idéalement à fond amovible",
     "rouleau à pâtisserie",

@@ -35,6 +35,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Toute l’année"],
+  tags: ["fete-des-grands-meres"],
   equipment: [
     "moule à manqué de 22 cm (ou moule à cake de 25 cm)",
     "papier sulfurisé",

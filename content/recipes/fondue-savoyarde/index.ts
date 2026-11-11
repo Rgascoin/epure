@@ -33,7 +33,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€€€",
   season: ["Hiver"],
-  tags: ["hiver", "nouvel-an"],
+  tags: ["hiver", "nouvel-an", "montagne"],
   equipment: [
     "caquelon en fonte émaillée ou en terre de 2,5 l",
     "réchaud à fondue",

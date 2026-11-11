@@ -22,11 +22,13 @@ export const TAGS = {
   paques: "Pâques",
   "fete-des-meres": "Fête des mères",
   "fete-des-peres": "Fête des pères",
+  "fete-des-grands-meres": "Fête des grands-mères",
   halloween: "Halloween",
   // Moments.
   "pique-nique": "pique-nique",
   barbecue: "barbecue",
   apero: "apéro",
+  montagne: "montagne",
 } as const;
 
 export type Tag = keyof typeof TAGS;

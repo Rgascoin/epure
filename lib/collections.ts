@@ -89,6 +89,13 @@ export function fathersDay(y: number): Day {
   return shift(d, 14);
 }
 
+/** Fête des grands-mères: first Sunday of March. */
+export function grandmothersDay(y: number): Day {
+  let d = day(y, 3, 1);
+  while (weekday(d) !== 0) d = shift(d, 1);
+  return d;
+}
+
 /** Today in Paris, as "YYYY-MM-DD". */
 export function parisToday(now: Date): Day {
   return new Intl.DateTimeFormat("en-CA", {
@@ -130,6 +137,19 @@ export const collections: Collection[] = [
     tags: ["nouvel-an"],
     window: (y) => [day(y - 1, 12, 26), day(y, 1, 1)],
     priority: 95,
+  },
+  {
+    slug: "apero-des-fetes",
+    title: "Apéro des fêtes",
+    seoTitle: "Apéro des fêtes : bouchées maison à préparer avant",
+    description:
+      "Pour l’apéritif de Noël et du réveillon : gougères et bouchées maison qui se préparent à l’avance et se réchauffent au dernier moment.",
+    headline: "L’apéro des fêtes, fait maison.",
+    lede: "Des bouchées qui se préparent la veille et passent au four quand on sonne.",
+    period: "du 10 au 31 décembre",
+    tags: ["apero"],
+    window: (y) => [day(y, 12, 10), day(y, 12, 31)],
+    priority: 80,
   },
   {
     slug: "galette-des-rois",
@@ -221,6 +241,46 @@ export const collections: Collection[] = [
     tags: ["fete-des-peres"],
     window: (y) => [shift(fathersDay(y), -10), fathersDay(y)],
     priority: 91,
+  },
+  {
+    slug: "fete-des-grands-meres",
+    title: "Fête des grands-mères",
+    seoTitle: "Fête des grands-mères : les desserts d’autrefois",
+    description:
+      "Pour la fête des grands-mères, début mars : île flottante, riz au lait, quatre-quarts et les gâteaux de goûter d’avant, au gramme près.",
+    headline: "Pour la fête des grands-mères.",
+    lede: "Les desserts qu’elles faisaient sans balance, enfin pesés.",
+    period: "les dix jours avant le premier dimanche de mars",
+    tags: ["fete-des-grands-meres"],
+    window: (y) => [shift(grandmothersDay(y), -10), grandmothersDay(y)],
+    priority: 91,
+  },
+  {
+    slug: "montagne",
+    title: "Recettes de montagne",
+    seoTitle: "Recettes de montagne : tartiflette, fondue, gratins",
+    description:
+      "Les plats de montagne pour l’hiver et les vacances au ski : tartiflette, fondue savoyarde, gratin dauphinois, avec les bons fromages et les temps exacts.",
+    headline: "Retour de la montagne.",
+    lede: "Fromages fondus, pommes de terre et vin blanc de Savoie.",
+    period: "de mi-décembre à mi-mars",
+    tags: ["montagne"],
+    window: (y) => [day(y - 1, 12, 15), day(y, 3, 15)],
+    priority: 55,
+    lead: ["tartiflette", "fondue-savoyarde"],
+  },
+  {
+    slug: "quatorze-juillet",
+    title: "Pique-nique du 14 Juillet",
+    seoTitle: "Pique-nique et barbecue du 14 Juillet",
+    description:
+      "Pour le 14 Juillet et les déjeuners dehors : brochettes, salades qui voyagent, quiche et taboulé, des recettes qui se préparent la veille et tiennent au frais.",
+    headline: "Le 14 Juillet se mange dehors.",
+    lede: "Brochettes, salades qui voyagent et quiches qui se coupent froides.",
+    period: "la première quinzaine de juillet",
+    tags: ["pique-nique", "barbecue"],
+    window: (y) => [day(y, 7, 1), day(y, 7, 14)],
+    priority: 70,
   },
   {
     slug: "halloween",
