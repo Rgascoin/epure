@@ -205,6 +205,115 @@ export default defineRecipe({
   storage:
     "Les lasagnes se gardent 3 jours au réfrigérateur, filmées ou en boîte fermée, et 3 mois au congélateur, en parts. Réchauffez-les au four à 160 °C, couvertes, 20 à 25 minutes, jusqu’à ce qu’elles soient brûlantes à cœur.",
   pairing: "Un rouge d’Émilie-Romagne, un sangiovese di romagna, ou un lambrusco sec servi frais.",
+  easy: {
+    shortcut: "feuilles de lasagne fraîches du commerce",
+    note: "Les feuilles fraîches aux œufs, au rayon frais, se posent crues et cuisent en 30 minutes en buvant moins de sauce. Le ragù, lui, mijote 45 minutes au lieu de 2 heures : il est bon, mais moins profond et moins fondant que la version longue. On gagne plus de 1 h 30.",
+    times: { prep: 35, cook: 100, rest: 15 },
+    ingredients: [
+      {
+        title: "Le ragù",
+        items: [
+          { qty: 1, name: "oignon jaune", plural: "oignons jaunes", step: 0.5 },
+          { qty: 1, name: "carotte", plural: "carottes", step: 0.5 },
+          { qty: 1, unit: "branche", name: "céleri", step: 0.5 },
+          { qty: 100, unit: "g", name: "pancetta", note: "en petits dés", step: 10 },
+          { qty: 2, unit: "cas", name: "huile d’olive", step: 0.5 },
+          { qty: 600, unit: "g", name: "bœuf haché", note: "paleron, 15 % de matières grasses", step: 50 },
+          { qty: 15, unit: "cl", name: "vin blanc sec", step: 1 },
+          { qty: 2, unit: "cas", name: "concentré de tomate", step: 0.5 },
+          { qty: 400, unit: "g", name: "coulis de tomate", note: "passata nature", step: 10 },
+          { qty: 20, unit: "cl", name: "lait entier", step: 1 },
+          { name: "sel et poivre du moulin" },
+        ],
+      },
+      {
+        title: "La béchamel",
+        items: [
+          { qty: 60, unit: "g", name: "beurre", step: 5 },
+          { qty: 60, unit: "g", name: "farine", step: 5 },
+          { qty: 100, unit: "cl", name: "lait entier", note: "froid", step: 5 },
+          { qty: 1, unit: "pincee", name: "noix de muscade", note: "râpée", step: 1 },
+          { qty: 0.5, unit: "cac", name: "sel fin", step: 0.5 },
+        ],
+      },
+      {
+        title: "Le montage",
+        items: [
+          { qty: 20, unit: "g", name: "beurre", note: "pour le plat et le dessus", step: 5 },
+          {
+            qty: 400,
+            unit: "g",
+            name: "feuilles de lasagne fraîches",
+            note: "aux œufs, au rayon frais, de quoi faire 4 couches",
+            step: 50,
+          },
+          { qty: 100, unit: "g", name: "parmigiano reggiano", note: "râpé finement", step: 10 },
+        ],
+      },
+    ],
+    method: [
+      {
+        title: "Le ragù rapide",
+        steps: [
+          {
+            title: "Hacher le soffritto",
+            text: "Épluchez l’oignon et la carotte, effilez le céleri, puis hachez les trois très finement, en dés de 2 mm : plus ils sont petits, plus vite ils fondent dans un ragù court. Un robot fait l’affaire, par petites impulsions.",
+          },
+          {
+            title: "Faire suer les légumes",
+            text: "Dans la cocotte, sur feu moyen, faites revenir la pancetta dans l’huile 3 minutes, jusqu’à ce que son gras devienne translucide. Ajoutez les légumes hachés et laissez-les suer 7 minutes en remuant souvent : ils ramollissent et brillent, sans prendre de couleur.",
+            timer: { minutes: 10, label: "Pancetta et légumes" },
+          },
+          {
+            title: "Saisir la viande",
+            text: "Montez sur feu vif et ajoutez le bœuf par petits morceaux. Écrasez-le à la spatule et laissez-le cuire 8 à 10 minutes : il rend d’abord son eau, puis grésille et dore franchement par endroits. Ne coupez pas court : dans un ragù rapide, c’est ce brunissement qui apporte le goût.",
+            timer: { minutes: 9, label: "Viande" },
+            tip: "Si votre cocotte fait moins de 24 cm, saisissez la viande en deux fois. Trop serrée, elle bout dans son jus et reste grise.",
+          },
+          {
+            title: "Déglacer au vin",
+            text: "Versez le vin blanc, grattez le fond pour décoller les sucs et laissez bouillir 3 minutes, jusqu’à ce que l’odeur d’alcool ait disparu. Ajoutez le concentré de tomate et remuez encore 1 minute.",
+            timer: { minutes: 4, label: "Vin et concentré" },
+          },
+          {
+            title: "Mijoter 45 minutes",
+            text: "Ajoutez le coulis, le lait, une pincée de sel et du poivre. Portez à frémissement, puis laissez cuire 45 minutes à feu doux, à découvert, en remuant de temps en temps. Le ragù est prêt quand il a réduit d’un tiers, que la cuillère laisse un sillon et que le gras brille en surface. S’il attache, ajoutez quelques cuillerées d’eau.",
+            timer: { minutes: 45, label: "Mijotage du ragù" },
+          },
+        ],
+      },
+      {
+        title: "La béchamel",
+        steps: [
+          {
+            title: "Préparer la béchamel",
+            text: "Pendant que le ragù mijote, préchauffez le four à 180 °C, chaleur statique. Dans la casserole, faites fondre le beurre sur feu moyen, ajoutez la farine et fouettez 2 minutes : le mélange mousse sans colorer. Versez le lait froid d’un coup en fouettant, portez à ébullition sans cesser de fouetter, puis laissez cuire 5 minutes. Elle doit napper la cuillère. Salez, ajoutez la muscade.",
+            timer: { minutes: 7, label: "Béchamel" },
+          },
+        ],
+      },
+      {
+        title: "Le montage et la cuisson",
+        steps: [
+          {
+            title: "Monter les couches",
+            text: "Beurrez le plat avec un peu des 20 g de beurre. Étalez une louche de béchamel au fond, puis répétez quatre fois : une couche de feuilles fraîches, crues, qui se chevauchent à peine, un quart du ragù chaud, une louche et demie de béchamel et 15 g de parmesan. Terminez par le reste de béchamel, les 40 g de parmesan restants et le reste du beurre en petits morceaux.",
+            tip: "Les feuilles doivent être entièrement couvertes de sauce, surtout dans les coins. Une feuille à l’air sèche et durcit au four.",
+          },
+          {
+            title: "Cuire au four",
+            text: "Enfournez à mi-hauteur pour 30 à 35 minutes. Les lasagnes sont cuites quand le dessus est doré avec des taches plus brunes, que les bords bouillonnent et qu’une lame s’enfonce sans résistance. Si le dessus colore trop vite, couvrez d’une feuille d’aluminium.",
+            timer: { minutes: 30, label: "Cuisson au four" },
+          },
+          {
+            title: "Laisser reposer",
+            text: "Sortez le plat et attendez 15 minutes avant de couper. Les couches se tiennent, et les parts sortent nettes au lieu de s’effondrer dans l’assiette.",
+            timer: { minutes: 15, label: "Repos" },
+          },
+        ],
+      },
+    ],
+  },
   faq: [
     {
       q: "Faut-il précuire les feuilles de lasagne ?",

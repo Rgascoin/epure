@@ -144,6 +144,8 @@ export interface RecipeContent {
   variations: { title: string; text: string }[];
   storage: string;
   pairing?: string;
+  /** Optional shortcut version (docs/guide-redaction-recettes.md, « Version facile »). */
+  easy?: EasyVersion;
   faq: { q: string; a: string }[];
   nutrition: Nutrition;
   /**
@@ -158,6 +160,20 @@ export interface RecipeContent {
   };
   datePublished: string;
   dateModified: string;
+}
+
+/**
+ * The « version facile »: the same dish with a ready-made shortcut (bought
+ * pizza dough, pastry, stock…). Shown with a switch above the ingredients.
+ */
+export interface EasyVersion {
+  /** What you buy ready-made, lowercase, e.g. « pâte à pizza du commerce » (≤ 60 characters). */
+  shortcut: string;
+  /** What changes, honestly: time saved, what you lose, what to buy (60–320 characters). */
+  note: string;
+  times: { prep: number; cook: number; rest?: number };
+  ingredients: IngredientGroup[];
+  method: MethodSection[];
 }
 
 /** What a recipe file declares (content/recipes/<slug>/index.ts). */

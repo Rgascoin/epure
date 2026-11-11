@@ -13,11 +13,10 @@ import { categoryOf } from "@/lib/recipes";
 import { formatDuration, fr } from "@/lib/format";
 import { breadcrumb, graph, organization, recipeList, webPage, website } from "@/lib/schema";
 import { absoluteUrl } from "@/lib/site";
-import { recipeHaystack } from "@/lib/search";
 import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
-import { RecipeCard } from "@/components/recipe-card";
 import { RecipeBrowser } from "@/components/recipe-browser";
+import { browsable } from "@/components/browsable";
 import { PhotoStrip } from "@/components/photo-strip";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ArrowRight } from "@/components/icons";
@@ -138,16 +137,7 @@ export default async function CollectionPage({ params }: PageProps<"/collections
         <RecipeBrowser
           categories={[{ slug: "collection", label: collection.title, href: path }]}
           placeholder={`Chercher dans « ${collection.title} »…`}
-          items={list.map((r) => ({
-            slug: r.slug,
-            title: r.title,
-            category: "collection",
-            haystack: recipeHaystack(r, categoryOf(r).label),
-            vegetarian: Boolean(r.diet?.includes("vegetarian") || r.diet?.includes("vegan")),
-            quick: r.totalMinutes < 60,
-            easy: r.difficulty === "Facile",
-            node: <RecipeCard recipe={r} />,
-          }))}
+          items={list.map((r) => browsable(r, "collection"))}
         />
       </section>
 

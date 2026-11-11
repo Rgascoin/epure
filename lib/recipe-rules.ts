@@ -99,6 +99,66 @@ export function durationsIn(text: string): Array<[number, number]> {
   return out;
 }
 
+type Report = (cond: boolean, msg: string) => unknown;
+
+function checkIngredients(groups: Recipe["ingredients"], prefix: string, err: Report, warn: Report) {
+  err(groups.length >= 1, `${prefix}ingredients : au moins un groupe`);
+  const allItems = groups.flatMap((g) => g.items);
+  err(allItems.length >= 3, `${prefix}ingredients : au moins 3 ingrédients`);
+  if (groups.length > 1)
+    err(
+      groups.every((g) => !!g.title),
+      `${prefix}ingredients : avec plusieurs groupes, chaque groupe a un titre`,
+    );
+  allItems.forEach((it) => {
+    err(
+      it.name.charAt(0) === it.name.charAt(0).toLowerCase(),
+      `${prefix}ingrédient « ${it.name} » : commence par une minuscule`,
+    );
+    if (it.qty !== undefined) err(it.qty > 0, `${prefix}ingrédient « ${it.name} » : quantité > 0`);
+    if (it.qty !== undefined && !it.unit && !it.fixed && it.qty > 0)
+      warn(
+        !!it.plural || it.qty <= 1 || /s$|x$/.test(it.name),
+        `${prefix}ingrédient compté « ${it.name} » : ajoutez plural`,
+      );
+  });
+}
+
+function checkMethod(method: Recipe["method"], prefix: string, min: number, max: number, err: Report, warn: Report) {
+  const steps = method.flatMap((s) => s.steps);
+  err(
+    steps.length >= min && steps.length <= max,
+    `${prefix}method : ${min} à ${max} étapes (actuel : ${steps.length})`,
+  );
+  if (method.length > 1)
+    err(
+      method.every((s) => s.steps.length >= 1),
+      `${prefix}method : aucune section vide`,
+    );
+  steps.forEach((st, i) => {
+    const where = `${prefix}étape ${i + 1}`;
+    err(words(st.title) <= 5, `${where} : titre de 5 mots maximum (« ${st.title} »)`);
+    err(words(st.text) <= 85, `${where} : 85 mots maximum (actuel : ${words(st.text)})`);
+    if (st.timer) {
+      err(st.timer.minutes > 0, `${where} : minuteur > 0`);
+      err(st.timer.label.length <= 32, `${where} : libellé de minuteur de 32 caractères maximum`);
+      const ranges = durationsIn(st.text);
+      const m = st.timer.minutes;
+      const sumMax = ranges.reduce((t, [, b]) => t + b, 0);
+      const sumMin = ranges.reduce((t, [a]) => t + a, 0);
+      err(
+        ranges.some(([a, b]) => m >= a && m <= b) || (ranges.length > 1 && m >= sumMin && m <= sumMax),
+        `${where} : le texte doit annoncer la durée du minuteur (${m} min)`,
+      );
+    } else {
+      warn(
+        durationsIn(st.text).every(([, b]) => b < 1),
+        `${where} : une durée est citée sans minuteur`,
+      );
+    }
+  });
+}
+
 /** Every human-readable string of a recipe, with its location for messages. */
 function proseFields(r: Recipe): Array<[string, string]> {
   const out: Array<[string, string]> = [
@@ -136,6 +196,28 @@ function proseFields(r: Recipe): Array<[string, string]> {
     ["annotations.detail", r.annotations.detail],
     ["images.heroAlt", r.images.heroAlt],
     ["images.detailAlt", r.images.detailAlt],
+    ...(r.easy
+      ? [
+          ["easy.shortcut", r.easy.shortcut] as [string, string],
+          ["easy.note", r.easy.note] as [string, string],
+          ...r.easy.ingredients.flatMap((g, gi) => [
+            ...(g.title ? [[`easy.ingredients[${gi}].title`, g.title] as [string, string]] : []),
+            ...g.items.flatMap((it, ii) => [
+              [`easy.ingredients[${gi}][${ii}].name`, it.name] as [string, string],
+              ...(it.note ? [[`easy.ingredients[${gi}][${ii}].note`, it.note] as [string, string]] : []),
+            ]),
+          ]),
+          ...r.easy.method.flatMap((sec, si) => [
+            [`easy.method[${si}].title`, sec.title] as [string, string],
+            ...sec.steps.flatMap((st, i) => [
+              [`easy step ${si}.${i} title`, st.title] as [string, string],
+              [`easy step ${si}.${i} text`, st.text] as [string, string],
+              ...(st.tip ? [[`easy step ${si}.${i} tip`, st.tip] as [string, string]] : []),
+              ...(st.timer ? [[`easy step ${si}.${i} timer`, st.timer.label] as [string, string]] : []),
+            ]),
+          ]),
+        ]
+      : []),
   ];
   return out;
 }
@@ -189,53 +271,30 @@ export function auditRecipe(r: Recipe): { errors: string[]; warnings: string[] }
   err(Number.isInteger(r.times.cook) && r.times.cook >= 0, "times.cook : minutes entières ≥ 0");
 
   /* Ingredients */
-  err(r.ingredients.length >= 1, "ingredients : au moins un groupe");
-  const allItems = r.ingredients.flatMap((g) => g.items);
-  err(allItems.length >= 3, "ingredients : au moins 3 ingrédients");
-  if (r.ingredients.length > 1)
-    err(
-      r.ingredients.every((g) => !!g.title),
-      "ingredients : avec plusieurs groupes, chaque groupe a un titre",
-    );
-  allItems.forEach((it) => {
-    err(
-      it.name.charAt(0) === it.name.charAt(0).toLowerCase(),
-      `ingrédient « ${it.name} » : commence par une minuscule`,
-    );
-    if (it.qty !== undefined) err(it.qty > 0, `ingrédient « ${it.name} » : quantité > 0`);
-    if (it.qty !== undefined && !it.unit && !it.fixed && it.qty > 0)
-      warn(!!it.plural || it.qty <= 1 || /s$|x$/.test(it.name), `ingrédient compté « ${it.name} » : ajoutez plural`);
-  });
+  checkIngredients(r.ingredients, "", err, warn);
 
   /* Method */
-  const steps = r.method.flatMap((s) => s.steps);
-  err(steps.length >= 4 && steps.length <= 14, `method : 4 à 14 étapes (actuel : ${steps.length})`);
-  if (r.method.length > 1)
+  checkMethod(r.method, "", 4, 14, err, warn);
+
+  /* Version facile */
+  if (r.easy) {
+    const e = r.easy;
+    err(e.shortcut.length > 0 && e.shortcut.length <= 60, "easy.shortcut : 1 à 60 caractères");
     err(
-      r.method.every((s) => s.steps.length >= 1),
-      "method : aucune section vide",
+      e.shortcut.charAt(0) === e.shortcut.charAt(0).toLowerCase(),
+      "easy.shortcut : commence par une minuscule (« pâte à pizza du commerce »)",
     );
-  steps.forEach((st, i) => {
-    err(words(st.title) <= 5, `étape ${i + 1} : titre de 5 mots maximum (« ${st.title} »)`);
-    err(words(st.text) <= 85, `étape ${i + 1} : 85 mots maximum (actuel : ${words(st.text)})`);
-    if (st.timer) {
-      err(st.timer.minutes > 0, `étape ${i + 1} : minuteur > 0`);
-      err(st.timer.label.length <= 32, `étape ${i + 1} : libellé de minuteur de 32 caractères maximum`);
-      const ranges = durationsIn(st.text);
-      const m = st.timer.minutes;
-      const sumMax = ranges.reduce((t, [, b]) => t + b, 0);
-      const sumMin = ranges.reduce((t, [a]) => t + a, 0);
-      err(
-        ranges.some(([a, b]) => m >= a && m <= b) || (ranges.length > 1 && m >= sumMin && m <= sumMax),
-        `étape ${i + 1} : le texte doit annoncer la durée du minuteur (${m} min)`,
-      );
-    } else {
-      warn(
-        durationsIn(st.text).every(([, b]) => b < 1),
-        `étape ${i + 1} : une durée est citée sans minuteur`,
-      );
-    }
-  });
+    err(e.note.length >= 60 && e.note.length <= 320, `easy.note : 60 à 320 caractères (actuel : ${e.note.length})`);
+    err(e.times.prep > 0 && Number.isInteger(e.times.prep), "easy.times.prep : minutes entières > 0");
+    err(Number.isInteger(e.times.cook) && e.times.cook >= 0, "easy.times.cook : minutes entières ≥ 0");
+    const easyTotal = e.times.prep + e.times.cook + (e.times.rest ?? 0);
+    err(
+      easyTotal < r.totalMinutes,
+      `easy : doit être plus courte que la recette complète (${easyTotal} ≥ ${r.totalMinutes} min)`,
+    );
+    checkIngredients(e.ingredients, "easy.", err, warn);
+    checkMethod(e.method, "easy.", 2, 10, err, warn);
+  }
 
   /* Editorial blocks */
   err(r.science.length >= 2 && r.science.length <= 4, `science : 2 à 4 explications (actuel : ${r.science.length})`);
@@ -319,6 +378,11 @@ export function auditRecipe(r: Recipe): { errors: string[]; warnings: string[] }
     "dates au format AAAA-MM-JJ",
   );
   err(r.dateModified >= r.datePublished, "dateModified postérieure ou égale à datePublished");
+  {
+    // A day of tolerance for time zones (builds run in UTC, writers in Paris).
+    const tomorrow = new Date(Date.now() + 86_400_000).toISOString().slice(0, 10);
+    err(r.dateModified <= tomorrow, `dateModified dans le futur (${r.dateModified})`);
+  }
 
   /* Typography & voice, on every human-readable string */
   for (const [where, text] of proseFields(r)) {

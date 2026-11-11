@@ -191,6 +191,104 @@ export default defineRecipe({
   storage:
     "La tarte se mange de préférence le jour même ; au réfrigérateur, elle tient jusqu’au lendemain, mais la pâte ramollit. Séparément, le fond cuit se garde 2 jours dans une boîte hermétique et la crème pâtissière 24 heures au frais, filmée au contact. Ne congelez pas la tarte garnie.",
   pairing: "Un crémant de Loire ou un thé vert jasmin, servi léger.",
+  easy: {
+    shortcut: "pâte sablée pur beurre du commerce",
+    note: "Une pâte sablée en rouleau, et une crème pâtissière refroidie en couche fine au congélateur plutôt que 2 heures au frigo : la tarte est prête en 1 h 30 au lieu de 3 heures. La pâte est plus fine et moins friable que la maison ; prenez-la pur beurre. La crème, elle, ne change pas.",
+    times: { prep: 30, cook: 30, rest: 30 },
+    ingredients: [
+      {
+        title: "Fond de tarte",
+        items: [
+          {
+            qty: 1,
+            unit: "rouleau",
+            name: "pâte sablée pur beurre",
+            note: "ronde, du commerce, environ 230 g",
+            step: 1,
+          },
+          { qty: 10, unit: "g", name: "beurre mou", note: "pour le moule", step: 5, fixed: true },
+        ],
+      },
+      {
+        title: "Crème pâtissière",
+        items: [
+          { qty: 400, unit: "ml", name: "lait entier", step: 10 },
+          { qty: 1, unit: "gousse", name: "vanille", note: "fendue et grattée", step: 1 },
+          { qty: 4, name: "jaune d’œuf", plural: "jaunes d’œufs", step: 1 },
+          { qty: 80, unit: "g", name: "sucre en poudre", step: 5 },
+          { qty: 35, unit: "g", name: "fécule de maïs", step: 5 },
+          { qty: 20, unit: "g", name: "beurre doux", step: 5 },
+        ],
+      },
+      {
+        title: "Garniture",
+        items: [
+          { qty: 600, unit: "g", name: "fraises", note: "gariguette, ciflorette ou mara des bois", step: 50 },
+          { qty: 3, unit: "cas", name: "gelée de groseille", step: 1, optional: true },
+          { qty: 1, unit: "cas", name: "eau", step: 1, optional: true },
+        ],
+      },
+    ],
+    method: [
+      {
+        title: "La crème pâtissière",
+        steps: [
+          {
+            title: "Chauffer le lait",
+            text: "Préchauffez le four à 170 °C, chaleur tournante. Mettez le lait, les graines de vanille et la gousse grattée dans une casserole et portez à frémissement.",
+          },
+          {
+            title: "Fouetter les jaunes",
+            text: "Dans un saladier, fouettez les jaunes avec le sucre, puis ajoutez la fécule et fouettez jusqu’à ce que le mélange soit lisse. Retirez la gousse et versez le lait chaud en filet, sans cesser de fouetter. Reversez le tout dans la casserole.",
+          },
+          {
+            title: "Cuire la crème",
+            text: "Sur feu moyen, fouettez sans arrêt en raclant le fond et les bords. La crème épaissit d’un coup : continuez de fouetter et laissez-la bouillonner 1 minute. Hors du feu, incorporez le beurre.",
+            timer: { minutes: 1, label: "Ébullition de la crème" },
+            tip: "Cette minute de bouillon est indispensable : elle finit de gonfler l’amidon et détruit une enzyme du jaune qui, sinon, liquéfie la crème au réfrigérateur.",
+          },
+          {
+            title: "Refroidir vite",
+            text: "Étalez la crème sur 1 à 2 cm d’épaisseur dans un grand plat froid et filmez-la au contact. Mettez-la 30 minutes au congélateur, puis au réfrigérateur jusqu’au montage. En couche fine, elle refroidit bien plus vite qu’en saladier ; au moment de garnir, elle doit être froide au toucher.",
+            timer: { minutes: 30, label: "Crème au congélateur" },
+          },
+        ],
+      },
+      {
+        title: "Le fond de tarte",
+        steps: [
+          {
+            title: "Foncer le moule",
+            text: "Pendant ce temps, beurrez le moule. Déroulez la pâte et foncez le moule en appuyant bien dans les angles. Coupez l’excédent et piquez le fond à la fourchette. Mettez le moule 15 minutes au congélateur.",
+            timer: { minutes: 15, label: "Pâte au congélateur" },
+          },
+          {
+            title: "Cuire à blanc",
+            text: "Couvrez la pâte de papier sulfurisé, remplissez de billes de cuisson et enfournez 15 minutes. Retirez papier et billes, puis prolongez de 5 à 8 minutes, jusqu’à ce que le fond soit sec et doré de façon uniforme. Plus fine que la pâte maison, elle colore vite : surveillez la fin. Laissez-le refroidir complètement sur une grille.",
+            timer: { minutes: 20, label: "Cuisson à blanc" },
+            tip: "Visez un fond doré, pas blond : sous la crème, une pâte pâle ramollit vite.",
+          },
+        ],
+      },
+      {
+        title: "Le montage",
+        steps: [
+          {
+            title: "Préparer les fraises",
+            text: "Rincez rapidement les fraises entières, avec leur queue, et séchez-les sur un torchon. Équeutez-les ensuite et coupez-les en deux dans la hauteur.",
+          },
+          {
+            title: "Garnir la tarte",
+            text: "Fouettez la crème froide quelques secondes pour la lisser. Étalez-la dans le fond refroidi, ou dressez-la à la poche à douille. Rangez les fraises en cercles serrés en partant du bord, la face coupée vers l’extérieur, et finissez par une fraise entière au centre.",
+          },
+          {
+            title: "Napper, si vous voulez",
+            text: "Faites fondre la gelée de groseille avec l’eau à feu doux, jusqu’à ce qu’elle soit fluide, et passez-la au pinceau sur les fraises. Servez sans trop attendre, tant que la pâte croque.",
+          },
+        ],
+      },
+    ],
+  },
   faq: [
     {
       q: "Quelle est la saison des fraises pour une tarte ?",

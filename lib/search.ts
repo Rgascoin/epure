@@ -31,6 +31,7 @@ export function recipeHaystack(r: Recipe, categoryLabel: string): string {
       categoryLabel,
       ...r.keywords,
       ...(r.tags ?? []).map((t) => TAGS[t]),
+      ...(r.easy ? ["version facile", "rapide", r.easy.shortcut] : []),
       ...r.ingredients.flatMap((g) => g.items.flatMap((i) => [i.name, i.plural ?? ""])),
     ].join(" · "),
   );

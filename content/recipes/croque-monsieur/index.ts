@@ -149,6 +149,74 @@ export default defineRecipe({
   storage:
     "Ils se mangent chauds, à la sortie du four. Cuits, ils se gardent 2 jours au réfrigérateur dans une boîte fermée ; réchauffez-les 8 à 10 minutes au four à 180 °C, jusqu’à ce qu’ils soient chauds à cœur. Au micro-ondes, ils ramollissent.",
   pairing: "Un rouge léger servi frais, un beaujolais ou un gamay de Touraine, ou une bière blonde.",
+  easy: {
+    shortcut: "crème fraîche épaisse à la place de la béchamel",
+    note: "De la crème épaisse mêlée à un peu de comté remplace la béchamel : ni casserole ni attente, 22 minutes au lieu de 35. Le croque est plus riche, un peu acidulé, et la crème coule davantage à la cuisson. Prenez-la entière et bien épaisse, jamais liquide ni allégée.",
+    times: { prep: 10, cook: 12 },
+    ingredients: [
+      {
+        title: "La crème au fromage",
+        items: [
+          { qty: 120, unit: "g", name: "crème fraîche épaisse", note: "entière", step: 10 },
+          { qty: 40, unit: "g", name: "comté", note: "ou gruyère, râpé", step: 10 },
+          { qty: 1, unit: "pincee", name: "noix de muscade", note: "râpée", step: 1 },
+          { name: "poivre du moulin" },
+        ],
+      },
+      {
+        title: "Les croques",
+        items: [
+          { qty: 40, unit: "g", name: "beurre doux", note: "mou, pour l’extérieur", step: 5 },
+          { qty: 8, unit: "tranche", name: "pain de mie", note: "grandes tranches", step: 2 },
+          { qty: 80, unit: "g", name: "comté", note: "ou gruyère, râpé", step: 10 },
+          { qty: 4, unit: "tranche", name: "jambon blanc", note: "à la coupe, en tranches fines", step: 1 },
+        ],
+      },
+      {
+        title: "Pour servir",
+        items: [{ name: "salade verte", note: "assaisonnée", optional: true }],
+      },
+    ],
+    method: [
+      {
+        title: "La crème au fromage",
+        steps: [
+          {
+            title: "Préparer la crème",
+            text: "Préchauffez le four à 220 °C, chaleur statique. Dans un bol, mélangez la crème fraîche avec 40 g de comté, la muscade et quelques tours de poivre. Ne salez pas : le jambon et le fromage s’en chargent. Le mélange doit rester épais et se tenir sur la cuillère.",
+          },
+        ],
+      },
+      {
+        title: "Le montage",
+        steps: [
+          {
+            title: "Beurrer le pain",
+            text: "Beurrez une face de chaque tranche de pain de mie avec les 40 g de beurre mou, jusqu’aux bords. Posez 4 tranches sur la plaque couverte de papier cuisson, face beurrée dessous.",
+          },
+          {
+            title: "Garnir les croques",
+            text: "Étalez la moitié de la crème sur les 4 tranches posées, en vous arrêtant à 1 cm des bords. Ajoutez 40 g de fromage, une tranche de jambon pliée au format du pain, puis le reste du fromage. Tartinez le reste de crème sur la face nue des 4 autres tranches et refermez les croques, beurre vers le haut.",
+            tip: "Gardez bien cette marge : en chauffant, la crème devient plus fluide qu’une béchamel et file sur la plaque si elle touche le bord.",
+          },
+        ],
+      },
+      {
+        title: "La cuisson",
+        steps: [
+          {
+            title: "Dorer au four",
+            text: "Enfournez à mi-hauteur pour 8 minutes : le dessus commence à dorer. Retournez les croques avec une spatule large et prolongez 4 à 5 minutes, jusqu’à ce que les deux faces soient bien dorées et que le fromage file sur les côtés.",
+            timer: { minutes: 12, label: "Cuisson des croques" },
+          },
+          {
+            title: "Servir aussitôt",
+            text: "Coupez les croques en deux en diagonale et servez-les tout de suite, avec une salade verte si vous en avez envie.",
+          },
+        ],
+      },
+    ],
+  },
   faq: [
     {
       q: "Quelle est la différence entre un croque-monsieur et un croque-madame ?",

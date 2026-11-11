@@ -10,7 +10,7 @@ import { breadcrumb, faqSchema, graph, organization, recipeSchema, webPage, webs
 import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
 import { Polaroid, RecipeHeroArch } from "@/components/recipe/recipe-hero";
-import { RecipeInteractive } from "@/components/recipe/recipe-interactive";
+import { EasyVersionLink, RecipeInteractive } from "@/components/recipe/recipe-interactive";
 import { ShareActions } from "@/components/recipe/share-actions";
 import {
   Byline,
@@ -199,6 +199,11 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
               <a href="#recette" className="btn btn-accent">
                 Aller à la recette
               </a>
+              {recipe.easy && (
+                <EasyVersionLink
+                  minutes={recipe.easy.times.prep + recipe.easy.times.cook + (recipe.easy.times.rest ?? 0)}
+                />
+              )}
               <ShareActions
                 title={recipe.seoTitle}
                 text={recipe.description}
@@ -264,6 +269,8 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
         {/* ---------------------------------------------------------------- */}
         <div className="mt-[clamp(4rem,12vh,8rem)] scroll-mt-[calc(var(--header-h)+1rem)]">
           <RecipeInteractive
+            easy={recipe.easy}
+            totalMinutes={recipe.totalMinutes}
             slug={recipe.slug}
             title={recipe.title}
             servings={recipe.servings}

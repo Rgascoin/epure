@@ -186,6 +186,71 @@ export default defineRecipe({
   storage:
     "Les pâtons se gardent 48 heures au frigo, ou 1 mois au congélateur, chacun dans un sac huilé. Les pizzas cuites se gardent 2 jours au réfrigérateur, emballées ; réchauffez-les à la poêle, couvercle posé, jusqu’à ce que le fromage refonde.",
   pairing: "Un rouge léger servi un peu frais, un lambrusco sec ou un gamay, ou une bière blonde.",
+  easy: {
+    shortcut: "pâte à pizza fraîche du commerce",
+    note: "Une boule de pâte achetée chez un boulanger ou une pizzeria fait mieux que les pâtes en rouleau, plus fines et plus sèches. On perd le goût de la longue fermentation, on gagne une journée : les pizzas sont prêtes en 1 h 30, sans pierre à pizza.",
+    times: { prep: 20, cook: 40, rest: 30 },
+    ingredients: [
+      {
+        title: "La pâte",
+        items: [
+          {
+            qty: 1000,
+            unit: "g",
+            name: "pâte à pizza fraîche",
+            note: "4 boules de 250 g, ou 4 pâtes déjà étalées",
+            step: 250,
+          },
+          { qty: 30, unit: "g", name: "semoule fine de blé dur", note: "pour étaler", step: 5 },
+        ],
+      },
+      {
+        title: "Garniture",
+        items: [
+          { qty: 500, unit: "g", name: "mozzarella", note: "fior di latte, 4 boules de 125 g", step: 25 },
+          { qty: 400, unit: "g", name: "tomates pelées en conserve", note: "entières", step: 20 },
+          { qty: 1, unit: "pincee", name: "sel fin", step: 1 },
+          { qty: 16, unit: "feuille", name: "basilic", step: 1 },
+          { qty: 4, unit: "cas", name: "huile d’olive vierge extra", step: 1 },
+        ],
+      },
+    ],
+    method: [
+      {
+        title: "Les pizzas",
+        steps: [
+          {
+            title: "Tempérer la pâte",
+            text: "Sortez la pâte du réfrigérateur 30 minutes avant de l’étaler, dans son emballage. Froide, elle se rétracte dès qu’on l’étire.",
+            timer: { minutes: 30, label: "Pâte à température" },
+          },
+          {
+            title: "Préchauffer le four",
+            text: "En même temps, glissez une plaque de cuisson retournée sur la grille du bas et préchauffez le four à fond, 250 à 275 °C, pendant 30 minutes. La plaque brûlante remplace la pierre.",
+            timer: { minutes: 30, label: "Préchauffage" },
+          },
+          {
+            title: "Préparer la garniture",
+            text: "Égouttez la mozzarella et coupez-la en morceaux de 2 cm. Écrasez les tomates à la main dans un bol avec le sel, sans les cuire.",
+          },
+          {
+            title: "Étaler la pâte",
+            text: "Posez une boule sur une feuille de papier cuisson saupoudrée de semoule. Aplatissez-la du bout des doigts en partant du centre, sans toucher au bord, jusqu’à 28 cm environ. Une pâte déjà étalée reste sur son papier.",
+          },
+          {
+            title: "Garnir et cuire",
+            text: "Étalez 3 cuillerées de tomate en laissant 1 cm de bord, ajoutez le quart de la mozzarella. Faites glisser la pizza sur la plaque chaude avec son papier et cuisez 7 à 9 minutes, jusqu’à ce que le bord dore et que le fromage bouillonne.",
+            timer: { minutes: 8, label: "Cuisson de la pizza" },
+          },
+          {
+            title: "Finir et enchaîner",
+            text: "À la sortie du four, ajoutez quatre feuilles de basilic et un filet d’huile d’olive. Laissez la plaque reprendre sa chaleur 5 minutes avant la pizza suivante.",
+            timer: { minutes: 5, label: "La plaque reprend sa chaleur" },
+          },
+        ],
+      },
+    ],
+  },
   faq: [
     {
       q: "Quelle farine pour une pâte à pizza ?",

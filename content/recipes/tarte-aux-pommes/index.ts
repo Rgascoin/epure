@@ -203,6 +203,94 @@ export default defineRecipe({
   storage:
     "Elle se garde 2 jours à température ambiante sous une cloche, ou 3 jours au frigo (la pâte ramollit un peu). Dix minutes au four à 150 °C lui rendent son croustillant.",
   pairing: "Un cidre brut fermier bien frais, ou un petit verre de pommeau.",
+  easy: {
+    shortcut: "pâte brisée pur beurre et compote du commerce",
+    note: "La pâte en rouleau et la compote en pot font gagner près d’une heure : ni repos de la pâte, ni compote à cuire puis à refroidir. On perd la vanille et le goût franc d’une compote de boskoop. Prenez une pâte pur beurre et une compote sans sucre ajouté, assez épaisse pour se tenir à la cuillère.",
+    times: { prep: 25, cook: 60, rest: 45 },
+    ingredients: [
+      {
+        title: "Fond et compote",
+        items: [
+          {
+            qty: 1,
+            unit: "rouleau",
+            name: "pâte brisée pur beurre",
+            note: "ronde, du commerce, environ 230 g",
+            step: 1,
+          },
+          { qty: 400, unit: "g", name: "compote de pommes", note: "sans sucre ajouté, bien épaisse", step: 10 },
+        ],
+      },
+      {
+        title: "Rosace et nappage",
+        items: [
+          {
+            qty: 4,
+            name: "pomme ferme",
+            plural: "pommes fermes",
+            note: "golden, pink lady ou chantecler",
+            step: 1,
+          },
+          { qty: 0.5, name: "citron", plural: "citrons", note: "pour le jus", step: 0.5 },
+          { qty: 30, unit: "g", name: "beurre doux", note: "fondu", step: 5 },
+          { qty: 30, unit: "g", name: "sucre en poudre", step: 5 },
+          { qty: 3, unit: "cas", name: "confiture d’abricot", note: "ou gelée de pommes", step: 1 },
+          { qty: 1, unit: "cas", name: "eau", step: 1 },
+        ],
+      },
+    ],
+    method: [
+      {
+        title: "Le fond de tarte",
+        steps: [
+          {
+            title: "Foncer le moule",
+            text: "Allumez le four à 190 °C. Déroulez la pâte et posez-la dans le moule beurré, en appuyant bien dans les angles. Coupez l’excédent, piquez le fond à la fourchette et mettez le moule 15 minutes au congélateur.",
+            timer: { minutes: 15, label: "Passage au congélateur" },
+          },
+          {
+            title: "Précuire à blanc",
+            text: "Couvrez la pâte de papier sulfurisé, remplissez de billes de cuisson (ou de haricots secs) et enfournez 15 minutes. Retirez papier et billes, et laissez encore 5 minutes, jusqu’à ce que le fond soit sec et à peine blond.",
+            timer: { minutes: 20, label: "Cuisson à blanc" },
+            tip: "Même avec une pâte du commerce, ne sautez pas cette étape : sans elle, la compote détrempe le fond et il reste pâle.",
+          },
+        ],
+      },
+      {
+        title: "Le montage",
+        steps: [
+          {
+            title: "Trancher les pommes",
+            text: "Pendant la cuisson à blanc, épluchez les pommes fermes, coupez-les en deux et retirez le cœur. Taillez-les en lamelles de 2 mm et arrosez-les de jus de citron au fur et à mesure.",
+          },
+          {
+            title: "Former la rosace",
+            text: "Baissez le four à 180 °C. Étalez la compote sur le fond de tarte, en couche régulière. Posez les lamelles en cercles serrés, de l’extérieur vers le centre, chacune recouvrant la précédente aux trois quarts. Pour le cœur, roulez quelques petites lamelles en fleur.",
+            tip: "Serrez plus que vous ne le pensez : les pommes se rétractent en cuisant, et une rosace lâche laisse voir la compote.",
+          },
+        ],
+      },
+      {
+        title: "La cuisson",
+        steps: [
+          {
+            title: "Beurrer et cuire",
+            text: "Badigeonnez les pommes de beurre fondu et saupoudrez de sucre. Enfournez 35 à 40 minutes, jusqu’à ce que le bord des lamelles dore et que la pâte soit bien blonde.",
+            timer: { minutes: 40, label: "Cuisson de la tarte" },
+          },
+          {
+            title: "Napper",
+            text: "Faites chauffer la confiture avec l’eau, passez-la au tamis, puis badigeonnez la tarte encore chaude au pinceau, en tapotant doucement pour ne pas déranger les pommes.",
+          },
+          {
+            title: "Laisser tiédir",
+            text: "Laissez-la tiédir 30 minutes sur une grille avant de la démouler. Si vous la coupez brûlante, la compote coule.",
+            timer: { minutes: 30, label: "Refroidissement" },
+          },
+        ],
+      },
+    ],
+  },
   faq: [
     {
       q: "Quelles pommes choisir pour une tarte aux pommes ?",
@@ -258,7 +346,7 @@ export default defineRecipe({
     },
   },
   datePublished: "2026-10-23",
-  dateModified: "2026-11-10",
+  dateModified: "2026-11-11",
   featured: true,
   hero,
   detail,
