@@ -48,7 +48,7 @@ export function website(): WebSite {
     "@id": WEBSITE_ID,
     url: absoluteUrl("/"),
     name: site.name,
-    alternateName: "Épure — recettes",
+    alternateName: "Épure, carnet de recettes",
     description: site.description,
     inLanguage: "fr-FR",
     publisher: { "@id": ORG_ID },

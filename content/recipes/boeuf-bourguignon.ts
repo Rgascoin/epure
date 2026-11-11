@@ -3,16 +3,16 @@ import type { RecipeContent } from "@/lib/types";
 export const content: RecipeContent = {
   slug: "boeuf-bourguignon",
   title: "Bœuf bourguignon",
-  seoTitle: "Bœuf bourguignon : la recette traditionnelle au four",
-  tagline: "Le temps fait le reste.",
+  seoTitle: "Bœuf bourguignon en cocotte, cuit doucement au four",
+  tagline: "À lancer le dimanche matin.",
   description:
-    "Le bœuf bourguignon traditionnel : paleron mijoté 3 h au four à 150 °C dans le pinot noir, avec lardons, champignons et oignons glacés. Les gestes pas à pas.",
+    "Le bœuf bourguignon comme on l’aime : du paleron qui mijote 3 h au four à 150 °C dans un pinot noir, puis lardons, champignons et petits oignons glacés.",
   summary:
-    "Pour un bœuf bourguignon pour 6, saisissez 1,5 kg de paleron en cubes, singez-le de farine, mouillez avec 75 cl de pinot noir et 30 cl de bouillon, puis laissez cuire 3 h au four à 150 °C en cocotte fermée. Ajoutez en fin de cuisson les lardons, les champignons et les petits oignons glacés : comptez un peu plus de 4 h au total, dont 40 minutes de travail.",
+    "Pour six personnes, faites dorer 1,5 kg de paleron en cubes, saupoudrez de farine, mouillez avec 75 cl de pinot noir et 30 cl de bouillon, puis laissez cuire 3 h au four à 150 °C, cocotte fermée. Les lardons, les champignons et les petits oignons glacés se préparent à part et rejoignent la cocotte à la fin. Il faut un peu plus de 4 h en tout, mais seulement 40 minutes de vrai travail.",
   intro: [
-    "Le bœuf bourguignon ne demande pas de talent, il demande du temps. Trois heures à couvert, dans un four doux, transforment un morceau ferme et nerveux en une viande qui se défait à la cuillère, nappée d’une sauce sombre et brillante.",
-    "Tout se joue au début et à la fin : une coloration franche et patiente de la viande, puis une garniture préparée à part — lardons, champignons, petits oignons glacés — ajoutée au dernier moment pour garder sa tenue.",
-    "Préparez-le la veille si vous le pouvez : il n’en sera que meilleur.",
+    "Le bourguignon ne demande pas de talent particulier, il demande du temps. Trois heures dans un four doux, et un morceau ferme, plein de nerfs, finit par se défaire à la cuillère dans une sauce sombre qui brille.",
+    "Il y a deux moments où il faut être là. Au début, pour faire dorer la viande sans se presser, morceau par morceau. À la fin, pour la garniture : lardons, champignons et petits oignons cuisent à part et n’arrivent qu’au dernier moment, sinon ils se délitent dans la sauce.",
+    "Entre les deux, le four travaille et vous pouvez aller vous promener. Et s’il en reste, il sera encore meilleur le lendemain.",
   ],
   category: "Plat",
   cuisine: "Française",
@@ -92,8 +92,8 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Mariner la viande",
-          text: "Réunissez dans un saladier le bœuf, la carotte, l’oignon, l’ail et le bouquet garni, puis couvrez de vin. Filmez et laissez 12 heures au réfrigérateur. Le lendemain, égouttez la viande en conservant le vin et les aromates séparément.",
-          tip: "La marinade parfume surtout la surface de la viande : elle est pratique pour s’organiser, mais la longue cuisson fait l’essentiel.",
+          text: "Mettez dans un saladier le bœuf, la carotte, l’oignon, l’ail et le bouquet garni, puis versez le vin par-dessus. Filmez et oubliez au frigo pendant 12 heures. Le lendemain, égouttez la viande en gardant d’un côté le vin, de l’autre les aromates.",
+          tip: "Honnêtement, la marinade parfume surtout la surface de la viande. Elle aide à s’organiser la veille, mais c’est la longue cuisson qui fait le goût. Si vous n’avez pas le temps, sautez cette étape.",
         },
       ],
     },
@@ -102,23 +102,23 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Préchauffer et sécher",
-          text: "Préchauffez le four à 150 °C. Épongez soigneusement chaque morceau de viande au papier absorbant, puis salez-les.",
-          tip: "Une viande humide ne colore pas : elle bout. Séchez-la parfaitement, c’est la condition d’une belle croûte.",
+          text: "Allumez le four à 150 °C. Épongez chaque morceau de viande au papier absorbant, vraiment bien, puis salez.",
+          tip: "Une viande humide ne dore pas, elle bout dans son eau. Si elle sort de la marinade, prenez le temps de la sécher : c’est ce qui fera la croûte.",
         },
         {
           title: "Dorer la viande",
-          text: "Chauffez l’huile à feu vif dans la cocotte. Saisissez la viande en trois ou quatre fois, sans serrer les morceaux, 3 à 4 minutes par face, jusqu’à une croûte brun foncé. Réservez au fur et à mesure.",
+          text: "Faites chauffer l’huile à feu vif dans la cocotte. Saisissez la viande en trois ou quatre fois, sans tasser les morceaux, 3 à 4 minutes par face. Ça doit grésiller fort et prendre une croûte brun foncé. Réservez au fur et à mesure.",
           timer: { minutes: 15, label: "Coloration de la viande" },
         },
         {
           title: "Faire suer les aromates",
-          text: "Baissez le feu, ajoutez le beurre, la carotte et l’oignon, et faites-les suer 5 minutes en grattant le fond. Ajoutez l’ail et le concentré de tomate, et poursuivez 1 minute.",
+          text: "Baissez le feu, ajoutez le beurre, la carotte et l’oignon, et laissez-les suer 5 minutes en grattant le fond avec une cuillère en bois. Ajoutez l’ail et le concentré de tomate, et comptez encore 1 minute.",
           timer: { minutes: 6, label: "Aromates" },
         },
         {
-          title: "Singer et déglacer",
-          text: "Remettez la viande et son jus, saupoudrez de farine et mélangez 2 minutes pour la torréfier légèrement. Versez le vin, grattez les sucs au fond de la cocotte et laissez bouillir 2 minutes.",
-          timer: { minutes: 4, label: "Singer et réduire" },
+          title: "Fariner et déglacer",
+          text: "Remettez la viande avec son jus, saupoudrez de farine et remuez 2 minutes pour qu’elle torréfie un peu. Versez le vin, grattez bien les sucs collés au fond et laissez bouillir 2 minutes.",
+          timer: { minutes: 4, label: "Farine et vin" },
         },
       ],
     },
@@ -127,13 +127,13 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Mouiller et enfourner",
-          text: "Ajoutez le bouillon jusqu’à couvrir presque la viande, puis le bouquet garni et un tour de poivre. Portez à frémissement, couvrez et enfournez pour 3 heures.",
+          text: "Ajoutez du bouillon jusqu’à presque couvrir la viande, puis le bouquet garni et un tour de poivre. Portez à frémissement, couvrez et enfournez pour 3 heures.",
           timer: { minutes: 180, label: "Cuisson au four" },
-          tip: "Au four, la chaleur enveloppe la cocotte : la sauce frémit sans attacher, sans surveillance.",
+          tip: "Au four, la chaleur arrive de tous les côtés. La sauce frémit tranquillement et n’attache pas, vous n’avez pas besoin de la surveiller.",
         },
         {
           title: "Vérifier la cuisson",
-          text: "La viande est prête lorsqu’elle se défait sous la pression d’une cuillère. Si la sauce est trop liquide, retirez la viande et faites réduire la sauce à découvert sur le feu, jusqu’à ce qu’elle nappe la cuillère.",
+          text: "La viande est prête quand elle cède sous le dos d’une cuillère. Si la sauce vous semble trop liquide, sortez la viande et faites réduire la sauce à découvert sur le feu, jusqu’à ce qu’elle nappe la cuillère.",
           timer: { minutes: 10, label: "Réduction de la sauce" },
         },
       ],
@@ -143,17 +143,17 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Glacer les oignons",
-          text: "Pendant la dernière heure de cuisson, placez les oignons grelots dans une sauteuse avec 10 g de beurre, le sucre, une pincée de sel et de l’eau à mi-hauteur. Couvrez d’un disque de papier sulfurisé et cuisez jusqu’à évaporation complète, puis roulez-les dans le jus caramélisé.",
+          text: "Pendant la dernière heure, mettez les oignons grelots dans une sauteuse avec 10 g de beurre, le sucre, une pincée de sel et de l’eau à mi-hauteur. Couvrez d’un rond de papier sulfurisé et laissez cuire jusqu’à ce que l’eau ait disparu, puis roulez-les dans le jus qui caramélise.",
           timer: { minutes: 20, label: "Oignons glacés" },
         },
         {
           title: "Dorer lardons et champignons",
-          text: "Faites revenir les lardons à sec dans une poêle 5 minutes. Ajoutez 10 g de beurre et les champignons, et faites-les sauter à feu vif jusqu’à ce qu’ils soient bien dorés.",
+          text: "Faites revenir les lardons à sec dans une poêle pendant 5 minutes. Ajoutez 10 g de beurre et les champignons, et faites-les sauter à feu vif jusqu’à ce qu’ils soient bien dorés. S’ils rendent de l’eau, continuez : elle va s’évaporer.",
           timer: { minutes: 8, label: "Lardons et champignons" },
         },
         {
           title: "Assembler",
-          text: "Retirez le bouquet garni, ajoutez la garniture dans la cocotte et laissez mijoter 10 minutes ensemble. Rectifiez l’assaisonnement et parsemez de persil au moment de servir.",
+          text: "Retirez le bouquet garni, versez la garniture dans la cocotte et laissez mijoter le tout 10 minutes. Goûtez, rectifiez le sel et le poivre, et parsemez de persil au moment de servir.",
           timer: { minutes: 10, label: "Mijotage final" },
         },
       ],
@@ -161,73 +161,73 @@ export const content: RecipeContent = {
   ],
   science: [
     {
-      title: "Le collagène devient gélatine",
-      text: "Les morceaux à braiser comme le paleron ou la joue sont riches en tissu conjonctif. Maintenu longtemps au-delà d’environ 70 °C en milieu humide, son collagène se transforme en gélatine : la viande devient fondante et la sauce prend du corps.",
+      title: "Pourquoi trois heures",
+      text: "Le paleron et la joue sont pleins de tissu conjonctif, c’est ce qui les rend durs à la poêle. Maintenu longtemps au-delà de 70 °C environ dans un milieu humide, le collagène de ce tissu se transforme en gélatine. La viande devient fondante et la sauce prend du corps.",
     },
     {
-      title: "La réaction de Maillard d’abord",
-      text: "La croûte brune formée à forte chaleur résulte de la réaction entre sucres et acides aminés, qui produit des centaines de composés aromatiques. Une viande mouillée plafonne à 100 °C et ne dore pas : d’où l’importance de la sécher et de ne pas surcharger la cocotte.",
+      title: "La croûte, c’est du goût",
+      text: "La couleur brune qui se forme à forte chaleur vient de la réaction de Maillard, entre les sucres et les acides aminés de la viande. Elle produit une foule d’arômes. Une viande mouillée reste bloquée autour de 100 °C et ne dore pas, d’où l’intérêt de la sécher et de ne pas surcharger la cocotte.",
     },
     {
-      title: "Frémir, jamais bouillir",
-      text: "À 150 °C, le liquide de la cocotte frémit doucement. Une ébullition franche contracte les fibres musculaires, qui expulsent leur jus : la viande devient sèche et filandreuse, même immergée dans la sauce.",
+      title: "Ça doit frémir, pas bouillir",
+      text: "À 150 °C au four, le liquide frémit à peine. Une ébullition franche contracte les fibres de la viande, qui rejettent leur jus. On obtient alors des morceaux secs et filandreux, même s’ils baignent dans la sauce.",
     },
   ],
   tips: [
-    "Mélangez deux morceaux, par exemple paleron et joue : l’un se tient, l’autre fond.",
-    "Coupez des cubes généreux de 5 cm : ils restent moelleux pendant les trois heures de cuisson.",
-    "Choisissez un vin que vous aimeriez boire : la cuisson concentre ses qualités comme ses défauts.",
-    "Préparez-le la veille : refroidi une nuit, le plat gagne en goût et le gras figé se retire facilement.",
-    "Servez avec des pommes vapeur, une purée ou des tagliatelles fraîches pour profiter de la sauce.",
+    "Demandez deux morceaux à votre boucher, du paleron et de la joue par exemple. L’un garde sa tenue, l’autre fond.",
+    "Coupez de gros cubes, 5 cm environ. Plus petits, ils sèchent avant d’être tendres.",
+    "Prenez un vin que vous auriez plaisir à boire. La cuisson concentre ses qualités, et ses défauts aussi.",
+    "Faites-le la veille. Après une nuit au frigo, le gras fige en surface et s’enlève à la cuillère, et la sauce a plus de goût.",
+    "Pour accompagner, des pommes vapeur, une purée ou des tagliatelles fraîches. Il faut quelque chose pour la sauce.",
   ],
   mistakes: [
-    "Saisir toute la viande d’un coup : la température chute, la viande rend son eau et bout au lieu de dorer.",
-    "Laisser bouillir à gros bouillons : la viande se dessèche malgré la sauce.",
-    "Ajouter champignons et oignons dès le début : ils se délitent et perdent leur goût.",
-    "Couper la viande en petits dés : elle se dessèche avant d’être tendre.",
+    "Mettre toute la viande d’un coup dans la cocotte. La température chute, la viande rend son eau et bout au lieu de dorer.",
+    "Laisser bouillir à gros bouillons. La viande sèche, même noyée dans la sauce.",
+    "Ajouter les champignons et les oignons dès le début. Au bout de trois heures, il n’en reste pas grand-chose.",
+    "Couper la viande en petits dés pour aller plus vite. Elle sèche avant d’avoir eu le temps de devenir tendre.",
   ],
   variations: [
     {
       title: "Tout en joue de bœuf",
-      text: "Plus riche en collagène, la joue donne une texture encore plus fondante. Prolongez la cuisson de 30 minutes.",
+      text: "La joue a encore plus de collagène et devient très fondante. Comptez 30 minutes de cuisson en plus.",
     },
     {
       title: "À l’autocuiseur",
-      text: "Après les étapes de coloration et de déglaçage, comptez environ 50 minutes de cuisson sous pression, puis réduisez la sauce à découvert si nécessaire.",
+      text: "Faites dorer et déglacer comme d’habitude, puis comptez environ 50 minutes sous pression. Si la sauce est trop liquide à l’ouverture, faites-la réduire quelques minutes à découvert.",
     },
     {
-      title: "Façon bistrot, aux carottes",
-      text: "Ajoutez trois carottes en tronçons épais pour la dernière heure de cuisson : elles s’imprègnent de la sauce sans se défaire.",
+      title: "Avec plus de carottes",
+      text: "Ajoutez trois carottes coupées en gros tronçons pour la dernière heure. Elles prennent le goût de la sauce sans tomber en purée.",
     },
   ],
   storage:
-    "Le bœuf bourguignon se conserve 3 jours au réfrigérateur dans un récipient fermé et 3 mois au congélateur. Réchauffez-le doucement, à couvert, sur feu doux ou au four à 140 °C.",
+    "Il se garde 3 jours au frigo dans une boîte fermée, et 3 mois au congélateur. Réchauffez-le doucement, à couvert, sur feu doux ou au four à 140 °C.",
   pairing:
-    "Le vin de la sauce ou l’un de ses voisins : un bourgogne rouge de pinot noir, comme un Hautes-Côtes-de-Nuits ou un Givry.",
+    "Le même vin que dans la sauce, ou un voisin : un bourgogne rouge, un Hautes-Côtes-de-Nuits ou un Givry par exemple.",
   faq: [
     {
       q: "Quel morceau de bœuf choisir pour un bœuf bourguignon ?",
-      a: "Des morceaux riches en collagène, faits pour les cuissons longues : paleron, joue, macreuse ou gîte. Mélanger deux morceaux donne une texture plus intéressante.",
+      a: "Un morceau qui supporte les cuissons longues : paleron, joue, macreuse ou gîte. Mélanger deux morceaux donne une texture plus intéressante. Votre boucher saura vous conseiller.",
     },
     {
       q: "Quel vin utiliser pour un bœuf bourguignon ?",
-      a: "Un pinot noir de Bourgogne fruité et peu tannique, de qualité correcte, comme un bourgogne rouge ou une appellation de la côte chalonnaise. Évitez les vins très boisés, dont l’amertume se concentre à la cuisson.",
+      a: "Un pinot noir de Bourgogne fruité et pas trop tannique, d’une qualité correcte, comme un bourgogne rouge ou un vin de la côte chalonnaise. Évitez les vins très boisés : leur amertume se concentre à la cuisson.",
     },
     {
       q: "Faut-il faire mariner le bœuf la veille ?",
-      a: "Ce n’est pas indispensable. La marinade parfume surtout la surface de la viande ; la longue cuisson dans le vin apporte l’essentiel du goût.",
+      a: "Non, ce n’est pas indispensable. La marinade parfume surtout la surface de la viande, et c’est la longue cuisson dans le vin qui apporte le goût.",
     },
     {
       q: "Combien de temps faut-il cuire un bœuf bourguignon ?",
-      a: "Environ 3 heures au four à 150 °C en cocotte fermée, ou 2 h 30 à 3 heures à frémissement sur le feu. Il est prêt quand la viande se défait à la cuillère.",
+      a: "Comptez environ 3 heures au four à 150 °C en cocotte fermée, ou 2 h 30 à 3 heures à frémissement sur le feu. Il est prêt quand la viande se défait à la cuillère.",
     },
     {
       q: "Peut-on préparer le bœuf bourguignon à l’avance ?",
-      a: "Oui, c’est même recommandé : une nuit au réfrigérateur lui donne plus de goût et une sauce mieux liée. Il se garde 3 jours au frais.",
+      a: "Oui, et c’est même mieux. Une nuit au frigo lui donne plus de goût et une sauce plus liée. Il se garde 3 jours au frais.",
     },
     {
       q: "Comment épaissir la sauce du bœuf bourguignon ?",
-      a: "Faites-la réduire à découvert après avoir retiré la viande, ou incorporez en fouettant un beurre manié de 10 g de beurre et 10 g de farine, puis laissez frémir 2 minutes.",
+      a: "Retirez la viande et faites réduire la sauce à découvert. Si vous êtes pressé, fouettez-y un beurre manié (10 g de beurre écrasé avec 10 g de farine) et laissez frémir 2 minutes.",
     },
   ],
   nutrition: {
@@ -240,9 +240,12 @@ export const content: RecipeContent = {
     fiber: 3,
     sodium: 1100,
   },
+  annotations: {
+    hero: "trois heures, pas une de moins",
+    detail: "la viande cède à la cuillère",
+  },
   images: {
-    heroAlt:
-      "Bœuf bourguignon mijoté dans une petite cocotte en fonte orange tenue à deux mains, avec un brin de romarin",
+    heroAlt: "Bœuf bourguignon dans une petite cocotte en fonte orange tenue à deux mains, avec un brin de romarin",
     detailAlt: "Morceaux de bœuf braisé nappés de sauce au vin, champignons et ciboulette sur une purée",
     credits: {
       hero: {

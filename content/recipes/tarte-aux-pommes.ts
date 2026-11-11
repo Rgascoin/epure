@@ -3,16 +3,16 @@ import type { RecipeContent } from "@/lib/types";
 export const content: RecipeContent = {
   slug: "tarte-aux-pommes",
   title: "Tarte aux pommes",
-  seoTitle: "Tarte aux pommes maison : la recette classique",
-  tagline: "Une rosace, pomme après pomme.",
+  seoTitle: "Tarte aux pommes maison, pâte brisée et compote",
+  tagline: "Celle du goûter, en mieux.",
   description:
-    "La tarte aux pommes classique : pâte brisée pur beurre, fond de compote maison et rosace de pommes fines, cuite 40 min à 180 °C. La recette pas à pas.",
+    "Une tarte aux pommes maison avec une pâte brisée pur beurre, un fond de compote et une rosace de pommes fines, cuite 40 minutes à 180 °C. Pas à pas.",
   summary:
-    "Pour une tarte aux pommes de 8 parts, précuisez 20 minutes à 190 °C une pâte brisée pur beurre (250 g de farine, 125 g de beurre), garnissez-la d’une compote maison puis d’une rosace de pommes en lamelles de 2 mm. Faites cuire 35 à 40 minutes à 180 °C et nappez de confiture d’abricot à la sortie du four.",
+    "Pour une tarte de 8 parts, précuisez 20 minutes à 190 °C une pâte brisée pur beurre (250 g de farine, 125 g de beurre). Étalez dessus une compote maison, couvrez d’une rosace de pommes coupées à 2 mm, puis faites cuire 35 à 40 minutes à 180 °C. Un peu de confiture d’abricot au pinceau à la sortie du four, et c’est prêt.",
   intro: [
-    "La tarte aux pommes est souvent la première pâtisserie que l’on apprend, et c’est précisément pour cela qu’elle mérite d’être faite avec soin : une pâte brisée pur beurre, croustillante et friable, une compote maison et une rosace de pommes fines.",
-    "Le secret tient en deux variétés de pommes : l’une qui fond pour la compote, l’autre qui garde sa forme pour la rosace. Et une précuisson à blanc, pour que le fond reste croustillant sous la garniture.",
-    "Une heure de travail, une heure de repos, et le plus beau classique de la pâtisserie familiale.",
+    "C’est souvent la première tarte qu’on apprend à faire, et elle vaut largement qu’on s’y applique : une pâte brisée au beurre qui se casse sous la fourchette, une compote maison, et une rosace de pommes fines bien serrée.",
+    "L’astuce, c’est d’utiliser deux sortes de pommes. Une qui s’effondre pour la compote, une qui se tient pour le dessus. Et de cuire le fond seul avant de garnir, sinon la compote le détrempe.",
+    "Comptez une heure de travail et une heure de repos pour la pâte. La rosace demande un peu de patience la première fois, ensuite ça va vite.",
   ],
   category: "Dessert",
   cuisine: "Française",
@@ -92,13 +92,13 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Sabler la pâte",
-          text: "Mélangez la farine, le sucre et le sel. Ajoutez le beurre froid et frottez le mélange du bout des doigts jusqu’à obtenir une texture de sable grossier, sans gros morceaux de beurre.",
+          text: "Mélangez la farine, le sucre et le sel. Ajoutez le beurre froid et frottez le tout entre vos doigts jusqu’à obtenir une sorte de sable grossier, sans gros morceaux de beurre.",
         },
         {
           title: "Rassembler et reposer",
-          text: "Ajoutez le jaune et l’eau glacée, puis rassemblez rapidement la pâte en boule sans la pétrir. Écrasez-la une ou deux fois sous la paume pour l’homogénéiser, aplatissez-la en disque, filmez-la et laissez-la reposer au réfrigérateur.",
+          text: "Ajoutez le jaune et l’eau glacée, puis rassemblez vite la pâte en boule, sans la pétrir. Écrasez-la une ou deux fois sous la paume pour bien mélanger, aplatissez-la en galette, filmez et mettez-la au frigo.",
           timer: { minutes: 60, label: "Repos de la pâte" },
-          tip: "Ne pétrissez pas : une pâte trop travaillée développe son gluten, devient élastique et se rétracte à la cuisson.",
+          tip: "Moins vous la travaillez, mieux c’est. Une pâte trop pétrie devient élastique et se rétracte dans le moule à la cuisson.",
         },
       ],
     },
@@ -107,7 +107,7 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Cuire la compote",
-          text: "Épluchez et coupez en dés les pommes à compote. Faites-les cuire à couvert sur feu doux avec le sucre, l’eau et la vanille pendant 15 minutes, puis 5 minutes à découvert pour dessécher. Écrasez à la fourchette et laissez refroidir.",
+          text: "Épluchez les pommes à compote et coupez-les en dés. Faites-les cuire à couvert sur feu doux avec le sucre, l’eau et la vanille pendant 15 minutes, puis 5 minutes à découvert pour qu’elle sèche un peu. Écrasez à la fourchette et laissez refroidir.",
           timer: { minutes: 20, label: "Cuisson de la compote" },
         },
       ],
@@ -117,14 +117,14 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Foncer le moule",
-          text: "Étalez la pâte sur 3 mm d’épaisseur et foncez le moule beurré en pressant bien dans les angles. Piquez le fond à la fourchette et placez le moule 15 minutes au congélateur.",
+          text: "Étalez la pâte sur 3 mm d’épaisseur et posez-la dans le moule beurré, en appuyant bien dans les angles. Piquez le fond à la fourchette et mettez le moule 15 minutes au congélateur.",
           timer: { minutes: 15, label: "Raffermir le fond" },
         },
         {
           title: "Précuire à blanc",
-          text: "Préchauffez le four à 190 °C. Couvrez la pâte de papier sulfurisé garni de billes de cuisson et enfournez 15 minutes. Retirez papier et billes, puis poursuivez 5 minutes jusqu’à ce que le fond soit sec et à peine blond.",
+          text: "Allumez le four à 190 °C. Couvrez la pâte de papier sulfurisé, remplissez de billes de cuisson (ou de haricots secs) et enfournez 15 minutes. Retirez papier et billes, et laissez encore 5 minutes, jusqu’à ce que le fond soit sec et à peine blond.",
           timer: { minutes: 20, label: "Cuisson à blanc" },
-          tip: "Cette précuisson est indispensable : sans elle, l’humidité de la compote détrempe le fond.",
+          tip: "C’est l’étape qu’on a envie de sauter. Ne le faites pas : sans elle, la compote détrempe le fond et il reste pâle.",
         },
         {
           title: "Trancher les pommes",
@@ -132,8 +132,8 @@ export const content: RecipeContent = {
         },
         {
           title: "Former la rosace",
-          text: "Baissez le four à 180 °C. Étalez la compote froide sur le fond de tarte. Disposez les lamelles en cercles concentriques serrés, de l’extérieur vers le centre, chacune recouvrant la précédente aux trois quarts. Terminez le cœur par quelques petites lamelles roulées.",
-          tip: "Plus la rosace est serrée, plus la tarte est généreuse : les pommes se rétractent à la cuisson.",
+          text: "Baissez le four à 180 °C. Étalez la compote froide sur le fond de tarte. Posez les lamelles en cercles serrés, de l’extérieur vers le centre, chacune recouvrant la précédente aux trois quarts. Pour le cœur, roulez quelques petites lamelles en fleur.",
+          tip: "Serrez plus que vous ne le pensez : les pommes se rétractent en cuisant, et une rosace lâche laisse voir la compote.",
         },
       ],
     },
@@ -142,16 +142,16 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Beurrer et cuire",
-          text: "Badigeonnez les pommes de beurre fondu et saupoudrez-les de sucre. Enfournez jusqu’à ce que les bords des lamelles soient dorés et la pâte bien blonde.",
+          text: "Badigeonnez les pommes de beurre fondu et saupoudrez de sucre. Enfournez jusqu’à ce que le bord des lamelles dore et que la pâte soit bien blonde.",
           timer: { minutes: 40, label: "Cuisson de la tarte" },
         },
         {
           title: "Napper",
-          text: "Faites chauffer la confiture avec l’eau, filtrez-la, puis badigeonnez la tarte encore chaude au pinceau, en tamponnant doucement.",
+          text: "Faites chauffer la confiture avec l’eau, passez-la au tamis, puis badigeonnez la tarte encore chaude au pinceau, en tapotant doucement pour ne pas déranger les pommes.",
         },
         {
           title: "Laisser tiédir",
-          text: "Laissez tiédir la tarte sur une grille avant de la démouler et de la découper.",
+          text: "Laissez-la tiédir sur une grille avant de la démouler. Si vous la coupez brûlante, la compote coule.",
           timer: { minutes: 30, label: "Refroidissement" },
         },
       ],
@@ -159,71 +159,71 @@ export const content: RecipeContent = {
   ],
   science: [
     {
-      title: "Le beurre froid fait la friabilité",
-      text: "En sablant la farine avec un beurre froid, on enrobe ses particules de matière grasse : elles absorbent moins d’eau et forment peu de gluten. Résultat : une pâte qui se brise net et fond en bouche, au lieu d’être dure et élastique.",
+      title: "Pourquoi le beurre doit être froid",
+      text: "En frottant la farine avec du beurre froid, on enrobe ses grains de gras. Ils absorbent moins d’eau et forment peu de gluten. La pâte se casse net et fond en bouche, au lieu d’être dure et élastique.",
     },
     {
-      title: "Deux pommes, deux comportements",
-      text: "Toutes les pommes ne réagissent pas de la même façon à la chaleur. Certaines variétés, comme la boskoop ou la reine des reinettes, s’effondrent en purée ; d’autres, plus fermes, comme la golden ou la pink lady, gardent leur forme. On utilise donc les unes pour la compote, les autres pour la rosace.",
+      title: "Deux pommes, deux usages",
+      text: "Toutes les pommes ne réagissent pas pareil à la chaleur. La boskoop ou la reine des reinettes s’effondrent en purée. La golden ou la pink lady gardent leur forme. On met donc les premières dans la compote et les secondes sur le dessus.",
     },
     {
-      title: "La précuisson à blanc",
-      text: "Cuire la pâte seule fixe son amidon et assèche sa surface avant d’ajouter une garniture humide. Le fond reste ainsi croustillant au lieu d’absorber le jus de la compote.",
+      title: "À quoi sert la cuisson à blanc",
+      text: "Cuire la pâte seule fixe son amidon et sèche sa surface avant qu’on y mette quelque chose d’humide. Le fond reste croustillant au lieu de boire le jus de la compote.",
     },
   ],
   tips: [
-    "Gardez tout froid pour la pâte : beurre, eau et même le saladier si votre cuisine est chaude.",
-    "Utilisez une mandoline pour des lamelles fines et régulières, qui cuisent uniformément.",
-    "Citronnez les pommes au fur et à mesure pour éviter qu’elles noircissent.",
-    "Servez la tarte tiède, avec une cuillerée de crème fraîche épaisse.",
+    "Pour la pâte, gardez tout bien froid : le beurre, l’eau, et même le saladier si votre cuisine est chaude.",
+    "Une mandoline donne des lamelles fines et régulières, qui cuisent toutes en même temps.",
+    "Citronnez les pommes au fur et à mesure que vous les coupez, sinon elles brunissent.",
+    "Servez-la tiède, avec une cuillerée de crème fraîche épaisse.",
   ],
   mistakes: [
-    "Pétrir la pâte : elle devient élastique et se rétracte dans le moule.",
-    "Oublier la précuisson : le fond reste pâle et détrempé.",
-    "Couper des lamelles trop épaisses : elles restent fermes en surface.",
-    "Utiliser une compote trop liquide : elle détrempe la pâte et déborde.",
+    "Pétrir la pâte comme une pâte à pain. Elle devient élastique et se rétracte dans le moule.",
+    "Oublier la précuisson. Le fond reste pâle et mou.",
+    "Couper les lamelles trop épaisses. Elles restent fermes et sèches sur le dessus.",
+    "Mettre une compote trop liquide. Elle détrempe la pâte et déborde au four.",
   ],
   variations: [
     {
       title: "Façon normande",
-      text: "Remplacez la compote par un appareil de 2 œufs, 20 cl de crème et 40 g de sucre, versé sur les pommes à mi-cuisson, avec un trait de calvados.",
+      text: "Sans compote. À mi-cuisson, versez sur les pommes un mélange de 2 œufs, 20 cl de crème et 40 g de sucre, avec un trait de calvados si vous en avez.",
     },
     {
       title: "Sur pâte sablée",
-      text: "Pour un fond plus biscuité, utilisez une pâte sablée enrichie de poudre d’amande. Surveillez la précuisson, plus rapide.",
+      text: "Pour un fond plus biscuité, prenez une pâte sablée avec un peu de poudre d’amande. Surveillez la précuisson, elle colore plus vite.",
     },
     {
       title: "Tarte fine feuilletée",
-      text: "Sans compote, sur un disque de pâte feuilletée pur beurre piqué : disposez les lamelles, beurrez, sucrez et cuisez 25 minutes à 200 °C.",
+      text: "Sans compote non plus : une pâte feuilletée pur beurre piquée, les lamelles par-dessus, du beurre, du sucre, et 25 minutes à 200 °C.",
     },
   ],
   storage:
-    "La tarte se garde 2 jours à température ambiante sous une cloche, ou 3 jours au réfrigérateur, où la pâte ramollit un peu. Repassez-la 10 minutes au four à 150 °C pour lui rendre son croustillant.",
-  pairing: "Un cidre brut fermier bien frais, ou un verre de pommeau de Normandie.",
+    "Elle se garde 2 jours à température ambiante sous une cloche, ou 3 jours au frigo (la pâte ramollit un peu). Dix minutes au four à 150 °C lui rendent son croustillant.",
+  pairing: "Un cidre brut fermier bien frais, ou un petit verre de pommeau.",
   faq: [
     {
       q: "Quelles pommes choisir pour une tarte aux pommes ?",
-      a: "Associez deux types : des pommes qui fondent pour la compote (boskoop, reine des reinettes) et des pommes fermes pour la rosace (golden, pink lady, chantecler).",
+      a: "Deux sortes : des pommes qui fondent pour la compote (boskoop, reine des reinettes) et des pommes fermes pour la rosace (golden, pink lady, chantecler).",
     },
     {
       q: "Faut-il précuire la pâte d’une tarte aux pommes ?",
-      a: "Oui, dès qu’il y a une compote : 15 minutes à 190 °C avec des billes de cuisson, puis 5 minutes à nu. Sans précuisson, le fond reste détrempé.",
+      a: "Oui, dès qu’il y a de la compote : 15 minutes à 190 °C avec des billes de cuisson, puis 5 minutes sans. Sinon le fond reste mou.",
     },
     {
       q: "Comment empêcher les pommes de noircir ?",
-      a: "Arrosez les lamelles de jus de citron au fur et à mesure du découpage : l’acidité ralentit l’oxydation qui les fait brunir.",
+      a: "Arrosez les lamelles de jus de citron au fur et à mesure que vous les coupez. L’acidité freine l’oxydation qui les fait brunir.",
     },
     {
       q: "Combien de temps cuire une tarte aux pommes ?",
-      a: "Après la précuisson, comptez 35 à 40 minutes à 180 °C, jusqu’à ce que les bords des pommes soient dorés et la pâte bien blonde.",
+      a: "Après la précuisson, comptez 35 à 40 minutes à 180 °C. Elle est cuite quand le bord des pommes dore et que la pâte est bien blonde.",
     },
     {
       q: "Peut-on utiliser une pâte brisée du commerce ?",
-      a: "Oui, choisissez-la pur beurre et précuisez-la exactement de la même façon. La pâte maison reste plus friable et plus savoureuse.",
+      a: "Oui, prenez-la pur beurre et précuisez-la de la même façon. La pâte maison reste plus friable, mais ça dépanne très bien.",
     },
     {
       q: "Comment faire briller une tarte aux pommes ?",
-      a: "Avec un nappage : de la confiture d’abricot chauffée avec un peu d’eau, filtrée, puis appliquée au pinceau sur la tarte encore chaude.",
+      a: "Avec de la confiture d’abricot chauffée avec un peu d’eau, filtrée, puis passée au pinceau sur la tarte encore chaude.",
     },
   ],
   nutrition: {
@@ -235,6 +235,10 @@ export const content: RecipeContent = {
     sugar: 28,
     fiber: 3,
     sodium: 60,
+  },
+  annotations: {
+    hero: "deux pommes, deux usages",
+    detail: "précuire le fond, toujours",
   },
   images: {
     heroAlt: "Tarte aux pommes vue de dessus, rosace serrée de fines lamelles de pommes dorées sur pâte brisée",

@@ -1,6 +1,6 @@
 # Épure — cinq recettes, à l’essentiel
 
-Un site de recettes volontairement minuscule : **cinq grands classiques**, écrits au gramme près, présentés comme une keynote.
+Un petit carnet de cuisine en ligne : **cinq grands classiques**, écrits au gramme près, avec le pourquoi de chaque geste. Direction artistique éditoriale (papier, encre, notes à la main) plutôt que « tech ».
 La qualité plutôt que la quantité, sur deux axes : **référencement (moteurs + IA)** et **expérience (motion design, mobile-first)**.
 
 | Recette                  | Catégorie | Temps total |
@@ -41,9 +41,12 @@ Tout le site est **pré-rendu statiquement** au build (pages, images Open Graph,
 
 ## Expérience
 
-- **Accueil keynote** : titre révélé ligne par ligne, « lineup » des cinq plats qui s’ouvre au scroll, manifeste dont les mots s’allument au défilement (CSS `view-timeline`, zéro JS), **vitrine épinglée** où chaque plat remplace le précédent par un volet et recolore la scène, bento des fonctionnalités avec micro-démos.
-- **Fiche recette** : hero qui s’étend en plein écran au scroll, portions ajustables (arrondis « de cuisinier », conversion g → kg), ingrédients cochables (mémorisés), étapes cochables avec rail de progression, **minuteurs intégrés** (son synthétisé, vibration, titre d’onglet clignotant, dock flottant), **mode cuisine plein écran** (`<dialog>` natif, Wake Lock pour garder l’écran allumé, swipe, clavier, liste d’ingrédients en tiroir), partage natif, version imprimable.
-- **Accessibilité** : `prefers-reduced-motion` respecté partout, focus visibles, lien d’évitement, libellés ARIA, contraste AA, HTML sémantique (`article`, `dl`, `time`, `details`).
+- **Direction artistique** : papier et encre, Fraunces (serif à tailles optiques) pour les titres, Instrument Sans pour le texte, IBM Plex Mono pour les étiquettes, Caveat pour les notes manuscrites. Boutons à ombre « imprimée », photos en arche de boulangerie, traits dessinés à la main.
+- **Accueil** : titre avec des photos de plats glissées entre les mots, tampon rotatif, bandeau d’ingrédients, manifeste surligné au feutre, **carnet horizontal** dont les pages défilent au scroll (swipe sur mobile), ticket de cuisine qui « s’imprime », sommaire typographique avec photo qui suit le curseur.
+- **Fiche recette** : photo en arche avec tampon et note, « En bref » sur une note scotchée, ingrédients façon menu de bistrot (pointillés, rature à la main quand on coche), portions ajustables (arrondis « de cuisinier », conversion g → kg), étapes numérotées entourées au stylo une fois faites, **minuteurs intégrés** (son, vibration, titre d’onglet), variantes sur fiches bristol, étiquette nutritionnelle, polaroïd, version imprimable.
+- **Mode cuisine plein écran** : `<dialog>` natif, Wake Lock (l’écran reste allumé), swipe et clavier, ingrédients en tiroir, minuteurs visibles en bas de l’écran.
+- **Transitions** : la petite photo d’une recette se transforme en grande photo de la page (View Transitions natives).
+- **Accessibilité** : `prefers-reduced-motion` respecté partout (les effets au scroll sont en CSS, sans JS), focus visibles, lien d’évitement, libellés ARIA, contrastes AA, HTML sémantique.
 
 ## Développement
 
@@ -89,5 +92,5 @@ Le sitemap, le flux RSS, `llms.txt`, les images Open Graph et le JSON-LD suivent
 ## Crédits
 
 - Photographies : [Pexels](https://www.pexels.com) (licence Pexels), auteurs crédités sur chaque recette et sur `/a-propos`.
-- Polices : Inter et Instrument Serif (SIL Open Font License) ; copies WOFF dans `assets/fonts/` pour les images Open Graph.
+- Polices : Fraunces, Instrument Sans, IBM Plex Mono et Caveat (SIL Open Font License) ; copies WOFF dans `assets/fonts/` pour les images Open Graph.
 - Valeurs nutritionnelles : estimations calculées à partir des listes d’ingrédients.

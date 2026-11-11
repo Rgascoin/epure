@@ -13,12 +13,10 @@ export default function NotFound() {
     <section className="container-page flex min-h-[80svh] flex-col items-center justify-center pt-[var(--header-h)] text-center">
       <p className="intro-fade text-eyebrow text-fg-3">Erreur 404</p>
       <h1 className="mt-4 text-display">
-        <span className="intro-line">
-          <span>Pas au menu.</span>
-        </span>
+        Pas au <span className="serif-accent text-ink">menu</span>.
       </h1>
       <p className="intro-fade mt-5 max-w-md text-lede text-fg-2" style={{ ["--d" as string]: "300ms" }}>
-        Cette page n’existe pas. Les cinq recettes, elles, vous attendent.
+        Cette page n’existe pas (ou plus). Les cinq recettes, elles, sont toujours là.
       </p>
       <ul className="intro-fade mt-10 flex flex-wrap justify-center gap-2" style={{ ["--d" as string]: "450ms" }}>
         {recipes.map((r) => (

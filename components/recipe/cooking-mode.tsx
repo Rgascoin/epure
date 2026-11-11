@@ -8,7 +8,7 @@ import clsx from "clsx";
 import type { IngredientGroup, Step } from "@/lib/types";
 import { displayQty, fr, ingredientName, scaleQty } from "@/lib/format";
 import { ArrowLeft, ArrowRight, Close, List } from "../icons";
-import { TimerButton } from "./timers";
+import { TimerButton, TimerTray } from "./timers";
 
 export interface FlatStep extends Step {
   n: number;
@@ -118,79 +118,65 @@ export function CookingMode({
         document.documentElement.style.overflow = "";
         onClose();
       }}
-      aria-label={`Mode cuisine — ${title}`}
-      className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none bg-black p-0 text-white backdrop:bg-black"
+      aria-label={`Mode cuisine : ${title}`}
+      className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none bg-[#15120f] p-0 text-[#f2ede4] backdrop:bg-[#15120f]"
     >
       {open && (
-        <div className="relative flex h-full flex-col">
-          {/* Ambient accent glow */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -top-1/2 left-1/2 aspect-square w-[110vmax] -translate-x-1/2 rounded-full opacity-25 blur-[140px]"
-            style={{ background: "var(--accent)" }}
-          />
-
+        <div className="grain relative flex h-full flex-col">
           {/* Top bar */}
-          <div className="relative flex flex-col gap-4 px-5 pt-[max(1rem,env(safe-area-inset-top))] md:px-10 md:pt-8">
-            <div
-              className="flex gap-1"
-              role="progressbar"
-              aria-valuemin={0}
-              aria-valuemax={total}
-              aria-valuenow={Math.min(index + 1, total)}
-            >
-              {steps.map((s, i) => (
-                <button
-                  key={s.n}
-                  type="button"
-                  onClick={() => {
-                    setDirection(i > index ? 1 : -1);
-                    setIndex(i);
-                  }}
-                  className="group h-6 flex-1 py-2.5"
-                  aria-label={`Aller à l’étape ${s.n}`}
-                >
-                  <span className="block h-[3px] overflow-hidden rounded-full bg-white/20">
-                    <m.span
-                      className="block h-full origin-left bg-white"
-                      initial={false}
-                      animate={{ scaleX: i < index || finished ? 1 : i === index ? 0.5 : 0 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    />
-                  </span>
-                </button>
-              ))}
+          <div className="relative flex items-start justify-between gap-4 px-5 pt-[max(1rem,env(safe-area-inset-top))] md:px-10 md:pt-8">
+            <div className="min-w-0">
+              <p className="truncate font-mono text-[0.75rem] tracking-wider text-[#f2ede4]/50 uppercase">{title}</p>
+              <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Étapes">
+                {steps.map((s, i) => (
+                  <li key={s.n}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setDirection(i > index ? 1 : -1);
+                        setIndex(i);
+                      }}
+                      aria-label={`Aller à l’étape ${s.n}`}
+                      aria-current={i === index ? "step" : undefined}
+                      className={clsx(
+                        "grid size-8 place-items-center rounded-full font-mono text-[0.75rem] transition-colors duration-300",
+                        i === index && !finished
+                          ? "bg-accent text-on-accent"
+                          : i < index || finished
+                            ? "bg-[#f2ede4]/15 text-[#f2ede4]/70 line-through"
+                            : "border border-[#f2ede4]/25 text-[#f2ede4]/60",
+                      )}
+                    >
+                      {s.n}
+                    </button>
+                  </li>
+                ))}
+              </ol>
             </div>
-            <div className="flex items-center justify-between gap-4">
-              <div className="min-w-0">
-                <p className="truncate text-[0.875rem] text-white/55">{title}</p>
-                <p className="text-[0.9375rem] font-semibold text-accent-bright">
-                  {finished ? "Terminé" : `Étape ${step.n} sur ${total} · ${step.section}`}
-                </p>
-              </div>
-              <div className="flex shrink-0 items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setShowIngredients((v) => !v)}
-                  aria-expanded={showIngredients}
-                  aria-controls="cm-ingredients"
-                  aria-label="Ingrédients"
-                  className={clsx(
-                    "inline-flex h-11 items-center gap-2 rounded-full px-4 text-[0.9375rem] font-medium transition-colors",
-                    showIngredients ? "bg-white text-black" : "bg-white/10 hover:bg-white/15",
-                  )}
-                >
-                  <List size={17} /> <span className="hidden sm:inline">Ingrédients</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => ref.current?.close()}
-                  className="grid size-11 place-items-center rounded-full bg-white/10 transition-colors hover:bg-white/15"
-                  aria-label="Quitter le mode cuisine"
-                >
-                  <Close size={18} />
-                </button>
-              </div>
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setShowIngredients((v) => !v)}
+                aria-expanded={showIngredients}
+                aria-controls="cm-ingredients"
+                aria-label="Ingrédients"
+                className={clsx(
+                  "inline-flex h-11 items-center gap-2 rounded-[12px] border-[1.5px] px-4 text-[0.9375rem] font-medium transition-colors",
+                  showIngredients
+                    ? "border-[#f2ede4] bg-[#f2ede4] text-[#15120f]"
+                    : "border-[#f2ede4]/30 hover:border-[#f2ede4]",
+                )}
+              >
+                <List size={17} /> <span className="hidden sm:inline">Ingrédients</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => ref.current?.close()}
+                className="grid size-11 place-items-center rounded-[12px] border-[1.5px] border-[#f2ede4]/30 transition-colors hover:border-[#f2ede4]"
+                aria-label="Quitter le mode cuisine"
+              >
+                <Close size={18} />
+              </button>
             </div>
           </div>
 
@@ -205,15 +191,17 @@ export function CookingMode({
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   className="flex w-full flex-col items-center justify-center px-6 text-center"
                 >
-                  <div className="relative aspect-square w-[min(56vw,300px)] overflow-hidden rounded-full shadow-[0_30px_120px_-20px_var(--accent)]">
-                    <Image src={hero} alt={heroAlt} fill sizes="300px" className="object-cover" />
+                  <div className="relative aspect-[4/5] w-[min(52vw,260px)] overflow-hidden rounded-[999px_999px_16px_16px] shadow-[6px_6px_0_var(--accent)]">
+                    <Image src={hero} alt={heroAlt} fill sizes="260px" className="object-cover" />
                   </div>
-                  <p className="mt-10 text-display">
-                    Bon <span className="serif-accent font-normal text-accent-bright">appétit</span>.
+                  <p className="mt-10 font-display text-[clamp(3rem,8vw,6rem)] leading-none font-[380] [font-variation-settings:'SOFT'_100]">
+                    Bon <span className="serif-accent text-accent-bright">appétit</span>.
                   </p>
-                  <p className="mt-3 text-white/60">{servingsText}</p>
+                  <p className="mt-4 hand text-[1.6rem] text-[#f2ede4]/70">
+                    {servingsText.toLowerCase()}, et pas une miette de reste.
+                  </p>
                   <button type="button" onClick={() => ref.current?.close()} className="btn btn-accent mt-8">
-                    Terminer
+                    Fermer le mode cuisine
                   </button>
                 </m.div>
               ) : (
@@ -221,14 +209,14 @@ export function CookingMode({
                   key={`${slug}-${index}`}
                   custom={direction}
                   variants={{
-                    enter: (d: number) => ({ opacity: 0, x: d * 80, filter: "blur(8px)" }),
-                    center: { opacity: 1, x: 0, filter: "blur(0px)" },
-                    exit: (d: number) => ({ opacity: 0, x: d * -80, filter: "blur(8px)" }),
+                    enter: (d: number) => ({ opacity: 0, x: d * 90, rotate: d * 1.5 }),
+                    center: { opacity: 1, x: 0, rotate: 0 },
+                    exit: (d: number) => ({ opacity: 0, x: d * -90, rotate: d * -1.5 }),
                   }}
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.18}
@@ -237,30 +225,33 @@ export function CookingMode({
                   aria-live="polite"
                 >
                   <div className="my-auto">
-                    <p className="text-[clamp(3.5rem,11vw,8rem)] leading-none font-semibold tracking-[-0.06em] text-white/12 tabular">
-                      {String(step.n).padStart(2, "0")}
+                    <p className="text-eyebrow text-[#f2ede4]/50">
+                      Étape {step.n} sur {total} · {step.section}
                     </p>
-                    <h2 className="mt-2 text-[clamp(1.25rem,2.4vw,1.75rem)] font-semibold tracking-[-0.02em] text-accent-bright">
-                      {step.title}
-                    </h2>
+                    <div className="mt-4 flex items-baseline gap-4">
+                      <span className="serif-accent text-[clamp(3.5rem,9vw,7rem)] leading-[0.8] text-accent-bright">
+                        {step.n}.
+                      </span>
+                      <h2 className="text-[clamp(1.25rem,2.4vw,1.75rem)] font-semibold">{step.title}</h2>
+                    </div>
                     <p
                       className={clsx(
-                        "mt-4 max-w-[40ch] leading-[1.14] font-semibold tracking-[-0.03em] text-balance",
+                        "mt-6 max-w-[38ch] font-display leading-[1.18] font-[380] text-balance [font-variation-settings:'SOFT'_80]",
                         step.text.length > 240
-                          ? "text-[clamp(1.375rem,3.4vw,2.625rem)]"
-                          : "text-[clamp(1.625rem,4.2vw,3.25rem)]",
+                          ? "text-[clamp(1.5rem,3.4vw,2.75rem)]"
+                          : "text-[clamp(1.75rem,4.2vw,3.4rem)]",
                       )}
                     >
                       {fr(step.text)}
                     </p>
                     {step.tip && (
-                      <p className="mt-6 max-w-[56ch] text-[clamp(1rem,1.5vw,1.1875rem)] leading-relaxed text-white/55">
-                        <span className="font-semibold text-white/80">Astuce · </span>
+                      <p className="mt-7 max-w-[56ch] border-l-2 border-accent pl-4 text-[clamp(1rem,1.5vw,1.1875rem)] leading-relaxed text-[#f2ede4]/70">
+                        <span className="mr-2 hand text-[1.5rem] text-accent-bright">psst.</span>
                         {fr(step.tip)}
                       </p>
                     )}
                     {step.timer && (
-                      <div className="mt-8">
+                      <div className="mt-9">
                         <TimerButton
                           id={`${slug}-step-${step.n}`}
                           label={step.timer.label}
@@ -284,22 +275,25 @@ export function CookingMode({
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
                   transition={{ type: "spring", stiffness: 320, damping: 36 }}
-                  className="absolute inset-y-0 right-0 z-10 w-full overflow-y-auto border-l border-white/10 bg-[#111]/95 px-6 py-6 backdrop-blur-xl sm:w-[380px]"
+                  className="absolute inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#f2ede4] px-6 py-6 text-[#1b1712] shadow-[-20px_0_60px_rgba(0,0,0,0.5)] sm:w-[400px]"
                   aria-label="Ingrédients"
                 >
-                  <p className="text-eyebrow text-white/50">{servingsText}</p>
+                  <p className="font-display text-[1.75rem] font-[450]">Ingrédients</p>
+                  <p className="hand text-[1.35rem] text-[#b23d24]">{servingsText.toLowerCase()}</p>
                   {ingredients.map((g, gi) => (
                     <div key={gi} className="mt-5">
-                      {g.title && <p className="mb-2 text-[0.8125rem] font-semibold text-accent-bright">{g.title}</p>}
-                      <ul className="divide-y divide-white/10">
+                      {g.title && <p className="mb-1 text-eyebrow text-[#6b6155]">{g.title}</p>}
+                      <ul>
                         {g.items.map((ing, i) => {
                           const q = scaleQty(ing, factor);
                           return (
-                            <li key={i} className="flex items-baseline justify-between gap-4 py-2.5 text-[1rem]">
-                              <span className="text-white/85">{ingredientName(ing, q)}</span>
-                              <span className="shrink-0 font-semibold tabular">
-                                {q !== undefined &&
-                                  `${displayQty(ing, q).num}${ing.unit ? ` ${displayQty(ing, q).unit}` : ""}`}
+                            <li key={i} className="flex items-baseline py-2 text-[1rem]">
+                              <span className="first-letter:uppercase">{ingredientName(ing, q)}</span>
+                              <span className="leader" />
+                              <span className="shrink-0 font-display font-[500] whitespace-nowrap tabular">
+                                {q !== undefined
+                                  ? `${displayQty(ing, q).num}${ing.unit ? ` ${displayQty(ing, q).unit}` : ""}`
+                                  : "au goût"}
                               </span>
                             </li>
                           );
@@ -312,24 +306,33 @@ export function CookingMode({
             </AnimatePresence>
           </div>
 
+          {/* Running timers stay visible here: the dialog sits above the page's own tray. */}
+          <div className="relative px-5 md:px-10">
+            <div className="mx-auto max-w-md">
+              <TimerTray variant="inline" />
+            </div>
+          </div>
+
           {/* Bottom controls */}
-          <div className="relative flex items-center justify-between gap-3 px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] md:px-10 md:pb-8">
+          <div className="relative flex items-center justify-between gap-3 px-5 pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] md:px-10 md:pb-8">
             <button
               type="button"
               onClick={() => go(-1)}
               disabled={index === 0}
-              className="inline-flex h-14 items-center gap-2 rounded-full bg-white/10 px-5 text-[1rem] font-medium transition-[background-color,opacity] hover:bg-white/15 disabled:opacity-30"
+              className="inline-flex h-14 items-center gap-2 rounded-[14px] border-[1.5px] border-[#f2ede4]/30 px-5 text-[1rem] font-medium transition-[border-color,opacity] hover:border-[#f2ede4] disabled:opacity-30"
             >
               <ArrowLeft size={20} /> <span className="sr-only sm:not-sr-only">Précédente</span>
             </button>
-            <p className="hidden text-[0.8125rem] text-white/40 md:block">← → pour naviguer · Échap pour quitter</p>
+            <p className="hidden font-mono text-[0.75rem] text-[#f2ede4]/40 md:block">
+              flèches ← → pour tourner les pages · Échap pour sortir
+            </p>
             {!finished && (
               <button
                 type="button"
                 onClick={() => go(1)}
-                className="inline-flex h-14 items-center gap-2 rounded-full bg-white px-6 text-[1rem] font-semibold text-black transition-transform active:scale-[0.97]"
+                className="inline-flex h-14 items-center gap-2 rounded-[14px] bg-[#f2ede4] px-6 text-[1rem] font-semibold text-[#15120f] shadow-[3px_3px_0_var(--accent)] transition-transform active:translate-x-[2px] active:translate-y-[2px]"
               >
-                {index === total - 1 ? "Terminer" : "Suivante"} <ArrowRight size={20} />
+                {index === total - 1 ? "J’ai fini" : "Étape suivante"} <ArrowRight size={20} />
               </button>
             )}
           </div>

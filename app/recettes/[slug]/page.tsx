@@ -4,11 +4,11 @@ import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 import { getNeighbours, getRecipe, recipes } from "@/lib/recipes";
 import { absoluteUrl } from "@/lib/site";
-import { formatDuration, fr, plural } from "@/lib/format";
+import { formatDuration, plural } from "@/lib/format";
 import { breadcrumb, faqSchema, graph, organization, recipeSchema, webPage, website } from "@/lib/schema";
 import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
-import { RecipeHeroImage, ParallaxImage } from "@/components/recipe/recipe-hero";
+import { Polaroid, RecipeHeroArch } from "@/components/recipe/recipe-hero";
 import { RecipeInteractive } from "@/components/recipe/recipe-interactive";
 import { ShareActions } from "@/components/recipe/share-actions";
 import {
@@ -18,13 +18,13 @@ import {
   Intro,
   KeyFacts,
   NextRecipe,
-  Nutrition,
-  PracticalInfo,
+  Pantry,
   Science,
   TipsAndMistakes,
   Variations,
 } from "@/components/recipe/sections";
-import { Clock, Gauge, Users } from "@/components/icons";
+import { Stamp } from "@/components/stamp";
+import { Scribble } from "@/components/scribble";
 
 export function generateStaticParams() {
   return recipes.map((r) => ({ slug: r.slug }));
@@ -62,6 +62,7 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
   const recipe = getRecipe(slug);
   if (!recipe) notFound();
   const { next } = getNeighbours(recipe.slug);
+  const number = recipes.findIndex((r) => r.slug === recipe.slug) + 1;
   const path = `/recettes/${recipe.slug}`;
   const t = recipe.theme;
 
@@ -80,7 +81,7 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
       description: recipe.description,
       primaryImage: recipe.seoImages[2],
       breadcrumbId: absoluteUrl(`${path}#breadcrumb`),
-      speakable: ["#essentiel"],
+      speakable: ["#en-bref"],
       datePublished: recipe.datePublished,
       dateModified: recipe.dateModified,
     }),
@@ -117,89 +118,121 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
         }
       >
         {/* ---------------------------------------------------------------- */}
-        {/* Header                                                           */}
+        {/* Header: text on the left, arched photo on the right              */}
         {/* ---------------------------------------------------------------- */}
-        <header className="container-page pt-[calc(var(--header-h)+clamp(1.5rem,5vh,3.5rem))] text-center">
-          <nav aria-label="Fil d’Ariane" className="intro-fade" style={{ ["--d" as string]: "0ms" }}>
-            <ol className="inline-flex flex-wrap items-center justify-center gap-1.5 text-[0.8125rem] text-fg-3">
-              {crumbs.map((c, i) => (
-                <li key={c.path} className="inline-flex items-center gap-1.5">
-                  {i < crumbs.length - 1 ? (
-                    <Link
-                      href={c.path as Route}
-                      className="transition-colors hover:text-fg"
-                      transitionTypes={["nav-back"]}
-                    >
-                      {c.name}
-                    </Link>
-                  ) : (
-                    <span aria-current="page" className="text-fg-2">
-                      {c.name}
-                    </span>
-                  )}
-                  {i < crumbs.length - 1 && <span aria-hidden>›</span>}
-                </li>
+        <header className="container-page grid gap-12 pt-[calc(var(--header-h)+clamp(1.5rem,5vh,3.5rem))] lg:grid-cols-12 lg:gap-16">
+          <div className="flex flex-col lg:col-span-6 lg:py-6">
+            <nav aria-label="Fil d’Ariane" className="intro-fade" style={{ "--d": "0ms" } as CSSProperties}>
+              <ol className="flex flex-wrap items-center gap-2 font-mono text-[0.75rem] text-fg-3">
+                {crumbs.map((c, i) => (
+                  <li key={c.path} className="inline-flex items-center gap-2">
+                    {i < crumbs.length - 1 ? (
+                      <Link
+                        href={c.path as Route}
+                        className="underline-offset-2 transition-colors hover:text-fg hover:underline"
+                        transitionTypes={["nav-back"]}
+                      >
+                        {c.name}
+                      </Link>
+                    ) : (
+                      <span aria-current="page" className="text-fg-2">
+                        {c.name}
+                      </span>
+                    )}
+                    {i < crumbs.length - 1 && <span aria-hidden>/</span>}
+                  </li>
+                ))}
+              </ol>
+            </nav>
+
+            <p className="intro-fade mt-10 text-eyebrow text-ink" style={{ "--d": "60ms" } as CSSProperties}>
+              {recipe.category} · cuisine {recipe.cuisine.toLowerCase()}
+              {recipe.diet?.slice(0, 2).map((d) => (
+                <span key={d}> · {dietLabels[d]}</span>
               ))}
-            </ol>
-          </nav>
+            </p>
+            <h1 className="mt-5 text-display text-balance">
+              {recipe.title.split(" ").map((word, i) => (
+                <span key={i}>
+                  <span className="intro-word" style={{ "--i": i } as CSSProperties}>
+                    {word}
+                  </span>{" "}
+                </span>
+              ))}
+            </h1>
+            <p
+              className="intro-fade mt-4 serif-accent text-[clamp(1.5rem,2.6vw,2.25rem)] leading-tight text-fg-2"
+              style={{ "--d": "380ms" } as CSSProperties}
+            >
+              {recipe.tagline}
+            </p>
 
-          <p className="intro-fade mt-8 text-eyebrow text-ink" style={{ ["--d" as string]: "80ms" }}>
-            {recipe.category} · Cuisine {recipe.cuisine.toLowerCase()}
-            {recipe.diet?.slice(0, 2).map((d) => (
-              <span key={d}> · {dietLabels[d]}</span>
-            ))}
-          </p>
-          <h1 className="mx-auto mt-4 max-w-[14ch] text-display text-balance">
-            <span className="intro-line" style={{ ["--i" as string]: 0 }}>
-              <span>{recipe.title}</span>
-            </span>
-          </h1>
-          <p
-            className="intro-fade mt-4 serif-accent text-[clamp(1.5rem,3vw,2.5rem)] leading-tight text-fg-2"
-            style={{ ["--d" as string]: "300ms" }}
-          >
-            {recipe.tagline}
-          </p>
+            <dl
+              className="intro-fade mt-9 grid max-w-md grid-cols-3 border-y-2 border-dotted border-line-strong py-3"
+              style={{ "--d": "480ms" } as CSSProperties}
+            >
+              {[
+                ["En tout", formatDuration(recipe.totalMinutes)],
+                ["Niveau", recipe.difficulty],
+                ["Pour", `${recipe.servings} ${plural(recipe.servings, recipe.servingsLabel)}`],
+              ].map(([k, v]) => (
+                <div key={k}>
+                  <dt className="font-mono text-[0.6875rem] tracking-wider text-fg-3 uppercase">{k}</dt>
+                  <dd className="mt-1 font-semibold">{v}</dd>
+                </div>
+              ))}
+            </dl>
 
-          <div
-            className="intro-fade mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[0.9375rem] text-fg-2"
-            style={{ ["--d" as string]: "420ms" }}
-          >
-            <span className="inline-flex items-center gap-2">
-              <Clock size={18} className="text-ink" /> {formatDuration(recipe.totalMinutes)}
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Gauge size={18} className="text-ink" /> {recipe.difficulty}
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Users size={18} className="text-ink" /> {recipe.servings} {plural(recipe.servings, recipe.servingsLabel)}
-            </span>
+            <div
+              className="intro-fade mt-8 flex flex-wrap items-center gap-3"
+              style={{ "--d": "580ms" } as CSSProperties}
+              data-print="hide"
+            >
+              <a href="#recette" className="btn btn-accent">
+                Aller à la recette
+              </a>
+              <ShareActions title={recipe.seoTitle} text={recipe.description} />
+            </div>
+
+            <div className="intro-fade mt-12 lg:mt-auto lg:pt-12" style={{ "--d": "700ms" } as CSSProperties}>
+              <Essentials recipe={recipe} />
+            </div>
           </div>
-          <div
-            className="intro-fade mt-7 flex flex-wrap items-center justify-center gap-2"
-            style={{ ["--d" as string]: "520ms" }}
-            data-print="hide"
-          >
-            <a href="#recette" className="btn btn-accent">
-              Aller à la recette
-            </a>
-            <ShareActions title={recipe.seoTitle} text={recipe.description} />
+
+          <div className="intro-fade relative lg:col-span-6" style={{ "--d": "120ms" } as CSSProperties}>
+            <RecipeHeroArch
+              slug={recipe.slug}
+              image={recipe.hero}
+              alt={recipe.images.heroAlt}
+              focus={t.focus}
+              stamp={
+                <Stamp text={`prêt en ${formatDuration(recipe.totalMinutes)} · ${recipe.difficulty} · `}>
+                  <span className="flex flex-col items-center leading-none">
+                    <span className="font-mono text-[0.625rem] tracking-widest">N°</span>
+                    <span className="serif-accent text-[2rem]">0{number}</span>
+                  </span>
+                </Stamp>
+              }
+              note={
+                <div className="absolute right-2 -bottom-6 flex items-end gap-1 md:-right-4" aria-hidden>
+                  <Scribble variant="arrow-left" className="mb-6 h-8 w-16 -rotate-12 text-ink" />
+                  <p className="max-w-[12rem] rotate-[-4deg] rounded-md bg-bg px-3 py-1.5 hand text-[1.6rem] text-ink shadow-[var(--shadow-card)]">
+                    {recipe.annotations.hero}
+                  </p>
+                </div>
+              }
+            />
           </div>
         </header>
 
-        <div className="mt-[clamp(2.5rem,7vh,5rem)]">
-          <RecipeHeroImage slug={recipe.slug} image={recipe.hero} alt={recipe.images.heroAlt} focus={t.focus} />
-        </div>
-
         {/* ---------------------------------------------------------------- */}
-        {/* Summary + facts                                                  */}
+        {/* Facts + intro                                                     */}
         {/* ---------------------------------------------------------------- */}
-        <div className="container-page mt-[clamp(3rem,8vh,6rem)] grid gap-4 md:gap-5">
-          <Essentials recipe={recipe} />
+        <div className="container-page mt-[clamp(4rem,10vh,7rem)]">
           <KeyFacts recipe={recipe} />
         </div>
 
-        <div className="mt-[clamp(4rem,12vh,8rem)]">
+        <div className="mt-[clamp(4rem,10vh,7rem)]">
           <Intro recipe={recipe} />
         </div>
 
@@ -224,26 +257,18 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
           <Science recipe={recipe} />
         </div>
 
-        <div className="mt-[clamp(4rem,12vh,8rem)]" data-print="hide">
-          <ParallaxImage
-            image={recipe.detail}
-            alt={recipe.images.detailAlt}
-            caption={
-              <>
-                {fr(recipe.images.detailAlt)}. Photo :{" "}
-                <a href={recipe.images.credits.detail.url} rel="noopener" className="underline underline-offset-2">
-                  {recipe.images.credits.detail.photographer}
-                </a>
-              </>
-            }
-          />
+        <div className="container-page mt-[clamp(4rem,12vh,8rem)] grid gap-16 md:grid-cols-12 md:items-start">
+          <div className="md:sticky md:top-[calc(var(--header-h)+3rem)] md:col-span-5" data-print="hide">
+            <Polaroid image={recipe.detail} alt={recipe.images.detailAlt} caption={recipe.annotations.detail} />
+          </div>
+          <div className="md:col-span-7">
+            <TipsAndMistakes recipe={recipe} />
+          </div>
         </div>
 
         <div className="mt-[clamp(4rem,12vh,8rem)] space-y-[clamp(4rem,12vh,8rem)]">
-          <TipsAndMistakes recipe={recipe} />
           <Variations recipe={recipe} />
-          <PracticalInfo recipe={recipe} />
-          <Nutrition recipe={recipe} />
+          <Pantry recipe={recipe} />
           <Faq recipe={recipe} />
           <Byline recipe={recipe} />
           <NextRecipe next={next} />

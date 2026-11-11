@@ -3,43 +3,37 @@
 import Image, { type StaticImageData } from "next/image";
 import { useScroll, useTransform } from "motion/react";
 import * as m from "motion/react-m";
-import { useRef, ViewTransition } from "react";
+import { useRef, ViewTransition, type ReactNode } from "react";
 
 /**
- * The recipe photo starts inset with rounded corners and expands to the
- * full viewport width as it scrolls into place — the classic keynote
- * "product grows to fill the screen" move. Server-rendered visible, so the
- * image is LCP-safe; only the clip and scale are driven by scroll.
+ * Arched hero photo. Visible from the first paint (LCP-safe); scrolling
+ * only pushes the photo gently inside its frame and turns the stamp.
  */
-export function RecipeHeroImage({
+export function RecipeHeroArch({
   slug,
   image,
   alt,
   focus,
+  stamp,
+  note,
 }: {
   slug: string;
   image: StaticImageData;
   alt: string;
   focus?: string;
+  stamp?: ReactNode;
+  note?: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "start 0.12"] });
-  const inset = useTransform(scrollYProgress, [0.35, 1], [5, 0], { clamp: true });
-  const radius = useTransform(scrollYProgress, [0.35, 1], [32, 0], { clamp: true });
-  const clipPath = useTransform(
-    [inset, radius],
-    ([i, r]) => `inset(0% ${i as number}% 0% ${i as number}% round ${r as number}px)`,
-  );
-  const scale = useTransform(scrollYProgress, [0.2, 1], [1.12, 1]);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 140]);
 
   return (
     <div ref={ref} className="relative">
       <ViewTransition name={`photo-${slug}`} share="morph" default="none">
-        <m.div
-          className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-auto lg:h-[min(86svh,62vw)]"
-          style={{ clipPath }}
-        >
-          <m.div className="absolute inset-0" style={{ scale }}>
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[999px_999px_22px_22px] bg-fill shadow-[var(--shadow-float)] lg:aspect-auto lg:h-[min(78svh,760px)]">
+          <m.div className="absolute inset-x-0 -inset-y-[6%]" style={{ y }}>
             <Image
               src={image}
               alt={alt}
@@ -48,48 +42,44 @@ export function RecipeHeroImage({
               fetchPriority="high"
               quality={80}
               placeholder="blur"
-              sizes="100vw"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
               style={{ objectPosition: focus }}
             />
           </m.div>
-        </m.div>
+        </div>
       </ViewTransition>
+      {stamp && (
+        <m.div className="absolute -top-4 -left-3 w-28 md:-left-8 md:w-36" style={{ rotate }}>
+          {stamp}
+        </m.div>
+      )}
+      {note}
     </div>
   );
 }
 
-/** Slow parallax for the secondary photograph. */
-export function ParallaxImage({
-  image,
-  alt,
-  caption,
-}: {
-  image: StaticImageData;
-  alt: string;
-  caption?: React.ReactNode;
-}) {
+/** A print of the detail photo, pinned slightly crooked, drifting on scroll. */
+export function Polaroid({ image, alt, caption }: { image: StaticImageData; alt: string; caption: ReactNode }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-9%", "9%"]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.18, 1.1, 1.18]);
+  const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [3, -2]);
 
   return (
-    <figure ref={ref} className="container-page">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-fill sm:aspect-[16/9]">
-        <m.div className="absolute inset-0" style={{ y, scale }}>
-          <Image
-            src={image}
-            alt={alt}
-            fill
-            quality={80}
-            placeholder="blur"
-            sizes="(max-width: 1280px) 100vw, 1280px"
-            className="object-cover"
-          />
-        </m.div>
+    <m.figure ref={ref} style={{ y, rotate }} className="relative mx-auto w-full max-w-[460px]">
+      <span
+        aria-hidden
+        className="absolute -top-3 left-1/2 z-10 h-7 w-28 -translate-x-1/2 rotate-[-4deg] bg-[#e8dcc4]/80 shadow-sm"
+      />
+      <div className="bg-[#fffdf8] p-3 pb-16 shadow-[var(--shadow-float)]">
+        <div className="relative aspect-[4/5] overflow-hidden bg-fill">
+          <Image src={image} alt={alt} fill quality={78} placeholder="blur" sizes="460px" className="object-cover" />
+        </div>
+        <figcaption className="absolute inset-x-4 bottom-4 text-center hand text-[1.6rem] text-[#1b1712]">
+          {caption}
+        </figcaption>
       </div>
-      {caption && <figcaption className="mt-3 text-[0.8125rem] text-fg-3">{caption}</figcaption>}
-    </figure>
+    </m.figure>
   );
 }

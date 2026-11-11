@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getRecipe, recipes } from "@/lib/recipes";
 import { formatDuration, plural } from "@/lib/format";
-import { OG_SIZE, OgMark, ogFonts, ogPhotos } from "@/lib/og";
+import { OG_COLORS, OG_SIZE, OgMark, ogFonts, ogPhotos } from "@/lib/og";
 
 export const size = OG_SIZE;
 export const contentType = "image/png";
@@ -15,51 +15,60 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const { slug } = await params;
   const r = getRecipe(slug);
   if (!r) return new Response("Not found", { status: 404 });
-  const photo = ogPhotos[r.slug].landscape;
+  const n = recipes.findIndex((x) => x.slug === r.slug) + 1;
 
   return new ImageResponse(
-    <div style={{ width: "100%", height: "100%", display: "flex", background: r.theme.deep, fontFamily: "Inter" }}>
-      <img src={photo} alt="" width={560} height={630} style={{ width: 560, height: 630, objectFit: "cover" }} />
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "56px 60px",
-          color: "white",
-          backgroundImage: `radial-gradient(circle at 100% 0%, ${r.theme.accent}55, transparent 60%)`,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-          <OgMark size={40} dark />
-          <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: -0.8 }}>Épure</div>
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        background: OG_COLORS.paper,
+        color: OG_COLORS.ink,
+        fontFamily: "Instrument Sans",
+        padding: "48px 56px",
+        gap: 48,
+      }}
+    >
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <OgMark size={38} />
+          <div style={{ fontFamily: "Fraunces", fontSize: 30, letterSpacing: -1 }}>Épure</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 22, fontWeight: 500, color: "rgba(255,255,255,0.6)" }}>
-            {`${r.category} · Cuisine ${r.cuisine.toLowerCase()}`}
+          <div style={{ fontSize: 18, letterSpacing: 2, color: r.theme.ink }}>
+            {`N° 0${n} · ${r.category.toUpperCase()} · CUISINE ${r.cuisine.toUpperCase()}`}
           </div>
-          <div style={{ fontSize: 68, fontWeight: 600, lineHeight: 1, letterSpacing: -3, marginTop: 14 }}>
+          <div style={{ fontFamily: "Fraunces", fontSize: 76, lineHeight: 1, letterSpacing: -2.5, marginTop: 16 }}>
             {r.title}
           </div>
           <div
-            style={{
-              fontFamily: "Instrument Serif",
-              fontStyle: "italic",
-              fontSize: 42,
-              color: r.theme.accent,
-              marginTop: 14,
-            }}
+            style={{ fontFamily: "Fraunces", fontStyle: "italic", fontSize: 38, color: OG_COLORS.ink2, marginTop: 16 }}
           >
             {r.tagline}
           </div>
         </div>
-        <div style={{ display: "flex", gap: 28, fontSize: 22, fontWeight: 500, color: "rgba(255,255,255,0.75)" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: 36,
+            fontSize: 22,
+            borderTop: `2px dashed ${OG_COLORS.ink2}`,
+            paddingTop: 16,
+          }}
+        >
           <span>{formatDuration(r.totalMinutes)}</span>
           <span>{r.difficulty}</span>
           <span>{`${r.servings} ${plural(r.servings, r.servingsLabel)}`}</span>
         </div>
       </div>
+      <img
+        src={ogPhotos[r.slug].landscape}
+        alt=""
+        width={420}
+        height={534}
+        style={{ width: 420, height: 534, objectFit: "cover", borderRadius: "210px 210px 18px 18px" }}
+      />
     </div>,
     { ...size, fonts: ogFonts },
   );

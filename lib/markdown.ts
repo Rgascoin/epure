@@ -34,7 +34,7 @@ export function recipeToMarkdown(r: Recipe): string {
     "",
     `> ${r.tagline}`,
     "",
-    "## L’essentiel",
+    "## En bref",
     "",
     r.summary,
     "",
@@ -46,7 +46,7 @@ export function recipeToMarkdown(r: Recipe): string {
   for (const g of r.ingredients) {
     if (g.title) push(`### ${g.title}`, "");
     for (const i of g.items) {
-      push(`- ${ingredientPhrase(i)}${i.note ? ` — ${i.note}` : ""}${i.optional ? " (facultatif)" : ""}`);
+      push(`- ${ingredientPhrase(i)}${i.note ? ` (${i.note})` : ""}${i.optional ? " (facultatif)" : ""}`);
     }
     push("");
   }
@@ -66,11 +66,11 @@ export function recipeToMarkdown(r: Recipe): string {
   }
 
   push("## Pourquoi ça marche", "", ...r.science.flatMap((s) => [`### ${s.title}`, "", s.text, ""]));
-  push("## Les secrets", "", ...r.tips.map((t) => `- ${t}`), "");
-  push("## Les erreurs à éviter", "", ...r.mistakes.map((t) => `- ${t}`), "");
+  push("## Ce qui aide", "", ...r.tips.map((t) => `- ${t}`), "");
+  push("## Ce qui fait rater", "", ...r.mistakes.map((t) => `- ${t}`), "");
   push("## Variations", "", ...r.variations.flatMap((v) => [`### ${v.title}`, "", v.text, ""]));
   push("## Conservation", "", r.storage, "");
-  if (r.pairing) push("## Accord", "", r.pairing, "");
+  if (r.pairing) push("## À boire avec", "", r.pairing, "");
   push(
     `## Valeurs nutritionnelles (par ${r.servingsLabel.one}, estimations)`,
     "",
@@ -80,7 +80,7 @@ export function recipeToMarkdown(r: Recipe): string {
     "",
   );
   push("## Questions fréquentes", "", ...r.faq.flatMap((f) => [`### ${f.q}`, "", f.a, ""]));
-  push("---", "", `Source : [${r.title} — ${site.name}](${url})`, "");
+  push("---", "", `Source : [${r.title}, ${site.name}](${url})`, "");
 
   return lines.join("\n");
 }

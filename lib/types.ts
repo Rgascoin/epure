@@ -132,6 +132,11 @@ export interface RecipeContent {
   pairing?: string;
   faq: { q: string; a: string }[];
   nutrition: Nutrition;
+  /**
+   * Short handwritten margin notes (≤ 6 words each), shown in a script font
+   * next to the photos, e.g. "le guanciale, pas des lardons".
+   */
+  annotations: { hero: string; detail: string };
   images: {
     heroAlt: string;
     detailAlt: string;
