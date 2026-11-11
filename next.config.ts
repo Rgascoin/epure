@@ -41,13 +41,14 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/categories", destination: "/recettes", permanent: true },
-      // One canonical host: the old Vercel address and www point to the domain.
-      ...["epure-fawn.vercel.app", "www.epure-cuisine.fr"].map((host) => ({
+      // The old Vercel address points to the domain (the bare domain → www
+      // redirect is configured in Vercel, not here, to avoid a loop).
+      {
         source: "/:path*",
-        has: [{ type: "host" as const, value: host }],
-        destination: "https://epure-cuisine.fr/:path*",
+        has: [{ type: "host", value: "epure-fawn.vercel.app" }],
+        destination: "https://www.epure-cuisine.fr/:path*",
         permanent: true,
-      })),
+      },
     ];
   },
   async rewrites() {

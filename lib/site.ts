@@ -1,5 +1,5 @@
-/** The production domain. Previews and local builds keep their own origin. */
-export const PRODUCTION_URL = "https://epure-cuisine.fr";
+/** The production origin. Vercel redirects the bare domain to www. */
+export const PRODUCTION_URL = "https://www.epure-cuisine.fr";
 
 /**
  * Single source of truth for site-wide identity.

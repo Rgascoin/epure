@@ -92,7 +92,7 @@ Le registre, les pages catégories, la recherche, le sitemap, le flux RSS, `llms
 ## Déploiement sur Vercel
 
 1. Sur [vercel.com/new](https://vercel.com/new), importer le dépôt GitHub : le framework Next.js et `pnpm` sont détectés, aucune configuration n’est nécessaire.
-2. Déployer. En production, l’URL canonique est `https://epure-cuisine.fr` (`PRODUCTION_URL` dans `lib/site.ts`) ; l’ancienne adresse `epure-fawn.vercel.app` et `www.` redirigent vers elle (`next.config.ts`). Les préversions gardent leur propre URL et ne sont pas indexables.
+2. Déployer. En production, l’URL canonique est `https://www.epure-cuisine.fr` (`PRODUCTION_URL` dans `lib/site.ts`) : Vercel redirige le domaine nu vers `www`, et `next.config.ts` redirige l’ancienne adresse `epure-fawn.vercel.app`. Les préversions gardent leur propre URL et ne sont pas indexables.
 3. (Recommandé) Variables d’environnement, voir `.env.example` :
    - `NEXT_PUBLIC_SITE_URL` : facultatif, pour forcer une autre origine canonique.
    - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` / `NEXT_PUBLIC_BING_SITE_VERIFICATION` : jetons de Search Console et Bing Webmaster Tools.
