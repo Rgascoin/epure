@@ -39,7 +39,16 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    return [{ source: "/categories", destination: "/recettes", permanent: true }];
+    return [
+      { source: "/categories", destination: "/recettes", permanent: true },
+      // One canonical host: the old Vercel address and www point to the domain.
+      ...["epure-fawn.vercel.app", "www.epure-cuisine.fr"].map((host) => ({
+        source: "/:path*",
+        has: [{ type: "host" as const, value: host }],
+        destination: "https://epure-cuisine.fr/:path*",
+        permanent: true,
+      })),
+    ];
   },
   async rewrites() {
     return {
