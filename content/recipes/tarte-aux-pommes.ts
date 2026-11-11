@@ -6,13 +6,13 @@ export const content: RecipeContent = {
   seoTitle: "Tarte aux pommes maison, pâte brisée et compote",
   tagline: "Celle du goûter, en mieux.",
   description:
-    "Une tarte aux pommes maison avec une pâte brisée pur beurre, un fond de compote et une rosace de pommes fines, cuite 40 minutes à 180 °C. Pas à pas.",
+    "Une tarte aux pommes maison avec une pâte brisée pur beurre, un fond de compote et une rosace de pommes fines, cuite 35 à 40 minutes à 180 °C.",
   summary:
     "Pour une tarte de 8 parts, précuisez 20 minutes à 190 °C une pâte brisée pur beurre (250 g de farine, 125 g de beurre). Étalez dessus une compote maison, couvrez d’une rosace de pommes coupées à 2 mm, puis faites cuire 35 à 40 minutes à 180 °C. Un peu de confiture d’abricot au pinceau à la sortie du four, et c’est prêt.",
   intro: [
     "C’est souvent la première tarte qu’on apprend à faire, et elle vaut largement qu’on s’y applique : une pâte brisée au beurre qui se casse sous la fourchette, une compote maison, et une rosace de pommes fines bien serrée.",
     "L’astuce, c’est d’utiliser deux sortes de pommes. Une qui s’effondre pour la compote, une qui se tient pour le dessus. Et de cuire le fond seul avant de garnir, sinon la compote le détrempe.",
-    "Comptez une heure de travail et une heure de repos pour la pâte. La rosace demande un peu de patience la première fois, ensuite ça va vite.",
+    "Comptez 50 minutes de travail et une heure de repos pour la pâte. La rosace demande un peu de patience la première fois, ensuite ça va vite.",
   ],
   category: "Dessert",
   cuisine: "Française",
@@ -34,12 +34,12 @@ export const content: RecipeContent = {
   cost: "€",
   season: ["Automne", "Hiver"],
   equipment: [
-    "Moule à tarte de 26 à 28 cm, idéalement à fond amovible",
-    "Rouleau à pâtisserie",
-    "Mandoline",
-    "Papier sulfurisé et billes de cuisson",
-    "Pinceau",
-    "Casserole",
+    "moule à tarte de 26 à 28 cm, idéalement à fond amovible",
+    "rouleau à pâtisserie",
+    "mandoline",
+    "papier sulfurisé et billes de cuisson",
+    "pinceau",
+    "casserole",
   ],
   ingredients: [
     {
@@ -107,7 +107,7 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Cuire la compote",
-          text: "Épluchez les pommes à compote et coupez-les en dés. Faites-les cuire à couvert sur feu doux avec le sucre, l’eau et la vanille pendant 15 minutes, puis 5 minutes à découvert pour qu’elle sèche un peu. Écrasez à la fourchette et laissez refroidir.",
+          text: "Épluchez les pommes à compote et coupez-les en dés. Faites-les cuire à couvert sur feu doux avec le sucre, l’eau et la vanille pendant 15 minutes, puis 5 minutes à découvert pour que la compote sèche un peu. Retirez la gousse de vanille, écrasez à la fourchette et laissez refroidir.",
           timer: { minutes: 20, label: "Cuisson de la compote" },
         },
       ],
@@ -117,12 +117,12 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Foncer le moule",
-          text: "Étalez la pâte sur 3 mm d’épaisseur et posez-la dans le moule beurré, en appuyant bien dans les angles. Piquez le fond à la fourchette et mettez le moule 15 minutes au congélateur.",
-          timer: { minutes: 15, label: "Raffermir le fond" },
+          text: "Étalez la pâte sur 3 mm d’épaisseur et posez-la dans le moule beurré, en appuyant bien dans les angles. Piquez le fond à la fourchette, mettez le moule 15 minutes au congélateur et allumez le four à 190 °C.",
+          timer: { minutes: 15, label: "Passage au congélateur" },
         },
         {
           title: "Précuire à blanc",
-          text: "Allumez le four à 190 °C. Couvrez la pâte de papier sulfurisé, remplissez de billes de cuisson (ou de haricots secs) et enfournez 15 minutes. Retirez papier et billes, et laissez encore 5 minutes, jusqu’à ce que le fond soit sec et à peine blond.",
+          text: "Couvrez la pâte de papier sulfurisé, remplissez de billes de cuisson (ou de haricots secs) et enfournez 15 minutes. Retirez papier et billes, et laissez encore 5 minutes, jusqu’à ce que le fond soit sec et à peine blond.",
           timer: { minutes: 20, label: "Cuisson à blanc" },
           tip: "C’est l’étape qu’on a envie de sauter. Ne le faites pas : sans elle, la compote détrempe le fond et il reste pâle.",
         },
@@ -142,7 +142,7 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Beurrer et cuire",
-          text: "Badigeonnez les pommes de beurre fondu et saupoudrez de sucre. Enfournez jusqu’à ce que le bord des lamelles dore et que la pâte soit bien blonde.",
+          text: "Badigeonnez les pommes de beurre fondu et saupoudrez de sucre. Enfournez 35 à 40 minutes, jusqu’à ce que le bord des lamelles dore et que la pâte soit bien blonde.",
           timer: { minutes: 40, label: "Cuisson de la tarte" },
         },
         {
@@ -238,7 +238,7 @@ export const content: RecipeContent = {
   },
   annotations: {
     hero: "deux pommes, deux usages",
-    detail: "précuire le fond, toujours",
+    detail: "le fond cuit seul d’abord",
   },
   images: {
     heroAlt: "Tarte aux pommes vue de dessus, rosace serrée de fines lamelles de pommes dorées sur pâte brisée",

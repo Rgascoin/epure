@@ -151,8 +151,8 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
                 ?.filter((d) => !(d === "vegetarian" && recipe.diet?.includes("vegan")))
                 .slice(0, 2)
                 .map((d) => (
-                <span key={d}> · {dietLabels[d]}</span>
-              ))}
+                  <span key={d}> · {dietLabels[d]}</span>
+                ))}
             </p>
             <h1 className="mt-5 text-display text-balance">
               {recipe.title.split(" ").map((word, i) => (

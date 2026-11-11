@@ -708,6 +708,15 @@ details.faq summary {
   [data-print="show"] {
     display: block !important;
   }
+  /* Dark bands print as plain ink on paper */
+  [data-print="plain"] {
+    background: none !important;
+    color: #000 !important;
+    padding-block: 1.5rem !important;
+  }
+  [data-print="plain"] * {
+    color: #000 !important;
+  }
   a {
     text-decoration: none;
     color: inherit;

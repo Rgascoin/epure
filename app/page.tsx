@@ -117,7 +117,8 @@ export default function HomePage() {
           }))}
         />
         <p className="mt-8 -rotate-1 hand text-[1.6rem] text-ink">
-          Si vous hésitez, la carbonara&#8239;: vingt-cinq minutes, et si la sauce graine, on vous dit comment la rattraper.
+          Si vous hésitez, la carbonara&#8239;: vingt-cinq minutes, et si la sauce graine, on vous dit comment la
+          rattraper.
         </p>
       </section>
     </PageTransition>

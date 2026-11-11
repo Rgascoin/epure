@@ -50,7 +50,7 @@ export function RecipeHeroArch({
         </div>
       </ViewTransition>
       {stamp && (
-        <m.div className="absolute -top-4 -left-3 w-28 md:-left-8 md:w-36" style={{ rotate }}>
+        <m.div className="absolute -top-4 -left-3 w-28 md:-left-8 md:w-36" style={{ rotate }} data-print="hide">
           {stamp}
         </m.div>
       )}

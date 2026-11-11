@@ -98,6 +98,7 @@ export function Science({ recipe }: { recipe: Recipe }) {
   return (
     <section
       aria-labelledby="science-title"
+      data-print="plain"
       className="grain relative overflow-hidden py-[clamp(5rem,14vh,9rem)] text-paper"
       style={{ backgroundColor: recipe.theme.deep }}
     >

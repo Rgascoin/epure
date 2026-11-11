@@ -19,8 +19,9 @@ export function Manifesto() {
             courts.
           </p>
           <p className="mt-10 max-w-xl text-[1.0625rem] leading-relaxed text-fg-2">
-            Chaque page suit le même ordre&#8239;: l’essentiel en quelques lignes, trois paragraphes pour situer le plat,
-            les ingrédients, les étapes avec leurs minuteurs, puis le pourquoi, les ratés possibles et les variantes.
+            Chaque page suit le même ordre&#8239;: l’essentiel en quelques lignes, trois paragraphes pour situer le
+            plat, les ingrédients, les étapes avec leurs minuteurs, puis le pourquoi, les ratés possibles et les
+            variantes.
           </p>
         </div>
       </div>
