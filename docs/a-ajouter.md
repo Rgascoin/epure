@@ -159,13 +159,13 @@ Une collection a sa page dès 3 recettes ; en dessous, la mise en avant renvoie 
 Le raccourci doit être honnête (voir la fiche mémo). Coché automatiquement quand la recette a un bloc `easy`.
 
 - [x] `pizza-margherita` · pâte à pizza fraîche du commerce
-- [ ] `quiche-lorraine` · pâte brisée du commerce
-- [ ] `tarte-aux-pommes` · pâte du commerce
-- [ ] `tarte-au-citron-meringuee` · pâte sablée du commerce
-- [ ] `tarte-aux-fraises` · pâte sablée du commerce
-- [ ] `tarte-tatin` · pâte feuilletée ou brisée du commerce
-- [ ] `croque-monsieur` · crème et fromage au lieu de la béchamel
-- [ ] `lasagnes-a-la-bolognaise` · feuilles fraîches sans précuisson, ragù court
+- [x] `quiche-lorraine` · pâte brisée du commerce
+- [x] `tarte-aux-pommes` · pâte du commerce
+- [x] `tarte-au-citron-meringuee` · pâte sablée du commerce
+- [x] `tarte-aux-fraises` · pâte sablée du commerce
+- [x] `tarte-tatin` · pâte feuilletée ou brisée du commerce
+- [x] `croque-monsieur` · crème et fromage au lieu de la béchamel
+- [x] `lasagnes-a-la-bolognaise` · feuilles fraîches sans précuisson, ragù court
 - [ ] `hachis-parmentier` · reste de viande cuite (pot-au-feu, rôti) au lieu du bœuf haché
 - [ ] `gratin-dauphinois` · à étudier : précuisson au lait, gain réel ?
 - [ ] `cheesecake` · biscuits du commerce pour la base, déjà le cas ? à vérifier

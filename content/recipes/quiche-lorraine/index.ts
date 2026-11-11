@@ -182,6 +182,93 @@ export default defineRecipe({
   storage:
     "Elle se garde 2 à 3 jours au réfrigérateur, filmée ou en boîte fermée. Réchauffez les parts 10 à 15 minutes au four à 160 °C, jusqu’à ce qu’elles soient chaudes à cœur : au micro-ondes, la pâte ramollit.",
   pairing: "Un vin gris des côtes de Toul si vous en trouvez, sinon un riesling ou un pinot blanc d’Alsace.",
+  easy: {
+    shortcut: "pâte brisée pur beurre du commerce",
+    note: "Une pâte brisée en rouleau fait gagner le sablage et 30 minutes de repos. Plus fine et moins friable que la maison, elle colore plus vite : la cuisson à blanc reste indispensable. Prenez-la pur beurre ; une pâte à l’huile ou à la margarine paraît fade sous la crème.",
+    times: { prep: 15, cook: 55, rest: 25 },
+    ingredients: [
+      {
+        title: "Le fond",
+        items: [
+          {
+            qty: 1,
+            unit: "rouleau",
+            name: "pâte brisée pur beurre",
+            note: "ronde, du commerce, environ 230 g",
+            step: 1,
+          },
+        ],
+      },
+      {
+        title: "La garniture",
+        items: [
+          { qty: 200, unit: "g", name: "lardons fumés", note: "ou poitrine fumée en bâtonnets de 5 mm", step: 10 },
+          { qty: 4, name: "œuf", plural: "œufs", step: 1 },
+          {
+            qty: 40,
+            unit: "cl",
+            name: "crème fraîche entière",
+            note: "liquide, ou moitié liquide moitié épaisse",
+            step: 1,
+          },
+          { qty: 1, unit: "pincee", name: "noix de muscade", note: "râpée", step: 1 },
+          { name: "poivre du moulin" },
+        ],
+      },
+    ],
+    method: [
+      {
+        title: "Le fond de tarte",
+        steps: [
+          {
+            title: "Foncer le moule",
+            text: "Préchauffez le four à 200 °C, chaleur statique. Déroulez la pâte, gardez son papier de côté et foncez le moule en poussant bien la pâte dans l’angle : elle doit remonter d’au moins 2 cm sur les bords. Coupez l’excédent en gardant une petite chute, puis piquez le fond à la fourchette. Mettez le moule 15 minutes au réfrigérateur pendant que le four chauffe.",
+            timer: { minutes: 15, label: "Fond de tarte au frais" },
+          },
+          {
+            title: "Cuire à blanc",
+            text: "Couvrez la pâte de son papier, remplissez-la de billes de cuisson ou de haricots secs et enfournez 15 minutes. Retirez papier et billes, puis prolongez 5 à 8 minutes : le fond doit être sec et blond, sans zone brillante. Plus fine qu’une pâte maison, elle dore vite : surveillez la fin.",
+            timer: { minutes: 20, label: "Cuisson à blanc" },
+            tip: "Une fissure après la cuisson ? Bouchez-la avec la chute de pâte crue : l’appareil ne passera pas dessous.",
+          },
+        ],
+      },
+      {
+        title: "La garniture",
+        steps: [
+          {
+            title: "Dorer les lardons",
+            text: "Pendant la cuisson à blanc, faites revenir les lardons à sec dans une poêle, à feu moyen, 5 à 6 minutes en remuant : ils doivent dorer sans devenir secs ni croustillants. Égouttez-les sur du papier absorbant.",
+            timer: { minutes: 6, label: "Lardons" },
+          },
+          {
+            title: "Préparer l’appareil",
+            text: "Dans un saladier, fouettez les œufs avec la crème, la muscade et quelques tours de poivre, juste assez pour que le mélange soit homogène, sans le faire mousser. Ne salez pas : les lardons apportent tout le sel nécessaire.",
+          },
+        ],
+      },
+      {
+        title: "La cuisson",
+        steps: [
+          {
+            title: "Garnir le fond",
+            text: "Baissez le four à 180 °C. Répartissez les lardons sur le fond de tarte encore chaud, puis versez l’appareil doucement par-dessus, sans dépasser le bord de la pâte.",
+          },
+          {
+            title: "Cuire la quiche",
+            text: "Enfournez au milieu du four pour 30 à 35 minutes. La quiche est cuite quand le dessus est doré par endroits et que le centre tremble à peine, comme une gelée, quand vous secouez doucement le moule.",
+            timer: { minutes: 32, label: "Cuisson de la quiche" },
+            tip: "Si les bords de la pâte dorent trop vite, couvrez-les d’une bande de papier aluminium.",
+          },
+          {
+            title: "Laisser reposer",
+            text: "Laissez reposer la quiche 10 minutes hors du four avant de la démouler et de la couper : l’appareil finit de prendre avec la chaleur qui reste, et les parts se tiennent. Servez-la chaude ou tiède.",
+            timer: { minutes: 10, label: "Repos de la quiche" },
+          },
+        ],
+      },
+    ],
+  },
   faq: [
     {
       q: "Met-on du fromage dans la quiche lorraine ?",

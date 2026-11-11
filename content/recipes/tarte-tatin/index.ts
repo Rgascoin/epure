@@ -170,6 +170,87 @@ export default defineRecipe({
   storage:
     "La tarte tatin se garde 2 jours au réfrigérateur, couverte. Réchauffez-la 10 minutes au four à 150 °C avant de la servir : le caramel redevient souple. Elle supporte mal la congélation, les pommes rendent leur eau.",
   pairing: "De la crème fraîche épaisse, et un cidre brut ou un pommeau bien frais.",
+  easy: {
+    shortcut: "pâte brisée pur beurre du commerce",
+    note: "La pâte en rouleau épargne le sablage, le repos et un saladier : une dizaine de minutes de travail en moins, pas plus, car le temps de la tatin est dans le caramel et les pommes. Plus fine que la maison, elle cuit un peu plus vite. Prenez-la pur beurre : à l’huile, elle paraît fade sous le caramel.",
+    times: { prep: 25, cook: 60, rest: 20 },
+    ingredients: [
+      {
+        title: "Pâte",
+        items: [
+          {
+            qty: 1,
+            unit: "rouleau",
+            name: "pâte brisée pur beurre",
+            note: "ronde, du commerce, environ 230 g",
+            step: 1,
+          },
+        ],
+      },
+      {
+        title: "Pommes au caramel",
+        items: [
+          {
+            qty: 8,
+            name: "grosse pomme",
+            plural: "grosses pommes",
+            note: "environ 1,6 kg, fermes et acidulées : reine des reinettes, boskoop ou golden",
+            step: 1,
+          },
+          { qty: 150, unit: "g", name: "sucre en poudre", step: 5 },
+          { qty: 80, unit: "g", name: "beurre demi-sel", note: "froid, en morceaux", step: 5 },
+        ],
+      },
+    ],
+    method: [
+      {
+        title: "Les pommes au caramel",
+        steps: [
+          {
+            title: "Préparer les pommes",
+            text: "Épluchez les pommes, coupez-les en deux de haut en bas et retirez le cœur et les pépins avec une petite cuillère. Gardez les demi-pommes à portée de main : une fois le caramel prêt, il faut aller vite.",
+          },
+          {
+            title: "Cuire le caramel",
+            text: "Versez le sucre en couche régulière dans la poêle, sur feu moyen, sans remuer. Quand il fond sur les bords, inclinez la poêle pour répartir le liquide. Au bout de 6 à 8 minutes, dès qu’il a la couleur d’un miel très foncé, retirez du feu et ajoutez le beurre en morceaux. Mélangez à la spatule : ça mousse et ça crépite, puis la sauce redevient lisse.",
+            timer: { minutes: 8, label: "Caramel à sec" },
+            tip: "S’il masse en grains blancs, ajoutez 3 cuillères à soupe d’eau et laissez-le refondre à feu doux, sans remuer. S’il fume et sent l’amer, il est brûlé : recommencez.",
+          },
+          {
+            title: "Ranger les pommes",
+            text: "Posez les demi-pommes debout sur la tranche, serrées les unes contre les autres en cercle le long du bord, puis remplissez le centre. Forcez un peu : elles doivent tenir seules. Gardez une ou deux moitiés de côté pour boucher les trous pendant la cuisson.",
+            tip: "Le caramel brûlant colle à la peau : posez les pommes avec une fourchette, jamais avec les doigts.",
+          },
+          {
+            title: "Confire sur le feu",
+            text: "Remettez sur feu moyen 20 à 25 minutes. Les pommes rendent leur jus, le caramel se dilue, puis réduit. Arrosez-les de temps en temps à la cuillère et glissez les moitiés gardées dans les vides. C’est prêt quand elles sont brunes à la base, tendres sous la pointe d’un couteau, et que le jus fait de grosses bulles épaisses. Préchauffez le four à 200 °C.",
+            timer: { minutes: 25, label: "Pommes au caramel" },
+          },
+        ],
+      },
+      {
+        title: "Cuisson et démoulage",
+        steps: [
+          {
+            title: "Couvrir de pâte",
+            text: "Laissez tiédir les pommes 10 minutes hors du feu. Pendant ce temps, déroulez la pâte et découpez-y un disque de 28 cm. Posez-le sur les pommes, retirez le papier et rentrez le bord entre les fruits et la paroi avec le dos d’une cuillère. Percez 4 ou 5 trous au couteau pour laisser sortir la vapeur.",
+            timer: { minutes: 10, label: "Pommes à tiédir" },
+          },
+          {
+            title: "Cuire au four",
+            text: "Posez la poêle sur une plaque, qui recueillera les débordements, et enfournez 20 à 25 minutes à 200 °C. La pâte doit être bien dorée et le caramel bouillonner sur les bords.",
+            timer: { minutes: 25, label: "Cuisson au four" },
+          },
+          {
+            title: "Retourner la tarte",
+            text: "Laissez reposer 10 minutes, pas plus. Passez une lame le long du bord, posez le plat de service à l’envers sur la poêle et, avec des gants, retournez d’un geste franc. Soulevez la poêle doucement. Si une pomme est restée collée, remettez-la en place à la spatule.",
+            timer: { minutes: 10, label: "Repos avant démoulage" },
+            tip: "Si le caramel a déjà pris, remettez la poêle 2 minutes sur feu doux avant de retourner : il se détache tout seul.",
+          },
+        ],
+      },
+    ],
+  },
   faq: [
     {
       q: "Quelles pommes choisir pour une tarte tatin ?",

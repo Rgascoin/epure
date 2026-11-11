@@ -135,7 +135,7 @@ function VersionSwitch({
       <div
         role="group"
         aria-label="Version de la recette"
-        className="inline-flex rounded-[14px] border-[1.5px] border-fg p-1"
+        className="grid w-full grid-cols-2 rounded-[14px] border-[1.5px] border-fg p-1 sm:inline-grid sm:w-auto"
       >
         {options.map(([v, label, minutes]) => {
           const on = version === v;
@@ -146,7 +146,7 @@ function VersionSwitch({
               aria-pressed={on}
               onClick={() => onChange(v)}
               className={clsx(
-                "relative flex min-h-11 items-baseline gap-2 rounded-[10px] px-4 py-2 text-[0.9375rem] font-semibold transition-colors duration-300",
+                "relative flex min-h-11 flex-col items-start gap-0.5 rounded-[10px] px-4 py-2 text-left text-[0.9375rem] font-semibold whitespace-nowrap transition-colors duration-300 sm:flex-row sm:items-baseline sm:gap-2",
                 on ? "text-bg" : "text-fg-2 hover:text-fg",
               )}
             >

@@ -198,6 +198,113 @@ export default defineRecipe({
   storage:
     "À cause de la meringue, gardez la tarte au réfrigérateur, sans film qui collerait dessus, et mangez-la dans les 24 heures. Sortez-la 15 minutes avant de servir : moins glacée, la crème est plus parfumée.",
   pairing: "Un jurançon moelleux, dont l’acidité tient tête au citron, ou un thé noir léger.",
+  easy: {
+    shortcut: "pâte sablée pur beurre du commerce",
+    note: "Une pâte sablée en rouleau fait gagner le sablage et 1 heure de repos. Plus fine et moins friable que la maison, souvent plus sucrée, elle dore vite : surveillez la cuisson à blanc. Prenez-la pur beurre. La crème et la meringue, qui font la tarte, restent maison.",
+    times: { prep: 40, cook: 40, rest: 135 },
+    ingredients: [
+      {
+        title: "Fond de tarte",
+        items: [
+          {
+            qty: 1,
+            unit: "rouleau",
+            name: "pâte sablée pur beurre",
+            note: "ronde, du commerce, environ 230 g",
+            step: 1,
+          },
+          { qty: 10, unit: "g", name: "beurre mou", note: "pour le moule", step: 5, fixed: true },
+        ],
+      },
+      {
+        title: "Crème au citron",
+        items: [
+          { qty: 140, unit: "g", name: "sucre en poudre", step: 10 },
+          {
+            qty: 4,
+            name: "citron jaune non traité",
+            plural: "citrons jaunes non traités",
+            note: "le zeste de 2, le jus des 4 (150 ml)",
+            step: 1,
+          },
+          { qty: 15, unit: "g", name: "fécule de maïs", step: 5 },
+          { qty: 2, name: "œuf", plural: "œufs", step: 1 },
+          { qty: 3, name: "jaune d’œuf", plural: "jaunes d’œufs", note: "gardez les blancs pour la meringue", step: 1 },
+          { qty: 80, unit: "g", name: "beurre doux", note: "en dés, à température ambiante", step: 5 },
+        ],
+      },
+      {
+        title: "Meringue suisse",
+        items: [
+          { qty: 3, name: "blanc d’œuf", plural: "blancs d’œufs", note: "ceux des jaunes, environ 100 g", step: 1 },
+          { qty: 170, unit: "g", name: "sucre en poudre", step: 10 },
+        ],
+      },
+    ],
+    method: [
+      {
+        title: "Le fond de tarte",
+        steps: [
+          {
+            title: "Foncer le moule",
+            text: "Préchauffez le four à 170 °C, chaleur tournante. Déroulez la pâte et foncez le moule beurré, en appuyant bien dans les angles. Coupez l’excédent, piquez le fond à la fourchette et mettez le moule 15 minutes au congélateur.",
+            timer: { minutes: 15, label: "Pâte au congélateur" },
+          },
+          {
+            title: "Cuire à blanc",
+            text: "Couvrez la pâte de papier sulfurisé, remplissez de billes de cuisson et enfournez 15 minutes. Retirez papier et billes, puis prolongez 5 à 8 minutes, jusqu’à ce que le fond soit sec et doré de façon uniforme. Plus fine que la pâte maison, elle colore vite : surveillez la fin. Laissez refroidir complètement sur une grille.",
+            timer: { minutes: 20, label: "Cuisson à blanc" },
+            tip: "Le fond doit être bien doré, pas seulement blond : une fois garni de crème, il ne cuira plus.",
+          },
+        ],
+      },
+      {
+        title: "La crème au citron",
+        steps: [
+          {
+            title: "Zester et presser",
+            text: "Mettez le sucre dans une casserole et râpez finement par-dessus le zeste de 2 citrons, sans le blanc amer. Frottez sucre et zeste du bout des doigts pour en libérer le parfum. Pressez les 4 citrons : il vous faut 150 ml de jus.",
+          },
+          {
+            title: "Cuire la crème",
+            text: "Ajoutez la fécule au sucre, puis les œufs et les jaunes, et fouettez jusqu’à ce que ce soit lisse. Versez le jus. Chauffez à feu moyen-doux sans cesser de fouetter, 6 à 8 minutes : la crème épaissit d’un coup. Laissez-la alors bouillonner 1 minute en fouettant toujours, puis retirez du feu.",
+            timer: { minutes: 9, label: "Cuisson de la crème" },
+            tip: "Ce petit bouillon est indispensable : il finit de gonfler l’amidon et détruit une enzyme du jaune d’œuf qui, sinon, refluidifie la crème en quelques heures.",
+          },
+          {
+            title: "Incorporer le beurre",
+            text: "Hors du feu, ajoutez le beurre en dés et fouettez jusqu’à ce qu’il ait fondu et que la crème soit lisse et brillante. Pour une texture encore plus fine, donnez quelques secondes de mixeur plongeant.",
+          },
+          {
+            title: "Garnir et laisser prendre",
+            text: "Versez la crème encore chaude sur le fond de tarte refroidi et lissez-la à la spatule. Laissez tiédir, puis placez la tarte au moins 2 heures au réfrigérateur : la crème doit être prise et froide avant de recevoir la meringue.",
+            timer: { minutes: 120, label: "Prise de la crème" },
+          },
+        ],
+      },
+      {
+        title: "La meringue suisse",
+        steps: [
+          {
+            title: "Chauffer les blancs",
+            text: "Dans un bol résistant à la chaleur, mélangez les blancs et le sucre. Posez le bol sur une casserole d’eau frémissante, sans qu’il touche l’eau, et fouettez sans arrêt 5 à 8 minutes, jusqu’à 70 °C au thermomètre. Le sucre doit être fondu : un peu de mélange, tiédi sur une cuillère, ne crisse plus entre les doigts.",
+            timer: { minutes: 7, label: "Blancs au bain-marie" },
+          },
+          {
+            title: "Fouetter la meringue",
+            text: "Retirez le bol du bain-marie et fouettez au batteur électrique, à vitesse maximale, 8 à 10 minutes : la meringue doit être épaisse et très brillante, former un bec ferme au bout des fouets, et le bol ne doit plus être que tiède.",
+            timer: { minutes: 9, label: "Fouettage de la meringue" },
+          },
+          {
+            title: "Meringuer et dorer",
+            text: "Étalez la meringue sur la crème froide, en la soudant bien au bord de la pâte, puis soulevez-la par petites touches pour former des pointes. Dorez-les au chalumeau, flamme à 5 cm. Sans chalumeau, passez la tarte 1 à 2 minutes sous le gril bien chaud, porte ouverte, sans la quitter des yeux.",
+            timer: { minutes: 2, label: "Coloration sous le gril" },
+            tip: "Collez bien la meringue au bord de la pâte, sans laisser de jour : sinon elle se rétracte vers le centre et laisse voir la crème.",
+          },
+        ],
+      },
+    ],
+  },
   faq: [
     {
       q: "Meringue italienne ou suisse pour une tarte au citron ?",
