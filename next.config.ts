@@ -38,6 +38,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [{ source: "/categories", destination: "/recettes", permanent: true }];
+  },
   async rewrites() {
     return {
       beforeFiles: [

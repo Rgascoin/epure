@@ -40,7 +40,7 @@ export function Marquee({
                         alt=""
                         fill
                         sizes="64px"
-                        quality={60}
+                        quality={70}
                         className="object-cover"
                         style={{ objectPosition: thumbs[i % thumbs.length].focus }}
                       />

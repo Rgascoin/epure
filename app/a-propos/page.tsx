@@ -8,11 +8,11 @@ import { absoluteUrl } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
 import { Scribble } from "@/components/scribble";
-import { ArrowRight } from "@/components/icons";
+import { ArrowRight, ChevronDown } from "@/components/icons";
 
-const title = "À propos : pourquoi seulement cinq recettes ?";
+const title = "À propos : pourquoi des recettes au gramme près ?";
 const description =
-  "Épure est un petit carnet de cinq recettes écrites au gramme près, avec le pourquoi de chaque geste. Pas de publicité, pas de compte, pas de pop-up.";
+  "Épure est un carnet de recettes écrites au gramme près, avec le pourquoi de chaque geste et quoi faire quand ça rate. Pas de publicité, pas de compte, pas de pop-up.";
 
 export const metadata: Metadata = {
   title,
@@ -66,7 +66,7 @@ export default function AboutPage() {
           À propos
         </p>
         <h1 className="mt-6 max-w-[13ch] text-hero">
-          {["Pourquoi", "seulement"].map((word, i) => (
+          {["Pourquoi", "au"].map((word, i) => (
             <span key={word}>
               <span className="intro-word" style={{ "--i": i } as CSSProperties}>
                 {word}
@@ -75,7 +75,7 @@ export default function AboutPage() {
           ))}
           <span className="relative inline-block">
             <span className="intro-word serif-accent text-ink" style={{ "--i": 2 } as CSSProperties}>
-              cinq
+              gramme
             </span>
             <Scribble
               variant="circle"
@@ -84,7 +84,7 @@ export default function AboutPage() {
             />
           </span>
           <span className="intro-word" style={{ "--i": 3 } as CSSProperties}>
-            &#8239;?
+            près&#8239;?
           </span>
         </h1>
       </section>
@@ -96,12 +96,12 @@ export default function AboutPage() {
         <div className="space-y-6 text-[1.1875rem] leading-[1.7] text-fg-2 md:col-span-7 md:col-start-4">
           <p className="dropcap font-display text-[clamp(1.35rem,2.2vw,1.75rem)] leading-[1.5] [font-weight:calc(380+var(--dw))] text-fg [font-variation-settings:'SOFT'_80]">
             {fr(
-              "Parce qu’on préfère expliquer une recette à fond plutôt qu’en survoler cent. Il existe des milliers de versions de la carbonara en ligne ; on en a écrit une, en prenant le temps de dire pourquoi elle marche.",
+              "Parce qu’une recette qui dit « un peu de farine » ou « cuire jusqu’à ce que ce soit cuit » ne sert qu’à ceux qui savent déjà. Il existe des milliers de carbonaras en ligne ; on a écrit la nôtre en prenant le temps de dire pourquoi elle marche, puis on a fait pareil pour les autres.",
             )}
           </p>
           <p>
             {fr(
-              "Les cinq recettes ont été choisies parce que chacune apprend un geste qui servira ailleurs : lier une sauce aux œufs sans la cuire, mijoter longtemps sans dessécher, confire des légumes, foncer une pâte, monter des blancs. Si vous maîtrisez ces cinq-là, vous avez fait une bonne partie du chemin.",
+              "On commence par les plats que tout le monde cherche, des crêpes au bœuf bourguignon. Chacun suit le même guide d’écriture : des quantités pesées, des temps annoncés avant chaque minuteur, ce qu’il faut guetter dans la casserole, et quoi faire quand ça tourne mal. Le carnet grossit petit à petit, et une recette n’y entre que si elle tient ces promesses.",
             )}
           </p>
           <p>
@@ -172,26 +172,32 @@ export default function AboutPage() {
             "Les photos viennent de Pexels et sont utilisées selon leur licence. Les caractères sont Fraunces, Instrument Sans, IBM Plex Mono et Caveat, tous sous licence libre.",
           )}
         </p>
-        <ul className="mt-8 grid gap-x-10 border-t border-line-strong text-[0.9375rem] sm:grid-cols-2 lg:grid-cols-3">
-          {recipes.flatMap((r) =>
-            (["hero", "detail"] as const).map((k) => (
-              <li key={`${r.slug}-${k}`} className="flex items-baseline border-b border-line py-3">
-                <span className="text-fg-2">
-                  {r.title}
-                  {k === "detail" ? " (détail)" : ""}
-                </span>
-                <span className="leader" />
-                <a
-                  href={r.images.credits[k].url}
-                  rel="noopener"
-                  className="font-medium underline-offset-4 hover:underline"
-                >
-                  {r.images.credits[k].photographer}
-                </a>
-              </li>
-            )),
-          )}
-        </ul>
+        <details className="group mt-8 border-t border-line-strong">
+          <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 border-b border-line py-3 font-medium [&::-webkit-details-marker]:hidden">
+            Les {recipes.length * 2} photos et leurs auteurs
+            <ChevronDown size={18} className="transition-transform duration-300 group-open:rotate-180" />
+          </summary>
+          <ul className="grid gap-x-10 text-[0.9375rem] sm:grid-cols-2 lg:grid-cols-3">
+            {recipes.flatMap((r) =>
+              (["hero", "detail"] as const).map((k) => (
+                <li key={`${r.slug}-${k}`} className="flex items-baseline border-b border-line py-3">
+                  <span className="text-fg-2">
+                    {r.title}
+                    {k === "detail" ? " (détail)" : ""}
+                  </span>
+                  <span className="leader" />
+                  <a
+                    href={r.images.credits[k].url}
+                    rel="noopener"
+                    className="font-medium underline-offset-4 hover:underline"
+                  >
+                    {r.images.credits[k].photographer}
+                  </a>
+                </li>
+              )),
+            )}
+          </ul>
+        </details>
 
         <Link href="/recettes" className="btn btn-primary mt-14" transitionTypes={["nav-forward"]}>
           Voir les recettes <ArrowRight size={18} />

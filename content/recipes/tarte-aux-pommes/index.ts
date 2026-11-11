@@ -1,6 +1,8 @@
-import type { RecipeContent } from "@/lib/types";
+import { defineRecipe } from "@/lib/define-recipe";
+import hero from "./hero.jpg";
+import detail from "./detail.jpg";
 
-export const content: RecipeContent = {
+export default defineRecipe({
   slug: "tarte-aux-pommes",
   title: "Tarte aux pommes",
   seoTitle: "Tarte aux pommes maison, pâte brisée et compote",
@@ -96,7 +98,7 @@ export const content: RecipeContent = {
         },
         {
           title: "Rassembler et reposer",
-          text: "Ajoutez le jaune et l’eau glacée, puis rassemblez vite la pâte en boule, sans la pétrir. Écrasez-la une ou deux fois sous la paume pour bien mélanger, aplatissez-la en galette, filmez et mettez-la au frigo.",
+          text: "Ajoutez le jaune et l’eau glacée, puis rassemblez vite la pâte en boule, sans la pétrir. Écrasez-la une ou deux fois sous la paume pour bien mélanger, aplatissez-la en galette, filmez et mettez-la 1 heure au frigo.",
           timer: { minutes: 60, label: "Repos de la pâte" },
           tip: "Moins vous la travaillez, mieux c’est. Une pâte trop pétrie devient élastique et se rétracte dans le moule à la cuisson.",
         },
@@ -151,7 +153,7 @@ export const content: RecipeContent = {
         },
         {
           title: "Laisser tiédir",
-          text: "Laissez-la tiédir sur une grille avant de la démouler. Si vous la coupez brûlante, la compote coule.",
+          text: "Laissez-la tiédir 30 minutes sur une grille avant de la démouler. Si vous la coupez brûlante, la compote coule.",
           timer: { minutes: 30, label: "Refroidissement" },
         },
       ],
@@ -256,4 +258,15 @@ export const content: RecipeContent = {
   },
   datePublished: "2026-10-23",
   dateModified: "2026-11-10",
-};
+  featured: true,
+  hero,
+  detail,
+  theme: {
+    accent: "#C27A32",
+    onAccent: "#1d1d1f",
+    ink: "#8F5512",
+    tint: "#F9F0E6",
+    deep: "#130D09",
+    focus: "50% 50%",
+  },
+});

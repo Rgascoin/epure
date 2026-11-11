@@ -1,6 +1,8 @@
-import type { RecipeContent } from "@/lib/types";
+import { defineRecipe } from "@/lib/define-recipe";
+import hero from "./hero.jpg";
+import detail from "./detail.jpg";
 
-export const content: RecipeContent = {
+export default defineRecipe({
   slug: "boeuf-bourguignon",
   title: "Bœuf bourguignon",
   seoTitle: "Bœuf bourguignon en cocotte, cuit doucement au four",
@@ -133,7 +135,7 @@ export const content: RecipeContent = {
         },
         {
           title: "Vérifier la cuisson",
-          text: "La viande est prête quand elle cède sous le dos d’une cuillère. Si la sauce vous semble trop liquide, sortez la viande et faites réduire la sauce à découvert sur le feu, jusqu’à ce qu’elle nappe la cuillère, puis remettez la viande.",
+          text: "La viande est prête quand elle cède sous le dos d’une cuillère. Si la sauce vous semble trop liquide, sortez la viande et faites réduire la sauce à découvert sur le feu, 10 minutes environ, jusqu’à ce qu’elle nappe la cuillère, puis remettez la viande.",
           timer: { minutes: 10, label: "Réduction de la sauce" },
         },
       ],
@@ -143,7 +145,7 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Glacer les oignons",
-          text: "Pendant la dernière heure, mettez les oignons grelots dans une sauteuse avec 10 g de beurre, le sucre, une pincée de sel et de l’eau à mi-hauteur. Couvrez d’un rond de papier sulfurisé et laissez cuire jusqu’à ce que l’eau ait disparu, puis roulez-les dans le jus qui caramélise.",
+          text: "Pendant la dernière heure, mettez les oignons grelots dans une sauteuse avec 10 g de beurre, le sucre, une pincée de sel et de l’eau à mi-hauteur. Couvrez d’un rond de papier sulfurisé et laissez cuire 20 minutes environ, jusqu’à ce que l’eau ait disparu, puis roulez-les dans le jus qui caramélise.",
           timer: { minutes: 20, label: "Oignons glacés" },
         },
         {
@@ -260,4 +262,15 @@ export const content: RecipeContent = {
   },
   datePublished: "2026-10-09",
   dateModified: "2026-11-10",
-};
+  featured: true,
+  hero,
+  detail,
+  theme: {
+    accent: "#8E1F2F",
+    onAccent: "#ffffff",
+    ink: "#8E1F2F",
+    tint: "#F8ECEC",
+    deep: "#1C090C",
+    focus: "50% 46%",
+  },
+});

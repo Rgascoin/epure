@@ -1,6 +1,8 @@
-import type { RecipeContent } from "@/lib/types";
+import { defineRecipe } from "@/lib/define-recipe";
+import hero from "./hero.jpg";
+import detail from "./detail.jpg";
 
-export const content: RecipeContent = {
+export default defineRecipe({
   slug: "tian-provencal",
   title: "Tian provençal",
   seoTitle: "Tian provençal, le gratin de légumes d’été au four",
@@ -69,7 +71,7 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Confire les oignons",
-          text: "Faites chauffer 3 cuillerées à soupe d’huile d’olive à feu doux dans une grande poêle. Ajoutez les oignons, l’ail, les feuilles de 2 brins de thym et le sel, et laissez cuire en remuant souvent. Ils doivent devenir fondants et blonds, sans brunir.",
+          text: "Faites chauffer 3 cuillerées à soupe d’huile d’olive à feu doux dans une grande poêle. Ajoutez les oignons, l’ail, les feuilles de 2 brins de thym et le sel, et laissez cuire 15 minutes en remuant souvent. Ils doivent devenir fondants et blonds, sans brunir.",
           timer: { minutes: 15, label: "Oignons confits" },
         },
         {
@@ -96,12 +98,12 @@ export const content: RecipeContent = {
         },
         {
           title: "Cuire à couvert",
-          text: "Couvrez d’une feuille de papier sulfurisé, puis de papier aluminium, et enfournez. Les légumes cuisent à l’étouffée et s’attendrissent.",
+          text: "Couvrez d’une feuille de papier sulfurisé, puis de papier aluminium, et enfournez pour 45 minutes. Les légumes cuisent à l’étouffée et s’attendrissent.",
           timer: { minutes: 45, label: "Cuisson couverte" },
         },
         {
           title: "Finir à découvert",
-          text: "Retirez les feuilles et continuez la cuisson. Le tian est prêt quand les légumes sont fondants, les bords un peu caramélisés et qu’il ne reste presque plus de jus au fond.",
+          text: "Retirez les feuilles et continuez la cuisson 30 minutes. Le tian est prêt quand les légumes sont fondants, les bords un peu caramélisés et qu’il ne reste presque plus de jus au fond.",
           timer: { minutes: 30, label: "Cuisson à découvert" },
           tip: "S’il reste beaucoup de jus, prolongez la cuisson de 10 minutes ou retirez-en une partie à la cuillère.",
         },
@@ -213,4 +215,15 @@ export const content: RecipeContent = {
   },
   datePublished: "2026-10-16",
   dateModified: "2026-11-10",
-};
+  featured: true,
+  hero,
+  detail,
+  theme: {
+    accent: "#4A7524",
+    onAccent: "#ffffff",
+    ink: "#41691F",
+    tint: "#EFF4E8",
+    deep: "#0D1608",
+    focus: "50% 48%",
+  },
+});

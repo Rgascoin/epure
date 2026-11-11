@@ -1,99 +1,133 @@
-import type { Recipe, RecipeContent, RecipeTheme } from "./types";
-import type { StaticImageData } from "next/image";
+import type { Category, Recipe } from "./types";
+import { allRecipes } from "@/content/recipes";
+import { auditRecipe } from "./recipe-rules";
 
-import { content as carbonara } from "@/content/recipes/spaghetti-carbonara";
-import { content as bourguignon } from "@/content/recipes/boeuf-bourguignon";
-import { content as tian } from "@/content/recipes/tian-provencal";
-import { content as tarte } from "@/content/recipes/tarte-aux-pommes";
-import { content as mousse } from "@/content/recipes/mousse-au-chocolat";
+/* -------------------------------------------------------------------------- */
+/*  Categories                                                                 */
+/* -------------------------------------------------------------------------- */
 
-import carbonaraHero from "@/content/recipes/images/spaghetti-carbonara.jpg";
-import carbonaraDetail from "@/content/recipes/images/spaghetti-carbonara-detail.jpg";
-import bourguignonHero from "@/content/recipes/images/boeuf-bourguignon.jpg";
-import bourguignonDetail from "@/content/recipes/images/boeuf-bourguignon-detail.jpg";
-import tianHero from "@/content/recipes/images/tian-provencal.jpg";
-import tianDetail from "@/content/recipes/images/tian-provencal-detail.jpg";
-import tarteHero from "@/content/recipes/images/tarte-aux-pommes.jpg";
-import tarteDetail from "@/content/recipes/images/tarte-aux-pommes-detail.jpg";
-import mousseHero from "@/content/recipes/images/mousse-au-chocolat.jpg";
-import mousseDetail from "@/content/recipes/images/mousse-au-chocolat-detail.jpg";
-
-const themes: Record<string, RecipeTheme> = {
-  "spaghetti-carbonara": {
-    accent: "#F0B323",
-    onAccent: "#1d1d1f",
-    ink: "#885A00",
-    tint: "#FBF4E2",
-    deep: "#14161B",
-    focus: "50% 42%",
-  },
-  "boeuf-bourguignon": {
-    accent: "#8E1F2F",
-    onAccent: "#ffffff",
-    ink: "#8E1F2F",
-    tint: "#F8ECEC",
-    deep: "#1C090C",
-    focus: "50% 46%",
-  },
-  "tian-provencal": {
-    accent: "#4A7524",
-    onAccent: "#ffffff",
-    ink: "#41691F",
-    tint: "#EFF4E8",
-    deep: "#0D1608",
-    focus: "50% 48%",
-  },
-  "tarte-aux-pommes": {
-    accent: "#C27A32",
-    onAccent: "#1d1d1f",
-    ink: "#8F5512",
-    tint: "#F9F0E6",
-    deep: "#130D09",
-    focus: "50% 50%",
-  },
-  "mousse-au-chocolat": {
-    accent: "#C9976A",
-    onAccent: "#0d0907",
-    ink: "#7A4A2A",
-    tint: "#F4EDE7",
-    deep: "#050403",
-    focus: "50% 38%",
-  },
-};
-
-const images: Record<string, { hero: StaticImageData; detail: StaticImageData }> = {
-  "spaghetti-carbonara": { hero: carbonaraHero, detail: carbonaraDetail },
-  "boeuf-bourguignon": { hero: bourguignonHero, detail: bourguignonDetail },
-  "tian-provencal": { hero: tianHero, detail: tianDetail },
-  "tarte-aux-pommes": { hero: tarteHero, detail: tarteDetail },
-  "mousse-au-chocolat": { hero: mousseHero, detail: mousseDetail },
-};
-
-function build(c: RecipeContent): Recipe {
-  const img = images[c.slug];
-  const theme = themes[c.slug];
-  if (!img || !theme) throw new Error(`Missing image or theme for recipe "${c.slug}"`);
-  return {
-    ...c,
-    theme,
-    hero: img.hero,
-    detail: img.detail,
-    seoImages: ["1x1", "4x3", "16x9"].map((r) => `/images/recipes/${c.slug}/${r}.jpg`),
-    totalMinutes: c.times.prep + c.times.cook + (c.times.rest ?? 0),
-  };
+export interface CategoryInfo {
+  name: Category;
+  slug: string;
+  /** Plural label used in navigation and titles. */
+  label: string;
+  /** <title> of the category page (≤ 52 characters, the site name is appended). */
+  seoTitle: string;
+  /** One sentence for the category page and its meta description. */
+  description: string;
 }
 
-/** Editorial order — the order of the keynote. */
-export const recipes: Recipe[] = [carbonara, bourguignon, tian, tarte, mousse].map(build);
+export const categories: CategoryInfo[] = [
+  {
+    name: "Entrée",
+    slug: "entrees",
+    label: "Entrées & soupes",
+    seoTitle: "Recettes de soupes, veloutés et entrées",
+    description:
+      "Soupes, veloutés et entrées de saison, écrits au gramme près : ce qu’il faut acheter, combien de temps, et comment ne pas les rater.",
+  },
+  {
+    name: "Plat",
+    slug: "plats",
+    label: "Plats",
+    seoTitle: "Recettes de plats, du quotidien au dimanche",
+    description:
+      "Les grands plats du quotidien et du dimanche, des pâtes du soir aux mijotés qui prennent leur temps, avec chaque geste expliqué.",
+  },
+  {
+    name: "Accompagnement",
+    slug: "accompagnements",
+    label: "Accompagnements",
+    seoTitle: "Recettes d’accompagnements et de gratins",
+    description:
+      "Gratins, légumes et garnitures qui tiennent la route à côté d’un rôti ou toute seule avec une salade.",
+  },
+  {
+    name: "Dessert",
+    slug: "desserts",
+    label: "Desserts",
+    seoTitle: "Recettes de desserts classiques, pas à pas",
+    description:
+      "Tartes, crèmes, gâteaux et mousses : les desserts classiques, avec les températures et les repères qui évitent les mauvaises surprises.",
+  },
+  {
+    name: "Goûter",
+    slug: "gouters",
+    label: "Goûters & petits-déjeuners",
+    seoTitle: "Recettes de goûter : crêpes, gâteaux, gaufres",
+    description:
+      "Crêpes, gaufres, pancakes, gâteaux de goûter : les recettes qu’on refait le week-end, en version précise.",
+  },
+];
+
+export const categoryBySlug = (slug: string) => categories.find((c) => c.slug === slug);
+export const categoryOf = (recipe: Recipe) => categories.find((c) => c.name === recipe.category)!;
+export const categoryPath = (category: CategoryInfo) => `/categories/${category.slug}` as const;
+
+/* -------------------------------------------------------------------------- */
+/*  Recipes                                                                    */
+/* -------------------------------------------------------------------------- */
+
+const categoryRank = (c: Category) => categories.findIndex((x) => x.name === c);
+const collator = new Intl.Collator("fr", { sensitivity: "base" });
+
+/*
+ * Every recipe is checked against the editorial guide (docs/guide-redaction-recettes.md).
+ * A production build refuses to ship a recipe that breaks a mandatory rule.
+ */
+for (const recipe of allRecipes) {
+  const { errors } = auditRecipe(recipe);
+  if (errors.length && process.env.NODE_ENV === "production") {
+    throw new Error(`La recette « ${recipe.slug} » ne respecte pas le guide :\n- ${errors.join("\n- ")}`);
+  }
+}
+
+/** All recipes, ordered by category then title. */
+export const recipes: Recipe[] = [...allRecipes].sort(
+  (a, b) => categoryRank(a.category) - categoryRank(b.category) || collator.compare(a.title, b.title),
+);
+
+/** Hand-picked recipes for the home page notebook, in a stable order. */
+export const featuredRecipes: Recipe[] = recipes.filter((r) => r.featured);
+
+/** Most recently published first. */
+export const latestRecipes: Recipe[] = [...recipes].sort((a, b) => b.datePublished.localeCompare(a.datePublished));
 
 export function getRecipe(slug: string): Recipe | undefined {
   return recipes.find((r) => r.slug === slug);
 }
 
+export function recipesIn(category: CategoryInfo): Recipe[] {
+  return recipes.filter((r) => r.category === category.name);
+}
+
+/** Previous / next recipe inside the same category (wraps around). */
 export function getNeighbours(slug: string): { prev: Recipe; next: Recipe } {
-  const i = recipes.findIndex((r) => r.slug === slug);
-  const n = recipes.length;
-  return { prev: recipes[(i - 1 + n) % n], next: recipes[(i + 1) % n] };
+  const recipe = getRecipe(slug)!;
+  const list = recipes.filter((r) => r.category === recipe.category);
+  const pool = list.length > 1 ? list : recipes;
+  const i = pool.findIndex((r) => r.slug === slug);
+  const n = pool.length;
+  return { prev: pool[(i - 1 + n) % n], next: pool[(i + 1) % n] };
+}
+
+/** Recipes to suggest at the bottom of a page: same category first, then shared keywords. */
+export function relatedRecipes(slug: string, count = 3): Recipe[] {
+  const recipe = getRecipe(slug)!;
+  const { next } = getNeighbours(slug);
+  const words = new Set(recipe.keywords.flatMap((k) => k.split(" ")));
+  return recipes
+    .filter((r) => r.slug !== slug && r.slug !== next.slug)
+    .map((r) => ({
+      r,
+      score:
+        (r.category === recipe.category ? 10 : 0) +
+        r.keywords.flatMap((k) => k.split(" ")).filter((w) => w.length > 3 && words.has(w)).length +
+        (r.cuisine === recipe.cuisine ? 1 : 0),
+    }))
+    .sort((a, b) => b.score - a.score || collator.compare(a.r.title, b.r.title))
+    .slice(0, count)
+    .map((x) => x.r);
 }
 
 export const recipePath = (slug: string) => `/recettes/${slug}` as const;

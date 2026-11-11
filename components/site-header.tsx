@@ -1,25 +1,34 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
 import { usePathname } from "next/navigation";
 import { useMotionValueEvent, useScroll, useSpring } from "motion/react";
 import * as m from "motion/react-m";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { LogoMark, Wordmark } from "./logo";
+import { ArrowRight, ChevronDown } from "./icons";
+
+export interface NavCategory {
+  label: string;
+  href: string;
+  count: number;
+}
 
 const NAV = [
   { href: "/recettes", label: "Recettes" },
   { href: "/a-propos", label: "À propos" },
 ] as const;
 
-export function SiteHeader() {
+export function SiteHeader({ categories, total }: { categories: NavCategory[]; total: number }) {
   const pathname = usePathname();
   const { scrollY, scrollYProgress } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const progress = useSpring(scrollYProgress, { stiffness: 220, damping: 40, restDelta: 0.001 });
   const isRecipe = pathname.startsWith("/recettes/");
+  const inRecipes = pathname.startsWith("/recettes") || pathname.startsWith("/categories/");
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
@@ -65,9 +74,9 @@ export function SiteHeader() {
         <nav aria-label="Navigation principale" className="justify-self-end">
           <ul className="flex items-center gap-1 text-[0.9375rem] font-medium">
             {NAV.map((item) => {
-              const active = pathname === item.href || (item.href === "/recettes" && isRecipe);
+              const active = pathname === item.href || (item.href === "/recettes" && inRecipes);
               return (
-                <li key={item.href}>
+                <li key={item.href} className={item.href === "/recettes" ? "relative flex items-center" : undefined}>
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
@@ -96,6 +105,7 @@ export function SiteHeader() {
                       </m.svg>
                     )}
                   </Link>
+                  {item.href === "/recettes" && <CategoryMenu categories={categories} total={total} />}
                 </li>
               );
             })}
@@ -110,5 +120,125 @@ export function SiteHeader() {
         />
       )}
     </m.header>
+  );
+}
+
+/**
+ * Categories under « Recettes » (desktop): opens on hover, or with the
+ * chevron button for keyboard and touch. Phones go straight to /recettes,
+ * where the same categories are filters.
+ */
+function CategoryMenu({ categories, total }: { categories: NavCategory[]; total: number }) {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const root = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<number>(undefined);
+
+  const [lastPath, setLastPath] = useState(pathname);
+  if (lastPath !== pathname) {
+    setLastPath(pathname);
+    setOpen(false);
+  }
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        root.current?.querySelector<HTMLButtonElement>("button")?.focus();
+      }
+    };
+    const onDown = (e: PointerEvent) => {
+      if (!root.current?.parentElement?.contains(e.target as Node)) setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("pointerdown", onDown);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("pointerdown", onDown);
+    };
+  }, [open]);
+
+  // Hovering the whole « Recettes » item (link + chevron) opens the menu.
+  useEffect(() => {
+    const item = root.current?.parentElement;
+    if (!item) return;
+    const enter = (e: PointerEvent) => {
+      if (e.pointerType !== "mouse") return;
+      window.clearTimeout(closeTimer.current);
+      setOpen(true);
+    };
+    const leave = (e: PointerEvent) => {
+      if (e.pointerType !== "mouse") return;
+      closeTimer.current = window.setTimeout(() => setOpen(false), 180);
+    };
+    item.addEventListener("pointerenter", enter);
+    item.addEventListener("pointerleave", leave);
+    return () => {
+      item.removeEventListener("pointerenter", enter);
+      item.removeEventListener("pointerleave", leave);
+      window.clearTimeout(closeTimer.current);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={root}
+      className="hidden md:block"
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false);
+      }}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls="menu-categories"
+        aria-label="Catégories de recettes"
+        onClick={() => setOpen((o) => !o)}
+        className="-ml-2 grid size-8 place-items-center rounded-full text-fg-2 transition-colors hover:bg-fill hover:text-fg aria-expanded:text-fg"
+      >
+        <ChevronDown size={16} className={clsx("transition-transform duration-300", open && "rotate-180")} />
+      </button>
+      <m.div
+        id="menu-categories"
+        initial={false}
+        animate={
+          open
+            ? { opacity: 1, y: 0, rotate: -0.6, visibility: "visible" }
+            : { opacity: 0, y: -8, rotate: 0, transitionEnd: { visibility: "hidden" } }
+        }
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        style={{ visibility: "hidden" }}
+        className={clsx(
+          "absolute top-[calc(100%+0.75rem)] right-0 w-[19rem] origin-top-right",
+          !open && "pointer-events-none",
+        )}
+      >
+        <div className="rounded-[var(--radius-card)] bg-elevated p-2 shadow-[var(--shadow-float)] ring-1 ring-line">
+          <p className="px-3 pt-2 pb-1 text-eyebrow text-fg-3">Catégories</p>
+          <ul>
+            {categories.map((c) => (
+              <li key={c.href}>
+                <Link
+                  href={c.href as Route}
+                  aria-current={pathname === c.href ? "page" : undefined}
+                  className="flex items-baseline justify-between gap-4 rounded-[10px] px-3 py-2.5 text-[1rem] text-fg transition-colors hover:bg-fill aria-[current=page]:bg-fill"
+                >
+                  <span className="font-display text-[1.125rem] [font-weight:calc(420+var(--dw))]">{c.label}</span>
+                  <span className="font-mono text-[0.8125rem] text-fg-3 tabular">{c.count}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/recettes"
+            className="mt-1 flex items-center justify-between rounded-[10px] border-t border-line px-3 pt-3 pb-2.5 text-[0.9375rem] font-semibold transition-colors hover:bg-fill"
+          >
+            Toutes les recettes ({total})
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </m.div>
+    </div>
   );
 }

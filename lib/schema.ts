@@ -183,11 +183,11 @@ export function faqSchema(path: string, faq: Recipe["faq"]): FAQPage {
   };
 }
 
-export function recipeList(path: string, list: Recipe[]): ItemList {
+export function recipeList(path: string, list: Recipe[], name = "Les recettes d’Épure"): ItemList {
   return {
     "@type": "ItemList",
     "@id": absoluteUrl(`${path}#recipes`),
-    name: "Les cinq recettes d’Épure",
+    name,
     numberOfItems: list.length,
     itemListOrder: "https://schema.org/ItemListOrderAscending",
     itemListElement: list.map((r, i) => ({

@@ -1,6 +1,8 @@
-import type { RecipeContent } from "@/lib/types";
+import { defineRecipe } from "@/lib/define-recipe";
+import hero from "./hero.jpg";
+import detail from "./detail.jpg";
 
-export const content: RecipeContent = {
+export default defineRecipe({
   slug: "mousse-au-chocolat",
   title: "Mousse au chocolat",
   seoTitle: "Mousse au chocolat maison, légère et sans crème",
@@ -59,7 +61,7 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Fondre le chocolat",
-          text: "Faites fondre le chocolat haché (et le beurre, si vous en mettez) au bain-marie, sur une eau qui frémit à peine. Le bol ne doit pas toucher l’eau. Remuez jusqu’à ce que ce soit lisse, puis retirez du feu.",
+          text: "Faites fondre le chocolat haché (et le beurre, si vous en mettez) au bain-marie, sur une eau qui frémit à peine. Le bol ne doit pas toucher l’eau. Remuez 5 minutes environ, jusqu’à ce que ce soit lisse, puis retirez du feu.",
           timer: { minutes: 5, label: "Fonte du chocolat" },
           tip: "Attention à l’eau et à la vapeur : une seule goutte dans le chocolat et il devient épais et granuleux.",
         },
@@ -198,4 +200,15 @@ export const content: RecipeContent = {
   },
   datePublished: "2026-11-02",
   dateModified: "2026-11-10",
-};
+  featured: true,
+  hero,
+  detail,
+  theme: {
+    accent: "#C9976A",
+    onAccent: "#0d0907",
+    ink: "#7A4A2A",
+    tint: "#F4EDE7",
+    deep: "#050403",
+    focus: "50% 38%",
+  },
+});

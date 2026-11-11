@@ -1,6 +1,8 @@
-import type { RecipeContent } from "@/lib/types";
+import { defineRecipe } from "@/lib/define-recipe";
+import hero from "./hero.jpg";
+import detail from "./detail.jpg";
 
-export const content: RecipeContent = {
+export default defineRecipe({
   slug: "spaghetti-carbonara",
   title: "Spaghetti alla carbonara",
   seoTitle: "Spaghetti carbonara à la romaine, sans crème",
@@ -59,7 +61,7 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Lancer l’eau",
-          text: "Faites bouillir 3 l d’eau dans une grande casserole et ajoutez le gros sel. C’est moins que d’habitude : le guanciale et le pecorino apportent déjà beaucoup de sel.",
+          text: "Faites bouillir 3 l d’eau dans une grande casserole (comptez 10 minutes) et ajoutez le gros sel. C’est moins que d’habitude : le guanciale et le pecorino apportent déjà beaucoup de sel.",
           timer: { minutes: 10, label: "Ébullition de l’eau" },
         },
         {
@@ -204,4 +206,15 @@ export const content: RecipeContent = {
   },
   datePublished: "2026-10-02",
   dateModified: "2026-11-10",
-};
+  featured: true,
+  hero,
+  detail,
+  theme: {
+    accent: "#F0B323",
+    onAccent: "#1d1d1f",
+    ink: "#885A00",
+    tint: "#FBF4E2",
+    deep: "#14161B",
+    focus: "50% 42%",
+  },
+});

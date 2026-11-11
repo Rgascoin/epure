@@ -74,7 +74,7 @@ export function Polaroid({ image, alt, caption }: { image: StaticImageData; alt:
       />
       <div className="bg-paper-card p-3 pb-16 shadow-[var(--shadow-float)]">
         <div className="relative aspect-[4/5] overflow-hidden bg-fill">
-          <Image src={image} alt={alt} fill quality={78} placeholder="blur" sizes="460px" className="object-cover" />
+          <Image src={image} alt={alt} fill quality={80} placeholder="blur" sizes="460px" className="object-cover" />
         </div>
         <figcaption className="absolute inset-x-4 bottom-4 text-center hand text-[1.6rem] text-[#1b1712]">
           {caption}
