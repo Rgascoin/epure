@@ -3,16 +3,16 @@ import type { RecipeContent } from "@/lib/types";
 export const content: RecipeContent = {
   slug: "tian-provencal",
   title: "Tian provençal",
-  seoTitle: "Tian provençal : la recette du gratin de légumes au four",
-  tagline: "Trois légumes. Une spirale.",
+  seoTitle: "Tian provençal, le gratin de légumes d’été au four",
+  tagline: "L’été qui confit au four.",
   description:
-    "Le tian provençal : tomates, courgettes et aubergines en rosace sur un lit d’oignons confits, cuit 1 h 15 à 180 °C. Végétarien, fondant et sans gluten.",
+    "Le tian provençal : des rondelles de tomates, courgettes et aubergines serrées sur des oignons fondus, cuites 1 h 15 à 180 °C. Végétarien et sans gluten.",
   summary:
-    "Pour un tian provençal pour 6, faites confire 3 oignons 15 minutes dans l’huile d’olive, puis disposez dessus, en rosace serrée, des rondelles de 3 mm de tomates, courgettes et aubergines. Arrosez d’huile, parsemez de thym et faites cuire 1 h 15 à 180 °C : 45 minutes couvert, puis 30 minutes à découvert.",
+    "Pour six, faites fondre 3 oignons 15 minutes dans l’huile d’olive et étalez-les au fond d’un plat. Par-dessus, serrez en spirale des rondelles de 3 mm de tomates, courgettes et aubergines, arrosez d’huile, ajoutez du thym, puis faites cuire 1 h 15 à 180 °C : 45 minutes couvert, et 30 minutes à découvert pour que le jus s’évapore.",
   intro: [
-    "En Provence, le tian désigne d’abord le plat en terre dans lequel on le cuit. Le principe tient en une image : des légumes d’été tranchés fin, serrés en spirale, qui confisent lentement au four dans l’huile d’olive.",
-    "Rien n’est frit, rien n’est compliqué. Tout repose sur la régularité des tranches, un lit d’oignons fondus qui boit les jus, et la patience d’une cuisson longue qui concentre les saveurs.",
-    "Il se mange chaud, tiède ou froid, et il est encore meilleur le lendemain.",
+    "Le mot tian désigne d’abord le plat en terre dans lequel on le fait cuire. La recette, elle, tient en une image : des légumes d’été tranchés fin, serrés en spirale, qui confisent doucement au four dans l’huile d’olive.",
+    "On ne fait rien frire. Ce qui compte, ce sont des tranches régulières, un lit d’oignons fondus qui boit le jus des légumes, et une cuisson assez longue pour que tout se concentre.",
+    "Le montage de la spirale prend un quart d’heure et c’est plutôt agréable à faire. Ensuite il se mange chaud, tiède ou froid, et souvent on le préfère le lendemain.",
   ],
   category: "Plat",
   cuisine: "Française",
@@ -69,45 +69,45 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Confire les oignons",
-          text: "Chauffez 3 cuillerées d’huile d’olive à feu doux dans une grande poêle. Ajoutez les oignons, l’ail, les feuilles de 2 brins de thym et le sel, et laissez cuire en remuant souvent, jusqu’à ce que les oignons soient fondants et blonds, sans brunir.",
+          text: "Faites chauffer 3 cuillerées d’huile d’olive à feu doux dans une grande poêle. Ajoutez les oignons, l’ail, les feuilles de 2 brins de thym et le sel, et laissez cuire en remuant souvent. Ils doivent devenir fondants et blonds, sans brunir.",
           timer: { minutes: 15, label: "Oignons confits" },
         },
         {
           title: "Préchauffer le four",
-          text: "Préchauffez le four à 180 °C. Huilez légèrement un plat rond de 26 à 28 cm.",
+          text: "Allumez le four à 180 °C et huilez légèrement un plat rond de 26 à 28 cm.",
         },
         {
           title: "Trancher les légumes",
-          text: "Lavez et séchez les légumes. Retirez les extrémités, puis taillez tomates, courgettes et aubergines en rondelles régulières de 3 mm, idéalement à la mandoline.",
-          tip: "Choisissez des légumes de diamètre proche : la rosace sera plus régulière et tous cuiront en même temps.",
+          text: "Lavez et séchez les légumes, coupez les extrémités, puis taillez tomates, courgettes et aubergines en rondelles de 3 mm. À la mandoline, c’est plus rapide et beaucoup plus régulier.",
+          tip: "Au marché, cherchez des courgettes et des aubergines à peu près du diamètre des tomates. La spirale sera plus jolie et tout cuira en même temps.",
         },
         {
           title: "Étaler le lit d’oignons",
-          text: "Répartissez les oignons confits en couche uniforme au fond du plat. Ils serviront de base aromatique et absorberont les jus des légumes.",
+          text: "Répartissez les oignons confits au fond du plat, en couche régulière. Ils vont boire le jus des légumes pendant la cuisson.",
         },
         {
           title: "Monter la rosace",
-          text: "En partant du bord, disposez les rondelles presque à la verticale en alternant tomate, courgette et aubergine, chacune recouvrant la précédente aux deux tiers. Avancez en spirale jusqu’au centre, en serrant bien.",
-          tip: "Serrez davantage que vous ne le pensez : les légumes perdent leur eau et se tassent à la cuisson.",
+          text: "En partant du bord, posez les rondelles presque debout en alternant tomate, courgette et aubergine, chacune recouvrant la précédente aux deux tiers. Avancez en spirale jusqu’au centre, en serrant bien.",
+          tip: "Serrez plus que ce qui vous paraît raisonnable. Les légumes perdent leur eau et se tassent, et une spirale lâche finit à moitié vide.",
         },
         {
           title: "Assaisonner",
-          text: "Arrosez de 4 cuillerées d’huile d’olive, salez et poivrez. Parsemez de thym effeuillé et glissez quelques brins entiers, ainsi que le romarin, entre les légumes.",
+          text: "Arrosez avec les 4 cuillerées d’huile d’olive, salez et poivrez. Effeuillez du thym par-dessus et glissez quelques brins entiers entre les légumes, avec le romarin si vous en avez.",
         },
         {
           title: "Cuire à couvert",
-          text: "Couvrez le plat d’une feuille de papier sulfurisé puis de papier aluminium, et enfournez. Les légumes cuisent à l’étouffée et deviennent tendres.",
+          text: "Couvrez d’une feuille de papier sulfurisé, puis de papier aluminium, et enfournez. Les légumes cuisent à l’étouffée et s’attendrissent.",
           timer: { minutes: 45, label: "Cuisson couverte" },
         },
         {
           title: "Finir à découvert",
-          text: "Retirez la couverture et poursuivez la cuisson jusqu’à ce que les légumes soient fondants, les bords légèrement caramélisés et le jus presque entièrement évaporé.",
+          text: "Retirez les feuilles et continuez la cuisson. Le tian est prêt quand les légumes sont fondants, les bords un peu caramélisés et qu’il ne reste presque plus de jus au fond.",
           timer: { minutes: 30, label: "Cuisson à découvert" },
-          tip: "S’il reste beaucoup de jus, prolongez de 10 minutes ou retirez-en une partie à la cuillère.",
+          tip: "S’il reste beaucoup de jus, laissez 10 minutes de plus ou retirez-en une partie à la cuillère.",
         },
         {
           title: "Laisser reposer",
-          text: "Laissez reposer 10 minutes hors du four avant de servir, avec un filet d’huile d’olive crue.",
+          text: "Sortez-le du four et attendez 10 minutes. Servez avec un filet d’huile d’olive crue.",
           timer: { minutes: 10, label: "Repos" },
         },
       ],
@@ -115,71 +115,71 @@ export const content: RecipeContent = {
   ],
   science: [
     {
-      title: "Évaporer pour concentrer",
-      text: "Courgettes, aubergines et tomates contiennent plus de 90 % d’eau. La cuisson couverte les attendrit à la vapeur ; la cuisson à découvert évapore ensuite cette eau et concentre sucres et arômes, jusqu’à une légère caramélisation des bords.",
+      title: "Pourquoi deux temps de cuisson",
+      text: "Courgettes, aubergines et tomates contiennent plus de 90 % d’eau. Couvertes, elles s’attendrissent dans leur propre vapeur. Découvertes, cette eau s’évapore, les sucres se concentrent et les bords commencent à caraméliser.",
     },
     {
-      title: "Le pouvoir des oignons confits",
-      text: "Cuits longuement à feu doux, les oignons s’attendrissent et révèlent leur douceur sans développer l’amertume d’une cuisson vive. Au fond du plat, ils absorbent les jus des légumes et les transforment en sauce.",
+      title: "Les oignons font la sauce",
+      text: "Cuits longtemps à feu doux, les oignons deviennent sucrés sans prendre l’amertume d’une cuisson vive. Au fond du plat, ils absorbent le jus des légumes et finissent par former une sorte de sauce.",
     },
     {
       title: "Des tranches égales, une cuisson égale",
-      text: "La vitesse de cuisson dépend de l’épaisseur. Des rondelles régulières de 3 mm confisent toutes en même temps en 1 h 15, sans que certaines restent fermes pendant que d’autres se défont.",
+      text: "Le temps de cuisson dépend surtout de l’épaisseur. À 3 mm partout, toutes les rondelles sont prêtes au bout de 1 h 15, sans que certaines restent fermes pendant que d’autres tombent en compote.",
     },
   ],
   tips: [
-    "Utilisez une mandoline : c’est la clé de rondelles parfaitement régulières.",
-    "Préférez des tomates charnues, type olivettes : elles rendent moins d’eau que les tomates rondes.",
-    "Choisissez une huile d’olive que vous aimez goûter crue : elle fait partie du goût final.",
-    "Préparez-le la veille : à température ambiante ou réchauffé, le tian gagne en saveur.",
+    "Une mandoline, même bon marché, change tout pour avoir des rondelles régulières. Attention aux doigts, utilisez le poussoir.",
+    "Prenez des tomates charnues, des olivettes par exemple. Elles rendent moins d’eau que les grosses tomates rondes.",
+    "Utilisez une huile d’olive que vous aimez goûter crue. On la sent vraiment dans le plat.",
+    "Faites-le la veille si ça vous arrange. À température ambiante ou réchauffé, il a encore plus de goût.",
   ],
   mistakes: [
-    "Des rondelles épaisses ou irrégulières : la cuisson devient inégale.",
-    "Une rosace trop lâche : les légumes s’affaissent et le plat paraît à moitié vide.",
-    "Des légumes hors saison : ils manquent de goût et rendent beaucoup d’eau.",
-    "Sauter la cuisson à découvert : le tian reste noyé dans son jus.",
+    "Couper les rondelles trop épaisses ou de travers. Certaines restent fermes, d’autres s’effondrent.",
+    "Monter une spirale trop lâche. À la cuisson, tout s’affaisse et le plat a l’air à moitié vide.",
+    "Le faire en plein hiver avec des légumes sans goût. Ils rendent beaucoup d’eau et le tian reste fade.",
+    "Sauter la cuisson à découvert. Le tian reste noyé dans son jus.",
   ],
   variations: [
     {
       title: "Gratiné au parmesan",
-      text: "Parsemez 40 g de parmesan râpé pour les 15 dernières minutes. La version n’est alors plus végane.",
+      text: "Parsemez 40 g de parmesan râpé pour les 15 dernières minutes. Évidemment, il n’est plus végan.",
     },
     {
       title: "Avec des pommes de terre",
-      text: "Intercalez de fines rondelles de pommes de terre à chair ferme et prolongez la cuisson couverte de 15 minutes.",
+      text: "Glissez de fines rondelles de pommes de terre à chair ferme dans la spirale, et ajoutez 15 minutes à la cuisson couverte.",
     },
     {
-      title: "En portions individuelles",
-      text: "Montez des rosaces dans des plats à œuf ou de petits moules et réduisez la cuisson d’environ 20 minutes.",
+      title: "En petites portions",
+      text: "Montez des petites spirales dans des plats à œuf ou des moules individuels, et retirez environ 20 minutes à la cuisson.",
     },
   ],
   storage:
-    "Le tian se conserve 3 jours au réfrigérateur, filmé. Servez-le froid, à température ambiante, ou réchauffé 15 minutes au four à 160 °C.",
-  pairing: "Un rosé de Provence sec et salin, comme un côtes-de-provence ou un bandol rosé.",
+    "Il se garde 3 jours au frigo, filmé. Servez-le froid, à température ambiante, ou réchauffé 15 minutes au four à 160 °C.",
+  pairing: "Un rosé de Provence bien sec, un côtes-de-provence ou un bandol rosé.",
   faq: [
     {
       q: "Quelle est la différence entre un tian et une ratatouille ?",
-      a: "La ratatouille est un mijoté de légumes coupés en morceaux, cuits à la cocotte. Le tian est un plat de légumes tranchés en rondelles et cuits au four, qui tire son nom du plat en terre provençal.",
+      a: "La ratatouille mijote en cocotte, avec des légumes coupés en morceaux. Le tian est cuit au four, avec des légumes en rondelles, et il tient son nom du plat en terre dans lequel on le prépare.",
     },
     {
       q: "Faut-il faire dégorger les aubergines pour un tian ?",
-      a: "Ce n’est pas nécessaire : les aubergines du commerce sont aujourd’hui peu amères, et la cuisson longue à découvert évacue leur eau.",
+      a: "Non. Les aubergines qu’on trouve aujourd’hui sont peu amères, et la cuisson à découvert s’occupe de leur eau.",
     },
     {
       q: "Comment éviter que le tian rende trop d’eau ?",
-      a: "Taillez des rondelles fines, choisissez des tomates charnues et terminez toujours la cuisson à découvert. S’il reste du jus, prolongez de 10 minutes.",
+      a: "Coupez des rondelles fines, prenez des tomates charnues et finissez toujours la cuisson à découvert. S’il reste du jus, laissez-le 10 minutes de plus.",
     },
     {
       q: "À quelle température et combien de temps cuire un tian ?",
-      a: "Comptez 1 h 15 à 180 °C : 45 minutes couvert pour attendrir les légumes, puis 30 minutes à découvert pour les confire et réduire le jus.",
+      a: "Comptez 1 h 15 à 180 °C : 45 minutes couvert pour attendrir les légumes, puis 30 minutes à découvert pour les confire et faire réduire le jus.",
     },
     {
       q: "Peut-on préparer le tian provençal à l’avance ?",
-      a: "Oui, la veille : il est même meilleur réchauffé ou servi à température ambiante. Il se garde 3 jours au réfrigérateur.",
+      a: "Oui, la veille sans problème. Réchauffé ou à température ambiante, il est même meilleur. Il se garde 3 jours au frigo.",
     },
     {
       q: "Avec quoi servir un tian provençal ?",
-      a: "En plat végétarien avec du riz, de la semoule ou du pain de campagne, ou en accompagnement d’un gigot d’agneau, d’un poulet rôti ou d’un poisson grillé.",
+      a: "Seul avec du riz, de la semoule ou une bonne tranche de pain de campagne. Ou à côté d’un gigot d’agneau, d’un poulet rôti ou d’un poisson grillé.",
     },
   ],
   nutrition: {
@@ -191,6 +191,10 @@ export const content: RecipeContent = {
     sugar: 9,
     fiber: 5,
     sodium: 300,
+  },
+  annotations: {
+    hero: "serrez plus que vous ne pensez",
+    detail: "3 mm, pas plus",
   },
   images: {
     heroAlt:

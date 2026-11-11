@@ -8,9 +8,9 @@ import { PageTransition } from "@/components/page-transition";
 import { RecipeCard } from "@/components/recipe-card";
 import { RecipeFilter } from "@/components/recipe-filter";
 
-const title = "Toutes les recettes";
+const title = "Toutes les recettes du carnet";
 const description =
-  "Carbonara, bœuf bourguignon, tian provençal, tarte aux pommes, mousse au chocolat : cinq recettes de référence, expliquées pas à pas, au gramme près.";
+  "Carbonara, bœuf bourguignon, tian provençal, tarte aux pommes et mousse au chocolat : les cinq recettes d’Épure, expliquées pas à pas et au gramme près.";
 
 export const metadata: Metadata = {
   title,
@@ -42,19 +42,26 @@ export default function RecipesPage() {
       <JsonLd data={data} />
       <section className="container-page pt-[calc(var(--header-h)+clamp(3rem,10vh,7rem))] pb-[clamp(5rem,14vh,10rem)]">
         <p className="intro-fade text-eyebrow text-fg-3" style={{ ["--d" as string]: "0ms" }}>
-          La collection
+          Sommaire
         </p>
-        <h1 className="mt-4 max-w-[12ch] text-display">
-          <span className="intro-line" style={{ ["--i" as string]: 0 }}>
-            <span>Cinq recettes.</span>
+        <h1 className="mt-5 max-w-[14ch] text-display">
+          {["Les", "cinq", "recettes", "du"].map((word, i) => (
+            <span key={i}>
+              <span className="intro-word" style={{ ["--i" as string]: i }}>
+                {word}
+              </span>{" "}
+            </span>
+          ))}
+          <span className="intro-word serif-accent text-ink" style={{ ["--i" as string]: 4 }}>
+            carnet
           </span>
-          <span className="intro-line" style={{ ["--i" as string]: 1 }}>
-            <span className="text-fg-3">Toutes essentielles.</span>
+          <span className="intro-word" style={{ ["--i" as string]: 5 }}>
+            .
           </span>
         </h1>
         <p className="intro-fade mt-6 max-w-2xl text-lede text-fg-2" style={{ ["--d" as string]: "380ms" }}>
           {fr(
-            "Trois plats, deux desserts. Chacune a été choisie parce qu’elle enseigne un geste qui servira partout ailleurs : émulsionner, mijoter, confire, foncer, monter.",
+            "Trois plats, deux desserts. Chacune apprend un geste qui resservira ailleurs : lier une sauce aux œufs, mijoter, confire des légumes, foncer une pâte, monter des blancs.",
           )}
         </p>
 

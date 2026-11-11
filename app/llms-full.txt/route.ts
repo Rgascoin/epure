@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 /** Every recipe, in full, in one Markdown document — the llms-full.txt convention. */
 export function GET() {
   const body = [
-    `# ${site.name} — toutes les recettes`,
+    `# ${site.name} : toutes les recettes`,
     "",
     `> ${site.description}`,
     "",

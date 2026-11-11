@@ -16,7 +16,7 @@ const FILTERS = [
   { id: "plat", label: "Plats" },
   { id: "dessert", label: "Desserts" },
   { id: "vegetarien", label: "Végétarien" },
-  { id: "rapide", label: "Moins d’une heure" },
+  { id: "rapide", label: "En moins d’une heure" },
 ] as const;
 
 export function RecipeFilter({ items }: { items: FilterableItem[] }) {
@@ -40,14 +40,14 @@ export function RecipeFilter({ items }: { items: FilterableItem[] }) {
               aria-pressed={on}
               onClick={() => setActive(f.id)}
               className={clsx(
-                "relative inline-flex h-10 shrink-0 items-center gap-2 rounded-full px-4 text-[0.9375rem] font-medium transition-colors duration-300",
-                on ? "text-bg" : "bg-fill text-fg-2 hover:text-fg",
+                "relative inline-flex h-10 shrink-0 items-center gap-2 rounded-[11px] border-[1.5px] px-4 text-[0.9375rem] font-medium transition-colors duration-300",
+                on ? "border-fg text-bg" : "border-line-strong text-fg-2 hover:border-fg hover:text-fg",
               )}
             >
               {on && (
                 <m.span
                   layoutId="filter-pill"
-                  className="absolute inset-0 -z-0 rounded-full bg-fg"
+                  className="absolute -inset-[1.5px] -z-0 rounded-[11px] bg-fg"
                   transition={{ type: "spring", stiffness: 420, damping: 34 }}
                 />
               )}
@@ -60,7 +60,7 @@ export function RecipeFilter({ items }: { items: FilterableItem[] }) {
         })}
       </div>
 
-      <m.ul layout className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+      <m.ul layout className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         <AnimatePresence mode="popLayout" initial={false}>
           {visible.map((item) => (
             <m.li

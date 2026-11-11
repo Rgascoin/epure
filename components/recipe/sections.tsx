@@ -3,10 +3,10 @@ import Link from "next/link";
 import { ViewTransition } from "react";
 import type { Recipe } from "@/lib/types";
 import { durationParts, formatDateFr, formatDuration, fr, isoDuration } from "@/lib/format";
-import { ArrowRight, Check, ChevronDown, Glass, Leaf, Snowflake, Sparkle, Warning } from "../icons";
+import { ArrowRight, Check, Plus, Warning } from "../icons";
 
 /* -------------------------------------------------------------------------- */
-/*  Key facts                                                                  */
+/*  Key facts — an editorial table                                             */
 /* -------------------------------------------------------------------------- */
 
 export function KeyFacts({ recipe }: { recipe: Recipe }) {
@@ -16,22 +16,23 @@ export function KeyFacts({ recipe }: { recipe: Recipe }) {
     ...(recipe.times.rest
       ? [{ label: "Repos", ...durationParts(recipe.times.rest), dateTime: isoDuration(recipe.times.rest) }]
       : []),
-    { label: "Total", ...durationParts(recipe.totalMinutes), dateTime: isoDuration(recipe.totalMinutes) },
-    { label: "Difficulté", value: recipe.difficulty },
+    { label: "En tout", ...durationParts(recipe.totalMinutes), dateTime: isoDuration(recipe.totalMinutes) },
+    { label: "Niveau", value: recipe.difficulty },
     { label: "Budget", value: recipe.cost },
   ];
   return (
-    <dl className="flex flex-wrap gap-px overflow-hidden rounded-[var(--radius-card)] bg-line ring-1 ring-line">
-      {facts.map((f) => (
-        <div key={f.label} className="grow basis-[9.5rem] bg-elevated px-5 py-5 md:basis-[11rem] md:px-6 md:py-6">
+    <dl className="flex flex-wrap border-y-2 border-fg">
+      {facts.map((f, i) => (
+        <div
+          key={f.label}
+          className={`grow basis-[9rem] px-1 py-5 md:basis-[10rem] md:px-5 md:py-6 ${i ? "md:border-l-2 md:border-dotted md:border-line-strong" : "md:pl-0"}`}
+        >
           <dt className="text-eyebrow text-fg-3">{f.label}</dt>
-          <dd
-            className={`mt-1.5 leading-none font-semibold tracking-[-0.04em] tabular ${f.dateTime ? "text-[clamp(1.6rem,2.6vw,2.1rem)]" : "pt-1 text-[clamp(1.25rem,1.8vw,1.5rem)] tracking-[-0.025em]"}`}
-          >
+          <dd className="mt-2 font-display text-[clamp(1.6rem,2.5vw,2.25rem)] leading-none font-[420] tabular [font-variation-settings:'SOFT'_60]">
             {f.dateTime ? (
               <time dateTime={f.dateTime}>
                 {f.value}
-                {f.unit && <span className="ml-1 text-[0.55em] font-medium tracking-normal text-fg-2">{f.unit}</span>}
+                {f.unit && <span className="ml-1 font-sans text-[0.5em] font-medium text-fg-2">{f.unit}</span>}
               </time>
             ) : (
               f.value
@@ -44,26 +45,24 @@ export function KeyFacts({ recipe }: { recipe: Recipe }) {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  "L’essentiel" — answer-first summary (also the speakable section)          */
+/*  "En bref" — answer-first summary on a taped note (also the speakable part) */
 /* -------------------------------------------------------------------------- */
 
 export function Essentials({ recipe }: { recipe: Recipe }) {
   return (
     <section
-      id="essentiel"
-      aria-labelledby="essentiel-title"
-      className="relative overflow-hidden rounded-[var(--radius-card)] bg-tint p-7 md:p-10"
+      id="en-bref"
+      aria-labelledby="en-bref-title"
+      className="relative rotate-[-0.6deg] rounded-[4px] bg-tint px-6 pt-8 pb-6 shadow-[var(--shadow-card)] md:px-8"
     >
-      <div aria-hidden className="absolute top-0 left-0 h-full w-1.5 bg-accent" />
-      <h2 id="essentiel-title" className="flex items-center gap-2 text-eyebrow text-ink">
-        <Sparkle size={16} /> L’essentiel
+      <span
+        aria-hidden
+        className="absolute -top-3 left-8 h-6 w-24 rotate-[-3deg] bg-[#e8dcc4]/85 shadow-sm dark:bg-[#4a4034]/85"
+      />
+      <h2 id="en-bref-title" className="hand text-[1.75rem] text-ink">
+        En bref
       </h2>
-      <p className="mt-3 text-[clamp(1.1875rem,1.8vw,1.4375rem)] leading-[1.45] font-medium tracking-[-0.015em] text-fg">
-        {fr(recipe.summary)}
-      </p>
-      <a href="#recette" className="link-arrow mt-5 text-[0.9375rem]" data-print="hide">
-        Aller à la recette <ArrowRight size={16} />
-      </a>
+      <p className="mt-2 text-[1.0625rem] leading-[1.6] text-fg">{fr(recipe.summary)}</p>
     </section>
   );
 }
@@ -75,14 +74,19 @@ export function Essentials({ recipe }: { recipe: Recipe }) {
 export function Intro({ recipe }: { recipe: Recipe }) {
   const [first, ...rest] = recipe.intro;
   return (
-    <div className="prose-recipe mx-auto max-w-[44rem]">
-      <p className="text-lede text-fg">{fr(first)}</p>
-      {rest.map((p, i) => (
-        <p key={i} className="mt-5 text-body text-[1.1875rem] leading-[1.65] text-fg-2">
-          {fr(p)}
+    <section aria-label="Avant de commencer" className="container-page grid gap-8 md:grid-cols-12">
+      <p className="text-eyebrow text-fg-3 md:col-span-3 md:pt-2">Avant de commencer</p>
+      <div className="prose-recipe max-w-[42rem] md:col-span-8">
+        <p className="dropcap font-display text-[clamp(1.3rem,2vw,1.6rem)] leading-[1.5] font-[380] [font-variation-settings:'SOFT'_80]">
+          {fr(first)}
         </p>
-      ))}
-    </div>
+        {rest.map((p, i) => (
+          <p key={i} className="mt-5 text-[1.125rem] leading-[1.7] text-fg-2">
+            {fr(p)}
+          </p>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -94,31 +98,25 @@ export function Science({ recipe }: { recipe: Recipe }) {
   return (
     <section
       aria-labelledby="science-title"
-      className="grain relative overflow-hidden py-[clamp(5rem,14vh,9rem)] text-white"
-      style={{ background: recipe.theme.deep }}
+      className="grain relative overflow-hidden py-[clamp(5rem,14vh,9rem)] text-paper"
+      style={{ backgroundColor: recipe.theme.deep }}
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(50%_70%_at_85%_0%,black,transparent)] opacity-[0.22]"
-        style={{ background: recipe.theme.accent }}
-      />
       <div className="relative container-page">
-        <p className="text-eyebrow text-white/50">Pourquoi ça marche</p>
-        <h2 id="science-title" className="mt-3 max-w-3xl text-headline">
-          La science, <span className="serif-accent font-normal text-accent-bright">sans jargon</span>.
-        </h2>
-        <div className="mt-12 grid gap-4 md:grid-cols-3 md:gap-5">
-          {recipe.science.map((s, i) => (
-            <article
-              key={s.title}
-              className="reveal-on-scroll rounded-[var(--radius-card)] bg-white/[0.06] p-7 ring-1 ring-white/10 backdrop-blur-sm md:p-8"
-            >
-              <p className="text-[0.8125rem] font-semibold text-white/40 tabular">{String(i + 1).padStart(2, "0")}</p>
-              <h3 className="mt-4 text-[1.375rem] leading-tight font-semibold tracking-[-0.02em]">{s.title}</h3>
-              <p className="mt-3 text-[1rem] leading-relaxed text-white/70">{fr(s.text)}</p>
-            </article>
-          ))}
+        <div className="grid gap-6 md:grid-cols-12 md:items-end">
+          <p className="text-eyebrow text-paper/60 md:col-span-3">Pourquoi ça marche</p>
+          <h2 id="science-title" className="text-headline md:col-span-9">
+            Ce qui se passe <span className="serif-accent text-accent-bright">dans la casserole</span>.
+          </h2>
         </div>
+        <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+          {recipe.science.map((s, i) => (
+            <li key={s.title} className="reveal-on-scroll border-t border-paper/20 pt-6">
+              <span className="serif-accent text-[3.5rem] leading-none text-accent-bright">{i + 1}.</span>
+              <h3 className="mt-4 text-[1.3125rem] leading-tight font-semibold">{s.title}</h3>
+              <p className="mt-3 text-[1rem] leading-relaxed text-paper/75">{fr(s.text)}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
@@ -130,38 +128,28 @@ export function Science({ recipe }: { recipe: Recipe }) {
 
 export function TipsAndMistakes({ recipe }: { recipe: Recipe }) {
   return (
-    <div className="container-page grid gap-4 md:grid-cols-2 md:gap-5">
-      <section
-        aria-labelledby="tips-title"
-        className="rounded-[var(--radius-card)] bg-elevated p-7 ring-1 ring-line md:p-10"
-      >
+    <div className="space-y-12">
+      <section aria-labelledby="tips-title">
         <h2 id="tips-title" className="text-title">
-          Les secrets
+          Ce qui aide
         </h2>
-        <ul className="mt-6 space-y-4">
+        <ul className="mt-5 divide-y divide-line border-y border-line">
           {recipe.tips.map((t) => (
-            <li key={t} className="flex gap-3.5 text-[1.0625rem] leading-relaxed text-fg-2">
-              <span className="mt-1 grid size-[22px] shrink-0 place-items-center rounded-full bg-accent text-on-accent">
-                <Check size={13} strokeWidth={3} />
-              </span>
+            <li key={t} className="flex gap-4 py-4 text-[1.0625rem] leading-relaxed text-fg-2">
+              <Check size={20} strokeWidth={2.4} className="mt-1 shrink-0 text-ink" />
               <span>{fr(t)}</span>
             </li>
           ))}
         </ul>
       </section>
-      <section
-        aria-labelledby="mistakes-title"
-        className="rounded-[var(--radius-card)] bg-elevated p-7 ring-1 ring-line md:p-10"
-      >
+      <section aria-labelledby="mistakes-title">
         <h2 id="mistakes-title" className="text-title">
-          Les erreurs à éviter
+          Ce qui fait rater
         </h2>
-        <ul className="mt-6 space-y-4">
+        <ul className="mt-5 divide-y divide-line border-y border-line">
           {recipe.mistakes.map((t) => (
-            <li key={t} className="flex gap-3.5 text-[1.0625rem] leading-relaxed text-fg-2">
-              <span className="mt-1 grid size-[22px] shrink-0 place-items-center rounded-full bg-fill-strong text-fg">
-                <Warning size={13} strokeWidth={2.4} />
-              </span>
+            <li key={t} className="flex gap-4 py-4 text-[1.0625rem] leading-relaxed text-fg-2">
+              <Warning size={19} strokeWidth={2} className="mt-1 shrink-0 text-fg-3" />
               <span>{fr(t)}</span>
             </li>
           ))}
@@ -172,21 +160,28 @@ export function TipsAndMistakes({ recipe }: { recipe: Recipe }) {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Variations + practical info                                                */
+/*  Variations — French "fiches bristol"                                       */
 /* -------------------------------------------------------------------------- */
 
 export function Variations({ recipe }: { recipe: Recipe }) {
   return (
     <section aria-labelledby="variations-title" className="container-page">
-      <h2 id="variations-title" className="text-headline">
-        Variations.
+      <p className="text-eyebrow text-fg-3">Variantes</p>
+      <h2 id="variations-title" className="mt-3 text-headline">
+        Si vous voulez changer un peu.
       </h2>
-      <div className="mt-10 grid gap-4 md:grid-cols-3 md:gap-5">
+      <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-7">
         {recipe.variations.map((v, i) => (
-          <article key={v.title} className="reveal-on-scroll rounded-[var(--radius-card)] bg-fill p-7 md:p-8">
-            <p className="text-[0.8125rem] font-semibold text-ink tabular">{String(i + 1).padStart(2, "0")}</p>
-            <h3 className="mt-3 text-[1.3125rem] font-semibold tracking-[-0.02em]">{v.title}</h3>
-            <p className="mt-2 text-[1rem] leading-relaxed text-fg-2">{fr(v.text)}</p>
+          <article
+            key={v.title}
+            className="bristol reveal-on-scroll rounded-[3px] px-6 pt-4 pb-7 shadow-[var(--shadow-card)]"
+            style={{ rotate: `${[-1.2, 0.8, -0.4][i % 3]}deg` }}
+          >
+            <h3 className="flex h-[2.4rem] items-center justify-between font-display text-[1.375rem] font-[460]">
+              {v.title}
+              <span className="font-mono text-[0.75rem] text-[#6b6155]">0{i + 1}</span>
+            </h3>
+            <p className="mt-[0.85rem] text-[0.9875rem] leading-[1.75rem] text-[#3c352d]">{fr(v.text)}</p>
           </article>
         ))}
       </div>
@@ -194,88 +189,77 @@ export function Variations({ recipe }: { recipe: Recipe }) {
   );
 }
 
-export function PracticalInfo({ recipe }: { recipe: Recipe }) {
-  const items = [
-    { icon: Snowflake, title: "Conservation", text: recipe.storage },
-    ...(recipe.pairing ? [{ icon: Glass, title: "Accord", text: recipe.pairing }] : []),
-    { icon: Leaf, title: "Saison", text: recipe.season.join(", ") },
-  ];
-  return (
-    <section aria-label="Informations pratiques" className="container-page grid gap-4 md:grid-cols-3 md:gap-5">
-      {items.map(({ icon: Icon, title, text }) => (
-        <div key={title} className="rounded-[var(--radius-card)] bg-elevated p-7 ring-1 ring-line">
-          <Icon size={22} className="text-ink" />
-          <h2 className="mt-4 text-[1.125rem] font-semibold tracking-[-0.015em]">{title}</h2>
-          <p className="mt-2 text-[0.9875rem] leading-relaxed text-fg-2">{fr(text)}</p>
-        </div>
-      ))}
-    </section>
-  );
-}
-
 /* -------------------------------------------------------------------------- */
-/*  Nutrition — per serving, against EU reference intakes                      */
+/*  Practical info + nutrition label                                           */
 /* -------------------------------------------------------------------------- */
 
 const RI = { calories: 2000, fat: 70, saturatedFat: 20, carbs: 260, sugar: 90, protein: 50, salt: 6 } as const;
 
-export function Nutrition({ recipe }: { recipe: Recipe }) {
+export function Pantry({ recipe }: { recipe: Recipe }) {
   const n = recipe.nutrition;
   const salt = Math.round((n.sodium * 2.5) / 100) / 10;
-  const rows: Array<{ label: string; value: string; pct?: number }> = [
-    { label: "Lipides", value: `${n.fat} g`, pct: n.fat / RI.fat },
-    { label: "dont saturés", value: `${n.saturatedFat} g`, pct: n.saturatedFat / RI.saturatedFat },
+  const rows: Array<{ label: string; value: string; pct?: number; sub?: boolean }> = [
+    { label: "Matières grasses", value: `${n.fat} g`, pct: n.fat / RI.fat },
+    {
+      label: "dont acides gras saturés",
+      value: `${n.saturatedFat} g`,
+      pct: n.saturatedFat / RI.saturatedFat,
+      sub: true,
+    },
     { label: "Glucides", value: `${n.carbs} g`, pct: n.carbs / RI.carbs },
-    { label: "dont sucres", value: `${n.sugar} g`, pct: n.sugar / RI.sugar },
+    { label: "dont sucres", value: `${n.sugar} g`, pct: n.sugar / RI.sugar, sub: true },
     { label: "Fibres", value: `${n.fiber} g` },
     { label: "Protéines", value: `${n.protein} g`, pct: n.protein / RI.protein },
     { label: "Sel", value: `${salt.toLocaleString("fr-FR")} g`, pct: salt / RI.salt },
   ];
+  const info = [
+    { title: "Conservation", text: recipe.storage },
+    ...(recipe.pairing ? [{ title: "À boire avec", text: recipe.pairing }] : []),
+    { title: "Saison", text: recipe.season.join(", ") },
+  ];
+
   return (
-    <section aria-labelledby="nutrition-title" className="container-page">
-      <div className="grid gap-10 rounded-[var(--radius-card)] bg-elevated p-7 ring-1 ring-line md:grid-cols-12 md:p-10">
-        <div className="md:col-span-4">
-          <h2 id="nutrition-title" className="text-title">
+    <section aria-label="Informations pratiques" className="container-page grid gap-12 md:grid-cols-12">
+      <div className="space-y-5 md:col-span-7">
+        {info.map((it) => (
+          <div key={it.title} className="rounded-[14px] border-[1.5px] border-dashed border-line-strong p-6">
+            <h2 className="text-eyebrow text-ink">{it.title}</h2>
+            <p className="mt-2 text-[1.0625rem] leading-relaxed text-fg-2">{fr(it.text)}</p>
+          </div>
+        ))}
+      </div>
+
+      <section aria-labelledby="nutrition-title" className="md:col-span-5">
+        <div className="border-[2.5px] border-fg bg-elevated p-5 font-sans">
+          <h2 id="nutrition-title" className="text-[1.6rem] leading-none font-bold tracking-[-0.02em]">
             Valeurs nutritionnelles
           </h2>
-          <p className="mt-2 text-[0.9375rem] text-fg-3">Par {recipe.servingsLabel.one}, estimations.</p>
-          <p className="mt-8 text-[clamp(3.5rem,6vw,5rem)] leading-none font-semibold tracking-[-0.05em] tabular">
-            {n.calories}
-            <span className="ml-2 text-[0.3em] font-medium tracking-normal text-fg-2">kcal</span>
+          <p className="mt-1.5 text-[0.875rem] text-fg-2">
+            Pour 1 {recipe.servingsLabel.one}, estimation calculée sur les ingrédients
           </p>
-          <p className="mt-2 text-[0.875rem] text-fg-3">
-            {Math.round((n.calories / RI.calories) * 100)}&nbsp;% de l’apport de référence (2&nbsp;000&nbsp;kcal)
+          <div className="mt-3 flex items-baseline justify-between border-y-[6px] border-fg py-2">
+            <span className="text-[1.0625rem] font-bold">Énergie</span>
+            <span className="text-[1.75rem] font-bold tabular">{n.calories} kcal</span>
+          </div>
+          <p className="border-b border-fg py-1 text-right text-[0.75rem] font-semibold">% des apports de référence</p>
+          <dl>
+            {rows.map((r) => (
+              <div
+                key={r.label}
+                className="flex items-baseline justify-between gap-4 border-b border-fg/40 py-1.5 text-[0.9375rem]"
+              >
+                <dt className={r.sub ? "pl-4 text-fg-2" : "font-semibold"}>
+                  {r.label} <span className="font-normal tabular">{r.value}</span>
+                </dt>
+                <dd className="font-semibold tabular">{r.pct !== undefined ? `${Math.round(r.pct * 100)} %` : ""}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-2 text-[0.75rem] leading-snug text-fg-2">
+            Apport de référence d’un adulte type&#8239;: 8&#8239;400&nbsp;kJ / 2&#8239;000&nbsp;kcal.
           </p>
         </div>
-        <dl className="divide-y divide-line md:col-span-8">
-          {rows.map((r) => (
-            <div
-              key={r.label}
-              className="grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-2 py-3 sm:grid-cols-[9rem_1fr_6.5rem]"
-            >
-              <dt className={r.label.startsWith("dont") ? "pl-4 text-fg-3" : "font-medium"}>{r.label}</dt>
-              <dd className="order-3 col-span-2 sm:order-none sm:col-span-1">
-                {r.pct !== undefined && (
-                  <span className="block h-1.5 overflow-hidden rounded-full bg-fill">
-                    <span
-                      className="block h-full rounded-full bg-accent"
-                      style={{ width: `${Math.min(100, r.pct * 100)}%` }}
-                    />
-                  </span>
-                )}
-              </dd>
-              <dd className="text-right font-semibold whitespace-nowrap tabular">
-                {r.value}
-                {r.pct !== undefined && (
-                  <span className="ml-2 hidden text-[0.8125rem] font-normal text-fg-3 lg:inline">
-                    {Math.round(r.pct * 100)}&nbsp;%
-                  </span>
-                )}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
+      </section>
     </section>
   );
 }
@@ -288,21 +272,23 @@ export function Faq({ recipe }: { recipe: Recipe }) {
   return (
     <section aria-labelledby="faq-title" className="container-page grid gap-10 md:grid-cols-12">
       <div className="md:col-span-4">
-        <h2 id="faq-title" className="text-headline">
-          Vos questions.
+        <p className="text-eyebrow text-fg-3">Questions fréquentes</p>
+        <h2 id="faq-title" className="mt-3 text-headline">
+          Les doutes classiques.
         </h2>
-        <p className="mt-4 text-fg-2">Les réponses aux questions qu’on se pose vraiment, devant les fourneaux.</p>
       </div>
-      <div className="divide-y divide-line border-y border-line md:col-span-8">
+      <div className="border-t-2 border-fg md:col-span-8">
         {recipe.faq.map((f, i) => (
-          <details key={f.q} className="faq group" open={i === 0}>
-            <summary className="flex cursor-pointer items-center justify-between gap-6 py-6 text-[1.1875rem] font-semibold tracking-[-0.015em] transition-colors hover:text-ink">
-              <h3>{f.q}</h3>
-              <span className="grid size-9 shrink-0 place-items-center rounded-full bg-fill transition-transform duration-500 ease-[var(--ease-out)] group-open:rotate-180">
-                <ChevronDown size={18} />
+          <details key={f.q} className="faq group border-b border-line-strong" open={i === 0}>
+            <summary className="flex cursor-pointer items-start justify-between gap-6 py-6">
+              <h3 className="font-display text-[1.375rem] leading-snug font-[440] tracking-[-0.01em] transition-colors group-hover:text-ink">
+                {f.q}
+              </h3>
+              <span className="mt-1 grid size-8 shrink-0 place-items-center rounded-full border-[1.5px] border-fg transition-transform duration-500 ease-[var(--ease-out)] group-open:rotate-45">
+                <Plus size={16} strokeWidth={2.2} />
               </span>
             </summary>
-            <p className="pr-12 pb-6 text-[1.0625rem] leading-relaxed text-fg-2">{fr(f.a)}</p>
+            <p className="max-w-[44rem] pr-12 pb-7 text-[1.0625rem] leading-relaxed text-fg-2">{fr(f.a)}</p>
           </details>
         ))}
       </div>
@@ -320,34 +306,36 @@ export function NextRecipe({ next }: { next: Recipe }) {
       <Link
         href={`/recettes/${next.slug}`}
         transitionTypes={["nav-forward"]}
-        className="group relative block overflow-hidden rounded-[var(--radius-card)]"
+        className="group grid items-center gap-8 border-y-2 border-fg py-10 md:grid-cols-12 md:py-14"
       >
-        <ViewTransition name={`photo-${next.slug}`} share="morph" default="none">
-          <div className="relative aspect-[4/5] sm:aspect-[21/9]">
-            <Image
-              src={next.hero}
-              alt={next.images.heroAlt}
-              fill
-              quality={80}
-              placeholder="blur"
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover transition-transform duration-[1.6s] ease-[var(--ease-out)] group-hover:scale-[1.04]"
-              style={{ objectPosition: next.theme.focus }}
-            />
-          </div>
-        </ViewTransition>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-4 p-7 text-white md:p-12">
-          <div>
-            <p className="text-eyebrow text-white/70">Recette suivante</p>
-            <p className="mt-2 text-[clamp(2rem,5vw,4.25rem)] leading-[0.98] font-semibold tracking-[-0.045em]">
-              {next.title}
-            </p>
-            <p className="mt-2 serif-accent text-[clamp(1.2rem,2vw,1.6rem)] text-white/85">{next.tagline}</p>
-          </div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-[0.9375rem] font-semibold text-black transition-transform duration-500 group-hover:translate-x-1">
-            {formatDuration(next.totalMinutes)} <ArrowRight size={18} />
-          </span>
+        <div className="md:col-span-8">
+          <p className="text-eyebrow text-fg-3">Page suivante du carnet</p>
+          <p className="mt-4 font-display text-[clamp(2.6rem,6.5vw,6rem)] leading-[0.95] font-[400] tracking-[-0.03em] transition-transform duration-700 ease-[var(--ease-out)] [font-variation-settings:'SOFT'_70] group-hover:translate-x-3">
+            {next.title}
+          </p>
+          <p className="mt-3 serif-accent text-[clamp(1.25rem,2vw,1.6rem)] text-fg-2">{next.tagline}</p>
+          <p className="mt-6 inline-flex items-center gap-3 font-mono text-[0.875rem]">
+            {formatDuration(next.totalMinutes)}
+            <span className="grid size-10 place-items-center rounded-full bg-fg text-bg transition-transform duration-500 group-hover:-rotate-45">
+              <ArrowRight size={18} />
+            </span>
+          </p>
+        </div>
+        <div className="md:col-span-4">
+          <ViewTransition name={`photo-${next.slug}`} share="morph" default="none">
+            <div className="relative mx-auto aspect-[4/5] w-2/3 overflow-hidden rounded-[999px_999px_16px_16px] transition-[width] duration-700 ease-[var(--ease-out)] group-hover:w-3/4 md:w-4/5 md:group-hover:w-full">
+              <Image
+                src={next.hero}
+                alt={next.images.heroAlt}
+                fill
+                quality={75}
+                placeholder="blur"
+                sizes="(max-width: 768px) 70vw, 400px"
+                className="object-cover"
+                style={{ objectPosition: next.theme.focus }}
+              />
+            </div>
+          </ViewTransition>
         </div>
       </Link>
     </section>
@@ -361,17 +349,17 @@ export function NextRecipe({ next }: { next: Recipe }) {
 export function Byline({ recipe }: { recipe: Recipe }) {
   const { hero, detail } = recipe.images.credits;
   return (
-    <div className="container-page flex flex-col gap-2 text-[0.8125rem] text-fg-3 md:flex-row md:justify-between">
+    <div className="container-page flex flex-col gap-2 font-mono text-[0.75rem] text-fg-3 md:flex-row md:justify-between">
       <p>
-        Par{" "}
+        Rédigé par{" "}
         <Link href="/a-propos" className="text-fg-2 underline underline-offset-2">
-          la rédaction d’Épure
+          l’équipe d’Épure
         </Link>{" "}
-        · Publiée le <time dateTime={recipe.datePublished}>{formatDateFr(recipe.datePublished)}</time> · Mise à jour le{" "}
+        · publié le <time dateTime={recipe.datePublished}>{formatDateFr(recipe.datePublished)}</time> · revu le{" "}
         <time dateTime={recipe.dateModified}>{formatDateFr(recipe.dateModified)}</time>
       </p>
       <p>
-        Photos :{" "}
+        Photos&#8239;:{" "}
         <a href={hero.url} rel="noopener" className="underline underline-offset-2">
           {hero.photographer}
         </a>
@@ -383,7 +371,7 @@ export function Byline({ recipe }: { recipe: Recipe }) {
             </a>
           </>
         )}{" "}
-        / Pexels
+        (Pexels)
       </p>
     </div>
   );

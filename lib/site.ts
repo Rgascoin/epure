@@ -16,14 +16,14 @@ function resolveSiteUrl(): string {
 
 export const site = {
   name: "Épure",
-  legalName: "Épure — cuisine essentielle",
+  legalName: "Épure, carnet de cuisine",
   url: resolveSiteUrl(),
   locale: "fr_FR",
   lang: "fr",
-  title: "Épure — Cinq recettes, à l’essentiel",
-  tagline: "La cuisine, à l’essentiel.",
+  title: "Épure · Un carnet de cinq recettes, écrites avec soin",
+  tagline: "Un carnet de cinq recettes.",
   description:
-    "Cinq grands classiques de la cuisine française et italienne, réécrits avec précision : grammes exacts, temps justes, science expliquée et mode cuisine mains libres.",
+    "Carbonara, bœuf bourguignon, tian provençal, tarte aux pommes et mousse au chocolat : cinq recettes au gramme près, avec les gestes expliqués et un mode cuisine.",
   keywords: [
     "recettes de cuisine",
     "recette facile",
@@ -39,8 +39,8 @@ export const site = {
     name: "La rédaction d’Épure",
     url: "/a-propos",
   },
-  themeColor: { light: "#fbfbfd", dark: "#000000" },
-  /** Set to true only on the production deployment. */
+  themeColor: { light: "#f2ede4", dark: "#14110e" },
+  /** Only the production deployment is indexable. */
   indexable: process.env.VERCEL_ENV ? process.env.VERCEL_ENV === "production" : true,
 } as const;
 

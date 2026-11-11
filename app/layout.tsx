@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Caveat, Fraunces, IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteHeader } from "@/components/site-header";
@@ -8,19 +8,47 @@ import { Providers } from "@/components/providers";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
+// Display: Fraunces, a soft "old style" serif with optical sizes.
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-inter",
+  axes: ["opsz"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-// Only the italic cut is used (editorial accents).
-const instrument = Instrument_Serif({
+// Its italic, for accents only: loaded on demand rather than preloaded.
+const frauncesItalic = Fraunces({
   subsets: ["latin"],
   weight: "400",
   style: "italic",
+  variable: "--font-fraunces-italic",
+  display: "swap",
+  preload: false,
+});
+
+// Text & UI.
+const instrument = Instrument_Sans({
+  subsets: ["latin"],
   variable: "--font-instrument",
   display: "swap",
+});
+
+// Handwritten margin notes (below the fold: not preloaded).
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: "500",
+  variable: "--font-caveat",
+  display: "swap",
+  preload: false,
+});
+
+// Catalogue labels and the kitchen ticket.
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -35,7 +63,7 @@ export const metadata: Metadata = {
   category: "food",
   formatDetection: { telephone: false, address: false, email: false },
   alternates: {
-    types: { "application/rss+xml": [{ url: "/feed.xml", title: "Épure — nouvelles recettes" }] },
+    types: { "application/rss+xml": [{ url: "/feed.xml", title: "Épure, les nouvelles recettes" }] },
   },
   openGraph: {
     type: "website",
@@ -79,7 +107,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" dir="ltr" className={`${inter.variable} ${instrument.variable}`}>
+    <html
+      lang="fr"
+      dir="ltr"
+      className={`${fraunces.variable} ${frauncesItalic.variable} ${instrument.variable} ${caveat.variable} ${plexMono.variable}`}
+    >
       <body className="min-h-dvh">
         <Providers>
           <SiteHeader />

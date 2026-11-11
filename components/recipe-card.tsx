@@ -1,81 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ViewTransition } from "react";
-import clsx from "clsx";
 import type { Recipe } from "@/lib/types";
 import { formatDuration } from "@/lib/format";
-import { Clock } from "./icons";
 
 /**
- * Recipe card. Its photo shares a view-transition name with the recipe
- * hero, so opening a recipe morphs the card into the page.
+ * A recipe as a sheet of paper: arched photo, number, title. The photo shares
+ * a view-transition name with the recipe hero, so it morphs into the page.
  */
 export function RecipeCard({
   recipe,
   index,
-  size = "default",
   headingLevel = 3,
 }: {
   recipe: Recipe;
   index: number;
-  size?: "default" | "large";
   headingLevel?: 2 | 3;
 }) {
   const Heading = headingLevel === 2 ? "h2" : "h3";
   return (
-    <article className="group relative">
+    <article className="group relative h-full">
       <Link
         href={`/recettes/${recipe.slug}`}
         transitionTypes={["nav-forward"]}
-        className="block rounded-[var(--radius-card)] outline-offset-4"
+        className="flex h-full flex-col rounded-[var(--radius-card)] bg-elevated p-3 shadow-[var(--shadow-card)] ring-1 ring-line transition-[transform,box-shadow] duration-500 ease-[var(--ease-out)] hover:-translate-y-1 hover:-rotate-[0.6deg] hover:shadow-[6px_6px_0_var(--accent)]"
       >
         <ViewTransition name={`photo-${recipe.slug}`} share="morph" default="none">
-          <div
-            className={clsx(
-              "relative overflow-hidden rounded-[var(--radius-card)] bg-fill",
-              size === "large" ? "aspect-[4/5] md:aspect-[16/11]" : "aspect-[4/5]",
-            )}
-          >
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[999px_999px_14px_14px] bg-fill">
             <Image
               src={recipe.hero}
               alt={recipe.images.heroAlt}
               fill
-              sizes={
-                size === "large"
-                  ? "(max-width: 768px) 100vw, 66vw"
-                  : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              }
-              quality={80}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={75}
               placeholder="blur"
-              className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-out)] group-hover:scale-[1.045]"
+              className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-out)] group-hover:scale-[1.05]"
               style={{ objectPosition: recipe.theme.focus }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/0" />
-            <span className="absolute top-4 left-4 rounded-full bg-black/35 px-3 py-1 text-[0.75rem] font-semibold text-white tabular backdrop-blur-md">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <span className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full bg-black/35 px-3 py-1 text-[0.75rem] font-medium text-white backdrop-blur-md">
-              <Clock size={13} strokeWidth={2.2} />
-              {formatDuration(recipe.totalMinutes)}
-            </span>
-            <div className="absolute inset-x-0 bottom-0 p-5 text-white md:p-6">
-              <p className="text-eyebrow text-white/75">
-                {recipe.category} · {recipe.cuisine}
-              </p>
-              <Heading
-                className={clsx(
-                  "mt-1.5 font-semibold tracking-[-0.03em]",
-                  size === "large"
-                    ? "text-[clamp(1.75rem,3.4vw,2.75rem)] leading-[1.02]"
-                    : "text-[1.625rem] leading-[1.05]",
-                )}
-              >
-                {recipe.title}
-              </Heading>
-              <p className="mt-1 serif-accent text-[1.1875rem] text-white/85">{recipe.tagline}</p>
-            </div>
           </div>
         </ViewTransition>
+        <div className="flex flex-1 flex-col px-3 pt-5 pb-3">
+          <p className="flex justify-between text-eyebrow text-fg-3">
+            <span>
+              N°&nbsp;0{index + 1} · {recipe.category}
+            </span>
+            <span className="tabular">{formatDuration(recipe.totalMinutes)}</span>
+          </p>
+          <Heading className="mt-3 font-display text-[1.875rem] leading-[1.02] font-[430] tracking-[-0.02em] [font-variation-settings:'SOFT'_60]">
+            {recipe.title}
+          </Heading>
+          <p className="mt-2 serif-accent text-[1.1875rem] leading-snug text-fg-2">{recipe.tagline}</p>
+        </div>
       </Link>
     </article>
   );

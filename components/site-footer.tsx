@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { recipes } from "@/lib/recipes";
 import { LogoMark } from "./logo";
+import { Scribble } from "./scribble";
 
 const year = new Date(
   recipes.reduce((max, r) => (r.dateModified > max ? r.dateModified : max), "2026-01-01"),
@@ -8,87 +9,89 @@ const year = new Date(
 
 export function SiteFooter() {
   return (
-    <footer data-site-footer className="relative overflow-hidden border-t border-line bg-bg">
-      <div className="container-page grid gap-12 pt-16 pb-10 md:grid-cols-12 md:pt-24">
-        <div className="md:col-span-5">
-          <Link href="/" className="inline-flex items-center gap-3" aria-label="Épure — accueil">
-            <LogoMark className="size-9 text-fg" />
-          </Link>
-          <p className="mt-5 max-w-sm text-[0.9375rem] leading-relaxed text-fg-2">
-            Cinq recettes. Des grammes, des degrés, des minutes — et la raison de chaque geste. Rien de plus, rien de
-            moins.
-          </p>
-        </div>
+    <footer data-site-footer className="relative overflow-hidden bg-charcoal text-paper">
+      <div className="container-page pt-20 pb-10 md:pt-28">
+        <p className="text-eyebrow text-paper/60">Fin du carnet</p>
+        <p className="relative mt-4 inline-block font-display text-[clamp(4rem,15vw,13rem)] leading-[0.85] font-[350] tracking-[-0.045em] [font-variation-settings:'SOFT'_100]">
+          À <span className="serif-accent text-[#E2765C]">table</span>.
+          <Scribble
+            variant="underline"
+            animate={false}
+            className="absolute -bottom-[0.04em] left-[0.74em] h-[0.12em] w-[1.75em] text-[#E2765C]"
+          />
+        </p>
 
-        <nav aria-label="Recettes" className="md:col-span-3">
-          <h2 className="text-eyebrow text-fg-3">Les recettes</h2>
-          <ul className="mt-4 space-y-2.5 text-[0.9375rem]">
-            {recipes.map((r) => (
-              <li key={r.slug}>
-                <Link href={`/recettes/${r.slug}`} className="text-fg-2 transition-colors hover:text-fg">
-                  {r.title}
+        <div className="mt-16 grid gap-12 border-t border-paper/15 pt-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <LogoMark className="size-10 text-paper [--bg:#1b1712]" />
+            <p className="mt-5 max-w-sm text-[0.9375rem] leading-relaxed text-paper/70">
+              Épure est un petit carnet en ligne. Cinq recettes, mises à jour quand on trouve mieux, sans publicité ni
+              compte à créer.
+            </p>
+          </div>
+
+          <nav aria-label="Recettes" className="md:col-span-3">
+            <h2 className="text-eyebrow text-paper/60">Les recettes</h2>
+            <ul className="mt-4 space-y-2.5 text-[0.9375rem]">
+              {recipes.map((r, i) => (
+                <li key={r.slug}>
+                  <Link href={`/recettes/${r.slug}`} className="group inline-flex gap-3 text-paper/80 hover:text-paper">
+                    <span className="font-mono text-[0.75rem] text-paper/60 tabular">0{i + 1}</span>
+                    <span className="underline-offset-4 group-hover:underline">{r.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Le site" className="md:col-span-2">
+            <h2 className="text-eyebrow text-paper/60">Le site</h2>
+            <ul className="mt-4 space-y-2.5 text-[0.9375rem]">
+              <li>
+                <Link href="/a-propos" className="text-paper/80 underline-offset-4 hover:text-paper hover:underline">
+                  À propos
                 </Link>
               </li>
-            ))}
-          </ul>
-        </nav>
+              <li>
+                <Link href="/recettes" className="text-paper/80 underline-offset-4 hover:text-paper hover:underline">
+                  Toutes les recettes
+                </Link>
+              </li>
+              <li>
+                <a href="/feed.xml" className="text-paper/80 underline-offset-4 hover:text-paper hover:underline">
+                  Flux RSS
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-        <nav aria-label="Le site" className="md:col-span-2">
-          <h2 className="text-eyebrow text-fg-3">Le site</h2>
-          <ul className="mt-4 space-y-2.5 text-[0.9375rem]">
-            <li>
-              <Link href="/a-propos" className="text-fg-2 transition-colors hover:text-fg">
-                Manifeste
-              </Link>
-            </li>
-            <li>
-              <Link href="/recettes" className="text-fg-2 transition-colors hover:text-fg">
-                Toutes les recettes
-              </Link>
-            </li>
-            <li>
-              <a href="/feed.xml" className="text-fg-2 transition-colors hover:text-fg">
-                Flux RSS
-              </a>
-            </li>
-          </ul>
-        </nav>
+          <nav aria-label="Pour les robots" className="md:col-span-2">
+            <h2 className="text-eyebrow text-paper/60">Pour les robots</h2>
+            <ul className="mt-4 space-y-2.5 text-[0.9375rem]">
+              <li>
+                <a href="/llms.txt" className="text-paper/80 underline-offset-4 hover:text-paper hover:underline">
+                  llms.txt
+                </a>
+              </li>
+              <li>
+                <a href="/sitemap.xml" className="text-paper/80 underline-offset-4 hover:text-paper hover:underline">
+                  Plan du site
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-        <nav aria-label="Pour les machines" className="md:col-span-2">
-          <h2 className="text-eyebrow text-fg-3">Pour les machines</h2>
-          <ul className="mt-4 space-y-2.5 text-[0.9375rem]">
-            <li>
-              <a href="/llms.txt" className="text-fg-2 transition-colors hover:text-fg">
-                llms.txt
-              </a>
-            </li>
-            <li>
-              <a href="/sitemap.xml" className="text-fg-2 transition-colors hover:text-fg">
-                Plan du site
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div className="container-page">
-        <p
-          aria-hidden
-          className="pointer-events-none -mb-[0.12em] bg-gradient-to-b from-fg/[0.14] to-transparent bg-clip-text pt-[0.08em] text-center text-[clamp(6rem,27vw,24rem)] leading-[0.95] font-semibold tracking-[-0.07em] text-transparent select-none"
-        >
-          Épure
-        </p>
-      </div>
-
-      <div className="container-page flex flex-col gap-2 border-t border-line py-6 text-[0.8125rem] text-fg-3 sm:flex-row sm:items-center sm:justify-between">
-        <p>© {year} Épure. La cuisine, à l’essentiel.</p>
-        <p>
-          Photographies :{" "}
-          <a href="https://www.pexels.com" className="underline-offset-2 hover:underline" rel="noopener">
-            Pexels
-          </a>{" "}
-          — crédits sur chaque recette.
-        </p>
+        <div className="mt-16 flex flex-col gap-3 border-t border-paper/15 pt-6 font-mono text-[0.75rem] text-paper/60 md:flex-row md:justify-between">
+          <p>© {year} Épure</p>
+          <p>
+            Composé en Fraunces et Instrument Sans · photos{" "}
+            <a href="https://www.pexels.com" rel="noopener" className="underline underline-offset-2 hover:text-paper">
+              Pexels
+            </a>{" "}
+            · aucun cookie
+          </p>
+        </div>
       </div>
     </footer>
   );

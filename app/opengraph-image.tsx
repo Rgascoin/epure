@@ -1,13 +1,13 @@
 import { ImageResponse } from "next/og";
 import { recipes } from "@/lib/recipes";
-import { OG_SIZE, OgMark, ogFonts, ogPhotos } from "@/lib/og";
+import { OG_COLORS, OG_SIZE, OgMark, ogFonts, ogPhotos } from "@/lib/og";
 
 export const size = OG_SIZE;
 export const contentType = "image/png";
-export const alt = "Épure — Cinq recettes, à l’essentiel";
+export const alt = "Épure, un carnet de cinq recettes écrites avec soin";
 
 export default function Image() {
-  const thumbs = recipes.map((r) => ogPhotos[r.slug].square);
+  const thumbs = recipes.slice(0, 3).map((r) => ogPhotos[r.slug].square);
 
   return new ImageResponse(
     <div
@@ -15,64 +15,72 @@ export default function Image() {
         width: "100%",
         height: "100%",
         display: "flex",
+        background: OG_COLORS.paper,
+        color: OG_COLORS.ink,
+        fontFamily: "Instrument Sans",
+        padding: "56px 64px",
         flexDirection: "column",
-        alignItems: "center",
         justifyContent: "space-between",
-        background: "#000",
-        backgroundImage: "radial-gradient(circle at 50% 120%, #F0B32355, transparent 55%)",
-        color: "white",
-        fontFamily: "Inter",
-        padding: "54px 60px 60px",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-        <OgMark size={40} dark />
-        <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: -0.8 }}>Épure</div>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <OgMark size={44} />
+          <div style={{ fontFamily: "Fraunces", fontSize: 34, letterSpacing: -1 }}>Épure</div>
+        </div>
+        <div style={{ fontSize: 18, letterSpacing: 2, color: OG_COLORS.ink2 }}>CARNET DE CUISINE · N° 1</div>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <div style={{ fontSize: 96, fontWeight: 600, letterSpacing: -4.5, lineHeight: 1 }}>La cuisine,</div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            fontSize: 96,
-            fontWeight: 600,
-            letterSpacing: -4.5,
-            lineHeight: 1.05,
-          }}
-        >
-          à l’
-          <span
-            style={{
-              fontFamily: "Instrument Serif",
-              fontStyle: "italic",
-              fontWeight: 400,
-              color: "#F0B323",
-              letterSpacing: -2,
-            }}
-          >
-            essentiel
-          </span>
-          .
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          fontFamily: "Fraunces",
+          fontSize: 92,
+          lineHeight: 1,
+          letterSpacing: -3,
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
+          Cinq
+          <img
+            src={thumbs[0]}
+            alt=""
+            width={150}
+            height={72}
+            style={{ width: 150, height: 72, borderRadius: 999, objectFit: "cover" }}
+          />
+          recettes qu’on
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 22, marginTop: 8 }}>
+          a pris
+          <img
+            src={thumbs[1]}
+            alt=""
+            width={150}
+            height={72}
+            style={{ width: 150, height: 72, borderRadius: 999, objectFit: "cover" }}
+          />
+          le temps
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 22, marginTop: 8 }}>
+          <span style={{ fontStyle: "italic", color: OG_COLORS.tomato }}>d’écrire.</span>
+          <img
+            src={thumbs[2]}
+            alt=""
+            width={150}
+            height={72}
+            style={{ width: 150, height: 72, borderRadius: 999, objectFit: "cover" }}
+          />
         </div>
       </div>
-      <div style={{ display: "flex", gap: 18 }}>
-        {thumbs.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt=""
-            width={118}
-            height={118}
-            style={{
-              width: 118,
-              height: 118,
-              borderRadius: 999,
-              objectFit: "cover",
-              border: "3px solid rgba(255,255,255,0.12)",
-            }}
-          />
-        ))}
+
+      <div style={{ display: "flex", fontSize: 22, color: OG_COLORS.ink2, gap: 26 }}>
+        <span>carbonara</span>
+        <span>bœuf bourguignon</span>
+        <span>tian provençal</span>
+        <span>tarte aux pommes</span>
+        <span>mousse au chocolat</span>
       </div>
     </div>,
     { ...size, fonts: ogFonts },

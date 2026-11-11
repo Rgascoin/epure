@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { recipes } from "@/lib/recipes";
 import { fr } from "@/lib/format";
 import { breadcrumb, graph, organization, webPage, website } from "@/lib/schema";
 import { absoluteUrl } from "@/lib/site";
 import { JsonLd } from "@/components/json-ld";
 import { PageTransition } from "@/components/page-transition";
-import { ScrollText } from "@/components/home/scroll-text";
+import { Scribble } from "@/components/scribble";
 import { ArrowRight } from "@/components/icons";
 
-const title = "Manifeste — pourquoi cinq recettes";
+const title = "À propos : pourquoi seulement cinq recettes";
 const description =
-  "Épure publie peu, mais précisément : cinq recettes classiques écrites au gramme près, avec la science de chaque geste, sans publicité ni détour.";
+  "Épure est un petit carnet de cinq recettes écrites au gramme près, avec le pourquoi de chaque geste. Pas de publicité, pas de compte, pas de pop-up.";
 
 export const metadata: Metadata = {
   title,
@@ -22,24 +23,20 @@ export const metadata: Metadata = {
 
 const PRINCIPLES = [
   {
-    n: "01",
-    title: "Des mesures, pas des impressions",
-    text: "Grammes, millilitres, degrés, minutes. Quand une approximation est inévitable, on décrit le signe à guetter : la couleur, la texture, le son.",
+    title: "Des mesures plutôt que des impressions",
+    text: "Des grammes, des degrés, des minutes. Quand un chiffre ne suffit pas, on décrit ce qu’il faut guetter : la couleur du caramel, le bruit du guanciale, la sauce qui nappe la cuillère.",
   },
   {
-    n: "02",
-    title: "La raison de chaque geste",
-    text: "Démarrer le guanciale à froid, mélanger hors du feu, monter des blancs fermes mais pas secs : chaque recette explique la science qui rend le geste juste.",
+    title: "Le pourquoi de chaque geste",
+    text: "Pourquoi démarrer à froid, pourquoi sortir la poêle du feu, pourquoi ne pas tourner les blancs. Une fois qu’on a compris, on n’a plus besoin de la recette.",
   },
   {
-    n: "03",
-    title: "La recette d’abord",
-    text: "L’essentiel tient en quelques lignes, en haut de chaque page. Le contexte, les variantes et les questions viennent ensuite, pour qui veut aller plus loin.",
+    title: "La recette en premier",
+    text: "Le résumé est en haut de la page, les ingrédients juste après. Les explications, les ratés possibles et les variantes viennent ensuite, pour ceux qui ont le temps.",
   },
   {
-    n: "04",
-    title: "Pensé pour la cuisine",
-    text: "Portions ajustables, minuteurs intégrés, liste cochable, mode cuisine plein écran qui garde l’écran allumé. Même imprimée, la recette reste lisible.",
+    title: "Un site qui sert en cuisine",
+    text: "Des portions qui se recalculent, des minuteurs dans les étapes, un mode plein écran qui garde l’écran allumé, et une version qui s’imprime proprement.",
   },
 ];
 
@@ -56,7 +53,7 @@ export default function AboutPage() {
     }),
     breadcrumb("/a-propos", [
       { name: "Accueil", path: "/" },
-      { name: "Manifeste", path: "/a-propos" },
+      { name: "À propos", path: "/a-propos" },
     ]),
   );
 
@@ -65,104 +62,130 @@ export default function AboutPage() {
       <JsonLd data={data} />
 
       <section className="container-page pt-[calc(var(--header-h)+clamp(3rem,10vh,7rem))]">
-        <p className="intro-fade text-eyebrow text-fg-3" style={{ ["--d" as string]: "0ms" }}>
-          Manifeste
+        <p className="intro-fade text-eyebrow text-fg-3" style={{ "--d": "0ms" } as CSSProperties}>
+          À propos
         </p>
-        <h1 className="mt-5 text-hero">
-          <span className="intro-line" style={{ ["--i" as string]: 0 }}>
-            <span>Moins.</span>
-          </span>
-          <span className="intro-line" style={{ ["--i" as string]: 1 }}>
-            <span>
-              <span className="serif-accent font-normal">Mieux</span>.
+        <h1 className="mt-6 max-w-[13ch] text-hero">
+          {["Pourquoi", "seulement"].map((word, i) => (
+            <span key={word}>
+              <span className="intro-word" style={{ "--i": i } as CSSProperties}>
+                {word}
+              </span>{" "}
             </span>
+          ))}
+          <span className="relative inline-block">
+            <span className="intro-word serif-accent text-ink" style={{ "--i": 2 } as CSSProperties}>
+              cinq
+            </span>
+            <Scribble
+              variant="circle"
+              animate={false}
+              className="intro-fade absolute -inset-x-[0.2em] -inset-y-[0.12em] text-accent"
+            />
+          </span>
+          <span className="intro-word" style={{ "--i": 3 } as CSSProperties}>
+            &#8239;?
           </span>
         </h1>
       </section>
 
-      <section className="container-page py-[clamp(4rem,12vh,9rem)]" aria-label="Pourquoi cinq">
-        <ScrollText
-          className="max-w-[60rem] text-[clamp(1.75rem,3.8vw,3.25rem)] leading-[1.1] font-semibold tracking-[-0.035em]"
-          text={fr(
-            "Il existe des millions de recettes en ligne. La plupart se ressemblent, beaucoup se contredisent, peu expliquent. Épure fait le pari inverse : cinq recettes seulement, choisies parce que chacune enseigne un geste fondamental, et écrites avec assez de précision pour réussir du premier coup.",
-          )}
-        />
-      </section>
-
-      <section className="container-page pb-[clamp(4rem,12vh,9rem)]" aria-labelledby="method-title">
-        <h2 id="method-title" className="text-headline">
-          La méthode.
-        </h2>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 md:gap-5">
-          {PRINCIPLES.map((p) => (
-            <article
-              key={p.n}
-              className="reveal-on-scroll rounded-[var(--radius-card)] bg-elevated p-8 ring-1 ring-line md:p-10"
-            >
-              <p className="text-[0.8125rem] font-semibold text-fg-3 tabular">{p.n}</p>
-              <h3 className="mt-4 text-title">{p.title}</h3>
-              <p className="mt-3 text-[1.0625rem] leading-relaxed text-fg-2">{fr(p.text)}</p>
-            </article>
-          ))}
+      <section
+        className="container-page grid gap-10 py-[clamp(4rem,12vh,8rem)] md:grid-cols-12"
+        aria-label="Notre histoire"
+      >
+        <div className="space-y-6 text-[1.1875rem] leading-[1.7] text-fg-2 md:col-span-7 md:col-start-4">
+          <p className="dropcap font-display text-[clamp(1.35rem,2.2vw,1.75rem)] leading-[1.5] font-[380] text-fg [font-variation-settings:'SOFT'_80]">
+            {fr(
+              "Parce qu’on préfère une recette bien expliquée à cent recettes survolées. Il existe des milliers de versions de la carbonara en ligne ; on en a écrit une, en prenant le temps de dire pourquoi elle marche.",
+            )}
+          </p>
+          <p>
+            {fr(
+              "Les cinq recettes ont été choisies parce que chacune apprend un geste qui servira ailleurs : lier une sauce aux œufs sans la cuire, mijoter longtemps sans dessécher, confire des légumes, foncer une pâte, monter des blancs. Si vous maîtrisez ces cinq-là, vous avez fait une bonne partie du chemin.",
+            )}
+          </p>
+          <p>
+            {fr(
+              "On reprend les recettes quand on trouve une meilleure façon de faire, et la date de mise à jour est indiquée en bas de chaque page.",
+            )}
+          </p>
         </div>
       </section>
 
-      <section className="bg-black py-[clamp(5rem,14vh,10rem)] text-white" aria-labelledby="machines-title">
+      <section className="container-page pb-[clamp(4rem,12vh,8rem)]" aria-labelledby="method-title">
+        <h2 id="method-title" className="text-headline">
+          Comment on écrit une recette.
+        </h2>
+        <ol className="mt-12 grid gap-x-10 gap-y-12 border-t-2 border-fg pt-10 md:grid-cols-2">
+          {PRINCIPLES.map((p, i) => (
+            <li key={p.title} className="reveal-on-scroll grid grid-cols-[3rem_1fr] gap-4">
+              <span className="serif-accent text-[2.75rem] leading-[0.9] text-ink">{i + 1}.</span>
+              <div>
+                <h3 className="text-[1.3125rem] leading-tight font-semibold">{p.title}</h3>
+                <p className="mt-2 text-[1.0625rem] leading-relaxed text-fg-2">{fr(p.text)}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="grain bg-charcoal py-[clamp(5rem,14vh,9rem)] text-paper" aria-labelledby="machines-title">
         <div className="container-page grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="text-eyebrow text-white/50">Ouvert aux machines</p>
-            <h2 id="machines-title" className="mt-3 text-headline">
-              Lisible par tous.
-              <br />
-              <span className="text-white/40">Même par les IA.</span>
+            <p className="text-eyebrow text-paper/60">Pour les moteurs et les assistants</p>
+            <h2 id="machines-title" className="mt-4 text-headline">
+              Lisible par les gens, <span className="serif-accent text-[#E2765C]">et par les robots</span>.
             </h2>
           </div>
-          <div className="space-y-5 text-[1.0625rem] leading-relaxed text-white/70 md:col-span-7">
+          <div className="space-y-5 text-[1.0625rem] leading-relaxed text-paper/75 md:col-span-6 md:col-start-7">
             <p>
               {fr(
-                "Chaque recette est décrite en données structurées schema.org (Recipe, FAQ, fil d’Ariane) pour apparaître enrichie dans les moteurs de recherche, avec ses temps, ses ingrédients et sa photo.",
+                "Chaque recette est décrite en données structurées (schema.org) : temps, ingrédients, étapes, valeurs nutritionnelles. C’est ce qui permet aux moteurs de recherche de l’afficher avec sa photo et son temps de préparation.",
               )}
             </p>
             <p>
-              {fr("Les assistants et agents d’IA disposent d’un index dédié, ")}
-              <a href="/llms.txt" className="text-white underline underline-offset-4">
+              {fr("Pour les assistants comme ChatGPT, Claude ou Perplexity, il y a un index ")}
+              <a href="/llms.txt" className="text-paper underline underline-offset-4">
                 llms.txt
               </a>
-              {fr(
-                ", et d’une version Markdown propre de chaque recette : ajoutez simplement « .md » à l’adresse, par exemple ",
-              )}
-              <a href={`/recettes/${recipes[0].slug}.md`} className="text-white underline underline-offset-4">
+              {fr(" et une version texte de chaque recette : il suffit d’ajouter « .md » à l’adresse, par exemple ")}
+              <a href={`/recettes/${recipes[0].slug}.md`} className="text-paper underline underline-offset-4">
                 /recettes/{recipes[0].slug}.md
               </a>
               .
             </p>
             <p>
               {fr(
-                "Sans publicité, sans traceur publicitaire, sans pop-up : des pages légères, rapides, et qui respectent le réglage « réduire les animations » de votre appareil.",
+                "Pas de publicité, pas de cookie, pas de traceur publicitaire. Les animations se coupent si votre appareil demande à réduire les mouvements.",
               )}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="container-page py-[clamp(4rem,12vh,9rem)]" aria-labelledby="credits-title">
+      <section className="container-page py-[clamp(4rem,12vh,8rem)]" aria-labelledby="credits-title">
         <h2 id="credits-title" className="text-title">
-          Crédits
+          Merci à eux
         </h2>
         <p className="mt-3 max-w-2xl text-fg-2">
           {fr(
-            "Photographies issues de Pexels, utilisées selon la licence Pexels. Merci à leurs auteurs. Typographies : Inter (Rasmus Andersson) et Instrument Serif, sous licence SIL Open Font License.",
+            "Les photos viennent de Pexels et sont utilisées selon leur licence. Les caractères sont Fraunces, Instrument Sans, IBM Plex Mono et Caveat, tous sous licence libre.",
           )}
         </p>
-        <ul className="mt-8 grid gap-x-10 gap-y-3 text-[0.9375rem] sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-8 grid gap-x-10 border-t border-line-strong text-[0.9375rem] sm:grid-cols-2 lg:grid-cols-3">
           {recipes.flatMap((r) =>
             (["hero", "detail"] as const).map((k) => (
-              <li key={`${r.slug}-${k}`} className="flex justify-between gap-4 border-b border-line py-2.5">
+              <li key={`${r.slug}-${k}`} className="flex items-baseline border-b border-line py-3">
                 <span className="text-fg-2">
                   {r.title}
                   {k === "detail" ? " (détail)" : ""}
                 </span>
-                <a href={r.images.credits[k].url} rel="noopener" className="font-medium hover:underline">
+                <span className="leader" />
+                <a
+                  href={r.images.credits[k].url}
+                  rel="noopener"
+                  className="font-medium underline-offset-4 hover:underline"
+                >
                   {r.images.credits[k].photographer}
                 </a>
               </li>

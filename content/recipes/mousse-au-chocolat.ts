@@ -3,16 +3,16 @@ import type { RecipeContent } from "@/lib/types";
 export const content: RecipeContent = {
   slug: "mousse-au-chocolat",
   title: "Mousse au chocolat",
-  seoTitle: "Mousse au chocolat : la recette aérienne et facile",
-  tagline: "Du chocolat. De l’air.",
+  seoTitle: "Mousse au chocolat maison, légère et sans crème",
+  tagline: "Meilleure le lendemain, promis.",
   description:
-    "La mousse au chocolat maison : 200 g de chocolat noir 70 %, 6 œufs, une pincée de sel et un peu de sucre. 25 min de préparation, 6 h au frais. Pas à pas.",
+    "Une mousse au chocolat maison avec 200 g de chocolat noir 70 %, 6 œufs, une pincée de sel et très peu de sucre. 25 minutes de travail, 6 heures au frais.",
   summary:
-    "Pour une mousse au chocolat pour 6, faites fondre 200 g de chocolat noir à 70 % au bain-marie, incorporez 6 jaunes, puis les 6 blancs montés en neige souple avec une pincée de sel et 30 g de sucre. Mélangez délicatement à la maryse et laissez prendre au moins 6 heures au réfrigérateur.",
+    "Pour six, faites fondre 200 g de chocolat noir à 70 % au bain-marie, ajoutez les 6 jaunes, puis incorporez les 6 blancs montés en neige souple avec une pincée de sel et 30 g de sucre. Mélangez doucement à la maryse, répartissez dans des verrines et laissez prendre au moins 6 heures au frigo, une nuit si vous pouvez.",
   intro: [
-    "Il existe mille mousses au chocolat ; celle-ci revient à l’essentiel. Du chocolat noir, des œufs, une pincée de sel et à peine de sucre. Pas de crème, pas de gélatine : la tenue vient du beurre de cacao qui fige au froid, la légèreté de l’air emprisonné dans les blancs.",
-    "La réussite tient à deux gestes : un chocolat à la bonne température au moment du mélange, et des blancs incorporés avec douceur pour ne pas casser les bulles.",
-    "Préparez-la le matin pour le soir, ou la veille pour le lendemain.",
+    "Des mousses au chocolat, il en existe des centaines. Celle-ci est la plus simple qu’on connaisse : du chocolat noir, des œufs, une pincée de sel et à peine de sucre. On n’ajoute ni crème ni gélatine. Elle tient parce que le beurre de cacao fige au froid, et elle est légère grâce à l’air des blancs.",
+    "Deux choses comptent vraiment. Le chocolat doit être à peine tiède quand on le mélange. Et les blancs s’incorporent doucement, en soulevant, pour garder un maximum de bulles.",
+    "Faites-la le matin pour le soir, ou la veille. Le lendemain, elle est encore plus fondante.",
   ],
   category: "Dessert",
   cuisine: "Française",
@@ -58,113 +58,113 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Fondre le chocolat",
-          text: "Faites fondre le chocolat haché et le beurre au bain-marie, sur une eau à peine frémissante, sans que le bol touche l’eau. Remuez jusqu’à ce que le mélange soit lisse, puis retirez du feu.",
+          text: "Faites fondre le chocolat haché et le beurre au bain-marie, sur une eau qui frémit à peine. Le bol ne doit pas toucher l’eau. Remuez jusqu’à ce que ce soit lisse, puis retirez du feu.",
           timer: { minutes: 5, label: "Fonte du chocolat" },
-          tip: "Pas une goutte d’eau ni de vapeur dans le chocolat : il deviendrait épais et granuleux.",
+          tip: "Attention à l’eau et à la vapeur : une seule goutte dans le chocolat et il devient épais et granuleux.",
         },
         {
           title: "Séparer les œufs",
-          text: "Clarifiez les œufs : les jaunes dans un bol, les blancs dans un grand saladier parfaitement propre et sec. La moindre trace de jaune empêcherait les blancs de monter.",
+          text: "Cassez les œufs en mettant les jaunes dans un bol et les blancs dans un grand saladier bien propre et sec. S’il tombe un peu de jaune dans les blancs, retirez-le avec un bout de coquille : sinon ils ne monteront pas.",
         },
         {
           title: "Incorporer les jaunes",
-          text: "Laissez tiédir le chocolat jusqu’à ce qu’il soit à peine tiède au toucher, autour de 35 à 40 °C. Incorporez les jaunes un à un en fouettant : le mélange doit être lisse et brillant.",
+          text: "Attendez que le chocolat soit juste tiède quand vous y trempez le doigt, entre 35 et 40 °C. Ajoutez les jaunes un par un en fouettant. Le mélange doit rester lisse et brillant.",
         },
         {
           title: "Monter les blancs",
-          text: "Fouettez les blancs avec le sel à vitesse moyenne. Quand ils sont mousseux, ajoutez le sucre en pluie et continuez jusqu’à obtenir une neige brillante qui forme un bec d’oiseau souple au bout du fouet.",
-          tip: "Arrêtez-vous au bec d’oiseau : des blancs trop fermes deviennent granuleux et se mélangent mal au chocolat.",
+          text: "Battez les blancs avec le sel à vitesse moyenne. Quand ils moussent, versez le sucre en pluie et continuez jusqu’à obtenir une neige brillante qui fait un petit bec souple au bout du fouet.",
+          tip: "Arrêtez-vous à ce bec souple. Des blancs trop fermes deviennent granuleux et se mélangent mal au chocolat.",
         },
         {
           title: "Détendre le chocolat",
-          text: "Incorporez énergiquement un quart des blancs au chocolat avec un fouet. Ce premier ajout allège la masse et facilite la suite.",
+          text: "Prenez un quart des blancs et mélangez-les franchement au chocolat avec un fouet. Ce premier ajout sert à assouplir la masse, ne vous inquiétez pas des bulles perdues.",
         },
         {
           title: "Incorporer délicatement",
-          text: "Ajoutez le reste des blancs en deux fois et mélangez à la maryse en soulevant la masse du fond vers le haut, tout en tournant le saladier. Arrêtez dès qu’il ne reste plus de traces blanches.",
-          tip: "Chaque geste en trop casse des bulles : mieux vaut une trace blanche qu’une mousse retombée.",
+          text: "Ajoutez le reste des blancs en deux fois. À la maryse, passez sous la masse et ramenez-la vers le haut en tournant le saladier d’un quart de tour à chaque geste. Arrêtez dès qu’il n’y a plus de traces blanches.",
+          tip: "Chaque tour de trop casse des bulles. Mieux vaut une petite trace blanche qu’une mousse qui retombe.",
         },
         {
           title: "Laisser prendre",
-          text: "Répartissez la mousse dans les verrines ou un plat, filmez et réservez au réfrigérateur au moins 6 heures, idéalement une nuit.",
+          text: "Répartissez la mousse dans les verrines ou un plat, filmez et laissez au frigo au moins 6 heures. Une nuit, c’est encore mieux.",
           timer: { minutes: 360, label: "Prise au froid" },
         },
         {
           title: "Servir",
-          text: "Sortez la mousse 10 minutes avant de servir. Parsemez d’une pointe de fleur de sel ou d’éclats de cacao.",
+          text: "Sortez-la 10 minutes avant de servir, avec quelques grains de fleur de sel ou des éclats de cacao.",
         },
       ],
     },
   ],
   science: [
     {
-      title: "Une mousse, c’est de l’air piégé",
-      text: "En fouettant les blancs, on déplie leurs protéines, qui se réorganisent en un film élastique autour de millions de bulles d’air. Le sucre, ajouté une fois les blancs mousseux, renforce ce film et rend la neige plus stable.",
+      title: "Ce qui se passe dans les blancs",
+      text: "En fouettant, on déplie les protéines du blanc. Elles s’organisent en un film souple autour d’une multitude de bulles d’air. Le sucre, ajouté quand les blancs moussent déjà, renforce ce film et rend la neige plus stable.",
     },
     {
-      title: "Le beurre de cacao fige la structure",
-      text: "Au froid, le beurre de cacao du chocolat se solidifie et emprisonne les bulles dans leur position. C’est pour cela que la mousse a besoin de plusieurs heures au réfrigérateur pour se tenir.",
+      title: "Pourquoi six heures au frigo",
+      text: "Au froid, le beurre de cacao du chocolat durcit et fige les bulles là où elles sont. C’est ce qui donne de la tenue à la mousse, et ça prend plusieurs heures.",
     },
     {
-      title: "La bonne température",
-      text: "Trop chaud, le chocolat fait éclater les bulles et la mousse retombe. Trop froid, il fige au contact des blancs et forme des grains. Autour de 35 à 40 °C, avec des œufs à température ambiante, le mélange reste souple et lisse.",
+      title: "Le chocolat à la bonne température",
+      text: "Trop chaud, il fait éclater les bulles et la mousse retombe. Trop froid, il durcit au contact des blancs et fait des grains. Entre 35 et 40 °C, avec des œufs qui ne sortent pas du frigo, le mélange reste souple.",
     },
   ],
   tips: [
-    "Choisissez un chocolat noir entre 64 et 70 % de cacao, de qualité pâtissière : il fait tout le goût.",
-    "Sortez les œufs du réfrigérateur une heure avant : les blancs montent mieux et le chocolat ne fige pas.",
-    "Essuyez le saladier et le fouet avec un peu de vinaigre : la moindre trace de gras empêche les blancs de monter.",
-    "Une pointe de fleur de sel au service exalte l’amertume du chocolat.",
-    "Une cuillerée d’espresso serré ou un zeste d’orange dans le chocolat fondu changent tout.",
+    "Prenez un chocolat noir pâtissier entre 64 et 70 % de cacao. C’est lui qui fait le goût, ne lésinez pas.",
+    "Sortez les œufs du frigo une heure avant. Les blancs montent mieux, et le chocolat ne fige pas au contact des jaunes.",
+    "Passez un essuie-tout imbibé de vinaigre dans le saladier et sur les fouets. La moindre trace de gras empêche les blancs de monter.",
+    "Quelques grains de fleur de sel au moment de servir font ressortir l’amertume du chocolat.",
+    "Une cuillerée d’espresso serré ou un zeste d’orange dans le chocolat fondu, et vous avez une autre mousse.",
   ],
   mistakes: [
-    "Battre les blancs trop fermes : ils forment des grumeaux blancs dans la mousse.",
-    "Mélanger en tournant comme une pâte : les bulles éclatent et la mousse devient dense.",
-    "Incorporer un chocolat trop chaud ou trop froid : la mousse retombe ou devient granuleuse.",
-    "Servir trop tôt : sans ses heures de froid, la mousse n’a pas de tenue.",
+    "Battre les blancs trop fermes. Ils laissent des grumeaux blancs dans la mousse.",
+    "Mélanger en tournant comme une pâte à gâteau. Les bulles éclatent et la mousse devient dense.",
+    "Mélanger avec un chocolat trop chaud ou trop froid. Elle retombe, ou elle fait des grains.",
+    "La servir trop tôt. Sans ses heures au frais, elle n’a aucune tenue.",
   ],
   variations: [
     {
       title: "Au café",
-      text: "Ajoutez 2 cuillerées à soupe d’espresso serré au chocolat fondu, avant les jaunes.",
+      text: "Ajoutez 2 cuillerées à soupe d’espresso serré dans le chocolat fondu, avant les jaunes.",
     },
     {
       title: "À l’orange",
-      text: "Râpez le zeste d’une orange non traitée dans le chocolat fondu et parsemez quelques zestes au service.",
+      text: "Râpez le zeste d’une orange non traitée dans le chocolat fondu, et gardez-en un peu pour le dessus.",
     },
     {
       title: "Végane, à l’aquafaba",
-      text: "Remplacez les œufs par 150 ml de jus de cuisson de pois chiches monté en neige avec le sucre, incorporé au chocolat fondu tiède. La texture est un peu plus légère et fragile.",
+      text: "Remplacez les œufs par 150 ml de jus de cuisson de pois chiches, monté en neige avec le sucre, puis mélangé au chocolat tiède. La mousse est plus légère, et un peu plus fragile.",
     },
   ],
   storage:
-    "Préparée avec des œufs crus, la mousse se conserve 24 heures au réfrigérateur, filmée, et 48 heures au maximum. Ne la laissez pas à température ambiante.",
+    "Comme elle contient des œufs crus, elle se garde 24 heures au frigo, filmée, 48 heures grand maximum. Ne la laissez pas traîner à température ambiante.",
   pairing:
-    "Un vin doux naturel du Roussillon, banyuls ou maury, dont les notes de cacao et de fruits secs prolongent le chocolat.",
+    "Un vin doux naturel du Roussillon, un banyuls ou un maury : leurs notes de cacao et de fruits secs vont très bien avec.",
   faq: [
     {
       q: "La mousse au chocolat est-elle déconseillée aux femmes enceintes ?",
-      a: "La mousse classique contient des œufs crus : elle est déconseillée aux femmes enceintes, aux jeunes enfants, aux personnes âgées et aux personnes immunodéprimées, en raison du risque de salmonellose. Pour eux, utilisez des œufs pasteurisés (blancs et jaunes vendus en brique au rayon frais) : la recette fonctionne à l’identique.",
+      a: "Oui, car elle contient des œufs crus. Elle est déconseillée aux femmes enceintes, aux jeunes enfants, aux personnes âgées et aux personnes immunodéprimées, à cause du risque de salmonellose. Pour eux, prenez des œufs pasteurisés (blancs et jaunes vendus en brique au rayon frais) : la recette marche de la même façon.",
     },
     {
       q: "Combien de temps faut-il laisser prendre une mousse au chocolat ?",
-      a: "Au moins 6 heures au réfrigérateur, idéalement une nuit. C’est le temps nécessaire pour que le beurre de cacao fige et stabilise la mousse.",
+      a: "Au moins 6 heures au frigo, et idéalement une nuit. C’est le temps qu’il faut au beurre de cacao pour figer et faire tenir la mousse.",
     },
     {
       q: "Pourquoi ma mousse au chocolat est-elle granuleuse ?",
-      a: "Le plus souvent, le chocolat était trop froid au moment du mélange et a figé au contact des blancs, ou les blancs étaient trop fermes. Visez un chocolat à 35–40 °C et une neige souple.",
+      a: "Le plus souvent, le chocolat était trop froid au moment du mélange et a durci au contact des blancs. Ou alors les blancs étaient trop fermes. Visez un chocolat entre 35 et 40 °C et une neige souple.",
     },
     {
       q: "Pourquoi ma mousse au chocolat est-elle restée liquide ?",
-      a: "Les blancs n’étaient pas assez montés ou ont été mélangés trop énergiquement, ce qui a cassé les bulles. Un temps de repos trop court au froid peut aussi l’expliquer.",
+      a: "Les blancs n’étaient sans doute pas assez montés, ou ils ont été mélangés trop vigoureusement. Un temps de repos trop court au froid peut aussi jouer.",
     },
     {
       q: "Quel chocolat choisir pour une mousse au chocolat ?",
-      a: "Un chocolat noir de qualité pâtissière, entre 64 et 70 % de cacao. Plus riche en beurre de cacao qu’un chocolat ordinaire, il donne une mousse plus intense et mieux tenue.",
+      a: "Un chocolat noir pâtissier, entre 64 et 70 % de cacao. Il contient plus de beurre de cacao qu’une tablette ordinaire, donc la mousse a plus de goût et tient mieux.",
     },
     {
       q: "Peut-on faire une mousse au chocolat sans sucre ?",
-      a: "Oui. Le sucre sert surtout à stabiliser les blancs : sans lui, la mousse est un peu plus fragile mais tout à fait réussie avec un chocolat à 70 %.",
+      a: "Oui. Le sucre sert surtout à stabiliser les blancs. Sans lui, la mousse est un peu plus fragile, mais avec un chocolat à 70 % elle reste très bonne.",
     },
   ],
   nutrition: {
@@ -176,6 +176,10 @@ export const content: RecipeContent = {
     sugar: 15,
     fiber: 4,
     sodium: 100,
+  },
+  annotations: {
+    hero: "le chocolat juste tiède",
+    detail: "soulever, ne pas tourner",
   },
   images: {
     heroAlt: "Mousse au chocolat dans un verre à pied sur fond noir, entourée d’éclats de cacao et de truffes",

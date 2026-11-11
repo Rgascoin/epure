@@ -3,16 +3,16 @@ import type { RecipeContent } from "@/lib/types";
 export const content: RecipeContent = {
   slug: "spaghetti-carbonara",
   title: "Spaghetti alla carbonara",
-  seoTitle: "Spaghetti carbonara : la vraie recette italienne",
-  tagline: "Cinq ingrédients. Zéro crème.",
+  seoTitle: "Spaghetti carbonara à la romaine, sans crème",
+  tagline: "Sans crème, et c’est tant mieux.",
   description:
-    "La vraie carbonara romaine en 25 minutes : guanciale, pecorino, jaunes d’œufs et poivre, sans crème. La technique pas à pas pour une sauce lisse et brillante.",
+    "Spaghetti carbonara comme à Rome, en 25 minutes, avec du guanciale, du pecorino, des jaunes d’œufs et beaucoup de poivre. Sans crème, et sans omelette.",
   summary:
-    "Pour une vraie carbonara (4 personnes), faites rendre 150 g de guanciale à la poêle, cuisez 400 g de spaghetti al dente, puis mélangez-les hors du feu avec 4 jaunes, 1 œuf entier, 80 g de pecorino et du poivre, en ajoutant l’eau de cuisson jusqu’à obtenir une sauce nappante. Comptez 25 minutes et aucune crème : l’onctuosité vient de l’amidon de l’eau de cuisson et du gras du guanciale.",
+    "Pour quatre, faites fondre 150 g de guanciale à la poêle et cuisez 400 g de spaghetti deux minutes de moins que sur le paquet. Hors du feu, mélangez les pâtes avec 4 jaunes, 1 œuf entier, 80 g de pecorino et du poivre, en ajoutant de l’eau de cuisson jusqu’à ce que la sauce nappe. Il faut 25 minutes en tout, et pas de crème : c’est le gras du guanciale et l’amidon de l’eau qui font la sauce.",
   intro: [
-    "La carbonara est un plat de mécanique plus que d’ingrédients. Cinq éléments seulement — guanciale, œufs, pecorino, poivre, pâtes — et aucune place pour l’approximation : c’est la température qui décide entre une sauce soyeuse et une omelette.",
-    "Ici, pas de crème, pas d’ail, pas d’oignon. L’onctuosité naît d’une émulsion : le gras fondu du guanciale, l’amidon de l’eau de cuisson et les jaunes d’œufs, liés hors du feu, au dernier moment.",
-    "Une fois le geste compris, la recette se fait en vingt-cinq minutes et ne se rate plus.",
+    "La carbonara tient en cinq ingrédients, et c’est justement pour ça qu’elle pardonne peu. Tout se joue sur la température : un peu trop chaud et les œufs prennent en omelette, trop froid et la sauce reste liquide au fond de la poêle.",
+    "On n’y met ni crème, ni ail, ni oignon. La sauce vient du gras du guanciale, de l’eau de cuisson chargée d’amidon et des jaunes, mélangés hors du feu au tout dernier moment. Écrit comme ça, ça a l’air technique. À la poêle, c’est une minute de pince et un peu d’attention.",
+    "Si la première tourne un peu, ce n’est pas grave. On explique comment rattraper la sauce à l’étape « Émulsionner hors du feu », et ça marche presque toujours.",
   ],
   category: "Plat",
   cuisine: "Italienne",
@@ -59,114 +59,114 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Lancer l’eau",
-          text: "Portez 3 l d’eau à ébullition dans une grande casserole, puis salez avec le gros sel. Le guanciale et le pecorino sont déjà salés : l’eau doit l’être moins que pour des pâtes classiques.",
+          text: "Faites bouillir 3 l d’eau dans une grande casserole et salez avec le gros sel. Salez moins que d’habitude : le guanciale et le pecorino apportent déjà beaucoup de sel.",
           timer: { minutes: 10, label: "Ébullition de l’eau" },
         },
         {
           title: "Préparer la crème d’œufs",
-          text: "Dans un saladier, fouettez les jaunes, l’œuf entier, 60 g de pecorino, le parmigiano et les trois quarts du poivre jusqu’à obtenir une pâte épaisse et homogène. Réservez le reste du fromage pour le service.",
-          tip: "Râpez le fromage le plus finement possible : il fondra instantanément dans la sauce au lieu de former des grumeaux.",
+          text: "Dans un saladier, fouettez les jaunes et l’œuf entier avec 60 g de pecorino, le parmigiano et les trois quarts du poivre. Vous devez obtenir une pâte épaisse, presque une crème. Gardez le reste du fromage pour la fin.",
+          tip: "Râpez le fromage très fin, avec une râpe type Microplane. Râpé gros, il fait des fils au lieu de fondre.",
         },
         {
           title: "Rendre le guanciale",
-          text: "Déposez le guanciale dans une grande poêle froide, sans matière grasse, puis chauffez à feu moyen-doux. Laissez fondre 8 à 10 minutes, jusqu’à ce que le gras soit translucide et les bords dorés et croustillants.",
+          text: "Mettez le guanciale dans la poêle encore froide, sans matière grasse, puis allumez à feu moyen-doux. Laissez-le fondre 8 à 10 minutes : le gras devient translucide, les bords dorent et croustillent, et la cuisine commence à sentir très bon.",
           timer: { minutes: 9, label: "Guanciale" },
-          tip: "Démarrer à froid laisse au gras le temps de fondre avant que la viande ne colore : vous obtenez plus de graisse parfumée pour la sauce.",
+          tip: "Partir à froid laisse le temps au gras de fondre avant que la viande ne colore. Vous récupérez plus de graisse dans la poêle, et c’est elle qui va parfumer la sauce.",
         },
         {
           title: "Cuire les pâtes",
-          text: "Plongez les spaghetti dans l’eau bouillante et faites-les cuire 2 minutes de moins que le temps indiqué sur le paquet. Ils finiront de cuire dans la poêle.",
+          text: "Jetez les spaghetti dans l’eau bouillante et comptez 2 minutes de moins que ce qu’indique le paquet. Ils finiront de cuire dans la poêle.",
           timer: { minutes: 9, label: "Cuisson des pâtes" },
         },
         {
           title: "Torréfier le poivre",
-          text: "Coupez le feu sous la poêle, retirez quelques morceaux de guanciale croustillant pour le dressage, puis ajoutez le reste du poivre dans le gras chaud. Versez une louche d’eau de cuisson pour décoller les sucs.",
+          text: "Coupez le feu sous la poêle. Mettez de côté quelques morceaux de guanciale bien croustillants pour le service, puis jetez le reste du poivre dans le gras chaud : il grésille et embaume. Ajoutez une louche d’eau de cuisson pour décoller les sucs.",
         },
         {
           title: "Enrober les pâtes",
-          text: "Prélevez 250 ml d’eau de cuisson, puis égouttez les pâtes et transférez-les dans la poêle. Remettez sur feu moyen 1 minute en remuant à la pince : les spaghetti s’enrobent de gras et d’amidon.",
+          text: "Gardez 250 ml d’eau de cuisson dans un bol, égouttez les pâtes et versez-les dans la poêle. Remettez sur feu moyen 1 minute en remuant à la pince, le temps que les spaghetti se couvrent de gras et d’amidon.",
           timer: { minutes: 1, label: "Enrobage" },
         },
         {
           title: "Émulsionner hors du feu",
-          text: "Retirez la poêle du feu et attendez 30 secondes. Détendez la crème d’œufs avec 2 cuillerées d’eau de cuisson, versez-la sur les pâtes et mélangez vivement à la pince, en ajoutant de l’eau de cuisson cuillerée par cuillerée jusqu’à une sauce brillante qui nappe les spaghetti.",
-          tip: "Sauce trop épaisse : un trait d’eau de cuisson. Trop liquide : quelques secondes sur feu très doux, sans cesser de remuer.",
+          text: "Retirez la poêle du feu et attendez 30 secondes. Détendez la crème d’œufs avec 2 cuillerées d’eau de cuisson, versez-la sur les pâtes et remuez vivement à la pince. Ajoutez ensuite de l’eau, cuillerée par cuillerée, jusqu’à ce que la sauce brille et accroche aux spaghetti.",
+          tip: "Trop épaisse, la sauce ? Un trait d’eau de cuisson. Trop liquide ? Quelques secondes sur feu très doux sans arrêter de remuer. Si elle a un peu grainé, de l’eau bien chaude et beaucoup d’huile de coude la rattrapent souvent.",
         },
         {
           title: "Servir aussitôt",
-          text: "Dressez dans des assiettes chaudes, parsemez du pecorino restant, d’un tour de poivre et des morceaux de guanciale réservés. La carbonara n’attend pas : servez immédiatement.",
+          text: "Servez dans des assiettes chaudes, avec le pecorino restant, un tour de poivre et le guanciale croustillant que vous aviez gardé. Ne la faites pas attendre : une carbonara qui patiente sur la table fige.",
         },
       ],
     },
   ],
   science: [
     {
-      title: "Une émulsion, pas une omelette",
-      text: "Les protéines du jaune d’œuf commencent à épaissir vers 65 °C et figent au-delà d’environ 70 °C. Hors du feu, la chaleur résiduelle des pâtes suffit à épaissir la sauce sans la faire grainer ; sur le feu, elle tourne en œufs brouillés en quelques secondes.",
+      title: "Pourquoi hors du feu",
+      text: "Les jaunes commencent à épaissir vers 65 °C et figent au-delà de 70 °C environ. La chaleur qui reste dans les pâtes suffit à épaissir la sauce. Sur le feu, on dépasse ce seuil en quelques secondes, et on se retrouve avec des œufs brouillés.",
     },
     {
-      title: "L’amidon, liant naturel",
-      text: "L’eau de cuisson est chargée d’amidon libéré par les pâtes. Il stabilise l’émulsion entre le gras du guanciale et l’eau, et la dilution des œufs repousse leur température de coagulation : la sauce devient plus tolérante.",
+      title: "Ce que fait l’eau de cuisson",
+      text: "Elle est trouble parce qu’elle est pleine d’amidon. Cet amidon aide le gras du guanciale et l’eau à rester liés. Et en diluant les œufs, elle retarde le moment où ils coagulent. La sauce devient beaucoup moins capricieuse.",
     },
     {
-      title: "Pourquoi le guanciale",
-      text: "Le guanciale est de la joue de porc salée et séchée. Plus gras que la pancetta, il fond à basse température et libère une graisse très parfumée, qui forme la base de la sauce avec les jaunes.",
+      title: "Guanciale plutôt que pancetta",
+      text: "Le guanciale, c’est de la joue de porc salée et séchée. Il est plus gras que la pancetta, et ce gras fond à basse température. C’est lui qui donne son goût à la sauce, bien plus que la viande elle-même.",
     },
   ],
   tips: [
-    "Choisissez des pâtes tréfilées au bronze : leur surface rugueuse accroche mieux la sauce et libère plus d’amidon.",
-    "Cuisez les pâtes dans moins d’eau que d’habitude (3 l pour 400 g) : l’eau de cuisson sera plus riche en amidon.",
-    "Sortez les œufs du réfrigérateur 30 minutes avant : une crème d’œufs tempérée émulsionne plus régulièrement.",
-    "Réchauffez les assiettes : la sauce reste nappante plus longtemps.",
-    "Concassez le poivre au mortier plutôt qu’au moulin, pour des éclats francs et parfumés.",
+    "Prenez des pâtes tréfilées au bronze. On les reconnaît à leur aspect mat, un peu rugueux, et la sauce s’y accroche nettement mieux.",
+    "Cuisez-les dans moins d’eau que d’habitude, 3 l pour 400 g. L’eau de cuisson sera plus chargée en amidon.",
+    "Sortez les œufs du frigo une demi-heure avant. Froids, ils émulsionnent moins bien.",
+    "Passez les assiettes quelques minutes au four tiède : la sauce reste nappante plus longtemps.",
+    "Si vous avez un mortier, concassez-y le poivre. Les éclats ont plus de mordant qu’au moulin.",
   ],
   mistakes: [
-    "Ajouter de la crème : elle masque le goût du guanciale et du pecorino, et n’apporte rien à une émulsion réussie.",
-    "Mélanger les œufs sur le feu : ils coagulent en grumeaux au lieu de former une sauce lisse.",
-    "Égoutter les pâtes sans garder d’eau de cuisson : c’est elle qui permet d’ajuster la texture.",
-    "Utiliser un fromage râpé grossièrement ou en sachet : il fond mal et forme des fils.",
+    "Ajouter de la crème. On comprend l’envie, mais elle écrase le goût du guanciale et du pecorino, et une sauce bien liée n’en a pas besoin.",
+    "Verser les œufs sur le feu. Ils prennent en grumeaux avant même d’avoir enrobé les pâtes.",
+    "Tout égoutter sans garder d’eau de cuisson. Sans elle, impossible de rattraper une sauce trop épaisse.",
+    "Prendre du fromage râpé en sachet. Il fond mal et fait des fils.",
   ],
   variations: [
     {
       title: "Avec de la pancetta",
-      text: "À défaut de guanciale, utilisez de la pancetta en morceau, coupée en bâtonnets. Le goût est plus doux, la graisse moins abondante : ajoutez une cuillerée d’huile d’olive si nécessaire.",
+      text: "Si vous ne trouvez pas de guanciale, demandez de la pancetta en morceau chez un traiteur italien et taillez-la vous-même. Elle est plus douce et rend moins de gras ; une cuillerée d’huile d’olive peut aider.",
     },
     {
       title: "Avec des rigatoni",
-      text: "Les rigatoni ou les mezze maniche sont aussi traditionnels à Rome que les spaghetti. Leurs cannelures retiennent la sauce et les morceaux de guanciale.",
+      text: "À Rome, on la fait aussi souvent avec des rigatoni ou des mezze maniche. Les morceaux de guanciale se glissent dans les tubes, et personne ne s’en plaint.",
     },
     {
       title: "Plus douce",
-      text: "Remplacez la moitié du pecorino par du parmigiano reggiano pour une sauce moins salée et moins piquante.",
+      text: "Moitié pecorino, moitié parmigiano reggiano : la sauce est moins salée et moins piquante. Pratique si des enfants passent à table.",
     },
   ],
   storage:
-    "La carbonara se déguste immédiatement : la sauce fige en refroidissant. Les restes se gardent 24 heures au réfrigérateur et se réchauffent à la poêle avec un trait d’eau, au prix d’une texture moins soyeuse.",
-  pairing: "Un blanc sec et vif du Latium comme un Frascati, ou un rouge léger servi un peu frais.",
+    "Elle se mange tout de suite, la sauce fige en refroidissant. S’il en reste, ça tient 24 heures au frigo ; réchauffez à la poêle avec un trait d’eau. Ce sera moins soyeux, mais ça fait un bon déjeuner.",
+  pairing: "Un blanc sec du Latium, un Frascati par exemple, ou un rouge léger qu’on sert un peu frais.",
   faq: [
     {
       q: "Faut-il mettre de la crème dans la carbonara ?",
-      a: "Non. La carbonara romaine ne contient pas de crème : son onctuosité vient de l’émulsion entre les jaunes d’œufs, le pecorino, le gras du guanciale et l’eau de cuisson des pâtes.",
+      a: "Non, la carbonara romaine n’en contient pas. Le côté crémeux vient de l’émulsion entre les jaunes, le pecorino, le gras du guanciale et l’eau de cuisson des pâtes.",
     },
     {
       q: "Comment éviter que les œufs cuisent en omelette ?",
-      a: "Mélangez toujours hors du feu, après 30 secondes de repos de la poêle, et détendez la crème d’œufs avec un peu d’eau de cuisson. Ajoutez ensuite l’eau progressivement en remuant sans arrêt.",
+      a: "Mélangez hors du feu, après avoir laissé la poêle reposer 30 secondes, et détendez la crème d’œufs avec un peu d’eau de cuisson avant de la verser. Ensuite, ajoutez l’eau petit à petit sans arrêter de remuer.",
     },
     {
       q: "Par quoi remplacer le guanciale ?",
-      a: "La pancetta en morceau est le meilleur substitut. Des lardons fumés de qualité fonctionnent aussi, mais leur goût fumé s’éloigne de la recette d’origine.",
+      a: "La pancetta en morceau, c’est le meilleur remplaçant. Des lardons fumés de bonne qualité font l’affaire, mais le goût fumé vous éloigne de la recette d’origine.",
     },
     {
       q: "Faut-il des jaunes seuls ou des œufs entiers ?",
-      a: "Un mélange des deux : les jaunes apportent onctuosité et couleur, l’œuf entier fluidifie la sauce. Comptez un jaune par personne plus un œuf entier pour quatre.",
+      a: "Les deux. Les jaunes donnent la couleur et le côté crémeux, l’œuf entier rend la sauce un peu plus fluide. On compte un jaune par personne, plus un œuf entier pour quatre.",
     },
     {
       q: "Pecorino ou parmesan pour la carbonara ?",
-      a: "Le pecorino romano est le fromage traditionnel, plus salé et plus piquant. Vous pouvez le couper avec un quart de parmigiano reggiano pour une sauce plus douce.",
+      a: "Le pecorino romano est le fromage d’origine, plus salé et plus piquant. Si vous préférez plus doux, coupez-le avec un quart de parmigiano reggiano.",
     },
     {
       q: "Peut-on préparer la carbonara à l’avance ?",
-      a: "Non, elle se fait à la minute. Vous pouvez en revanche couper le guanciale et préparer la crème d’œufs une heure à l’avance, filmée au réfrigérateur.",
+      a: "Pas vraiment, elle se fait au dernier moment. Vous pouvez quand même couper le guanciale et préparer la crème d’œufs une heure avant, filmée au frigo.",
     },
   ],
   nutrition: {
@@ -178,6 +178,10 @@ export const content: RecipeContent = {
     sugar: 3,
     fiber: 3,
     sodium: 1350,
+  },
+  annotations: {
+    hero: "le guanciale, pas des lardons !",
+    detail: "hors du feu, toujours",
   },
   images: {
     heroAlt:

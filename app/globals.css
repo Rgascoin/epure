@@ -1,55 +1,57 @@
 @import "tailwindcss";
 
 /* -------------------------------------------------------------------------- */
-/*  Design tokens                                                              */
+/*  Design tokens — paper, ink, and one tomato red                             */
 /* -------------------------------------------------------------------------- */
 
 :root {
-  --bg: #fbfbfd;
-  --bg-elevated: #ffffff;
-  --fill: #f5f5f7;
-  --fill-strong: #e8e8ed;
-  --fg: #1d1d1f;
-  --fg-2: #616166;
-  --fg-3: #737378;
-  --line: rgb(0 0 0 / 0.08);
-  --line-strong: rgb(0 0 0 / 0.14);
-  --glass: rgb(251 251 253 / 0.72);
-  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -8px rgb(0 0 0 / 0.12);
-  --shadow-float: 0 2px 6px rgb(0 0 0 / 0.06), 0 24px 60px -12px rgb(0 0 0 / 0.25);
+  --bg: #f2ede4; /* papier */
+  --bg-elevated: #faf6ef; /* papier clair */
+  --fill: #e9e2d6;
+  --fill-strong: #ddd4c5;
+  --fg: #1b1712; /* encre */
+  --fg-2: #4f473e;
+  --fg-3: #6b6155;
+  --line: rgb(27 23 18 / 0.14);
+  --line-strong: rgb(27 23 18 / 0.3);
+  --shadow-card: 0 1px 0 rgb(27 23 18 / 0.06), 0 18px 40px -22px rgb(27 23 18 / 0.35);
+  --shadow-float: 0 2px 4px rgb(27 23 18 / 0.08), 0 30px 60px -20px rgb(27 23 18 / 0.45);
 
-  /* Per-recipe theme (overridden on recipe pages) */
-  --accent: #1d1d1f;
+  /* Site accent (tomato). Recipe pages override these four. */
+  --accent: #c6462b;
   --on-accent: #ffffff;
-  --ink: #1d1d1f;
-  --tint: #f5f5f7;
-  --deep: #000000;
-  --accent-bright: #f5f5f7;
+  --ink: #b23d24;
+  --tint: #f6e4dc;
+  --deep: #1b1712;
+  --accent-bright: #e2765c;
+
+  --paper-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1  0 0 0 0 0.08  0 0 0 0 0.05  0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --header-h: 52px;
-  --gutter: clamp(1.25rem, 4vw, 2.5rem);
-  --maxw: 1280px;
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --header-h: 60px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --maxw: 1320px;
 
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #000000;
-    --bg-elevated: #161617;
-    --fill: #1d1d1f;
-    --fill-strong: #2c2c2e;
-    --fg: #f5f5f7;
-    --fg-2: #a1a1a6;
-    --fg-3: #86868b;
-    --line: rgb(255 255 255 / 0.1);
-    --line-strong: rgb(255 255 255 / 0.18);
-    --glass: rgb(22 22 23 / 0.72);
-    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -8px rgb(0 0 0 / 0.6);
-    --ink: #f5f5f7;
-    --tint: #161617;
+    --bg: #14110e;
+    --bg-elevated: #1d1915;
+    --fill: #26211b;
+    --fill-strong: #322b23;
+    --fg: #eee6d8;
+    --fg-2: #bdb2a2;
+    --fg-3: #978c7d;
+    --line: rgb(238 230 216 / 0.13);
+    --line-strong: rgb(238 230 216 / 0.28);
+    --shadow-card: 0 1px 0 rgb(0 0 0 / 0.3), 0 18px 40px -22px rgb(0 0 0 / 0.8);
+    --ink: #e2765c;
+    --tint: #2a1d17;
+    --paper-noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.95  0 0 0 0 0.9  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
     color-scheme: dark;
   }
 }
@@ -70,13 +72,15 @@
   --color-tint: var(--tint);
   --color-deep: var(--deep);
   --color-accent-bright: var(--accent-bright);
+  --color-paper: #f2ede4;
+  --color-charcoal: #1b1712;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-hand: var(--font-caveat), "Bradley Hand", cursive;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  --ease-out-expo: var(--ease-out);
-  --radius-card: 1.75rem;
-
+  --radius-card: 1.25rem;
   --breakpoint-xs: 25rem;
 }
 
@@ -99,21 +103,21 @@
   }
 
   body {
-    background: var(--bg);
+    background-color: var(--bg);
+    background-image: var(--paper-noise);
     color: var(--fg);
     font-family: var(--font-sans);
-    font-feature-settings: "cv11", "ss01", "ss03";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: clip;
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--accent) 30%, transparent);
+    background: color-mix(in srgb, var(--accent) 35%, transparent);
   }
 
   :focus-visible {
-    outline: 2px solid var(--fg);
+    outline: 2px dashed var(--accent);
     outline-offset: 3px;
     border-radius: 6px;
   }
@@ -131,59 +135,82 @@
 /*  Typography                                                                 */
 /* -------------------------------------------------------------------------- */
 
+@utility font-display-tuned {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 60;
+}
+
 @utility text-hero {
-  font-size: clamp(3.5rem, 10.5vw, 9.75rem);
-  line-height: 0.88;
-  letter-spacing: -0.055em;
-  font-weight: 650;
+  font-family: var(--font-display);
+  font-size: clamp(3.1rem, 9.6vw, 9.25rem);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  font-weight: 380;
+  font-variation-settings: "SOFT" 70;
 }
 
 @utility text-display {
-  font-size: clamp(2.6rem, 7.2vw, 6.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.045em;
-  font-weight: 650;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6.6vw, 6.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  font-variation-settings: "SOFT" 60;
 }
 
 @utility text-headline {
-  font-size: clamp(2rem, 4.6vw, 4rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.4vw, 4rem);
   line-height: 1.02;
-  letter-spacing: -0.035em;
-  font-weight: 650;
+  letter-spacing: -0.025em;
+  font-weight: 420;
+  font-variation-settings: "SOFT" 50;
 }
 
 @utility text-title {
-  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  font-weight: 620;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  font-weight: 460;
+  font-variation-settings: "SOFT" 40;
 }
 
 @utility text-lede {
-  font-size: clamp(1.1875rem, 1.9vw, 1.6rem);
-  line-height: 1.38;
-  letter-spacing: -0.016em;
-  font-weight: 500;
+  font-size: clamp(1.1875rem, 1.7vw, 1.4375rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  font-weight: 450;
 }
 
 @utility text-body {
   font-size: 1.0625rem;
-  line-height: 1.6;
-  letter-spacing: -0.011em;
+  line-height: 1.62;
 }
 
+/* Small mono labels — the "catalogue" voice of the site */
 @utility text-eyebrow {
-  font-size: 0.8125rem;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 @utility serif-accent {
-  font-family: var(--font-serif);
+  font-family: var(--font-fraunces-italic), var(--font-display);
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 100;
+}
+
+@utility hand {
+  font-family: var(--font-hand);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.05;
 }
 
 @utility tabular {
@@ -197,12 +224,6 @@
   padding-inline: var(--gutter);
 }
 
-@utility glass {
-  background: var(--glass);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-}
-
 @utility no-scrollbar {
   scrollbar-width: none;
   &::-webkit-scrollbar {
@@ -210,61 +231,90 @@
   }
 }
 
+/* Arched window, like a bakery shopfront */
+@utility arch {
+  border-radius: 999px 999px 1.25rem 1.25rem;
+}
+
+@utility text-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px currentColor;
+}
+
 /* -------------------------------------------------------------------------- */
 /*  Components                                                                 */
 /* -------------------------------------------------------------------------- */
 
 @layer components {
+  /* Buttons with a printed, offset shadow */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    height: 2.75rem;
+    gap: 0.55rem;
+    height: 3rem;
     padding-inline: 1.375rem;
-    border-radius: 999px;
-    font-size: 1.0625rem;
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
     transition:
-      transform 0.4s var(--ease-out),
+      transform 0.25s var(--ease-out),
+      box-shadow 0.25s var(--ease-out),
       background-color 0.3s,
       color 0.3s,
-      box-shadow 0.3s;
+      border-color 0.3s;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
-  }
-  .btn:active {
-    transform: scale(0.97);
   }
   .btn-primary {
     background: var(--fg);
     color: var(--bg);
-  }
-  .btn-primary:hover {
-    background: color-mix(in srgb, var(--fg) 85%, var(--bg));
+    box-shadow: 3px 3px 0 var(--accent);
   }
   .btn-accent {
     background: var(--accent);
     color: var(--on-accent);
+    box-shadow: 3px 3px 0 var(--fg);
+  }
+  .btn-primary:hover,
+  .btn-accent:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 var(--accent);
   }
   .btn-accent:hover {
-    background: color-mix(in srgb, var(--accent) 88%, black);
+    box-shadow: 5px 5px 0 var(--fg);
+  }
+  .btn-primary:active,
+  .btn-accent:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--accent);
   }
   .btn-ghost {
-    background: var(--fill);
+    border: 1.5px solid var(--line-strong);
     color: var(--fg);
+    background: transparent;
   }
   .btn-ghost:hover {
-    background: var(--fill-strong);
+    border-color: var(--fg);
+  }
+  .btn-ghost:active {
+    transform: scale(0.97);
   }
 
   .link-arrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    color: var(--ink);
-    font-weight: 500;
+    gap: 0.35rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.3em;
+    text-decoration-color: var(--line-strong);
+    transition: text-decoration-color 0.3s;
+  }
+  .link-arrow:hover {
+    text-decoration-color: var(--accent);
   }
   .link-arrow svg {
     transition: transform 0.4s var(--ease-out);
@@ -273,24 +323,66 @@
     transform: translateX(3px);
   }
 
+  /* Menu-style dotted leaders: "Guanciale ........ 150 g" */
+  .leader {
+    flex: 1;
+    min-width: 1.5rem;
+    margin-inline: 0.5rem;
+    border-bottom: 2px dotted var(--line-strong);
+    transform: translateY(-0.3em);
+  }
+
+  /* French "fiche bristol" index card */
+  .bristol {
+    background-color: #fffdf8;
+    background-image:
+      linear-gradient(
+        to bottom,
+        transparent 3.15rem,
+        rgb(214 75 63 / 0.55) 3.15rem,
+        rgb(214 75 63 / 0.55) calc(3.15rem + 1.5px),
+        transparent calc(3.15rem + 1.5px)
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent calc(1.75rem - 1px),
+        rgb(70 120 190 / 0.22) calc(1.75rem - 1px),
+        rgb(70 120 190 / 0.22) 1.75rem
+      );
+    background-position:
+      0 0,
+      0 3.5rem;
+    color: #1b1712;
+  }
+
+  /* Paper ticket with zigzag torn edges */
+  .ticket {
+    --z: 14px;
+    background: #fffdf8;
+    color: #1b1712;
+    -webkit-mask:
+      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) top / var(--z) 51% repeat-x,
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / var(--z) 51% repeat-x;
+    mask:
+      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) top / var(--z) 51% repeat-x,
+      conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / var(--z) 51% repeat-x;
+  }
+
   .prose-recipe p + p {
     margin-top: 1.1em;
   }
-}
 
-/* Per-recipe theme: base colours come from inline custom properties */
-.recipe-theme {
-  --ink: var(--ink-light);
-  --tint: var(--tint-light);
-  --accent-bright: color-mix(in oklab, var(--accent) 62%, white);
-}
-.recipe-theme ::selection {
-  background: color-mix(in srgb, var(--accent) 30%, transparent);
-}
-@media (prefers-color-scheme: dark) {
-  .recipe-theme {
-    --ink: color-mix(in oklab, var(--accent) 70%, white);
-    --tint: color-mix(in oklab, var(--accent) 13%, #0a0a0a);
+  /* Editorial drop cap */
+  .dropcap::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-variation-settings: "SOFT" 100;
+    font-size: 4.6em;
+    line-height: 0.82;
+    margin: 0.06em 0.12em 0 0;
+    color: var(--ink);
   }
 }
 
@@ -312,51 +404,53 @@ details.faq summary {
   list-style: none;
 }
 
-/* Grain overlay for immersive dark sections */
-.grain::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.09;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+/* Per-recipe theme: base colours come from inline custom properties */
+.recipe-theme {
+  --ink: var(--ink-light);
+  --tint: var(--tint-light);
+  --accent-bright: color-mix(in oklab, var(--accent) 62%, white);
+}
+@media (prefers-color-scheme: dark) {
+  .recipe-theme {
+    --ink: color-mix(in oklab, var(--accent) 65%, white);
+    --tint: color-mix(in oklab, var(--accent) 14%, #14110e);
+  }
+}
+
+/* Grain for dark, immersive sections */
+.grain {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Intro choreography — pure CSS so it starts on first paint (good for LCP)   */
+/*  Motion                                                                     */
 /* -------------------------------------------------------------------------- */
 
-.intro-line {
-  display: block;
-  overflow: clip;
-  padding-bottom: 0.12em;
-  margin-bottom: -0.12em;
-}
-.intro-line > span {
-  display: block;
-  animation: line-up 1.25s var(--ease-out) both;
-  animation-delay: calc(var(--i, 0) * 90ms + 80ms);
+/* Intro choreography — pure CSS so it starts on first paint (LCP-friendly) */
+.intro-word {
+  display: inline-block;
+  animation: word-in 1.1s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 70ms + 60ms);
 }
 .intro-fade {
-  animation: fade-up 1.1s var(--ease-out) both;
-  animation-delay: var(--d, 450ms);
+  animation: fade-up 1s var(--ease-out) both;
+  animation-delay: var(--d, 400ms);
 }
-.intro-rise {
-  animation: rise-in 1.4s var(--ease-out) both;
-  animation-delay: var(--d, 300ms);
-}
-@keyframes line-up {
+@keyframes word-in {
   from {
-    transform: translateY(108%);
+    opacity: 0.01;
+    transform: translateY(0.35em) rotate(2deg);
+    filter: blur(8px);
   }
   to {
+    opacity: 1;
     transform: none;
+    filter: blur(0);
   }
 }
 @keyframes fade-up {
   from {
-    opacity: 0;
+    opacity: 0.01;
     transform: translateY(14px);
   }
   to {
@@ -364,115 +458,100 @@ details.faq summary {
     transform: none;
   }
 }
-@keyframes rise-in {
+
+/* Inline photo "pills" that open inside the headline */
+.pill-open {
+  animation: pill-open 1.1s var(--ease-spring) both;
+  animation-delay: var(--d, 500ms);
+}
+@keyframes pill-open {
   from {
+    transform: scale(0.2, 0.6) rotate(-8deg);
     opacity: 0;
-    transform: translateY(80px) scale(0.92);
   }
   to {
-    opacity: 1;
     transform: none;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .intro-line > span,
-  .intro-fade,
-  .intro-rise {
-    animation: none;
+    opacity: 1;
   }
 }
 
-/* Looping micro-demos (bento) */
-@keyframes ring-countdown {
-  from {
-    stroke-dashoffset: 0;
-  }
+/* Rubber stamp spinning */
+.spin-slow {
+  animation: spin 22s linear infinite;
+}
+@keyframes spin {
   to {
-    stroke-dashoffset: var(--circ);
+    transform: rotate(360deg);
   }
 }
-@keyframes check-in {
-  0%,
-  8% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  14%,
-  86% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  94%,
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-@keyframes strike {
-  0%,
-  10% {
-    transform: scaleX(0);
-  }
-  18%,
-  86% {
-    transform: scaleX(1);
-  }
-  94%,
-  100% {
-    transform: scaleX(0);
-  }
-}
-@keyframes segment-fill {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .loop-anim,
-  .loop-anim * {
-    animation: none !important;
+
+@keyframes ticket-shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(-2deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  60% {
+    transform: rotate(-1deg);
   }
 }
 
-/* Word-by-word highlight driven by the paragraph's own view timeline */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .scroll-text {
-      view-timeline: --words block;
-    }
-    .scroll-text > span {
-      animation: word-light linear both;
-      animation-timeline: --words;
-      animation-range: cover calc(18% + var(--i) * 40% / var(--n)) cover calc(18% + (var(--i) + 1) * 40% / var(--n));
-    }
-  }
-}
-@keyframes word-light {
-  from {
-    opacity: 0.16;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* CSS-only scroll-driven reveal, used where JS would be overkill */
+/* Scroll-driven effects (Chrome, Safari 26+). Without support, everything is simply shown. */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
     .reveal-on-scroll {
       animation: reveal-up linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 60%;
+      animation-range: entry 0% entry 55%;
+    }
+    /* Hand-drawn strokes draw themselves as they enter */
+    .draw-on-scroll path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw linear both;
+      animation-timeline: view();
+      animation-range: entry 30% cover 45%;
+    }
+    /* Highlighter marker sweeping behind words */
+    .marker {
+      animation: marker linear both;
+      animation-timeline: view();
+      animation-range: entry 60% cover 50%;
+    }
+    /* The ticket "prints" out of the slot */
+    .ticket-print {
+      animation: print linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 50%;
     }
   }
+}
+
+.marker {
+  background-image: linear-gradient(
+    100deg,
+    transparent 0.2em,
+    color-mix(in srgb, var(--accent) 34%, transparent) 0.3em,
+    color-mix(in srgb, var(--accent) 28%, transparent) calc(100% - 0.2em),
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.62em;
+  background-position: 0 88%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-inline: 0.06em;
 }
 
 @keyframes reveal-up {
@@ -485,6 +564,40 @@ details.faq summary {
     transform: none;
   }
 }
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes marker {
+  from {
+    background-size: 0% 0.62em;
+  }
+  to {
+    background-size: 100% 0.62em;
+  }
+}
+@keyframes print {
+  from {
+    clip-path: inset(0 0 92% 0);
+    transform: translateY(-40px);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-word,
+  .intro-fade,
+  .pill-open,
+  .spin-slow,
+  .loop-anim,
+  .loop-anim * {
+    animation: none !important;
+  }
+}
 
 /* -------------------------------------------------------------------------- */
 /*  View transitions                                                           */
@@ -495,7 +608,7 @@ details.faq summary {
 }
 
 ::view-transition-group(.morph) {
-  animation-duration: 560ms;
+  animation-duration: 620ms;
   animation-timing-function: var(--ease-out);
 }
 ::view-transition-image-pair(.morph) {
@@ -558,6 +671,10 @@ details.faq summary {
     --fill: #fff;
     --line: #ccc;
   }
+  body {
+    background-image: none;
+    font-size: 11pt;
+  }
   header[data-site-header],
   footer[data-site-footer],
   [data-print="hide"] {
@@ -565,9 +682,6 @@ details.faq summary {
   }
   [data-print="show"] {
     display: block !important;
-  }
-  body {
-    font-size: 11pt;
   }
   a {
     text-decoration: none;
