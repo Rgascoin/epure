@@ -36,7 +36,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Automne", "Hiver"],
-  tags: ["hiver", "noel"],
+  tags: ["hiver", "noel", "montagne"],
   equipment: [
     "plat à gratin d’environ 30 × 20 cm (2 litres)",
     "mandoline ou grand couteau bien aiguisé",

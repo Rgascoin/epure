@@ -36,7 +36,7 @@ export default defineRecipe({
   difficulty: "Facile",
   cost: "€",
   season: ["Toute l’année"],
-  tags: ["fete-des-meres"],
+  tags: ["fete-des-meres", "fete-des-grands-meres"],
   equipment: [
     "moule à madeleines en métal de 12 empreintes",
     "saladier et fouet",
