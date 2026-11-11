@@ -102,8 +102,11 @@ console.log(`${slug} : hero ${m.width}×${m.height}, detail + 3 recadrages écri
 
 if (picked.hero) {
   const fmt = (c) => {
-    const extra = c.source && c.source !== "Pexels" ? `, source: "${c.source}"${c.license ? `, license: "${c.license}"` : ""}` : "";
+    const extra =
+      c.source && c.source !== "Pexels" ? `, source: "${c.source}"${c.license ? `, license: "${c.license}"` : ""}` : "";
     return `{ photographer: "${c.photographer}", url: "${c.url}"${extra} }`;
   };
-  console.log(`\nCrédits à coller dans images.credits :\n  hero: ${fmt(picked.hero.credit)},\n  detail: ${fmt(picked.detail.credit)},`);
+  console.log(
+    `\nCrédits à coller dans images.credits :\n  hero: ${fmt(picked.hero.credit)},\n  detail: ${fmt(picked.detail.credit)},`,
+  );
 }

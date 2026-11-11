@@ -133,5 +133,8 @@ export default defineRecipe({
 `;
 writeFileSync(file, template);
 console.log(`Créé : ${file}`);
-if (!existsSync(join(dir, "hero.jpg"))) console.log(`Photos manquantes : pnpm recipes:photos "<plat>" puis pnpm recipes:images ${slug} <hero> <détail> --from …`);
+if (!existsSync(join(dir, "hero.jpg")))
+  console.log(
+    `Photos manquantes : pnpm recipes:photos "<plat>" puis pnpm recipes:images ${slug} <hero> <détail> --from …`,
+  );
 console.log(`Vérifier : pnpm recipes:check -t ${slug}`);

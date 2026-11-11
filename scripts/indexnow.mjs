@@ -32,7 +32,13 @@ if (args.includes("--all")) {
   if (slugs.length) {
     // The recipes, plus the listings that show them.
     const listings = (await sitemap()).filter((u) => /\/(categories|collections)\//.test(u));
-    urls = [...slugs.map((s) => `${SITE}/recettes/${s}`), `${SITE}/`, `${SITE}/recettes`, `${SITE}/collections`, ...listings];
+    urls = [
+      ...slugs.map((s) => `${SITE}/recettes/${s}`),
+      `${SITE}/`,
+      `${SITE}/recettes`,
+      `${SITE}/collections`,
+      ...listings,
+    ];
   }
 } else {
   console.error("Usage : node scripts/indexnow.mjs --since <ref> | --all [--dry-run]");
