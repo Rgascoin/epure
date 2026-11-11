@@ -36,11 +36,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Toute l’année"],
   tags: ["fete-des-grands-meres", "hiver"],
-  equipment: [
-    "casserole à fond épais de 3 l",
-    "cuillère en bois",
-    "ramequins ou bocaux, pour le servir froid",
-  ],
+  equipment: ["casserole à fond épais de 3 l", "cuillère en bois", "ramequins ou bocaux, pour le servir froid"],
   ingredients: [
     {
       items: [

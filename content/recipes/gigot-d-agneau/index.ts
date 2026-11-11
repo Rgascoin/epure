@@ -188,8 +188,18 @@ export default defineRecipe({
     heroAlt: "Gigot d’agneau rôti au romarin, croûte brune et luisante, posé sur une planche claire",
     detailAlt: "Gigot d’agneau rôti dans son plat, entouré de pommes de terre, de carottes et d’herbes",
     credits: {
-      hero: { photographer: "Beck", url: "https://commons.wikimedia.org/wiki/File:Roast_lamb_leg.jpg", source: "Wikimedia Commons", license: "CC BY 2.0" },
-      detail: { photographer: "Roger469", url: "https://commons.wikimedia.org/wiki/File:Agnello_arrosto.03.con_patate,verdure_e_aromi_cotto.jpg", source: "Wikimedia Commons", license: "CC BY-SA 4.0" },
+      hero: {
+        photographer: "Beck",
+        url: "https://commons.wikimedia.org/wiki/File:Roast_lamb_leg.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
+      detail: {
+        photographer: "Roger469",
+        url: "https://commons.wikimedia.org/wiki/File:Agnello_arrosto.03.con_patate,verdure_e_aromi_cotto.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
     },
   },
   datePublished: "2026-11-11",

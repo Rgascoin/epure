@@ -36,12 +36,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Automne", "Hiver"],
   tags: ["automne", "hiver"],
-  equipment: [
-    "deux plaques de four d’environ 40 × 30 cm",
-    "papier cuisson",
-    "grand saladier",
-    "spatule large",
-  ],
+  equipment: ["deux plaques de four d’environ 40 × 30 cm", "papier cuisson", "grand saladier", "spatule large"],
   ingredients: [
     {
       items: [
@@ -189,7 +184,8 @@ export default defineRecipe({
     detail: "la courge dore sur sa face plate",
   },
   images: {
-    heroAlt: "Légumes racines rôtis au four, betteraves, navets, carottes et oignons dorés sur les bords, parsemés de thym",
+    heroAlt:
+      "Légumes racines rôtis au four, betteraves, navets, carottes et oignons dorés sur les bords, parsemés de thym",
     detailAlt: "Tranches de courge rôties au four sur papier cuisson, bords caramélisés et herbes séchées",
     credits: {
       hero: {

@@ -154,8 +154,7 @@ export default defineRecipe({
   ],
   storage:
     "Elles se gardent 3 jours au réfrigérateur dans une boîte fermée, une fois refroidies. Réchauffez-les 10 à 15 minutes à 200 °C sur une plaque, pas au micro-ondes, qui les ramollit. Elles supportent mal la congélation.",
-  pairing:
-    "Avec un poulet ou un chapon rôti, un gigot d’agneau, un magret de canard ou une côte de bœuf.",
+  pairing: "Avec un poulet ou un chapon rôti, un gigot d’agneau, un magret de canard ou une côte de bœuf.",
   faq: [
     {
       q: "Faut-il précuire les pommes de terre avant de les rôtir au four ?",
@@ -197,8 +196,10 @@ export default defineRecipe({
     detail: "les bords écornés font la croûte",
   },
   images: {
-    heroAlt: "Pommes de terre grenaille rôties au four, coupées en deux et dorées sur leur face coupée, dans un plat clair",
-    detailAlt: "Gros morceaux de pommes de terre rôties avec leur peau, assaisonnés d’herbes, à la croûte dorée et craquante",
+    heroAlt:
+      "Pommes de terre grenaille rôties au four, coupées en deux et dorées sur leur face coupée, dans un plat clair",
+    detailAlt:
+      "Gros morceaux de pommes de terre rôties avec leur peau, assaisonnés d’herbes, à la croûte dorée et craquante",
     credits: {
       hero: {
         photographer: "Ellie Burgin",

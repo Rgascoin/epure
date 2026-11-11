@@ -48,7 +48,13 @@ export default defineRecipe({
         { qty: 3, name: "poireau", plural: "poireaux", note: "environ 600 g, avec leur vert tendre", step: 1 },
         { qty: 30, unit: "g", name: "beurre", step: 5 },
         { qty: 1, unit: "cac", name: "sel fin", step: 0.5 },
-        { qty: 500, unit: "g", name: "pommes de terre", note: "farineuses ou tout usage, type bintje ou monalisa", step: 50 },
+        {
+          qty: 500,
+          unit: "g",
+          name: "pommes de terre",
+          note: "farineuses ou tout usage, type bintje ou monalisa",
+          step: 50,
+        },
         { qty: 120, unit: "cl", name: "eau", step: 10 },
         { qty: 10, unit: "cl", name: "crème fraîche épaisse", step: 5, optional: true },
         { name: "poivre", note: "du moulin" },
@@ -132,8 +138,7 @@ export default defineRecipe({
   ],
   storage:
     "Refroidie et mise au frigo dans les 2 heures, elle se garde 3 jours dans une boîte fermée. Elle se congèle 3 mois, de préférence sans la crème ; la pomme de terre peut devenir un peu granuleuse, fouettez-la vivement en la réchauffant. Ne la recongelez jamais.",
-  pairing:
-    "Avec du pain de campagne grillé frotté d’ail et un morceau de comté ou de cantal, c’est un dîner complet.",
+  pairing: "Avec du pain de campagne grillé frotté d’ail et un morceau de comté ou de cantal, c’est un dîner complet.",
   faq: [
     {
       q: "Pourquoi ma soupe poireaux pommes de terre est-elle collante ?",

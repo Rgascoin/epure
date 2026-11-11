@@ -177,8 +177,18 @@ export default defineRecipe({
     heroAlt: "Pain d’épices entamé sur fond blanc, croûte brune et bosselée, mie dorée et alvéolée",
     detailAlt: "Tranche de pain d’épices vue de près, mie brune et alvéolée sous une fine croûte",
     credits: {
-      hero: { photographer: "David Monniaux", url: "https://commons.wikimedia.org/wiki/File:Pain_depices_p1050129.jpg", source: "Wikimedia Commons", license: "CC BY-SA 3.0" },
-      detail: { photographer: "David Monniaux", url: "https://commons.wikimedia.org/wiki/File:Pain_depices_p1050134.jpg", source: "Wikimedia Commons", license: "CC BY-SA 3.0" },
+      hero: {
+        photographer: "David Monniaux",
+        url: "https://commons.wikimedia.org/wiki/File:Pain_depices_p1050129.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 3.0",
+      },
+      detail: {
+        photographer: "David Monniaux",
+        url: "https://commons.wikimedia.org/wiki/File:Pain_depices_p1050134.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 3.0",
+      },
     },
   },
   datePublished: "2026-11-11",

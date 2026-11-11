@@ -46,7 +46,9 @@ export default defineRecipe({
   ingredients: [
     {
       title: "Le fromage",
-      items: [{ qty: 60, unit: "g", name: "comté", note: "affiné environ 12 mois, ou gruyère, râpé finement", step: 10 }],
+      items: [
+        { qty: 60, unit: "g", name: "comté", note: "affiné environ 12 mois, ou gruyère, râpé finement", step: 10 },
+      ],
     },
     {
       title: "La pâte à choux",
@@ -165,8 +167,7 @@ export default defineRecipe({
   ],
   storage:
     "Cuites, elles se gardent 2 jours dans une boîte hermétique et se raniment 5 minutes au four à 180 °C. Crues et dressées, elles se gardent 2 mois au congélateur et se cuisent sans décongélation ; ne recongelez jamais des gougères décongelées.",
-  pairing:
-    "Un verre de bourgogne blanc, chablis ou aligoté, ou un kir. Avec un crémant de Bourgogne pour les fêtes.",
+  pairing: "Un verre de bourgogne blanc, chablis ou aligoté, ou un kir. Avec un crémant de Bourgogne pour les fêtes.",
   faq: [
     {
       q: "Peut-on congeler les gougères crues ?",

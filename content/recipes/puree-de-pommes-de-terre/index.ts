@@ -153,8 +153,7 @@ export default defineRecipe({
   ],
   storage:
     "Laissez-la refroidir à couvert, puis mettez-la au réfrigérateur dans les 2 heures, dans une boîte fermée : elle se garde 3 jours. Réchauffez-la à feu doux avec un peu de lait en remuant, ou au micro-ondes en mélangeant à mi-parcours. Elle se congèle 3 mois ; décongelez-la au réfrigérateur et ne la recongelez pas.",
-  pairing:
-    "Avec un poulet rôti, des saucisses grillées, un bœuf bourguignon ou un poisson poêlé au beurre.",
+  pairing: "Avec un poulet rôti, des saucisses grillées, un bœuf bourguignon ou un poisson poêlé au beurre.",
   faq: [
     {
       q: "Quelle pomme de terre pour une purée ?",
@@ -196,7 +195,8 @@ export default defineRecipe({
     detail: "elle tombe en rubans souples",
   },
   images: {
-    heroAlt: "Purée de pommes de terre maison montée en dôme dans une assiette creuse orangée, avec des sillons de cuillère",
+    heroAlt:
+      "Purée de pommes de terre maison montée en dôme dans une assiette creuse orangée, avec des sillons de cuillère",
     detailAlt: "Purée de pommes de terre au beurre étalée à la cuillère sur une assiette blanche, jaune pâle et souple",
     credits: {
       hero: {

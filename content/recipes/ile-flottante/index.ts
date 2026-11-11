@@ -67,7 +67,14 @@ export default defineRecipe({
       items: [
         { qty: 80, unit: "g", name: "sucre en poudre", step: 5 },
         { qty: 2, unit: "cas", name: "eau", step: 1 },
-        { qty: 20, unit: "g", name: "amandes effilées", note: "grillées à sec, fruits à coque", step: 5, optional: true },
+        {
+          qty: 20,
+          unit: "g",
+          name: "amandes effilées",
+          note: "grillées à sec, fruits à coque",
+          step: 5,
+          optional: true,
+        },
       ],
     },
   ],

@@ -46,7 +46,9 @@ export default defineRecipe({
   ingredients: [
     {
       title: "Les œufs",
-      items: [{ qty: 6, name: "œuf", plural: "œufs", note: "gros (calibre L), sortis du frigo au dernier moment", step: 1 }],
+      items: [
+        { qty: 6, name: "œuf", plural: "œufs", note: "gros (calibre L), sortis du frigo au dernier moment", step: 1 },
+      ],
     },
     {
       title: "La mayonnaise",

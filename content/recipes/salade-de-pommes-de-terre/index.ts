@@ -149,8 +149,7 @@ export default defineRecipe({
   ],
   storage:
     "Mettez-la au réfrigérateur au plus tard 2 heures après la préparation, dans une boîte fermée : elle se garde 2 jours. La version à la mayonnaise maison se garde 24 h maximum. Elle ne se congèle pas.",
-  pairing:
-    "Avec des saucisses ou des merguez grillées, du hareng fumé, un poulet froid ou des œufs durs.",
+  pairing: "Avec des saucisses ou des merguez grillées, du hareng fumé, un poulet froid ou des œufs durs.",
   faq: [
     {
       q: "Quelle pomme de terre pour une salade de pommes de terre ?",
@@ -196,8 +195,10 @@ export default defineRecipe({
     detail: "les rondelles ont bu la vinaigrette",
   },
   images: {
-    heroAlt: "Salade de pommes de terre en morceaux à la vinaigrette, ciboulette et olive noire, à côté d’un verre de vin blanc",
-    detailAlt: "Salade de pommes de terre en rondelles brillantes de vinaigrette, persil haché et olives vertes, dans un bol blanc",
+    heroAlt:
+      "Salade de pommes de terre en morceaux à la vinaigrette, ciboulette et olive noire, à côté d’un verre de vin blanc",
+    detailAlt:
+      "Salade de pommes de terre en rondelles brillantes de vinaigrette, persil haché et olives vertes, dans un bol blanc",
     credits: {
       hero: {
         photographer: "Eli Velikova Maytham",

@@ -36,12 +36,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Printemps"],
   tags: ["paques", "printemps"],
-  equipment: [
-    "sauteuse de 28 cm",
-    "papier cuisson",
-    "économe",
-    "couteau de cuisine",
-  ],
+  equipment: ["sauteuse de 28 cm", "papier cuisson", "économe", "couteau de cuisine"],
   ingredients: [
     {
       items: [
@@ -133,8 +128,7 @@ export default defineRecipe({
   ],
   storage:
     "Elles se gardent 3 jours au réfrigérateur dans une boîte fermée. Réchauffez-les à la sauteuse avec 1 cas d’eau et une noix de beurre, 3 à 4 minutes, en secouant : le glaçage se reforme. Elles supportent mal la congélation et ramollissent.",
-  pairing:
-    "Avec un gigot d’agneau de Pâques, un poulet rôti, un rôti de veau ou une blanquette.",
+  pairing: "Avec un gigot d’agneau de Pâques, un poulet rôti, un rôti de veau ou une blanquette.",
   faq: [
     {
       q: "Pourquoi dit-on carottes Vichy ?",
@@ -169,14 +163,23 @@ export default defineRecipe({
   },
   annotations: {
     hero: "le fond de cuisson devient glaçage",
-    detail: "toutes à 5 mm",
+    detail: "même épaisseur, même cuisson",
   },
   images: {
-    heroAlt: "À ÉCRIRE",
-    detailAlt: "À ÉCRIRE",
+    heroAlt:
+      "Carottes glacées en rondelles épaisses, brillantes de leur glaçage, servies dans un plat en inox avec une cuillère",
+    detailAlt: "Carottes cuites coupées en tronçons réguliers, posées sur une assiette noire et un set de table tressé",
     credits: {
-      hero: { photographer: "À ÉCRIRE", url: "https://www.pexels.com/photo/0/" },
-      detail: { photographer: "À ÉCRIRE", url: "https://www.pexels.com/photo/0/" },
+      hero: {
+        photographer: "Portal cypr24.eu",
+        url: "https://www.pexels.com/photo/glazed-carrots-in-a-serving-tray-close-up-32894086/",
+        source: "Pexels",
+      },
+      detail: {
+        photographer: "Alesia Kozik",
+        url: "https://www.pexels.com/photo/circular-cut-carrot-pieces-on-black-ceramic-plate-6065914/",
+        source: "Pexels",
+      },
     },
   },
   datePublished: "2026-11-11",
@@ -189,6 +192,6 @@ export default defineRecipe({
     ink: "#9A4A0E",
     tint: "#FCEEE2",
     deep: "#1E0F06",
-    focus: "50% 50%",
+    focus: "60% 70%",
   },
 });

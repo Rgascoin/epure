@@ -194,8 +194,18 @@ export default defineRecipe({
     heroAlt: "Brochettes de poulet marinées au yaourt, dorées et marquées, alignées sur la grille d’un barbecue",
     detailAlt: "Brochettes de poulet, légumes et tomates cerises sur la grille d’un barbecue, à côté de saucisses",
     credits: {
-      hero: { photographer: "Benoît Prieur", url: "https://commons.wikimedia.org/w/index.php?curid=89108485", source: "Wikimedia Commons", license: "CC0" },
-      detail: { photographer: "Benoît Prieur", url: "https://commons.wikimedia.org/w/index.php?curid=104283117", source: "Wikimedia Commons", license: "CC0" },
+      hero: {
+        photographer: "Benoît Prieur",
+        url: "https://commons.wikimedia.org/w/index.php?curid=89108485",
+        source: "Wikimedia Commons",
+        license: "CC0",
+      },
+      detail: {
+        photographer: "Benoît Prieur",
+        url: "https://commons.wikimedia.org/w/index.php?curid=104283117",
+        source: "Wikimedia Commons",
+        license: "CC0",
+      },
     },
   },
   datePublished: "2026-11-11",

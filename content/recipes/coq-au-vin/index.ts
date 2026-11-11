@@ -221,11 +221,23 @@ export default defineRecipe({
   nutrition: { calories: 575, protein: 48, fat: 38, saturatedFat: 13, carbs: 9, sugar: 4, fiber: 2, sodium: 950 },
   annotations: { hero: "les petits oignons arrivent à mi-cuisson", detail: "la cuisse se détache de l’os" },
   images: {
-    heroAlt: "Coq au vin dans un plat blanc : morceaux de poulet en sauce brune, petits oignons, champignons et romarin",
-    detailAlt: "Cuisse de coq au vin nappée de sauce dans un bol blanc, salade de roquette à côté sur une table en bois",
+    heroAlt:
+      "Coq au vin dans un plat blanc : morceaux de poulet en sauce brune, petits oignons, champignons et romarin",
+    detailAlt:
+      "Cuisse de coq au vin nappée de sauce dans un bol blanc, salade de roquette à côté sur une table en bois",
     credits: {
-      hero: { photographer: "Beck from East Midlands, United Kingdon", url: "https://commons.wikimedia.org/wiki/File:Gourmet_coq_au_vin.jpg", source: "Wikimedia Commons", license: "CC BY 2.0" },
-      detail: { photographer: "jules", url: "https://commons.wikimedia.org/wiki/File:Coq_au_vin_with_greens.jpg", source: "Wikimedia Commons", license: "CC BY 2.0" },
+      hero: {
+        photographer: "Beck from East Midlands, United Kingdon",
+        url: "https://commons.wikimedia.org/wiki/File:Gourmet_coq_au_vin.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
+      detail: {
+        photographer: "jules",
+        url: "https://commons.wikimedia.org/wiki/File:Coq_au_vin_with_greens.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
     },
   },
   datePublished: "2026-11-11",

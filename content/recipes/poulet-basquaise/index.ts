@@ -35,11 +35,7 @@ export default defineRecipe({
   cost: "€€",
   season: ["Été", "Automne"],
   tags: ["ete"],
-  equipment: [
-    "grande sauteuse de 28 cm avec couvercle",
-    "casserole (pour peler les tomates)",
-    "thermomètre à sonde",
-  ],
+  equipment: ["grande sauteuse de 28 cm avec couvercle", "casserole (pour peler les tomates)", "thermomètre à sonde"],
   ingredients: [
     {
       items: [
@@ -188,11 +184,23 @@ export default defineRecipe({
   nutrition: { calories: 510, protein: 36, fat: 34, saturatedFat: 9, carbs: 14, sugar: 10, fiber: 4, sodium: 700 },
   annotations: { hero: "la sauce a réduit à découvert", detail: "des lanières, pas des dés" },
   images: {
-    heroAlt: "Poulet basquaise dans un plat en terre jaune : morceaux de poulet, poivrons rouges et verts, tomates et oignons fondus",
-    detailAlt: "Assiette de poulet basquaise : morceaux de poulet posés sur des poivrons rouges et verts et une sauce tomate",
+    heroAlt:
+      "Poulet basquaise dans un plat en terre jaune : morceaux de poulet, poivrons rouges et verts, tomates et oignons fondus",
+    detailAlt:
+      "Assiette de poulet basquaise : morceaux de poulet posés sur des poivrons rouges et verts et une sauce tomate",
     credits: {
-      hero: { photographer: "Arnaud 25", url: "https://commons.wikimedia.org/wiki/File:Poulet_basquaise_01.jpg", source: "Wikimedia Commons", license: "CC BY-SA 4.0" },
-      detail: { photographer: "Arnaud 25", url: "https://commons.wikimedia.org/wiki/File:Poulet_basquaise_02.jpg", source: "Wikimedia Commons", license: "CC BY-SA 4.0" },
+      hero: {
+        photographer: "Arnaud 25",
+        url: "https://commons.wikimedia.org/wiki/File:Poulet_basquaise_01.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
+      detail: {
+        photographer: "Arnaud 25",
+        url: "https://commons.wikimedia.org/wiki/File:Poulet_basquaise_02.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
     },
   },
   datePublished: "2026-11-11",

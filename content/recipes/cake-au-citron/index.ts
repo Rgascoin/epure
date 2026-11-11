@@ -49,7 +49,13 @@ export default defineRecipe({
       title: "Le cake",
       items: [
         { qty: 90, unit: "g", name: "beurre", step: 5 },
-        { qty: 2, name: "citron non traité", plural: "citrons non traités", note: "zestes ici, jus pour le sirop", step: 1 },
+        {
+          qty: 2,
+          name: "citron non traité",
+          plural: "citrons non traités",
+          note: "zestes ici, jus pour le sirop",
+          step: 1,
+        },
         { qty: 170, unit: "g", name: "sucre en poudre", step: 10 },
         { qty: 3, name: "œuf", plural: "œufs", note: "à température ambiante", step: 1 },
         { qty: 1, unit: "pincee", name: "sel fin", step: 1 },

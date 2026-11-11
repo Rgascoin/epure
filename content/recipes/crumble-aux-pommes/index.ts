@@ -36,11 +36,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Automne", "Hiver"],
   tags: ["automne"],
-  equipment: [
-    "plat à gratin de 20 × 28 cm ou moule rond de 26 cm",
-    "grand saladier",
-    "économe et couteau d’office",
-  ],
+  equipment: ["plat à gratin de 20 × 28 cm ou moule rond de 26 cm", "grand saladier", "économe et couteau d’office"],
   ingredients: [
     {
       title: "Crumble",
@@ -48,7 +44,13 @@ export default defineRecipe({
         { qty: 150, unit: "g", name: "farine T55", step: 5 },
         { qty: 100, unit: "g", name: "cassonade", step: 5 },
         { qty: 1, unit: "pincee", name: "sel fin", step: 1 },
-        { qty: 100, unit: "g", name: "beurre doux", note: "sorti du réfrigérateur au dernier moment, en dés de 1 cm", step: 5 },
+        {
+          qty: 100,
+          unit: "g",
+          name: "beurre doux",
+          note: "sorti du réfrigérateur au dernier moment, en dés de 1 cm",
+          step: 5,
+        },
       ],
     },
     {

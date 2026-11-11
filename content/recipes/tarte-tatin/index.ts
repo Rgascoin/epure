@@ -213,8 +213,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Tarte tatin entière démoulée sur un plat blanc, demi-pommes caramélisées serrées en rosace, vue de dessus",
-    detailAlt:
-      "Petite tarte tatin individuelle sur une assiette carrée, pommes laquées d’un caramel brun acajou",
+    detailAlt: "Petite tarte tatin individuelle sur une assiette carrée, pommes laquées d’un caramel brun acajou",
     credits: {
       hero: {
         photographer: "Djenghisz",

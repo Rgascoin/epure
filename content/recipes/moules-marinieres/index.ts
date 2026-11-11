@@ -168,8 +168,18 @@ export default defineRecipe({
     heroAlt: "Moules marinières en gros plan dans une cocotte noire, coquilles ouvertes sur la chair orangée",
     detailAlt: "Moules marinières servies dans un plat creux avec une portion de frites, sur une nappe rouge",
     credits: {
-      hero: { photographer: "Benoît Prieur", url: "https://commons.wikimedia.org/wiki/File:Moules_marini%C3%A8res_%C3%A0_La_Rose_Blanche_(Bruxelles).jpg", source: "Wikimedia Commons", license: "CC0" },
-      detail: { photographer: "Archangel12", url: "https://commons.wikimedia.org/wiki/File:Normandy_%2710-_Grandcamp_Maisy_La_Belle_Mariniere_(4824784230).jpg", source: "Wikimedia Commons", license: "CC BY 2.0" },
+      hero: {
+        photographer: "Benoît Prieur",
+        url: "https://commons.wikimedia.org/wiki/File:Moules_marini%C3%A8res_%C3%A0_La_Rose_Blanche_(Bruxelles).jpg",
+        source: "Wikimedia Commons",
+        license: "CC0",
+      },
+      detail: {
+        photographer: "Archangel12",
+        url: "https://commons.wikimedia.org/wiki/File:Normandy_%2710-_Grandcamp_Maisy_La_Belle_Mariniere_(4824784230).jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
     },
   },
   datePublished: "2026-11-11",
