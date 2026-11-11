@@ -8,11 +8,11 @@ export const content: RecipeContent = {
   description:
     "Le tian provençal : des rondelles de tomates, courgettes et aubergines serrées sur des oignons fondus, cuites 1 h 15 à 180 °C. Végétarien et sans gluten.",
   summary:
-    "Pour six, faites fondre 3 oignons 15 minutes dans l’huile d’olive et étalez-les au fond d’un plat. Par-dessus, serrez en spirale des rondelles de 3 mm de tomates, courgettes et aubergines, arrosez d’huile, ajoutez du thym, puis faites cuire 1 h 15 à 180 °C : 45 minutes couvert, et 30 minutes à découvert pour que le jus s’évapore.",
+    "Pour 6 personnes, faites fondre 3 oignons 15 minutes dans l’huile d’olive et étalez-les au fond d’un plat. Par-dessus, serrez en spirale des rondelles de 3 mm de tomates, courgettes et aubergines, arrosez d’huile, ajoutez du thym, puis faites cuire 1 h 15 à 180 °C : 45 minutes couvert, et 30 minutes à découvert pour que le jus s’évapore.",
   intro: [
     "Le mot tian désigne d’abord le plat en terre dans lequel on le fait cuire. La recette, elle, tient en une image : des légumes d’été tranchés fin, serrés en spirale, qui confisent doucement au four dans l’huile d’olive.",
     "On ne fait rien frire. Ce qui compte, ce sont des tranches régulières, un lit d’oignons fondus qui boit le jus des légumes, et une cuisson assez longue pour que tout se concentre.",
-    "Le montage de la spirale prend un quart d’heure et c’est plutôt agréable à faire. Ensuite il se mange chaud, tiède ou froid, et souvent on le préfère le lendemain.",
+    "Le montage de la spirale prend un quart d’heure et c’est plutôt agréable à faire. Ensuite, le tian se mange chaud, tiède ou froid, et souvent on le préfère le lendemain.",
   ],
   category: "Plat",
   cuisine: "Française",
@@ -34,10 +34,10 @@ export const content: RecipeContent = {
   cost: "€",
   season: ["Été", "Début d’automne"],
   equipment: [
-    "Plat rond à gratin de 26 à 28 cm, en terre ou en fonte",
-    "Mandoline",
-    "Grande poêle",
-    "Papier sulfurisé et papier aluminium",
+    "plat rond à gratin de 26 à 28 cm, en terre ou en fonte",
+    "mandoline",
+    "grande poêle",
+    "papier sulfurisé et papier aluminium",
   ],
   ingredients: [
     {
@@ -69,7 +69,7 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Confire les oignons",
-          text: "Faites chauffer 3 cuillerées d’huile d’olive à feu doux dans une grande poêle. Ajoutez les oignons, l’ail, les feuilles de 2 brins de thym et le sel, et laissez cuire en remuant souvent. Ils doivent devenir fondants et blonds, sans brunir.",
+          text: "Faites chauffer 3 cuillerées à soupe d’huile d’olive à feu doux dans une grande poêle. Ajoutez les oignons, l’ail, les feuilles de 2 brins de thym et le sel, et laissez cuire en remuant souvent. Ils doivent devenir fondants et blonds, sans brunir.",
           timer: { minutes: 15, label: "Oignons confits" },
         },
         {
@@ -86,13 +86,13 @@ export const content: RecipeContent = {
           text: "Répartissez les oignons confits au fond du plat, en couche régulière. Ils vont boire le jus des légumes pendant la cuisson.",
         },
         {
-          title: "Monter la rosace",
+          title: "Monter la spirale",
           text: "En partant du bord, posez les rondelles presque debout en alternant tomate, courgette et aubergine, chacune recouvrant la précédente aux deux tiers. Avancez en spirale jusqu’au centre, en serrant bien.",
           tip: "Serrez plus que ce qui vous paraît raisonnable. Les légumes perdent leur eau et se tassent, et une spirale lâche finit à moitié vide.",
         },
         {
           title: "Assaisonner",
-          text: "Arrosez avec les 4 cuillerées d’huile d’olive, salez et poivrez. Effeuillez du thym par-dessus et glissez quelques brins entiers entre les légumes, avec le romarin si vous en avez.",
+          text: "Arrosez avec les 4 cuillerées à soupe d’huile d’olive, salez et poivrez. Effeuillez du thym par-dessus et glissez quelques brins entiers entre les légumes, avec le romarin si vous en avez.",
         },
         {
           title: "Cuire à couvert",
@@ -103,7 +103,7 @@ export const content: RecipeContent = {
           title: "Finir à découvert",
           text: "Retirez les feuilles et continuez la cuisson. Le tian est prêt quand les légumes sont fondants, les bords un peu caramélisés et qu’il ne reste presque plus de jus au fond.",
           timer: { minutes: 30, label: "Cuisson à découvert" },
-          tip: "S’il reste beaucoup de jus, laissez 10 minutes de plus ou retirez-en une partie à la cuillère.",
+          tip: "S’il reste beaucoup de jus, prolongez la cuisson de 10 minutes ou retirez-en une partie à la cuillère.",
         },
         {
           title: "Laisser reposer",
@@ -116,21 +116,21 @@ export const content: RecipeContent = {
   science: [
     {
       title: "Pourquoi deux temps de cuisson",
-      text: "Courgettes, aubergines et tomates contiennent plus de 90 % d’eau. Couvertes, elles s’attendrissent dans leur propre vapeur. Découvertes, cette eau s’évapore, les sucres se concentrent et les bords commencent à caraméliser.",
+      text: "Courgettes, aubergines et tomates contiennent plus de 90 % d’eau. Sous le couvercle, elles s’attendrissent dans leur propre vapeur. Une fois le plat découvert, cette eau s’évapore, les sucres se concentrent et les bords commencent à caraméliser.",
     },
     {
       title: "Les oignons font la sauce",
       text: "Cuits longtemps à feu doux, les oignons deviennent sucrés sans prendre l’amertume d’une cuisson vive. Au fond du plat, ils absorbent le jus des légumes et finissent par former une sorte de sauce.",
     },
     {
-      title: "Des tranches égales, une cuisson égale",
+      title: "Pourquoi 3 mm partout",
       text: "Le temps de cuisson dépend surtout de l’épaisseur. À 3 mm partout, toutes les rondelles sont prêtes au bout de 1 h 15, sans que certaines restent fermes pendant que d’autres tombent en compote.",
     },
   ],
   tips: [
-    "Une mandoline, même bon marché, change tout pour avoir des rondelles régulières. Attention aux doigts, utilisez le poussoir.",
+    "Une mandoline, même bon marché, donne des rondelles régulières. Attention aux doigts : utilisez le poussoir.",
     "Prenez des tomates charnues, des olivettes par exemple. Elles rendent moins d’eau que les grosses tomates rondes.",
-    "Utilisez une huile d’olive que vous aimez goûter crue. On la sent vraiment dans le plat.",
+    "Prenez une huile d’olive que vous aimez déjà sur une salade : on la sent vraiment dans le plat.",
     "Faites-le la veille si ça vous arrange. À température ambiante ou réchauffé, il a encore plus de goût.",
   ],
   mistakes: [
@@ -150,7 +150,7 @@ export const content: RecipeContent = {
     },
     {
       title: "En petites portions",
-      text: "Montez des petites spirales dans des plats à œuf ou des moules individuels, et retirez environ 20 minutes à la cuisson.",
+      text: "Montez de petites spirales dans des plats à œufs ou des moules individuels : comptez 30 minutes couvert et 25 minutes à découvert.",
     },
   ],
   storage:
@@ -167,7 +167,7 @@ export const content: RecipeContent = {
     },
     {
       q: "Comment éviter que le tian rende trop d’eau ?",
-      a: "Coupez des rondelles fines, prenez des tomates charnues et finissez toujours la cuisson à découvert. S’il reste du jus, laissez-le 10 minutes de plus.",
+      a: "Coupez des rondelles fines, prenez des tomates charnues et finissez toujours la cuisson à découvert. S’il reste du jus, prolongez la cuisson de 10 minutes.",
     },
     {
       q: "À quelle température et combien de temps cuire un tian ?",
@@ -179,7 +179,7 @@ export const content: RecipeContent = {
     },
     {
       q: "Avec quoi servir un tian provençal ?",
-      a: "Seul avec du riz, de la semoule ou une bonne tranche de pain de campagne. Ou à côté d’un gigot d’agneau, d’un poulet rôti ou d’un poisson grillé.",
+      a: "En plat, avec du riz, de la semoule ou une bonne tranche de pain de campagne. Ou à côté d’un gigot d’agneau, d’un poulet rôti ou d’un poisson grillé.",
     },
   ],
   nutrition: {
@@ -193,12 +193,12 @@ export const content: RecipeContent = {
     sodium: 300,
   },
   annotations: {
-    hero: "serrez plus que vous ne pensez",
+    hero: "serrez, puis serrez encore",
     detail: "3 mm, pas plus",
   },
   images: {
     heroAlt:
-      "Tian provençal vu de dessus : rosace de tomates, courgettes et aubergines dans un plat rond sur un torchon de lin",
+      "Tian provençal vu de dessus : spirale de tomates, courgettes et aubergines dans un plat rond sur un torchon de lin",
     detailAlt: "Tian de légumes en rondelles de courgettes, aubergines et tomates dans un plat ovale, vu de dessus",
     credits: {
       hero: {

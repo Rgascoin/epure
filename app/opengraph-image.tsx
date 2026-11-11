@@ -4,7 +4,7 @@ import { OG_COLORS, OG_SIZE, OgMark, ogFonts, ogPhotos } from "@/lib/og";
 
 export const size = OG_SIZE;
 export const contentType = "image/png";
-export const alt = "Épure, un carnet de cinq recettes écrites avec soin";
+export const alt = "Épure, un carnet de cinq recettes au gramme près";
 
 export default function Image() {
   const thumbs = recipes.slice(0, 3).map((r) => ogPhotos[r.slug].square);

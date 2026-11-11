@@ -251,8 +251,8 @@ export function TimerButton({
       <span className="relative flex items-center gap-2">
         {isRunning ? <Pause size={15} /> : isPaused ? <Play size={14} /> : <TimerIcon size={17} />}
         <span>{t ? (t.done ? "C’est prêt !" : formatClock(left)) : formatMinutes(minutes)}</span>
-        {!t && <span className="font-normal opacity-80">· lancer</span>}
-        {isPaused && <span className="font-normal opacity-80">· en pause</span>}
+        {!t && <span className="font-normal">· lancer</span>}
+        {isPaused && <span className="font-normal">· en pause</span>}
         <span className="sr-only">
           {t && !t.done
             ? ` : ${isRunning ? "mettre en pause" : "reprendre"} le minuteur « ${label} »`

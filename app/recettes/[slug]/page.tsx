@@ -120,10 +120,10 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
         {/* ---------------------------------------------------------------- */}
         {/* Header: text on the left, arched photo on the right              */}
         {/* ---------------------------------------------------------------- */}
-        <header className="container-page grid gap-12 pt-[calc(var(--header-h)+clamp(1.5rem,5vh,3.5rem))] lg:grid-cols-12 lg:gap-16">
-          <div className="flex flex-col lg:col-span-6 lg:py-6">
+        <header className="container-page grid gap-12 pt-[calc(var(--header-h)+clamp(1.5rem,5vh,3.5rem))] lg:grid-cols-12 lg:gap-x-16 lg:gap-y-12">
+          <div className="flex flex-col lg:col-span-6 lg:row-start-1 lg:pt-6">
             <nav aria-label="Fil d’Ariane" className="intro-fade" style={{ "--d": "0ms" } as CSSProperties}>
-              <ol className="flex flex-wrap items-center gap-2 font-mono text-[0.75rem] text-fg-3">
+              <ol className="flex flex-wrap items-center gap-2 font-mono text-[0.8125rem] text-fg-3">
                 {crumbs.map((c, i) => (
                   <li key={c.path} className="inline-flex items-center gap-2">
                     {i < crumbs.length - 1 ? (
@@ -147,9 +147,12 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
 
             <p className="intro-fade mt-10 text-eyebrow text-ink" style={{ "--d": "60ms" } as CSSProperties}>
               {recipe.category} · cuisine {recipe.cuisine.toLowerCase()}
-              {recipe.diet?.slice(0, 2).map((d) => (
-                <span key={d}> · {dietLabels[d]}</span>
-              ))}
+              {recipe.diet
+                ?.filter((d) => !(d === "vegetarian" && recipe.diet?.includes("vegan")))
+                .slice(0, 2)
+                .map((d) => (
+                  <span key={d}> · {dietLabels[d]}</span>
+                ))}
             </p>
             <h1 className="mt-5 text-display text-balance">
               {recipe.title.split(" ").map((word, i) => (
@@ -177,7 +180,7 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
                 ["Pour", `${recipe.servings} ${plural(recipe.servings, recipe.servingsLabel)}`],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <dt className="font-mono text-[0.6875rem] tracking-wider text-fg-3 uppercase">{k}</dt>
+                  <dt className="font-mono text-[0.75rem] tracking-wider text-fg-3 uppercase">{k}</dt>
                   <dd className="mt-1 font-semibold">{v}</dd>
                 </div>
               ))}
@@ -193,13 +196,12 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
               </a>
               <ShareActions title={recipe.seoTitle} text={recipe.description} />
             </div>
-
-            <div className="intro-fade mt-12 lg:mt-auto lg:pt-12" style={{ "--d": "700ms" } as CSSProperties}>
-              <Essentials recipe={recipe} />
-            </div>
           </div>
 
-          <div className="intro-fade relative lg:col-span-6" style={{ "--d": "120ms" } as CSSProperties}>
+          <div
+            className="intro-fade relative lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1"
+            style={{ "--d": "120ms" } as CSSProperties}
+          >
             <RecipeHeroArch
               slug={recipe.slug}
               image={recipe.hero}
@@ -222,6 +224,13 @@ export default async function RecipePage({ params }: PageProps<"/recettes/[slug]
                 </div>
               }
             />
+          </div>
+          {/* On phones the summary comes after the photo; on desktop it sits under the title. */}
+          <div
+            className="intro-fade mt-2 lg:col-span-6 lg:row-start-2 lg:self-end"
+            style={{ "--d": "700ms" } as CSSProperties}
+          >
+            <Essentials recipe={recipe} />
           </div>
         </header>
 

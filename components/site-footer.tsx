@@ -12,7 +12,7 @@ export function SiteFooter() {
     <footer data-site-footer className="relative overflow-hidden bg-charcoal text-paper">
       <div className="container-page pt-20 pb-10 md:pt-28">
         <p className="text-eyebrow text-paper/60">Fin du carnet</p>
-        <p className="relative mt-4 inline-block font-display text-[clamp(4rem,15vw,13rem)] leading-[0.85] font-[350] tracking-[-0.045em] [font-variation-settings:'SOFT'_100]">
+        <p className="relative mt-4 inline-block font-display text-[clamp(4rem,15vw,13rem)] leading-[0.85] [font-weight:calc(350+var(--dw))] tracking-[-0.045em] [font-variation-settings:'SOFT'_100]">
           À <span className="serif-accent text-[#E2765C]">table</span>.
           <Scribble
             variant="underline"
@@ -36,7 +36,7 @@ export function SiteFooter() {
               {recipes.map((r, i) => (
                 <li key={r.slug}>
                   <Link href={`/recettes/${r.slug}`} className="group inline-flex gap-3 text-paper/80 hover:text-paper">
-                    <span className="font-mono text-[0.75rem] text-paper/60 tabular">0{i + 1}</span>
+                    <span className="font-mono text-[0.8125rem] text-paper/60 tabular">0{i + 1}</span>
                     <span className="underline-offset-4 group-hover:underline">{r.title}</span>
                   </Link>
                 </li>
@@ -82,10 +82,10 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-paper/15 pt-6 font-mono text-[0.75rem] text-paper/60 md:flex-row md:justify-between">
+        <div className="mt-16 flex flex-col gap-3 border-t border-paper/15 pt-6 font-mono text-[0.8125rem] text-paper/60 md:flex-row md:justify-between">
           <p>© {year} Épure</p>
           <p>
-            Composé en Fraunces et Instrument Sans · photos{" "}
+            Composé en Fraunces, Instrument Sans, IBM Plex Mono et Caveat · photos{" "}
             <a href="https://www.pexels.com" rel="noopener" className="underline underline-offset-2 hover:text-paper">
               Pexels
             </a>{" "}

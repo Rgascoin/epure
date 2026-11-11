@@ -22,7 +22,7 @@ const themes: Record<string, RecipeTheme> = {
   "spaghetti-carbonara": {
     accent: "#F0B323",
     onAccent: "#1d1d1f",
-    ink: "#946200",
+    ink: "#885A00",
     tint: "#FBF4E2",
     deep: "#14161B",
     focus: "50% 42%",
@@ -36,9 +36,9 @@ const themes: Record<string, RecipeTheme> = {
     focus: "50% 46%",
   },
   "tian-provencal": {
-    accent: "#5C8A2E",
+    accent: "#4A7524",
     onAccent: "#ffffff",
-    ink: "#466B21",
+    ink: "#41691F",
     tint: "#EFF4E8",
     deep: "#0D1608",
     focus: "50% 48%",

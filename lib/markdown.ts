@@ -38,6 +38,8 @@ export function recipeToMarkdown(r: Recipe): string {
     "",
     r.summary,
     "",
+    "## Avant de commencer",
+    "",
     ...r.intro.flatMap((p) => [p, ""]),
     `## Ingrédients (pour ${r.servings} ${plural(r.servings, r.servingsLabel)})`,
     "",
@@ -68,15 +70,15 @@ export function recipeToMarkdown(r: Recipe): string {
   push("## Pourquoi ça marche", "", ...r.science.flatMap((s) => [`### ${s.title}`, "", s.text, ""]));
   push("## Ce qui aide", "", ...r.tips.map((t) => `- ${t}`), "");
   push("## Ce qui fait rater", "", ...r.mistakes.map((t) => `- ${t}`), "");
-  push("## Variations", "", ...r.variations.flatMap((v) => [`### ${v.title}`, "", v.text, ""]));
+  push("## Variantes", "", ...r.variations.flatMap((v) => [`### ${v.title}`, "", v.text, ""]));
   push("## Conservation", "", r.storage, "");
   if (r.pairing) push("## À boire avec", "", r.pairing, "");
   push(
     `## Valeurs nutritionnelles (par ${r.servingsLabel.one}, estimations)`,
     "",
-    "| Énergie | Protéines | Lipides | dont saturés | Glucides | dont sucres | Fibres | Sodium |",
+    "| Énergie | Matières grasses | dont acides gras saturés | Glucides | dont sucres | Fibres | Protéines | Sel |",
     "|---|---|---|---|---|---|---|---|",
-    `| ${r.nutrition.calories} kcal | ${r.nutrition.protein} g | ${r.nutrition.fat} g | ${r.nutrition.saturatedFat} g | ${r.nutrition.carbs} g | ${r.nutrition.sugar} g | ${r.nutrition.fiber} g | ${r.nutrition.sodium} mg |`,
+    `| ${r.nutrition.calories} kcal | ${r.nutrition.fat} g | ${r.nutrition.saturatedFat} g | ${r.nutrition.carbs} g | ${r.nutrition.sugar} g | ${r.nutrition.fiber} g | ${r.nutrition.protein} g | ${(Math.round((r.nutrition.sodium * 2.5) / 100) / 10).toLocaleString("fr-FR")} g |`,
     "",
   );
   push("## Questions fréquentes", "", ...r.faq.flatMap((f) => [`### ${f.q}`, "", f.a, ""]));

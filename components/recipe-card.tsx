@@ -46,7 +46,7 @@ export function RecipeCard({
             </span>
             <span className="tabular">{formatDuration(recipe.totalMinutes)}</span>
           </p>
-          <Heading className="mt-3 font-display text-[1.875rem] leading-[1.02] font-[430] tracking-[-0.02em] [font-variation-settings:'SOFT'_60]">
+          <Heading className="mt-3 font-display text-[1.875rem] leading-[1.02] [font-weight:calc(430+var(--dw))] tracking-[-0.02em] [font-variation-settings:'SOFT'_60]">
             {recipe.title}
           </Heading>
           <p className="mt-2 serif-accent text-[1.1875rem] leading-snug text-fg-2">{recipe.tagline}</p>

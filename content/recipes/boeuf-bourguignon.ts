@@ -8,9 +8,9 @@ export const content: RecipeContent = {
   description:
     "Le bœuf bourguignon comme on l’aime : du paleron qui mijote 3 h au four à 150 °C dans un pinot noir, puis lardons, champignons et petits oignons glacés.",
   summary:
-    "Pour six personnes, faites dorer 1,5 kg de paleron en cubes, saupoudrez de farine, mouillez avec 75 cl de pinot noir et 30 cl de bouillon, puis laissez cuire 3 h au four à 150 °C, cocotte fermée. Les lardons, les champignons et les petits oignons glacés se préparent à part et rejoignent la cocotte à la fin. Il faut un peu plus de 4 h en tout, mais seulement 40 minutes de vrai travail.",
+    "Pour 6 personnes, faites dorer 1,5 kg de paleron en cubes, saupoudrez de farine, mouillez avec 75 cl de pinot noir et 30 cl de bouillon, puis laissez cuire 3 h au four à 150 °C, cocotte fermée. Les lardons, les champignons et les petits oignons glacés se préparent à part et rejoignent la cocotte à la fin. Il faut un peu plus de 4 h en tout, mais seulement 40 minutes de vrai travail.",
   intro: [
-    "Le bourguignon ne demande pas de talent particulier, il demande du temps. Trois heures dans un four doux, et un morceau ferme, plein de nerfs, finit par se défaire à la cuillère dans une sauce sombre qui brille.",
+    "Le bourguignon demande surtout du temps. Trois heures dans un four doux, et un morceau ferme, plein de nerfs, finit par se défaire à la cuillère dans une sauce sombre qui brille.",
     "Il y a deux moments où il faut être là. Au début, pour faire dorer la viande sans se presser, morceau par morceau. À la fin, pour la garniture : lardons, champignons et petits oignons cuisent à part et n’arrivent qu’au dernier moment, sinon ils se délitent dans la sauce.",
     "Entre les deux, le four travaille et vous pouvez aller vous promener. Et s’il en reste, il sera encore meilleur le lendemain.",
   ],
@@ -33,11 +33,11 @@ export const content: RecipeContent = {
   cost: "€€",
   season: ["Automne", "Hiver"],
   equipment: [
-    "Cocotte en fonte de 5 à 6 l avec couvercle",
-    "Grande poêle ou sauteuse",
-    "Papier absorbant",
-    "Papier sulfurisé",
-    "Saladier (pour la marinade)",
+    "cocotte en fonte de 5 à 6 l avec couvercle",
+    "une sauteuse et une grande poêle",
+    "papier absorbant",
+    "papier sulfurisé",
+    "saladier (pour la marinade)",
   ],
   ingredients: [
     {
@@ -88,7 +88,7 @@ export const content: RecipeContent = {
   ],
   method: [
     {
-      title: "La veille : la marinade (facultatif)",
+      title: "La veille : la marinade (facultative)",
       steps: [
         {
           title: "Mariner la viande",
@@ -107,8 +107,8 @@ export const content: RecipeContent = {
         },
         {
           title: "Dorer la viande",
-          text: "Faites chauffer l’huile à feu vif dans la cocotte. Saisissez la viande en trois ou quatre fois, sans tasser les morceaux, 3 à 4 minutes par face. Ça doit grésiller fort et prendre une croûte brun foncé. Réservez au fur et à mesure.",
-          timer: { minutes: 15, label: "Coloration de la viande" },
+          text: "Faites chauffer l’huile à feu vif dans la cocotte. Saisissez la viande en trois ou quatre fournées, sans tasser les morceaux : 6 à 8 minutes par fournée, en les retournant pour colorer toutes les faces. Ça doit grésiller fort et prendre une croûte brun foncé. Réservez au fur et à mesure, et relancez le minuteur à chaque fournée.",
+          timer: { minutes: 7, label: "Coloration (une fournée)" },
         },
         {
           title: "Faire suer les aromates",
@@ -117,7 +117,7 @@ export const content: RecipeContent = {
         },
         {
           title: "Fariner et déglacer",
-          text: "Remettez la viande avec son jus, saupoudrez de farine et remuez 2 minutes pour qu’elle torréfie un peu. Versez le vin, grattez bien les sucs collés au fond et laissez bouillir 2 minutes.",
+          text: "Remettez la viande avec son jus, saupoudrez de farine et remuez 2 minutes pour que la farine torréfie un peu. Versez le vin, grattez bien les sucs collés au fond et laissez bouillir 2 minutes.",
           timer: { minutes: 4, label: "Farine et vin" },
         },
       ],
@@ -127,13 +127,13 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Mouiller et enfourner",
-          text: "Ajoutez du bouillon jusqu’à presque couvrir la viande, puis le bouquet garni et un tour de poivre. Portez à frémissement, couvrez et enfournez pour 3 heures.",
+          text: "Ajoutez le bouillon jusqu’à presque couvrir la viande, puis le bouquet garni et un tour de poivre. Portez à frémissement, couvrez et enfournez pour 3 heures.",
           timer: { minutes: 180, label: "Cuisson au four" },
           tip: "Au four, la chaleur arrive de tous les côtés. La sauce frémit tranquillement et n’attache pas, vous n’avez pas besoin de la surveiller.",
         },
         {
           title: "Vérifier la cuisson",
-          text: "La viande est prête quand elle cède sous le dos d’une cuillère. Si la sauce vous semble trop liquide, sortez la viande et faites réduire la sauce à découvert sur le feu, jusqu’à ce qu’elle nappe la cuillère.",
+          text: "La viande est prête quand elle cède sous le dos d’une cuillère. Si la sauce vous semble trop liquide, sortez la viande et faites réduire la sauce à découvert sur le feu, jusqu’à ce qu’elle nappe la cuillère, puis remettez la viande.",
           timer: { minutes: 10, label: "Réduction de la sauce" },
         },
       ],
@@ -148,8 +148,8 @@ export const content: RecipeContent = {
         },
         {
           title: "Dorer lardons et champignons",
-          text: "Faites revenir les lardons à sec dans une poêle pendant 5 minutes. Ajoutez 10 g de beurre et les champignons, et faites-les sauter à feu vif jusqu’à ce qu’ils soient bien dorés. S’ils rendent de l’eau, continuez : elle va s’évaporer.",
-          timer: { minutes: 8, label: "Lardons et champignons" },
+          text: "Faites revenir les lardons à sec dans la grande poêle pendant 5 minutes. Ajoutez 10 g de beurre et les champignons, et faites-les sauter 6 à 7 minutes à feu vif, jusqu’à ce qu’ils soient bien dorés. S’ils rendent de l’eau, continuez : elle va s’évaporer.",
+          timer: { minutes: 12, label: "Lardons et champignons" },
         },
         {
           title: "Assembler",
@@ -203,7 +203,7 @@ export const content: RecipeContent = {
   storage:
     "Il se garde 3 jours au frigo dans une boîte fermée, et 3 mois au congélateur. Réchauffez-le doucement, à couvert, sur feu doux ou au four à 140 °C.",
   pairing:
-    "Le même vin que dans la sauce, ou un voisin : un bourgogne rouge, un Hautes-Côtes-de-Nuits ou un Givry par exemple.",
+    "Le même vin que dans la sauce, ou un voisin : un bourgogne rouge, un hautes-côtes-de-nuits ou un givry par exemple.",
   faq: [
     {
       q: "Quel morceau de bœuf choisir pour un bœuf bourguignon ?",
@@ -211,7 +211,7 @@ export const content: RecipeContent = {
     },
     {
       q: "Quel vin utiliser pour un bœuf bourguignon ?",
-      a: "Un pinot noir de Bourgogne fruité et pas trop tannique, d’une qualité correcte, comme un bourgogne rouge ou un vin de la côte chalonnaise. Évitez les vins très boisés : leur amertume se concentre à la cuisson.",
+      a: "Un pinot noir de Bourgogne fruité et pas trop tannique, d’une qualité correcte, comme un bourgogne rouge ou un vin de la Côte chalonnaise. Évitez les vins très boisés : leur amertume se concentre à la cuisson.",
     },
     {
       q: "Faut-il faire mariner le bœuf la veille ?",
@@ -219,7 +219,7 @@ export const content: RecipeContent = {
     },
     {
       q: "Combien de temps faut-il cuire un bœuf bourguignon ?",
-      a: "Comptez environ 3 heures au four à 150 °C en cocotte fermée, ou 2 h 30 à 3 heures à frémissement sur le feu. Il est prêt quand la viande se défait à la cuillère.",
+      a: "Comptez environ 3 heures au four à 150 °C en cocotte fermée, ou 2 h 30 à 3 h à petit frémissement sur le feu. Il est prêt quand la viande se défait à la cuillère.",
     },
     {
       q: "Peut-on préparer le bœuf bourguignon à l’avance ?",
@@ -241,7 +241,7 @@ export const content: RecipeContent = {
     sodium: 1100,
   },
   annotations: {
-    hero: "trois heures, pas une de moins",
+    hero: "trois heures de four doux",
     detail: "la viande cède à la cuillère",
   },
   images: {

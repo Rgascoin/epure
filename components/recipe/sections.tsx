@@ -28,7 +28,7 @@ export function KeyFacts({ recipe }: { recipe: Recipe }) {
           className={`grow basis-[9rem] px-1 py-5 md:basis-[10rem] md:px-5 md:py-6 ${i ? "md:border-l-2 md:border-dotted md:border-line-strong" : "md:pl-0"}`}
         >
           <dt className="text-eyebrow text-fg-3">{f.label}</dt>
-          <dd className="mt-2 font-display text-[clamp(1.6rem,2.5vw,2.25rem)] leading-none font-[420] tabular [font-variation-settings:'SOFT'_60]">
+          <dd className="mt-2 font-display text-[clamp(1.6rem,2.5vw,2.25rem)] leading-none [font-weight:calc(420+var(--dw))] tabular [font-variation-settings:'SOFT'_60]">
             {f.dateTime ? (
               <time dateTime={f.dateTime}>
                 {f.value}
@@ -77,7 +77,7 @@ export function Intro({ recipe }: { recipe: Recipe }) {
     <section aria-label="Avant de commencer" className="container-page grid gap-8 md:grid-cols-12">
       <p className="text-eyebrow text-fg-3 md:col-span-3 md:pt-2">Avant de commencer</p>
       <div className="prose-recipe max-w-[42rem] md:col-span-8">
-        <p className="dropcap font-display text-[clamp(1.3rem,2vw,1.6rem)] leading-[1.5] font-[380] [font-variation-settings:'SOFT'_80]">
+        <p className="dropcap font-display text-[clamp(1.3rem,2vw,1.6rem)] leading-[1.5] [font-weight:calc(380+var(--dw))] [font-variation-settings:'SOFT'_80]">
           {fr(first)}
         </p>
         {rest.map((p, i) => (
@@ -98,6 +98,7 @@ export function Science({ recipe }: { recipe: Recipe }) {
   return (
     <section
       aria-labelledby="science-title"
+      data-print="plain"
       className="grain relative overflow-hidden py-[clamp(5rem,14vh,9rem)] text-paper"
       style={{ backgroundColor: recipe.theme.deep }}
     >
@@ -105,7 +106,7 @@ export function Science({ recipe }: { recipe: Recipe }) {
         <div className="grid gap-6 md:grid-cols-12 md:items-end">
           <p className="text-eyebrow text-paper/60 md:col-span-3">Pourquoi ça marche</p>
           <h2 id="science-title" className="text-headline md:col-span-9">
-            Ce qui se passe <span className="serif-accent text-accent-bright">dans la casserole</span>.
+            Ce qui se passe <span className="serif-accent text-accent-bright">vraiment</span>.
           </h2>
         </div>
         <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
@@ -177,9 +178,9 @@ export function Variations({ recipe }: { recipe: Recipe }) {
             className="bristol reveal-on-scroll rounded-[3px] px-6 pt-4 pb-7 shadow-[var(--shadow-card)]"
             style={{ rotate: `${[-1.2, 0.8, -0.4][i % 3]}deg` }}
           >
-            <h3 className="flex h-[2.4rem] items-center justify-between font-display text-[1.375rem] font-[460]">
+            <h3 className="flex h-[2.4rem] items-center justify-between font-display text-[1.375rem] [font-weight:calc(460+var(--dw))]">
               {v.title}
-              <span className="font-mono text-[0.75rem] text-[#6b6155]">0{i + 1}</span>
+              <span className="font-mono text-[0.8125rem] text-[#6b6155]">0{i + 1}</span>
             </h3>
             <p className="mt-[0.85rem] text-[0.9875rem] leading-[1.75rem] text-[#3c352d]">{fr(v.text)}</p>
           </article>
@@ -255,7 +256,7 @@ export function Pantry({ recipe }: { recipe: Recipe }) {
               </div>
             ))}
           </dl>
-          <p className="mt-2 text-[0.75rem] leading-snug text-fg-2">
+          <p className="mt-2 text-[0.8125rem] leading-snug text-fg-2">
             Apport de référence d’un adulte type&#8239;: 8&#8239;400&nbsp;kJ / 2&#8239;000&nbsp;kcal.
           </p>
         </div>
@@ -281,7 +282,7 @@ export function Faq({ recipe }: { recipe: Recipe }) {
         {recipe.faq.map((f, i) => (
           <details key={f.q} className="faq group border-b border-line-strong" open={i === 0}>
             <summary className="flex cursor-pointer items-start justify-between gap-6 py-6">
-              <h3 className="font-display text-[1.375rem] leading-snug font-[440] tracking-[-0.01em] transition-colors group-hover:text-ink">
+              <h3 className="font-display text-[1.375rem] leading-snug [font-weight:calc(440+var(--dw))] tracking-[-0.01em] transition-colors group-hover:text-ink">
                 {f.q}
               </h3>
               <span className="mt-1 grid size-8 shrink-0 place-items-center rounded-full border-[1.5px] border-fg transition-transform duration-500 ease-[var(--ease-out)] group-open:rotate-45">
@@ -310,7 +311,7 @@ export function NextRecipe({ next }: { next: Recipe }) {
       >
         <div className="md:col-span-8">
           <p className="text-eyebrow text-fg-3">Page suivante du carnet</p>
-          <p className="mt-4 font-display text-[clamp(2.6rem,6.5vw,6rem)] leading-[0.95] font-[400] tracking-[-0.03em] transition-transform duration-700 ease-[var(--ease-out)] [font-variation-settings:'SOFT'_70] group-hover:translate-x-3">
+          <p className="mt-4 font-display text-[clamp(2.6rem,6.5vw,6rem)] leading-[0.95] [font-weight:calc(400+var(--dw))] tracking-[-0.03em] transition-transform duration-700 ease-[var(--ease-out)] [font-variation-settings:'SOFT'_70] group-hover:translate-x-3">
             {next.title}
           </p>
           <p className="mt-3 serif-accent text-[clamp(1.25rem,2vw,1.6rem)] text-fg-2">{next.tagline}</p>
@@ -349,11 +350,11 @@ export function NextRecipe({ next }: { next: Recipe }) {
 export function Byline({ recipe }: { recipe: Recipe }) {
   const { hero, detail } = recipe.images.credits;
   return (
-    <div className="container-page flex flex-col gap-2 font-mono text-[0.75rem] text-fg-3 md:flex-row md:justify-between">
+    <div className="container-page flex flex-col gap-2 font-mono text-[0.8125rem] text-fg-3 md:flex-row md:justify-between">
       <p>
         Rédigé par{" "}
         <Link href="/a-propos" className="text-fg-2 underline underline-offset-2">
-          l’équipe d’Épure
+          la rédaction d’Épure
         </Link>{" "}
         · publié le <time dateTime={recipe.datePublished}>{formatDateFr(recipe.datePublished)}</time> · revu le{" "}
         <time dateTime={recipe.dateModified}>{formatDateFr(recipe.dateModified)}</time>

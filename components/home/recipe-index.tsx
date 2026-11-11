@@ -4,7 +4,7 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useMotionValue, useSpring } from "motion/react";
 import * as m from "motion/react-m";
-import { useEffect, useState, ViewTransition } from "react";
+import { useEffect, useState, ViewTransition, type CSSProperties } from "react";
 import clsx from "clsx";
 import { ArrowRight } from "../icons";
 
@@ -16,7 +16,10 @@ export interface IndexRow {
   image: StaticImageData;
   alt: string;
   focus?: string;
+  /** Readable on paper (light theme). */
   accent: string;
+  /** Raw dish colour, lightened for the dark theme in CSS. */
+  accentRaw: string;
 }
 
 /**
@@ -81,9 +84,10 @@ export function RecipeIndex({ rows }: { rows: IndexRow[] }) {
               <span className="min-w-0">
                 <span
                   className={clsx(
-                    "block font-display text-[clamp(1.75rem,4.6vw,4rem)] leading-[1.02] font-[400] tracking-[-0.025em] transition-[transform,color] duration-500 ease-[var(--ease-out)] [font-variation-settings:'SOFT'_60] md:group-hover:translate-x-3",
+                    "row-title block font-display text-[clamp(1.75rem,4.6vw,4rem)] leading-[1.02] [font-weight:calc(400+var(--dw))] tracking-[-0.025em] transition-[transform,color] duration-500 ease-[var(--ease-out)] [font-variation-settings:'SOFT'_60] md:group-hover:translate-x-3",
                   )}
-                  style={active === r.slug ? { color: r.accent } : undefined}
+                  data-active={active === r.slug}
+                  style={{ "--row": r.accentRaw, "--row-ink-light": r.accent } as CSSProperties}
                 >
                   {r.title}
                 </span>

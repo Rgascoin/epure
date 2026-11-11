@@ -22,7 +22,7 @@ export function Ticket() {
         <div className="md:col-span-6 lg:col-span-5">
           <p className="text-eyebrow text-fg-3">Ce qu’il y a dedans</p>
           <h2 id="ticket-title" className="mt-4 text-headline">
-            Pensé pour servir les mains{" "}
+            Pensé pour s’en servir les mains{" "}
             <span className="relative inline-block whitespace-nowrap">
               dans la farine
               <Scribble variant="underline" className="absolute -bottom-[0.1em] left-0 h-[0.2em] w-full text-accent" />
@@ -43,7 +43,7 @@ export function Ticket() {
           {/* The slot the ticket comes out of */}
           <div aria-hidden className="absolute top-0 h-3 w-[min(92%,400px)] rounded-full bg-fg/85 shadow-inner" />
           <div className="ticket-print w-[min(86%,360px)] pt-1.5">
-            <div className="ticket -rotate-[1.5deg] px-5 pt-9 pb-10 font-mono text-[0.71875rem] leading-[1.9] shadow-[var(--shadow-float)] sm:px-7 sm:text-[0.8125rem]">
+            <div className="ticket -rotate-[1.5deg] px-5 pt-9 pb-10 font-mono text-[0.75rem] leading-[1.9] shadow-[var(--shadow-float)] sm:px-7 sm:text-[0.8125rem]">
               <p className="text-center text-[0.9375rem] font-medium tracking-[0.2em]">ÉPURE</p>
               <p className="text-center text-[0.75rem] text-[#6b6155]">carnet de cuisine · table 5</p>
               <p className="mt-4 border-t border-dashed border-[#1b1712]/40 pt-3 text-[0.75rem] text-[#6b6155]">

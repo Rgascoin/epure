@@ -8,11 +8,11 @@ export const content: RecipeContent = {
   description:
     "Une mousse au chocolat maison avec 200 g de chocolat noir 70 %, 6 œufs, une pincée de sel et très peu de sucre. 25 minutes de travail, 6 heures au frais.",
   summary:
-    "Pour six, faites fondre 200 g de chocolat noir à 70 % au bain-marie, ajoutez les 6 jaunes, puis incorporez les 6 blancs montés en neige souple avec une pincée de sel et 30 g de sucre. Mélangez doucement à la maryse, répartissez dans des verrines et laissez prendre au moins 6 heures au frigo, une nuit si vous pouvez.",
+    "Pour 6 personnes, faites fondre 200 g de chocolat noir à 70 % au bain-marie, ajoutez les 6 jaunes, puis incorporez les 6 blancs montés en neige souple avec une pincée de sel et 30 g de sucre. Mélangez doucement à la maryse, répartissez dans des verrines et laissez prendre au moins 6 heures au frigo, une nuit si vous pouvez.",
   intro: [
     "Des mousses au chocolat, il en existe des centaines. Celle-ci est la plus simple qu’on connaisse : du chocolat noir, des œufs, une pincée de sel et à peine de sucre. On n’ajoute ni crème ni gélatine. Elle tient parce que le beurre de cacao fige au froid, et elle est légère grâce à l’air des blancs.",
     "Deux choses comptent vraiment. Le chocolat doit être à peine tiède quand on le mélange. Et les blancs s’incorporent doucement, en soulevant, pour garder un maximum de bulles.",
-    "Faites-la le matin pour le soir, ou la veille. Le lendemain, elle est encore plus fondante.",
+    "Faites-la le matin pour le soir, ou la veille. Le lendemain, elle est encore plus fondante (mais pas au-delà : avec des œufs crus, on la mange dans les 24 heures).",
   ],
   category: "Dessert",
   cuisine: "Française",
@@ -34,10 +34,11 @@ export const content: RecipeContent = {
   cost: "€",
   season: ["Toute l’année"],
   equipment: [
-    "Casserole et bol résistant à la chaleur (bain-marie)",
-    "Batteur électrique",
-    "Maryse",
-    "Grand saladier propre et sec",
+    "casserole et bol résistant à la chaleur (bain-marie)",
+    "batteur électrique",
+    "fouet",
+    "maryse",
+    "grand saladier propre et sec",
     "6 verrines ou un plat de service",
   ],
   ingredients: [
@@ -58,13 +59,13 @@ export const content: RecipeContent = {
       steps: [
         {
           title: "Fondre le chocolat",
-          text: "Faites fondre le chocolat haché et le beurre au bain-marie, sur une eau qui frémit à peine. Le bol ne doit pas toucher l’eau. Remuez jusqu’à ce que ce soit lisse, puis retirez du feu.",
+          text: "Faites fondre le chocolat haché (et le beurre, si vous en mettez) au bain-marie, sur une eau qui frémit à peine. Le bol ne doit pas toucher l’eau. Remuez jusqu’à ce que ce soit lisse, puis retirez du feu.",
           timer: { minutes: 5, label: "Fonte du chocolat" },
           tip: "Attention à l’eau et à la vapeur : une seule goutte dans le chocolat et il devient épais et granuleux.",
         },
         {
           title: "Séparer les œufs",
-          text: "Cassez les œufs en mettant les jaunes dans un bol et les blancs dans un grand saladier bien propre et sec. S’il tombe un peu de jaune dans les blancs, retirez-le avec un bout de coquille : sinon ils ne monteront pas.",
+          text: "Cassez les œufs en mettant les jaunes dans un bol et les blancs dans un grand saladier bien propre et sec. S’il tombe un peu de jaune dans les blancs, retirez-le avec un bout de coquille, sinon ils monteront mal.",
         },
         {
           title: "Incorporer les jaunes",
@@ -77,7 +78,7 @@ export const content: RecipeContent = {
         },
         {
           title: "Détendre le chocolat",
-          text: "Prenez un quart des blancs et mélangez-les franchement au chocolat avec un fouet. Ce premier ajout sert à assouplir la masse, ne vous inquiétez pas des bulles perdues.",
+          text: "Prenez un quart des blancs et mélangez-les franchement au chocolat avec un fouet. Ce premier ajout sert à assouplir la masse : ne vous souciez pas des bulles perdues.",
         },
         {
           title: "Incorporer délicatement",
@@ -111,11 +112,11 @@ export const content: RecipeContent = {
     },
   ],
   tips: [
-    "Prenez un chocolat noir pâtissier entre 64 et 70 % de cacao. C’est lui qui fait le goût, ne lésinez pas.",
+    "Prenez un chocolat noir pâtissier entre 64 et 70 % de cacao. C’est lui qui fait le goût : ne lésinez pas.",
     "Sortez les œufs du frigo une heure avant. Les blancs montent mieux, et le chocolat ne fige pas au contact des jaunes.",
     "Passez un essuie-tout imbibé de vinaigre dans le saladier et sur les fouets. La moindre trace de gras empêche les blancs de monter.",
     "Quelques grains de fleur de sel au moment de servir font ressortir l’amertume du chocolat.",
-    "Une cuillerée d’espresso serré ou un zeste d’orange dans le chocolat fondu, et vous avez une autre mousse.",
+    "Pour changer, 2 cuillerées à soupe d’espresso fondues avec le chocolat, ou un zeste d’orange : voir les variantes.",
   ],
   mistakes: [
     "Battre les blancs trop fermes. Ils laissent des grumeaux blancs dans la mousse.",
@@ -126,7 +127,7 @@ export const content: RecipeContent = {
   variations: [
     {
       title: "Au café",
-      text: "Ajoutez 2 cuillerées à soupe d’espresso serré dans le chocolat fondu, avant les jaunes.",
+      text: "Faites fondre le chocolat avec 2 cuillerées à soupe d’espresso serré dès le départ, avant d’ajouter les jaunes. Ajouté après, le liquide ferait grainer le chocolat.",
     },
     {
       title: "À l’orange",
@@ -134,17 +135,17 @@ export const content: RecipeContent = {
     },
     {
       title: "Végane, à l’aquafaba",
-      text: "Remplacez les œufs par 150 ml de jus de cuisson de pois chiches, monté en neige avec le sucre, puis mélangé au chocolat tiède. La mousse est plus légère, et un peu plus fragile.",
+      text: "Remplacez les œufs par 150 ml de jus de cuisson de pois chiches, monté en neige avec le sucre, puis mélangé au chocolat tiède. La mousse est plus légère, et un peu plus fragile. Sans beurre, et avec un chocolat noir garanti sans lait.",
     },
   ],
   storage:
-    "Comme elle contient des œufs crus, elle se garde 24 heures au frigo, filmée, 48 heures grand maximum. Ne la laissez pas traîner à température ambiante.",
+    "Comme elle contient des œufs crus, gardez-la au frigo, filmée, et mangez-la dans les 24 heures. Ne la laissez pas traîner à température ambiante.",
   pairing:
     "Un vin doux naturel du Roussillon, un banyuls ou un maury : leurs notes de cacao et de fruits secs vont très bien avec.",
   faq: [
     {
       q: "La mousse au chocolat est-elle déconseillée aux femmes enceintes ?",
-      a: "Oui, car elle contient des œufs crus. Elle est déconseillée aux femmes enceintes, aux jeunes enfants, aux personnes âgées et aux personnes immunodéprimées, à cause du risque de salmonellose. Pour eux, prenez des œufs pasteurisés (blancs et jaunes vendus en brique au rayon frais) : la recette marche de la même façon.",
+      a: "Oui, car elle contient des œufs crus. Elle est déconseillée aux femmes enceintes, aux jeunes enfants, aux personnes âgées et aux personnes immunodéprimées, à cause du risque de salmonellose. Pour ces personnes, prenez des œufs pasteurisés (blancs et jaunes en brique, au rayon frais) : les blancs montent un peu plus lentement, mais la recette marche.",
     },
     {
       q: "Combien de temps faut-il laisser prendre une mousse au chocolat ?",

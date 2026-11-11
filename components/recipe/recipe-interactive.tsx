@@ -6,7 +6,7 @@ import * as m from "motion/react-m";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
 import type { IngredientGroup, MethodSection } from "@/lib/types";
-import { displayQty, fr, ingredientName, ingredientPhrase, plural, scaleQty } from "@/lib/format";
+import { capitalize, displayQty, fr, ingredientName, ingredientPhrase, plural, scaleQty } from "@/lib/format";
 import { Check, ChefHat, Copy, Minus, Plus, Reset } from "../icons";
 import { CookingMode, type FlatStep } from "./cooking-mode";
 import { TimerButton, TimersProvider } from "./timers";
@@ -264,7 +264,7 @@ function RecipeInteractiveInner({
                             {ing.note && (
                               <span
                                 className={clsx(
-                                  "mt-0.5 block text-[0.875rem]",
+                                  "mt-0.5 block text-[0.9375rem]",
                                   isChecked ? "text-fg-3/70" : "text-fg-3",
                                 )}
                               >
@@ -280,7 +280,7 @@ function RecipeInteractiveInner({
               ))}
             </div>
 
-            <p className="mt-4 text-[0.875rem] text-fg-3" data-print="hide">
+            <p className="mt-4 text-[0.9375rem] text-fg-3" data-print="hide">
               Touchez une ligne pour la barrer pendant les courses ou la mise en place.
             </p>
 
@@ -306,7 +306,7 @@ function RecipeInteractiveInner({
             {equipment.length > 0 && (
               <div className="mt-10">
                 <h3 className="text-eyebrow text-fg-3">Ustensiles</h3>
-                <p className="mt-3 text-[1rem] leading-relaxed text-fg-2">{equipment.join(", ")}.</p>
+                <p className="mt-3 text-[1rem] leading-relaxed text-fg-2">{capitalize(equipment.join(", "))}.</p>
               </div>
             )}
 
@@ -347,7 +347,7 @@ function RecipeInteractiveInner({
       {/* Mobile action bar */}
       <div
         data-print="hide"
-        className="fixed inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-50 flex items-center gap-2 rounded-[16px] bg-charcoal p-1.5 shadow-[4px_4px_0_var(--accent)] lg:hidden"
+        className="fixed inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-50 flex items-center gap-2 rounded-[16px] bg-charcoal p-1.5 shadow-[4px_4px_0_var(--accent)] ring-1 ring-white/10 lg:hidden"
       >
         <a
           href="#ingredients-title"
@@ -461,7 +461,7 @@ function MethodList({
                     </StepHeading>
                     <p className="mt-2 text-body text-fg-2">{fr(step.text)}</p>
                     {step.tip && (
-                      <p className="mt-4 border-l-2 border-accent pl-4 text-[0.9875rem] leading-relaxed text-fg-2">
+                      <p className="mt-4 border-l-2 border-accent pl-4 text-[1rem] leading-relaxed text-fg-2">
                         <span className="mr-1.5 hand text-[1.35rem] text-ink">psst.</span>
                         {fr(step.tip)}
                       </p>

@@ -10,7 +10,7 @@ import { PageTransition } from "@/components/page-transition";
 import { Scribble } from "@/components/scribble";
 import { ArrowRight } from "@/components/icons";
 
-const title = "À propos : pourquoi seulement cinq recettes";
+const title = "À propos : pourquoi seulement cinq recettes ?";
 const description =
   "Épure est un petit carnet de cinq recettes écrites au gramme près, avec le pourquoi de chaque geste. Pas de publicité, pas de compte, pas de pop-up.";
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const PRINCIPLES = [
   {
     title: "Des mesures plutôt que des impressions",
-    text: "Des grammes, des degrés, des minutes. Quand un chiffre ne suffit pas, on décrit ce qu’il faut guetter : la couleur du caramel, le bruit du guanciale, la sauce qui nappe la cuillère.",
+    text: "Des grammes, des degrés, des minutes. Quand un chiffre ne suffit pas, on décrit ce qu’il faut guetter : la couleur de la croûte, le bruit du guanciale, la sauce qui nappe la cuillère.",
   },
   {
     title: "Le pourquoi de chaque geste",
@@ -32,7 +32,7 @@ const PRINCIPLES = [
   },
   {
     title: "La recette en premier",
-    text: "Le résumé est en haut de la page, les ingrédients juste après. Les explications, les ratés possibles et les variantes viennent ensuite, pour ceux qui ont le temps.",
+    text: "Le résumé, avec les quantités, est en haut de la page ; les ingrédients suivent trois paragraphes courts. Les explications, les ratés possibles et les variantes viennent ensuite, pour ceux qui ont le temps.",
   },
   {
     title: "Un site qui sert en cuisine",
@@ -94,9 +94,9 @@ export default function AboutPage() {
         aria-label="Notre histoire"
       >
         <div className="space-y-6 text-[1.1875rem] leading-[1.7] text-fg-2 md:col-span-7 md:col-start-4">
-          <p className="dropcap font-display text-[clamp(1.35rem,2.2vw,1.75rem)] leading-[1.5] font-[380] text-fg [font-variation-settings:'SOFT'_80]">
+          <p className="dropcap font-display text-[clamp(1.35rem,2.2vw,1.75rem)] leading-[1.5] [font-weight:calc(380+var(--dw))] text-fg [font-variation-settings:'SOFT'_80]">
             {fr(
-              "Parce qu’on préfère une recette bien expliquée à cent recettes survolées. Il existe des milliers de versions de la carbonara en ligne ; on en a écrit une, en prenant le temps de dire pourquoi elle marche.",
+              "Parce qu’on préfère expliquer une recette à fond plutôt qu’en survoler cent. Il existe des milliers de versions de la carbonara en ligne ; on en a écrit une, en prenant le temps de dire pourquoi elle marche.",
             )}
           </p>
           <p>

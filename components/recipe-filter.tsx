@@ -40,7 +40,7 @@ export function RecipeFilter({ items }: { items: FilterableItem[] }) {
               aria-pressed={on}
               onClick={() => setActive(f.id)}
               className={clsx(
-                "relative inline-flex h-10 shrink-0 items-center gap-2 rounded-[11px] border-[1.5px] px-4 text-[0.9375rem] font-medium transition-colors duration-300",
+                "relative inline-flex h-11 shrink-0 items-center gap-2 rounded-[11px] border-[1.5px] px-4 text-[0.9375rem] font-medium transition-colors duration-300",
                 on ? "border-fg text-bg" : "border-line-strong text-fg-2 hover:border-fg hover:text-fg",
               )}
             >

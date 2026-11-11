@@ -50,7 +50,7 @@ export function RecipeHeroArch({
         </div>
       </ViewTransition>
       {stamp && (
-        <m.div className="absolute -top-4 -left-3 w-28 md:-left-8 md:w-36" style={{ rotate }}>
+        <m.div className="absolute -top-4 -left-3 w-28 md:-left-8 md:w-36" style={{ rotate }} data-print="hide">
           {stamp}
         </m.div>
       )}
@@ -72,7 +72,7 @@ export function Polaroid({ image, alt, caption }: { image: StaticImageData; alt:
         aria-hidden
         className="absolute -top-3 left-1/2 z-10 h-7 w-28 -translate-x-1/2 rotate-[-4deg] bg-[#e8dcc4]/80 shadow-sm"
       />
-      <div className="bg-[#fffdf8] p-3 pb-16 shadow-[var(--shadow-float)]">
+      <div className="bg-paper-card p-3 pb-16 shadow-[var(--shadow-float)]">
         <div className="relative aspect-[4/5] overflow-hidden bg-fill">
           <Image src={image} alt={alt} fill quality={78} placeholder="blur" sizes="460px" className="object-cover" />
         </div>
