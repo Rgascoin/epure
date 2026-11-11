@@ -1,26 +1,580 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* -------------------------------------------------------------------------- */
+/*  Design tokens                                                              */
+/* -------------------------------------------------------------------------- */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --bg: #fbfbfd;
+  --bg-elevated: #ffffff;
+  --fill: #f5f5f7;
+  --fill-strong: #e8e8ed;
+  --fg: #1d1d1f;
+  --fg-2: #616166;
+  --fg-3: #737378;
+  --line: rgb(0 0 0 / 0.08);
+  --line-strong: rgb(0 0 0 / 0.14);
+  --glass: rgb(251 251 253 / 0.72);
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px -8px rgb(0 0 0 / 0.12);
+  --shadow-float: 0 2px 6px rgb(0 0 0 / 0.06), 0 24px 60px -12px rgb(0 0 0 / 0.25);
+
+  /* Per-recipe theme (overridden on recipe pages) */
+  --accent: #1d1d1f;
+  --on-accent: #ffffff;
+  --ink: #1d1d1f;
+  --tint: #f5f5f7;
+  --deep: #000000;
+  --accent-bright: #f5f5f7;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --header-h: 52px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --maxw: 1280px;
+
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg: #000000;
+    --bg-elevated: #161617;
+    --fill: #1d1d1f;
+    --fill-strong: #2c2c2e;
+    --fg: #f5f5f7;
+    --fg-2: #a1a1a6;
+    --fg-3: #86868b;
+    --line: rgb(255 255 255 / 0.1);
+    --line-strong: rgb(255 255 255 / 0.18);
+    --glass: rgb(22 22 23 / 0.72);
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -8px rgb(0 0 0 / 0.6);
+    --ink: #f5f5f7;
+    --tint: #161617;
+    color-scheme: dark;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --color-bg: var(--bg);
+  --color-elevated: var(--bg-elevated);
+  --color-fill: var(--fill);
+  --color-fill-strong: var(--fill-strong);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-fg-3: var(--fg-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-ink: var(--ink);
+  --color-tint: var(--tint);
+  --color-deep: var(--deep);
+  --color-accent-bright: var(--accent-bright);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+
+  --ease-out-expo: var(--ease-out);
+  --radius-card: 1.75rem;
+
+  --breakpoint-xs: 25rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Base                                                                       */
+/* -------------------------------------------------------------------------- */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+    interpolate-size: allow-keywords;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Typography                                                                 */
+/* -------------------------------------------------------------------------- */
+
+@utility text-hero {
+  font-size: clamp(3.5rem, 10.5vw, 9.75rem);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  font-weight: 650;
+}
+
+@utility text-display {
+  font-size: clamp(2.6rem, 7.2vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 650;
+}
+
+@utility text-headline {
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 650;
+}
+
+@utility text-title {
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 620;
+}
+
+@utility text-lede {
+  font-size: clamp(1.1875rem, 1.9vw, 1.6rem);
+  line-height: 1.38;
+  letter-spacing: -0.016em;
+  font-weight: 500;
+}
+
+@utility text-body {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+}
+
+@utility text-eyebrow {
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+@utility serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: calc(var(--maxw) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility glass {
+  background: var(--glass);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Components                                                                 */
+/* -------------------------------------------------------------------------- */
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.75rem;
+    padding-inline: 1.375rem;
+    border-radius: 999px;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition:
+      transform 0.4s var(--ease-out),
+      background-color 0.3s,
+      color 0.3s,
+      box-shadow 0.3s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn-primary {
+    background: var(--fg);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    background: color-mix(in srgb, var(--fg) 85%, var(--bg));
+  }
+  .btn-accent {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .btn-accent:hover {
+    background: color-mix(in srgb, var(--accent) 88%, black);
+  }
+  .btn-ghost {
+    background: var(--fill);
+    color: var(--fg);
+  }
+  .btn-ghost:hover {
+    background: var(--fill-strong);
+  }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .link-arrow svg {
+    transition: transform 0.4s var(--ease-out);
+  }
+  .link-arrow:hover svg {
+    transform: translateX(3px);
+  }
+
+  .prose-recipe p + p {
+    margin-top: 1.1em;
+  }
+}
+
+/* Per-recipe theme: base colours come from inline custom properties */
+.recipe-theme {
+  --ink: var(--ink-light);
+  --tint: var(--tint-light);
+  --accent-bright: color-mix(in oklab, var(--accent) 62%, white);
+}
+.recipe-theme ::selection {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+@media (prefers-color-scheme: dark) {
+  .recipe-theme {
+    --ink: color-mix(in oklab, var(--accent) 70%, white);
+    --tint: color-mix(in oklab, var(--accent) 13%, #0a0a0a);
+  }
+}
+
+/* Native <details> with animated height (progressive enhancement) */
+details.faq::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size 0.5s var(--ease-out),
+    content-visibility 0.5s allow-discrete;
+}
+details.faq[open]::details-content {
+  block-size: auto;
+}
+details.faq summary::-webkit-details-marker {
+  display: none;
+}
+details.faq summary {
+  list-style: none;
+}
+
+/* Grain overlay for immersive dark sections */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Intro choreography — pure CSS so it starts on first paint (good for LCP)   */
+/* -------------------------------------------------------------------------- */
+
+.intro-line {
+  display: block;
+  overflow: clip;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.intro-line > span {
+  display: block;
+  animation: line-up 1.25s var(--ease-out) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 80ms);
+}
+.intro-fade {
+  animation: fade-up 1.1s var(--ease-out) both;
+  animation-delay: var(--d, 450ms);
+}
+.intro-rise {
+  animation: rise-in 1.4s var(--ease-out) both;
+  animation-delay: var(--d, 300ms);
+}
+@keyframes line-up {
+  from {
+    transform: translateY(108%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-line > span,
+  .intro-fade,
+  .intro-rise {
+    animation: none;
+  }
+}
+
+/* Looping micro-demos (bento) */
+@keyframes ring-countdown {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: var(--circ);
+  }
+}
+@keyframes check-in {
+  0%,
+  8% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  14%,
+  86% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  94%,
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes strike {
+  0%,
+  10% {
+    transform: scaleX(0);
+  }
+  18%,
+  86% {
+    transform: scaleX(1);
+  }
+  94%,
+  100% {
+    transform: scaleX(0);
+  }
+}
+@keyframes segment-fill {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loop-anim,
+  .loop-anim * {
+    animation: none !important;
+  }
+}
+
+/* Word-by-word highlight driven by the paragraph's own view timeline */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-text {
+      view-timeline: --words block;
+    }
+    .scroll-text > span {
+      animation: word-light linear both;
+      animation-timeline: --words;
+      animation-range: cover calc(18% + var(--i) * 40% / var(--n)) cover calc(18% + (var(--i) + 1) * 40% / var(--n));
+    }
+  }
+}
+@keyframes word-light {
+  from {
+    opacity: 0.16;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* CSS-only scroll-driven reveal, used where JS would be overkill */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-on-scroll {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  View transitions                                                           */
+/* -------------------------------------------------------------------------- */
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-group(.morph) {
+  animation-duration: 560ms;
+  animation-timing-function: var(--ease-out);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+@keyframes via-blur {
+  35% {
+    filter: blur(2px);
+  }
+}
+
+::view-transition-old(.page-out) {
+  animation: 180ms ease-in both vt-fade reverse;
+}
+::view-transition-new(.page-in) {
+  animation:
+    360ms var(--ease-out) 120ms both vt-fade,
+    560ms var(--ease-out) both vt-rise;
+}
+@keyframes vt-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes vt-rise {
+  from {
+    transform: translateY(24px);
+  }
+}
+
+::view-transition-group(site-header) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
+::view-transition-new(site-header) {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Print — a clean, ink-friendly recipe card                                  */
+/* -------------------------------------------------------------------------- */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --fg-2: #333;
+    --fill: #fff;
+    --line: #ccc;
+  }
+  header[data-site-header],
+  footer[data-site-footer],
+  [data-print="hide"] {
+    display: none !important;
+  }
+  [data-print="show"] {
+    display: block !important;
+  }
+  body {
+    font-size: 11pt;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  section,
+  li {
+    break-inside: avoid;
+  }
 }
