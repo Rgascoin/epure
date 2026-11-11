@@ -234,16 +234,26 @@ export default defineRecipe({
     sodium: 350,
   },
   annotations: {
-    hero: "chaque légume cuit à part",
-    detail: "tomates mûres, ou en boîte l’hiver",
+    hero: "chaque légume doré à part",
+    detail: "mijotée doucement, sans écraser",
   },
   images: {
     heroAlt:
-      "Ratatouille vue de dessus : morceaux d’aubergine, de courgette, de poivron et de tomate dorés aux herbes",
-    detailAlt: "Gros plan sur des quartiers de tomate confits et des morceaux d’aubergine d’une ratatouille",
+      "Ratatouille vue de dessus dans une poêle noire : courgettes, aubergines, poivron rouge, oignon et laurier",
+    detailAlt: "Ratatouille mijotée dans un plat en terre : morceaux d’aubergine, de courgette, de poivron et de tomate",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/36040965/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/36040964/" },
+      hero: {
+        photographer: "Schnobby",
+        url: "https://commons.wikimedia.org/wiki/File:Ratatouille_2.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
+      detail: {
+        photographer: "Arnaud 25",
+        url: "https://commons.wikimedia.org/wiki/File:Ratatouille_004.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
     },
   },
   datePublished: "2026-11-05",
@@ -256,6 +266,6 @@ export default defineRecipe({
     ink: "#A63A16",
     tint: "#FBEEE7",
     deep: "#1C0E08",
-    focus: "50% 50%",
+    focus: "50% 52%",
   },
 });

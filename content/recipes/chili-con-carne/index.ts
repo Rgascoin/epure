@@ -237,8 +237,14 @@ export default defineRecipe({
       "Chili con carne au bœuf haché, haricots rouges et maïs dans un bol gris, avec crème aigre et oignon nouveau",
     detailAlt: "Bol de chili con carne garni de coriandre et de chips de tortilla, tenu à la main",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/15881322/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/14866629/" },
+      hero: {
+        photographer: "Julias Torten und Törtchen",
+        url: "https://www.pexels.com/photo/chili-con-carne-stew-15881322/",
+      },
+      detail: {
+        photographer: "Nadin Sh",
+        url: "https://www.pexels.com/photo/hand-holding-a-bowl-with-chilli-con-carne-14866629/",
+      },
     },
   },
   datePublished: "2026-11-03",

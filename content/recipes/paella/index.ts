@@ -253,8 +253,14 @@ export default defineRecipe({
       "Paella aux fruits de mer dans sa poêle noire : gambas, langoustines, moules et lanières de poivron rouge sur riz safrané",
     detailAlt: "Paella aux gambas dans sa poêle sur le feu, riz jaune au safran, cuillère en bois et torchon à carreaux bleus",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/16743489/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/36878063/" },
+      hero: {
+        photographer: "Marcelo Verfe",
+        url: "https://www.pexels.com/photo/paella-served-in-wok-16743489/",
+      },
+      detail: {
+        photographer: "Zakhar Vozhdaienko",
+        url: "https://www.pexels.com/photo/delicious-homemade-seafood-paella-in-pan-36878063/",
+      },
     },
   },
   datePublished: "2026-11-03",

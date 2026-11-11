@@ -205,8 +205,14 @@ export default defineRecipe({
     heroAlt: "Madeleines dorées alignées dans un plateau en bois garni de papier dentelle",
     detailAlt: "Gros plan sur des madeleines nature et leur bosse dorée, posées sur une plaque perforée",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/25067703/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/16521869/" },
+      hero: {
+        photographer: "Manass Rex",
+        url: "https://www.pexels.com/photo/selective-focus-of-madeleine-cakes-25067703/",
+      },
+      detail: {
+        photographer: "Hwanwoo Lee",
+        url: "https://www.pexels.com/photo/fresh-baked-madaleines-16521869/",
+      },
     },
   },
   datePublished: "2026-11-09",

@@ -205,8 +205,14 @@ export default defineRecipe({
     heroAlt: "Tranches épaisses de pain perdu dorées et caramélisées sur une assiette, une tasse de café derrière",
     detailAlt: "Deux tranches de pain perdu au sucre glace, avec des fraises et deux coupelles de confiture et de sirop",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/24343228/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/14613467/" },
+      hero: {
+        photographer: "Anderson Martins",
+        url: "https://www.pexels.com/photo/extreme-close-up-of-french-toast-and-coffee-24343228/",
+      },
+      detail: {
+        photographer: "Ivan Dražić",
+        url: "https://www.pexels.com/photo/sweet-french-toasts-14613467/",
+      },
     },
   },
   datePublished: "2026-11-08",

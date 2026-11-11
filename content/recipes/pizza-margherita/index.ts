@@ -235,8 +235,14 @@ export default defineRecipe({
       "Pizza margherita vue de dessus, bord gonflé tacheté de brun, mozzarella fondue et basilic ciselé, sur du bois blanc",
     detailAlt: "Gros plan d’une pizza margherita : mozzarella fondue en flaques blanches sur la tomate, feuilles de basilic",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/16890470/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/13310433/" },
+      hero: {
+        photographer: "Rene Strgar",
+        url: "https://www.pexels.com/photo/pizza-on-a-wooden-table-16890470/",
+      },
+      detail: {
+        photographer: "Rene Strgar",
+        url: "https://www.pexels.com/photo/close-up-shot-of-cheese-on-a-pizza-13310433/",
+      },
     },
   },
   datePublished: "2026-11-07",

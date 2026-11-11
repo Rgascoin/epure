@@ -195,8 +195,14 @@ export default defineRecipe({
       "Banana bread coupé en tranches sur une planche en bois, mie dorée piquée de banane, une banane jaune en arrière-plan",
     detailAlt: "Banana bread à la croûte brun foncé, une tranche coupée qui montre la mie moelleuse, sur du papier sulfurisé",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/33739660/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/5837001/" },
+      hero: {
+        photographer: "Kerri Sam",
+        url: "https://www.pexels.com/photo/delicious-homemade-banana-bread-slices-on-wooden-board-33739660/",
+      },
+      detail: {
+        photographer: "ROMAN ODINTSOV",
+        url: "https://www.pexels.com/photo/close-up-photo-of-sliced-bread-on-a-plate-5837001/",
+      },
     },
   },
   datePublished: "2026-11-09",

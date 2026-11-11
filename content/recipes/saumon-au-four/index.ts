@@ -197,8 +197,14 @@ export default defineRecipe({
     heroAlt: "Pavé de saumon au four laqué à la moutarde à l’ancienne, servi avec du riz vert, du basilic et un quartier de citron",
     detailAlt: "Plat en verre de pavés de saumon dorés sortant du four, avec des oignons et des pommes de terre",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/27672770/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/34624944/" },
+      hero: {
+        photographer: "Nadin Sh",
+        url: "https://www.pexels.com/photo/a-plate-with-salmon-and-rice-on-it-27672770/",
+      },
+      detail: {
+        photographer: "Ayşe Nur",
+        url: "https://www.pexels.com/photo/baked-salmon-with-onions-and-potatoes-in-oven-34624944/",
+      },
     },
   },
   datePublished: "2026-11-03",

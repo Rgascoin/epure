@@ -228,8 +228,8 @@ export default defineRecipe({
     heroAlt: "Poulet rôti doré dans un plat ovale blanc, entouré de haricots verts et de pommes de terre rôties",
     detailAlt: "Découpe d’un poulet rôti encore fumant, à la fourchette, la peau bien dorée",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/10821324/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/13897888/" },
+      hero: { photographer: "furkanfdemir", url: "https://www.pexels.com/photo/10821324/", source: "Pexels" },
+      detail: { photographer: "G N", url: "https://www.pexels.com/photo/13897888/", source: "Pexels" },
     },
   },
   datePublished: "2026-11-02",

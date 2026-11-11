@@ -191,8 +191,8 @@ export default defineRecipe({
     heroAlt: "Gratin dauphinois doré par endroits dans un plat émaillé à bord bleu, parsemé de brins de romarin",
     detailAlt: "Gratin dauphinois avant cuisson : rondelles de pommes de terre crues dans la crème, plat émaillé bleu",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/34985106/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/34985385/" },
+      hero: { photographer: "Golboo Maghooli", url: "https://www.pexels.com/photo/34985106/", source: "Pexels" },
+      detail: { photographer: "Golboo Maghooli", url: "https://www.pexels.com/photo/34985385/", source: "Pexels" },
     },
   },
   datePublished: "2026-11-03",

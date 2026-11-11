@@ -250,8 +250,14 @@ export default defineRecipe({
     heroAlt: "Poulet au curry dans un bol en terre, sauce orangée et crémeuse parsemée de coriandre fraîche",
     detailAlt: "Poulet au curry à la sauce au yaourt dans un bol blanc, un petit pot de sauce verte à côté",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/35629938/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/38400477/" },
+      hero: {
+        photographer: "Rahul Sonawane",
+        url: "https://www.pexels.com/photo/delicious-homemade-indian-chicken-curry-35629938/",
+      },
+      detail: {
+        photographer: "arijit dey",
+        url: "https://www.pexels.com/photo/indian-chicken-curry-with-fresh-cilantro-garnish-38400477/",
+      },
     },
   },
   datePublished: "2026-11-04",

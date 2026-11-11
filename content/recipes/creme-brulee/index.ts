@@ -205,8 +205,8 @@ export default defineRecipe({
     heroAlt: "Crème brûlée dans un ramequin blanc cannelé, caramel ambré et fruits rouges, sur une assiette en grès",
     detailAlt: "Chalumeau de cuisine caramélisant le sucre d’une crème brûlée dans un plat à anses",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/39440905/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/36295521/" },
+      hero: { photographer: "César O’neill", url: "https://www.pexels.com/photo/39440905/", source: "Pexels" },
+      detail: { photographer: "Mohamed Olwy", url: "https://www.pexels.com/photo/36295521/", source: "Pexels" },
     },
   },
   datePublished: "2026-11-06",

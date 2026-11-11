@@ -196,8 +196,14 @@ export default defineRecipe({
       "Carrés de brownie au chocolat fondant empilés dans une assiette, sur un napperon en dentelle, une théière orange derrière",
     detailAlt: "Deux carrés de brownie superposés, croûte brillante et craquelée, cœur dense et fondant",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/15033468/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/4655032/" },
+      hero: {
+        photographer: "Ana Lobo",
+        url: "https://www.pexels.com/photo/brownie-on-plate-15033468/",
+      },
+      detail: {
+        photographer: "Isabella Mendes",
+        url: "https://www.pexels.com/photo/brown-bread-on-the-table-4655032/",
+      },
     },
   },
   datePublished: "2026-11-09",

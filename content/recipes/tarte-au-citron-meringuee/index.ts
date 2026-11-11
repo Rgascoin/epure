@@ -245,8 +245,14 @@ export default defineRecipe({
     heroAlt: "Tarte au citron meringuée entamée, meringue en pointes dorées au chalumeau, crème au citron visible à la coupe",
     detailAlt: "Part de tarte au citron meringuée de profil : pâte sablée, crème au citron jaune et épaisse meringue dorée",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/37174478/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/17283922/" },
+      hero: {
+        photographer: "Unaizat Abdulgamidova",
+        url: "https://www.pexels.com/photo/golden-brown-meringue-topped-lemon-pie-slice-37174478/",
+      },
+      detail: {
+        photographer: "Valeria Boltneva",
+        url: "https://www.pexels.com/photo/close-up-of-cake-with-cream-17283922/",
+      },
     },
   },
   datePublished: "2026-11-06",

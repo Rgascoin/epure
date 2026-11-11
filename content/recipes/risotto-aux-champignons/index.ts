@@ -246,8 +246,14 @@ export default defineRecipe({
     detailAlt:
       "Risotto aux champignons parsemé de girolles et d’herbes ciselées, dans une assiette creuse blanche sur une table en bois",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/6406460/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/27298481/" },
+      hero: {
+        photographer: "Max Griss",
+        url: "https://www.pexels.com/photo/photo-of-risotto-on-a-black-and-white-plate-6406460/",
+      },
+      detail: {
+        photographer: "Nadin Sh",
+        url: "https://www.pexels.com/photo/a-bowl-of-rice-and-vegetables-on-a-table-27298481/",
+      },
     },
   },
   datePublished: "2026-11-05",

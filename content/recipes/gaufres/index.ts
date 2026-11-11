@@ -197,11 +197,11 @@ export default defineRecipe({
     detail: "une grille, jamais une pile",
   },
   images: {
-    heroAlt: "Gaufres rectangulaires dorées et croustillantes posées debout sur un petit support doré, fond blanc",
+    heroAlt: "Gaufres maison rectangulaires, dorées et croustillantes, sur une assiette à motifs bleus",
     detailAlt: "Sucre glace saupoudré sur deux gaufres dorées, sur fond noir",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/4963802/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/28919124/" },
+      hero: { photographer: "Mathias Reding", url: "https://www.pexels.com/photo/9281098/", source: "Pexels" },
+      detail: { photographer: "thecactusena", url: "https://www.pexels.com/photo/28919124/", source: "Pexels" },
     },
   },
   datePublished: "2026-11-09",
@@ -214,6 +214,6 @@ export default defineRecipe({
     ink: "#8A5316",
     tint: "#FAF1E5",
     deep: "#1B130A",
-    focus: "50% 64%",
+    focus: "55% 50%",
   },
 });

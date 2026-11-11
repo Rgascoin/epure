@@ -208,8 +208,14 @@ export default defineRecipe({
       "Gâteau au yaourt rond saupoudré de sucre glace, deux parts coupées montrant une mie jaune et aérée",
     detailAlt: "Tranche de gâteau au yaourt cuit en moule à cake, servie avec de la crème fouettée",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/37043950/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/36590625/" },
+      hero: {
+        photographer: "Konstantin Klimov",
+        url: "https://www.pexels.com/photo/delicious-freshly-baked-homemade-cake-37043950/",
+      },
+      detail: {
+        photographer: "Gu Ko",
+        url: "https://www.pexels.com/photo/homemade-loaf-cake-with-cream-on-a-plate-36590625/",
+      },
     },
   },
   datePublished: "2026-11-10",

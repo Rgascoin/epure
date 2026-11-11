@@ -263,8 +263,14 @@ export default defineRecipe({
       "Part de cheesecake new-yorkais sur base de biscuits, nappée de coulis de fruits rouges, de framboises et de myrtilles",
     detailAlt: "Part de cheesecake crémeux à la surface dorée, avec un trait de coulis de fruits rouges",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/37678304/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/32517227/" },
+      hero: {
+        photographer: "Gizem Gökce",
+        url: "https://www.pexels.com/photo/delicious-berry-topped-cheesecake-on-patio-table-37678304/",
+      },
+      detail: {
+        photographer: "Pablo Rodríguez",
+        url: "https://www.pexels.com/photo/delicious-basque-cheesecake-slice-with-jam-32517227/",
+      },
     },
   },
   datePublished: "2026-11-06",

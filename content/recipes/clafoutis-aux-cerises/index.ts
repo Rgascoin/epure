@@ -195,16 +195,27 @@ export default defineRecipe({
     sodium: 90,
   },
   annotations: {
-    hero: "il retombe en tiédissant, c’est normal",
+    hero: "servez-le tiède, pas brûlant",
     detail: "prévenez pour les noyaux",
   },
   images: {
     heroAlt:
-      "Clafoutis aux cerises doré et gonflé dans un plat rond en verre, en fin de cuisson dans le four",
-    detailAlt: "Cerises dans l’appareil à clafoutis encore cru, dans un plat rectangulaire blanc, juste avant d’enfourner",
+      "Part de clafoutis aux cerises dorée sur une assiette à liseré bleu, une cuillère à côté, le plat en verre derrière",
+    detailAlt:
+      "Clafoutis aux cerises vu de près, saupoudré de sucre glace, cerises entières dont quelques queues dépassent",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/32967718/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/26615687/" },
+      hero: {
+        photographer: "Popo le Chien",
+        url: "https://commons.wikimedia.org/wiki/File:Clafoutis_cerises.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
+      detail: {
+        photographer: "Orf3us",
+        url: "https://commons.wikimedia.org/wiki/File:Clafoutis_i_Telemarken.jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY-SA 4.0",
+      },
     },
   },
   datePublished: "2026-11-08",
@@ -217,6 +228,6 @@ export default defineRecipe({
     ink: "#8A1A2C",
     tint: "#F9ECEE",
     deep: "#1a0d10",
-    focus: "50% 55%",
+    focus: "95% 50%",
   },
 });

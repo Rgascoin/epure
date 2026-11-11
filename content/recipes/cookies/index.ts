@@ -222,8 +222,14 @@ export default defineRecipe({
       "Cookies aux pépites de chocolat dorés sur une plaque de cuisson, l’un cassé en deux sur son cœur fondant",
     detailAlt: "Pile de cookies aux pépites de chocolat et cookie cassé montrant le chocolat fondu",
     credits: {
-      hero: { photographer: "Pexels", url: "https://www.pexels.com/photo/20558711/" },
-      detail: { photographer: "Pexels", url: "https://www.pexels.com/photo/20558713/" },
+      hero: {
+        photographer: "Meryem Şahin",
+        url: "https://www.pexels.com/photo/homemade-cookies-on-a-tray-20558711/",
+      },
+      detail: {
+        photographer: "Meryem Şahin",
+        url: "https://www.pexels.com/photo/close-up-of-chocolate-chip-cookies-on-a-tray-20558713/",
+      },
     },
   },
   datePublished: "2026-11-08",
