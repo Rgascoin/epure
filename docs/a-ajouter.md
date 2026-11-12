@@ -28,8 +28,8 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 ## Entrées & soupes
 
 - [x] `soupe-de-legumes` · **Soupe de légumes** · hiver, automne · la soupe du soir, mixée ou en morceaux
-- [ ] `veloute-de-champignons` · **Velouté de champignons** · automne
-- [ ] `soupe-de-lentilles-corail` · **Soupe de lentilles corail** · hiver · végétalienne, cumin, lait de coco
+- [x] `veloute-de-champignons` · **Velouté de champignons** · automne
+- [x] `soupe-de-lentilles-corail` · **Soupe de lentilles corail** · hiver · végétalienne, cumin, lait de coco
 - [x] `minestrone` · **Minestrone** · automne · légumes, haricots, petites pâtes
 - [x] `salade-de-chevre-chaud` · **Salade de chèvre chaud** · automne, hiver
 - [ ] `poireaux-vinaigrette` · **Poireaux vinaigrette** · printemps, hiver
@@ -44,8 +44,8 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 
 ## Plats
 
-- [ ] `couscous` · **Couscous** · hiver · légumes, bouillon, semoule roulée ; version facile à la semoule précuite
-- [ ] `tajine-de-poulet-citron` · **Tajine de poulet aux citrons confits** · hiver
+- [x] `couscous` · **Couscous** · hiver · légumes, bouillon, semoule roulée ; version facile à la semoule précuite
+- [x] `tajine-de-poulet-citron` · **Tajine de poulet aux citrons confits** · hiver
 - [ ] `pates-au-pesto` · **Pâtes au pesto** · ete · pesto au mortier ou au mixeur
 - [x] `pates-sauce-tomate` · **Pâtes à la sauce tomate** · · la sauce tomate de base, 30 minutes
 - [x] `gratin-de-pates` · **Gratin de pâtes** · hiver · béchamel ; version facile à la crème
@@ -95,7 +95,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 
 ## Desserts
 
-- [ ] `tarte-au-chocolat` · **Tarte au chocolat** · saint-valentin · version facile à la pâte du commerce
+- [x] `tarte-au-chocolat` · **Tarte au chocolat** · saint-valentin · version facile à la pâte du commerce
 - [x] `fondant-au-chocolat` · **Fondant au chocolat cœur coulant** · saint-valentin · différent du gâteau au chocolat : individuel, 10 minutes de four
 - [ ] `profiteroles` · **Profiteroles** · · pâte à choux, sauce chocolat
 - [ ] `eclairs-au-chocolat` · **Éclairs au chocolat** · · exigeant

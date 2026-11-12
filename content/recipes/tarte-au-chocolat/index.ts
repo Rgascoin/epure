@@ -268,10 +268,12 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Part de tarte au chocolat sur une assiette à motifs bleus, ganache lisse sur un fond de pâte sablée dorée",
-    detailAlt:
-      "Gros plan d’une tarte au chocolat, ganache brillante bordée de crème au chocolat pochée sur la pâte",
+    detailAlt: "Gros plan d’une tarte au chocolat, ganache brillante bordée de crème au chocolat pochée sur la pâte",
     credits: {
-      hero: { photographer: "Canto Photography", url: "https://www.pexels.com/photo/slice-of-cake-on-a-plate-7679508/" },
+      hero: {
+        photographer: "Canto Photography",
+        url: "https://www.pexels.com/photo/slice-of-cake-on-a-plate-7679508/",
+      },
       detail: {
         photographer: "Nano Erdozain",
         url: "https://www.pexels.com/photo/cake-with-chocolate-cream-20009382/",
