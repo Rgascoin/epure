@@ -186,8 +186,7 @@ export default defineRecipe({
   ],
   storage:
     "Couverte d’un film, elle se garde 3 jours au réfrigérateur, la pâte ramollit un peu dès le deuxième jour. Sortez-la 30 minutes avant de servir. Elle se congèle mal : la crème rend de l’eau en décongelant.",
-  pairing:
-    "Une cuillerée de crème fraîche épaisse ou de crème fouettée peu sucrée, et un thé noir ou un café.",
+  pairing: "Une cuillerée de crème fraîche épaisse ou de crème fouettée peu sucrée, et un thé noir ou un café.",
   easy: {
     shortcut: "pâte brisée pur beurre du commerce",
     note: "Le rouleau fait gagner le sablage et 30 minutes de repos, et le reste ne change pas. La pâte achetée est plus fine et colore plus vite : surveillez la cuisson à blanc. Prenez-la pur beurre, une pâte à l’huile paraît fade sous la crème épicée.",

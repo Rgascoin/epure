@@ -176,8 +176,7 @@ export default defineRecipe({
   ],
   storage:
     "Mettez-la au réfrigérateur dans les 2 heures, dans une boîte fermée : elle se garde 3 jours, les pommes de terre à part. Choucroute et viandes se congèlent 3 mois, sans les pommes de terre, et ne se recongèlent pas. Réchauffez-les couvertes à feu doux 20 à 30 minutes avec 100 ml de bouillon, jusqu’à ce que les viandes soient brûlantes à cœur.",
-  pairing:
-    "Le même riesling sec que dans la cocotte, ou un sylvaner d’Alsace. Une bière blonde va très bien aussi.",
+  pairing: "Le même riesling sec que dans la cocotte, ou un sylvaner d’Alsace. Une bière blonde va très bien aussi.",
   faq: [
     {
       q: "Faut-il rincer la choucroute crue ?",

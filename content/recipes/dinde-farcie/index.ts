@@ -79,7 +79,7 @@ export default defineRecipe({
           fixed: true,
         },
         { qty: 2, unit: "cac", name: "sel fin", fixed: true },
-        { qty: 10, unit: "g", name: "beurre pour le plat de farce", fixed: true },
+        { qty: 10, unit: "g", name: "beurre", note: "pour le plat de farce", fixed: true },
         { qty: 1, name: "oignon", plural: "oignons", note: "en quartiers", step: 1, fixed: true },
         { qty: 50, unit: "g", name: "beurre mou", fixed: true },
         { qty: 20, unit: "cl", name: "eau", fixed: true },

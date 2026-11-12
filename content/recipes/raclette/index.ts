@@ -8,7 +8,7 @@ export default defineRecipe({
   seoTitle: "Raclette : les quantités par personne et le bon déroulé",
   tagline: "Le fromage sort du frigo en premier.",
   description:
-    "La raclette pour 6 : 200 g de fromage, 300 g de pommes de terre et 100 g de charcuterie par personne, cuites et servies en 45 minutes, avec ou sans appareil.",
+    "La raclette pour 6 : 200 g de fromage, 300 g de pommes de terre et 100 g de charcuterie par personne, prête en 45 minutes, avec ou sans appareil.",
   summary:
     "Pour 6 personnes, comptez 1,2 kg de fromage à raclette (200 g chacun), 1,8 kg de pommes de terre à chair ferme et 600 g de charcuterie. Sortez le fromage du réfrigérateur 30 minutes à 1 heure avant, cuisez les pommes de terre dans leur peau 20 à 25 minutes à l’eau salée, gardez-les chaudes sous un torchon, puis faites fondre chaque tranche 3 à 4 minutes dans sa coupelle. Il faut 45 minutes avant de passer à table, dont 15 minutes de travail.",
   intro: [
@@ -225,7 +225,8 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Raclette dans l’assiette : fromage fondu et doré sur les bords, pommes de terre en robe des champs, cornichons et petits oignons",
-    detailAlt: "Tranche de fromage à raclette fondue sur du jambon cru, avec des tranches de saucisson et de la salade verte",
+    detailAlt:
+      "Tranche de fromage à raclette fondue sur du jambon cru, avec des tranches de saucisson et de la salade verte",
     credits: {
       hero: {
         photographer: "Ka23 13",

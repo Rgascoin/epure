@@ -36,11 +36,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Automne", "Hiver"],
   tags: ["halloween", "automne", "hiver"],
-  equipment: [
-    "grand couteau de chef",
-    "faitout de 4 l avec couvercle",
-    "mixeur plongeant ou blender",
-  ],
+  equipment: ["grand couteau de chef", "faitout de 4 l avec couvercle", "mixeur plongeant ou blender"],
   ingredients: [
     {
       title: "La soupe",
