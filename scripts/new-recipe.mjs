@@ -7,6 +7,7 @@
  *   pnpm recipes:new <slug> [--category Plat] [--tags hiver,noel]
  *
  * Run `pnpm recipes:images` first (or right after) so hero.jpg and detail.jpg exist.
+ * The recipe starts as a draft (a .draft file): `pnpm recipes:release` publishes it.
  */
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -133,6 +134,8 @@ export default defineRecipe({
 });
 `;
 writeFileSync(file, template);
+// New recipes start as drafts: checked like the others, left out of production builds.
+writeFileSync(join(dir, ".draft"), "");
 console.log(`Créé : ${file}`);
 if (!existsSync(join(dir, "hero.jpg")))
   console.log(

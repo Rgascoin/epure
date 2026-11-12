@@ -94,6 +94,10 @@ pnpm recipes:todo                                                        # tient
 
 Le build de production refuse une recette qui enfreint une règle obligatoire. Un fichier vide `.draft` dans le dossier d’une recette en fait un brouillon : vérifiée comme les autres, elle reste hors du site en production jusqu’à ce qu’on supprime le fichier (`pnpm build` lance `recipes:index --skip-drafts`). Le registre, les catégories, les collections, la recherche, le sitemap, le flux RSS, `llms.txt`, les images Open Graph et Pinterest, et le JSON-LD suivent automatiquement.
 
+### Publier un lot
+
+[`docs/publier-un-lot.md`](docs/publier-un-lot.md) décrit le circuit complet, de la liste de travail à la production, pour un agent autonome comme pour une personne. `pnpm recipes:release <slug>…` valide un lot de brouillons : tests, lint, types, build de production, pages, audit d’accessibilité (`pnpm a11y`) et planche des photos (`pnpm recipes:sheet`).
+
 ### Version facile
 
 Une recette peut proposer une **version facile** (`easy`) : le même plat avec un produit tout prêt (pâte à pizza, pâte brisée, bouillon…). Un sélecteur « Fait maison / Version facile » bascule les ingrédients, les étapes, les minuteurs et le mode cuisine ; le lien `?version=facile` se partage, la recherche a un filtre « Version facile » et la version Markdown la reprend.

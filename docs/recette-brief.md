@@ -17,7 +17,7 @@ Regarder la planche (une seule image) pour choisir. La photo principale montre *
 
 ## Brouillons
 
-Un fichier vide `.draft` dans le dossier de la recette en fait un brouillon : elle se vérifie comme les autres (`pnpm recipes:check`), mais le build de production l’écarte. On supprime `.draft` quand la recette est prête à publier.
+`pnpm recipes:new` crée la recette en brouillon (un fichier vide `.draft` dans son dossier) : elle se vérifie comme les autres (`pnpm recipes:check`), mais le build de production l’écarte. On supprime `.draft` quand la recette est prête à publier.
 
 ## La voix
 

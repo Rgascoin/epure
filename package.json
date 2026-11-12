@@ -17,7 +17,10 @@
     "recipes:photos": "node scripts/photo-search.mjs",
     "recipes:new": "node scripts/new-recipe.mjs",
     "indexnow": "node scripts/indexnow.mjs",
-    "recipes:todo": "node scripts/backlog.mjs"
+    "recipes:todo": "node scripts/backlog.mjs",
+    "recipes:release": "bash scripts/release-batch.sh",
+    "recipes:sheet": "node scripts/photo-sheet.mjs",
+    "a11y": "node scripts/a11y-audit.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -33,6 +36,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "axe-core": "4.10.3",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
     "prettier": "^3.9.10",
