@@ -36,12 +36,7 @@ export default defineRecipe({
   cost: "€€",
   season: ["Automne", "Hiver"],
   tags: ["automne", "hiver"],
-  equipment: [
-    "grande poêle de 28 cm",
-    "casserole ou cocotte de 3 l",
-    "mixeur plongeant ou blender",
-    "spatule en bois",
-  ],
+  equipment: ["grande poêle de 28 cm", "casserole ou cocotte de 3 l", "mixeur plongeant ou blender", "spatule en bois"],
   ingredients: [
     {
       title: "Le velouté",

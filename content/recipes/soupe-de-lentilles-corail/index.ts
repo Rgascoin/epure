@@ -36,12 +36,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Automne", "Hiver"],
   tags: ["hiver"],
-  equipment: [
-    "passoire fine",
-    "casserole à fond épais de 3 l",
-    "mixeur plongeant",
-    "petite casserole pour l’huile",
-  ],
+  equipment: ["passoire fine", "casserole à fond épais de 3 l", "mixeur plongeant", "petite casserole pour l’huile"],
   ingredients: [
     {
       title: "La soupe",

@@ -212,8 +212,7 @@ export default defineRecipe({
   },
   annotations: { hero: "le couvercle se soulève à table", detail: "l’écorce confite, pas la pulpe" },
   images: {
-    heroAlt:
-      "Tajine de poulet aux citrons confits et olives vertes dans un plat en terre bleu, couvercle soulevé",
+    heroAlt: "Tajine de poulet aux citrons confits et olives vertes dans un plat en terre bleu, couvercle soulevé",
     detailAlt:
       "Tajine de poulet, quartiers de citron confit et olives vertes dans un plat émaillé violet, couvercle entrouvert",
     credits: {
