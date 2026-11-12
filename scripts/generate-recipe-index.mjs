@@ -35,7 +35,8 @@ export const draftsIncluded = ${!skipDrafts};
 `;
 
 writeFileSync(join(dir, "index.ts"), out);
+const plural = drafts.length > 1 ? "s" : "";
 const note = drafts.length
-  ? ` (${drafts.length} brouillon${drafts.length > 1 ? "s" : ""} ${skipDrafts ? "écartés" : "inclus"})`
+  ? ` (${drafts.length} brouillon${plural} ${skipDrafts ? `écarté${plural}` : "inclus"})`
   : "";
 console.log(`content/recipes/index.ts : ${slugs.length} recettes${note}`);
