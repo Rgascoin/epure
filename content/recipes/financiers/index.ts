@@ -168,8 +168,7 @@ export default defineRecipe({
   ],
   storage:
     "3 jours dans une boîte hermétique, à température ambiante. 2 mois au congélateur, emballés un par un ; 10 minutes au four à 150 °C leur rendent du croustillant. La pâte crue se garde 24 h au réfrigérateur, pas plus, à cause des blancs crus.",
-  pairing:
-    "Un café, un thé noir, ou à côté d’une salade de fruits ou d’une glace à la vanille pour le dessert.",
+  pairing: "Un café, un thé noir, ou à côté d’une salade de fruits ou d’une glace à la vanille pour le dessert.",
   faq: [
     {
       q: "Faut-il faire reposer la pâte à financiers ?",
