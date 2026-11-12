@@ -15,6 +15,10 @@ pnpm recipes:todo                                                 # coche la lis
 
 Regarder la planche (une seule image) pour choisir. La photo principale montre **ce plat-là**, fini, net, sujet centré (recadrage en arche portrait). Celle de détail montre une texture, une part coupée ou un geste. Si rien n’est fidèle, chercher en anglais (`--en`) ou avec une autre formulation ; ne jamais publier une photo d’un autre plat. Vérifier le recadrage en ouvrant `public/images/recipes/<slug>/1x1.jpg`.
 
+## Brouillons
+
+Un fichier vide `.draft` dans le dossier de la recette en fait un brouillon : elle se vérifie comme les autres (`pnpm recipes:check`), mais le build de production l’écarte. On supprime `.draft` quand la recette est prête à publier.
+
 ## La voix
 
 Un cuisinier qui explique à un ami : « vous » pour le lecteur, « on » pour nous. Concret, chaleureux, un peu pince-sans-rire. Phrases de longueurs variées.
