@@ -156,7 +156,7 @@ export default defineRecipe({
     },
     {
       title: "Poireaux snackés",
-      text: "Après l’égouttage, fendez les tronçons en deux et marquez-les 2 minutes côté coupé dans une poêle chaude huilée, avant de les assaisonner. Ils prennent un goût plus sucré, presque grillé.",
+      text: "Après l’égouttage, taillez les tronçons et marquez-les 2 minutes côté coupé dans une poêle chaude huilée, avant de les assaisonner. Ils prennent un goût plus sucré, presque grillé.",
     },
   ],
   storage:

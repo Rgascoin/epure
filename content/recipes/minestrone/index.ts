@@ -91,7 +91,7 @@ export default defineRecipe({
         },
         {
           title: "Cuire les pâtes dedans",
-          text: "Rincez les haricots et ajoutez-les. Écrasez une louche de légumes contre la paroi pour lier la soupe. Remontez à ébullition, versez les pâtes et laissez cuire à petits bouillons 10 minutes environ, le temps du paquet plus une minute, en raclant le fond toutes les deux minutes. Trop épaisse, la soupe accepte un verre d’eau bouillante.",
+          text: "Rincez les haricots et ajoutez-les. Écrasez une louche de légumes contre la paroi pour lier la soupe. Remontez à ébullition, versez les pâtes et laissez cuire à petits bouillons 10 minutes environ, le temps du paquet plus une minute, en raclant le fond toutes les deux minutes. Si elle devient trop épaisse, ajoutez 10 cl d’eau bouillante.",
           timer: { minutes: 10, label: "Pâtes dans la soupe" },
           tip: "Les pâtes attachent au fond dès qu’on les oublie : gardez la cuillère à portée de main.",
         },
