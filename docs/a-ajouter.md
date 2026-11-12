@@ -31,7 +31,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `veloute-de-champignons` · **Velouté de champignons** · automne
 - [ ] `soupe-de-lentilles-corail` · **Soupe de lentilles corail** · hiver · végétalienne, cumin, lait de coco
 - [ ] `minestrone` · **Minestrone** · automne · légumes, haricots, petites pâtes
-- [ ] `salade-de-chevre-chaud` · **Salade de chèvre chaud** · automne, hiver
+- [x] `salade-de-chevre-chaud` · **Salade de chèvre chaud** · automne, hiver
 - [ ] `poireaux-vinaigrette` · **Poireaux vinaigrette** · printemps, hiver
 - [ ] `terrine-de-campagne` · **Terrine de campagne** · pique-nique · cuisson à cœur 70 °C, repos 2 jours
 - [ ] `oeufs-cocotte` · **Œufs cocotte** · · jaune coulant, sécurité des œufs
@@ -47,7 +47,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `couscous` · **Couscous** · hiver · légumes, bouillon, semoule roulée ; version facile à la semoule précuite
 - [ ] `tajine-de-poulet-citron` · **Tajine de poulet aux citrons confits** · hiver
 - [ ] `pates-au-pesto` · **Pâtes au pesto** · ete · pesto au mortier ou au mixeur
-- [ ] `pates-sauce-tomate` · **Pâtes à la sauce tomate** · · la sauce tomate de base, 30 minutes
+- [x] `pates-sauce-tomate` · **Pâtes à la sauce tomate** · · la sauce tomate de base, 30 minutes
 - [ ] `gratin-de-pates` · **Gratin de pâtes** · hiver · béchamel ; version facile à la crème
 - [ ] `burger-maison` · **Burger maison** · barbecue, ete · cuisson du steak haché à cœur ; version facile aux pains du commerce
 - [ ] `boeuf-carottes` · **Bœuf carottes** · hiver · plus simple que le bourguignon, sans vin
@@ -81,7 +81,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 ## Accompagnements
 
 - [ ] `frites-maison` · **Frites maison** · · double cuisson 150 °C puis 180 °C ; version au four
-- [ ] `riz-pilaf` · **Riz pilaf** · · nacrer, proportion d’eau, repos
+- [x] `riz-pilaf` · **Riz pilaf** · · nacrer, proportion d’eau, repos
 - [ ] `haricots-verts` · **Haricots verts à l’ail** · ete · blanchir, rafraîchir
 - [ ] `gratin-de-courgettes` · **Gratin de courgettes** · ete · courgettes dégorgées
 - [ ] `gratin-de-chou-fleur` · **Gratin de chou-fleur** · hiver · béchamel
@@ -96,7 +96,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 ## Desserts
 
 - [ ] `tarte-au-chocolat` · **Tarte au chocolat** · saint-valentin · version facile à la pâte du commerce
-- [ ] `fondant-au-chocolat` · **Fondant au chocolat cœur coulant** · saint-valentin · différent du gâteau au chocolat : individuel, 10 minutes de four
+- [x] `fondant-au-chocolat` · **Fondant au chocolat cœur coulant** · saint-valentin · différent du gâteau au chocolat : individuel, 10 minutes de four
 - [ ] `profiteroles` · **Profiteroles** · · pâte à choux, sauce chocolat
 - [ ] `eclairs-au-chocolat` · **Éclairs au chocolat** · · exigeant
 - [ ] `panna-cotta` · **Panna cotta** · printemps · gélatine, coulis
@@ -116,7 +116,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 ## Goûters & petits-déjeuners
 
 - [ ] `muffins-aux-myrtilles` · **Muffins aux myrtilles** · · méthode des muffins : on ne mélange pas trop
-- [ ] `cake-marbre` · **Cake marbré** · fete-des-grands-meres
+- [x] `cake-marbre` · **Cake marbré** · fete-des-grands-meres
 - [ ] `financiers` · **Financiers** · · beurre noisette, blancs
 - [ ] `canneles` · **Cannelés** · · moules, repos 24 h, cuisson en deux temps
 - [ ] `chouquettes` · **Chouquettes** · · pâte à choux, sucre perlé
