@@ -16,18 +16,18 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `feuilletes-apero` · **Feuilletés apéritifs** · apero, noel · pâte feuilletée du commerce, 4 garnitures
 - [x] `rillettes-de-saumon` · **Rillettes de saumon** · apero, noel, nouvel-an · saumon frais et fumé
 - [x] `galette-des-rois-briochee` · **Gâteau des rois brioché** · epiphanie · la version du Sud, couronne aux fruits confits
-- [ ] `soupe-de-potiron` · **Soupe de potiron** · halloween, automne · plus simple que le velouté, sans crème
-- [ ] `tarte-au-potiron` · **Tarte au potiron** · halloween, automne · façon pumpkin pie, épices
-- [ ] `cassoulet` · **Cassoulet** · hiver · version maison réaliste (confit du commerce en variante)
-- [ ] `choucroute` · **Choucroute garnie** · hiver · cuisson du chou, ordre des viandes
-- [ ] `raclette` · **Raclette** · hiver, montagne · plus un guide de quantités et d’accompagnements qu’une recette
-- [ ] `dinde-farcie` · **Dinde farcie** · noel · farce, temps par kilo, 74 °C
-- [ ] `veloute-de-chataignes` · **Velouté de châtaignes** · noel, hiver · entrée de fête
+- [x] `soupe-de-potiron` · **Soupe de potiron** · halloween, automne · plus simple que le velouté, sans crème
+- [x] `tarte-au-potiron` · **Tarte au potiron** · halloween, automne · façon pumpkin pie, épices
+- [x] `cassoulet` · **Cassoulet** · hiver · version maison réaliste (confit du commerce en variante)
+- [x] `choucroute` · **Choucroute garnie** · hiver · cuisson du chou, ordre des viandes
+- [x] `raclette` · **Raclette** · hiver, montagne · plus un guide de quantités et d’accompagnements qu’une recette
+- [x] `dinde-farcie` · **Dinde farcie** · noel · farce, temps par kilo, 74 °C
+- [x] `veloute-de-chataignes` · **Velouté de châtaignes** · noel, hiver · entrée de fête
 - [x] `truffes-au-chocolat` · **Truffes au chocolat** · noel · ganache, enrobage cacao
 
 ## Entrées & soupes
 
-- [ ] `soupe-de-legumes` · **Soupe de légumes** · hiver, automne · la soupe du soir, mixée ou en morceaux
+- [x] `soupe-de-legumes` · **Soupe de légumes** · hiver, automne · la soupe du soir, mixée ou en morceaux
 - [ ] `veloute-de-champignons` · **Velouté de champignons** · automne
 - [ ] `soupe-de-lentilles-corail` · **Soupe de lentilles corail** · hiver · végétalienne, cumin, lait de coco
 - [ ] `minestrone` · **Minestrone** · automne · légumes, haricots, petites pâtes
@@ -184,3 +184,6 @@ Cocher à la main une fois la photo changée (`pnpm recipes:photos`, puis `pnpm 
 - [ ] `sables-de-noel` · la photo principale montre des biscuits au pain d’épices glacés
 - [ ] `oeufs-mimosa` · œufs farcis à la poche, pas de jaune tamisé
 - [ ] `legumes-rotis-au-four` · légumes différents de ceux de la recette
+- [ ] `veloute-de-chataignes` · velouté châtaigne-panais sur fond froid ; détail = châtaignes crues
+- [ ] `choucroute` · grande poêle de marché avec un jarret absent de la recette
+- [ ] `tarte-au-potiron` · photo principale en 2000 × 1333, peu de profondeur
