@@ -47,7 +47,14 @@ export default defineRecipe({
         { qty: 1, unit: "cas", name: "concentré de tomate", step: 1 },
         { qty: 1, unit: "cas", name: "farine", step: 1 },
         { qty: 1000, unit: "ml", name: "bouillon de bœuf", note: "chaud, maison ou d’un cube peu salé", step: 100 },
-        { qty: 1, name: "bouquet garni", plural: "bouquets garnis", note: "thym, laurier, queues de persil", step: 1, fixed: true },
+        {
+          qty: 1,
+          name: "bouquet garni",
+          plural: "bouquets garnis",
+          note: "thym, laurier, queues de persil",
+          step: 1,
+          fixed: true,
+        },
         { name: "sel fin" },
         { name: "poivre noir" },
       ],
@@ -55,7 +62,14 @@ export default defineRecipe({
     {
       title: "Les carottes",
       items: [
-        { qty: 1200, unit: "g", name: "carotte", plural: "carottes", note: "en tronçons de 5 cm, les grosses fendues en deux", step: 100 },
+        {
+          qty: 1200,
+          unit: "g",
+          name: "carotte",
+          plural: "carottes",
+          note: "en tronçons de 5 cm, les grosses fendues en deux",
+          step: 100,
+        },
         { qty: 4, unit: "brin", name: "persil plat", step: 1 },
       ],
     },

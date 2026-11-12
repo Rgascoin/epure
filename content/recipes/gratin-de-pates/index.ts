@@ -35,11 +35,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Automne", "Hiver"],
   tags: ["hiver"],
-  equipment: [
-    "plat à gratin de 20 × 30 cm",
-    "grande casserole de 4 l et une passoire",
-    "casserole moyenne et fouet",
-  ],
+  equipment: ["plat à gratin de 20 × 30 cm", "grande casserole de 4 l et une passoire", "casserole moyenne et fouet"],
   ingredients: [
     {
       title: "Les pâtes",
@@ -252,7 +248,8 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Gratin de pâtes dans un plat en céramique, la croûte de fromage dorée et tachée de brun, parsemée de persil",
-    detailAlt: "Gratin de pâtes à la béchamel servi dans un plat rond blanc, sur une serviette, avec cuillère et fourchette",
+    detailAlt:
+      "Gratin de pâtes à la béchamel servi dans un plat rond blanc, sur une serviette, avec cuillère et fourchette",
     credits: {
       hero: {
         photographer: "Hilal Diken",
