@@ -12,10 +12,10 @@ On dépile cette liste de haut en bas. Chaque catégorie est triée par priorit�
 
 Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant la date.
 
-- [ ] `blinis` · **Blinis maison** · apero, noel, nouvel-an · nourrit « Apéro des fêtes »
-- [ ] `feuilletes-apero` · **Feuilletés apéritifs** · apero, noel · pâte feuilletée du commerce, 4 garnitures
-- [ ] `rillettes-de-saumon` · **Rillettes de saumon** · apero, noel, nouvel-an · saumon frais et fumé
-- [ ] `galette-des-rois-briochee` · **Gâteau des rois brioché** · epiphanie · la version du Sud, couronne aux fruits confits
+- [x] `blinis` · **Blinis maison** · apero, noel, nouvel-an · nourrit « Apéro des fêtes »
+- [x] `feuilletes-apero` · **Feuilletés apéritifs** · apero, noel · pâte feuilletée du commerce, 4 garnitures
+- [x] `rillettes-de-saumon` · **Rillettes de saumon** · apero, noel, nouvel-an · saumon frais et fumé
+- [x] `galette-des-rois-briochee` · **Gâteau des rois brioché** · epiphanie · la version du Sud, couronne aux fruits confits
 - [ ] `soupe-de-potiron` · **Soupe de potiron** · halloween, automne · plus simple que le velouté, sans crème
 - [ ] `tarte-au-potiron` · **Tarte au potiron** · halloween, automne · façon pumpkin pie, épices
 - [ ] `cassoulet` · **Cassoulet** · hiver · version maison réaliste (confit du commerce en variante)
@@ -23,7 +23,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `raclette` · **Raclette** · hiver, montagne · plus un guide de quantités et d’accompagnements qu’une recette
 - [ ] `dinde-farcie` · **Dinde farcie** · noel · farce, temps par kilo, 74 °C
 - [ ] `veloute-de-chataignes` · **Velouté de châtaignes** · noel, hiver · entrée de fête
-- [ ] `truffes-au-chocolat` · **Truffes au chocolat** · noel · ganache, enrobage cacao
+- [x] `truffes-au-chocolat` · **Truffes au chocolat** · noel · ganache, enrobage cacao
 
 ## Entrées & soupes
 
