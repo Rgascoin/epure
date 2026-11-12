@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm recipes:index && next dev",
-    "build": "pnpm recipes:index && next build",
+    "build": "pnpm recipes:index --skip-drafts && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "pnpm recipes:index && next typegen && tsc --noEmit",

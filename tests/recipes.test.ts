@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { allRecipes } from "@/content/recipes";
+import { allRecipes, draftsIncluded } from "@/content/recipes";
 import { auditRecipe } from "@/lib/recipe-rules";
 
 /**
@@ -39,6 +39,11 @@ describe.each(allRecipes.map((r) => [r.slug, r] as const))("%s", (slug, recipe) 
 it("chaque dossier de recette est référencé dans l’index", () => {
   const folders = readdirSync(join(root, "content/recipes"), { withFileTypes: true })
     .filter((d) => d.isDirectory())
-    .map((d) => d.name);
+    .map((d) => d.name)
+    // A draft being started may not have its index.ts yet; drafts are left out of production indexes.
+    .filter((name) => {
+      const isDraft = existsSync(join(root, "content/recipes", name, ".draft"));
+      return !isDraft || (draftsIncluded && existsSync(join(root, "content/recipes", name, "index.ts")));
+    });
   expect(new Set(folders)).toEqual(new Set(allRecipes.map((r) => r.slug)));
 });

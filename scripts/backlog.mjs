@@ -4,7 +4,7 @@
  *
  *   pnpm recipes:todo [--next 10]
  *
- * - dish lines (`- [ ] \`slug\` …`) are ticked when content/recipes/<slug>/index.ts exists;
+ * - dish lines (`- [ ] \`slug\` …`) are ticked when content/recipes/<slug>/index.ts exists and is not a draft;
  * - in « Versions faciles », when that recipe has an `easy:` block;
  * - « Photos à remplacer » and other lines without a slug stay manual.
  */
@@ -17,6 +17,7 @@ const args = process.argv.slice(2);
 const next = Number(args[args.indexOf("--next") + 1]) || 10;
 
 const recipeFile = (slug) => join(root, "content/recipes", slug, "index.ts");
+const published = (slug) => existsSync(recipeFile(slug)) && !existsSync(join(root, "content/recipes", slug, ".draft"));
 let section = "";
 const stats = new Map();
 const todo = [];
@@ -30,8 +31,8 @@ const lines = readFileSync(file, "utf8")
     if (!item || section.startsWith("Photos")) return line;
     const [, mark, slug, rest] = item;
     const done = section.startsWith("Versions faciles")
-      ? existsSync(recipeFile(slug)) && /\n\s*easy: \{/.test(readFileSync(recipeFile(slug), "utf8"))
-      : existsSync(recipeFile(slug));
+      ? published(slug) && /\n\s*easy: \{/.test(readFileSync(recipeFile(slug), "utf8"))
+      : published(slug);
     const s = stats.get(section) ?? { done: 0, total: 0 };
     s.total += 1;
     s.done += done ? 1 : 0;

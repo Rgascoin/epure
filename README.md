@@ -92,7 +92,7 @@ pnpm recipes:check -t tartiflette                                        # liste
 pnpm recipes:todo                                                        # tient à jour docs/a-ajouter.md (plats, catégories, versions faciles, photos)
 ```
 
-Le build de production refuse une recette qui enfreint une règle obligatoire. Le registre, les catégories, les collections, la recherche, le sitemap, le flux RSS, `llms.txt`, les images Open Graph et Pinterest, et le JSON-LD suivent automatiquement.
+Le build de production refuse une recette qui enfreint une règle obligatoire. Un fichier vide `.draft` dans le dossier d’une recette en fait un brouillon : vérifiée comme les autres, elle reste hors du site en production jusqu’à ce qu’on supprime le fichier (`pnpm build` lance `recipes:index --skip-drafts`). Le registre, les catégories, les collections, la recherche, le sitemap, le flux RSS, `llms.txt`, les images Open Graph et Pinterest, et le JSON-LD suivent automatiquement.
 
 ### Version facile
 
