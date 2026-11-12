@@ -30,7 +30,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `soupe-de-legumes` · **Soupe de légumes** · hiver, automne · la soupe du soir, mixée ou en morceaux
 - [ ] `veloute-de-champignons` · **Velouté de champignons** · automne
 - [ ] `soupe-de-lentilles-corail` · **Soupe de lentilles corail** · hiver · végétalienne, cumin, lait de coco
-- [ ] `minestrone` · **Minestrone** · automne · légumes, haricots, petites pâtes
+- [x] `minestrone` · **Minestrone** · automne · légumes, haricots, petites pâtes
 - [x] `salade-de-chevre-chaud` · **Salade de chèvre chaud** · automne, hiver
 - [ ] `poireaux-vinaigrette` · **Poireaux vinaigrette** · printemps, hiver
 - [ ] `terrine-de-campagne` · **Terrine de campagne** · pique-nique · cuisson à cœur 70 °C, repos 2 jours
@@ -48,9 +48,9 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `tajine-de-poulet-citron` · **Tajine de poulet aux citrons confits** · hiver
 - [ ] `pates-au-pesto` · **Pâtes au pesto** · ete · pesto au mortier ou au mixeur
 - [x] `pates-sauce-tomate` · **Pâtes à la sauce tomate** · · la sauce tomate de base, 30 minutes
-- [ ] `gratin-de-pates` · **Gratin de pâtes** · hiver · béchamel ; version facile à la crème
+- [x] `gratin-de-pates` · **Gratin de pâtes** · hiver · béchamel ; version facile à la crème
 - [ ] `burger-maison` · **Burger maison** · barbecue, ete · cuisson du steak haché à cœur ; version facile aux pains du commerce
-- [ ] `boeuf-carottes` · **Bœuf carottes** · hiver · plus simple que le bourguignon, sans vin
+- [x] `boeuf-carottes` · **Bœuf carottes** · hiver · plus simple que le bourguignon, sans vin
 - [ ] `navarin-d-agneau` · **Navarin d’agneau** · paques, printemps · légumes nouveaux
 - [ ] `osso-buco` · **Osso buco** · hiver · gremolata
 - [ ] `porc-au-caramel` · **Porc au caramel** · · cuisine vietnamienne, caramel amer
@@ -80,7 +80,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 
 ## Accompagnements
 
-- [ ] `frites-maison` · **Frites maison** · · double cuisson 150 °C puis 180 °C ; version au four
+- [x] `frites-maison` · **Frites maison** · · double cuisson 150 °C puis 180 °C ; version au four
 - [x] `riz-pilaf` · **Riz pilaf** · · nacrer, proportion d’eau, repos
 - [ ] `haricots-verts` · **Haricots verts à l’ail** · ete · blanchir, rafraîchir
 - [ ] `gratin-de-courgettes` · **Gratin de courgettes** · ete · courgettes dégorgées
@@ -115,7 +115,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 
 ## Goûters & petits-déjeuners
 
-- [ ] `muffins-aux-myrtilles` · **Muffins aux myrtilles** · · méthode des muffins : on ne mélange pas trop
+- [x] `muffins-aux-myrtilles` · **Muffins aux myrtilles** · · méthode des muffins : on ne mélange pas trop
 - [x] `cake-marbre` · **Cake marbré** · fete-des-grands-meres
 - [ ] `financiers` · **Financiers** · · beurre noisette, blancs
 - [ ] `canneles` · **Cannelés** · · moules, repos 24 h, cuisson en deux temps

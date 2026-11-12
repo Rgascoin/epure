@@ -199,8 +199,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Muffins aux myrtilles dans des caissettes en papier sulfurisé, le dessus doré et bombé, piqué de myrtilles",
-    detailAlt:
-      "Muffins aux myrtilles sur une grille, l’un coupé en deux montrant une mie pâle parsemée de myrtilles",
+    detailAlt: "Muffins aux myrtilles sur une grille, l’un coupé en deux montrant une mie pâle parsemée de myrtilles",
     credits: {
       hero: {
         photographer: "Mia Millane",
