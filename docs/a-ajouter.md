@@ -33,10 +33,10 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `minestrone` · **Minestrone** · automne · légumes, haricots, petites pâtes
 - [x] `salade-de-chevre-chaud` · **Salade de chèvre chaud** · automne, hiver
 - [x] `poireaux-vinaigrette` · **Poireaux vinaigrette** · printemps, hiver
-- [ ] `terrine-de-campagne` · **Terrine de campagne** · pique-nique · cuisson à cœur 70 °C, repos 2 jours
+- [x] `terrine-de-campagne` · **Terrine de campagne** · pique-nique · cuisson à cœur 70 °C, repos 2 jours
 - [ ] `oeufs-cocotte` · **Œufs cocotte** · · jaune coulant, sécurité des œufs
 - [ ] `carpaccio-de-boeuf` · **Carpaccio de bœuf** · ete · viande crue : règles de fraîcheur
-- [ ] `tartare-de-saumon` · **Tartare de saumon** · ete, nouvel-an · poisson cru : congelé 24 h à −20 °C
+- [x] `tartare-de-saumon` · **Tartare de saumon** · ete, nouvel-an · poisson cru : congelé 24 h à −20 °C
 - [ ] `avocat-crevettes` · **Avocats aux crevettes** · noel · sauce cocktail maison
 - [ ] `flan-de-courgettes` · **Flan de courgettes** · ete
 - [ ] `soupe-a-la-tomate` · **Soupe à la tomate** · ete, automne · tomates fraîches ou en conserve hors saison
@@ -187,3 +187,4 @@ Cocher à la main une fois la photo changée (`pnpm recipes:photos`, puis `pnpm 
 - [ ] `veloute-de-chataignes` · velouté châtaigne-panais sur fond froid ; détail = châtaignes crues
 - [ ] `choucroute` · grande poêle de marché avec un jarret absent de la recette
 - [ ] `tarte-au-potiron` · photo principale en 2000 × 1333, peu de profondeur
+- [ ] `terrine-de-campagne` · assiette de restaurant ; détail sur fond rouge vif
