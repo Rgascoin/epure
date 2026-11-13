@@ -38,7 +38,7 @@ pnpm recipes:check -t <slug>                               # jusqu’à 0 erreur
 - **Version facile** : seulement si un produit tout prêt remplace honnêtement une étape (voir la fiche mémo).
 - **Interdits** : faits inventés, ton publicitaire, tiret cadratin. Les règles de sécurité alimentaire de la fiche mémo sont obligatoires.
 
-Tant que le fichier `.draft` est là, la recette ne part pas en production : on peut pousser des brouillons sans risque.
+Tant que le fichier `.draft` est là, la recette ne part pas en production : on peut pousser des brouillons sans risque. **Commiter et pousser la branche après chaque recette** : si la session s’interrompt, le travail est conservé et une reprise repart de là.
 
 ## 3. Valider le lot
 

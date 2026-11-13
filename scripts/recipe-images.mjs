@@ -41,18 +41,28 @@ if (fromIdx >= 0) {
 const focusIdx = rest.indexOf("--focus");
 const [fx, fy] = (focusIdx >= 0 ? rest[focusIdx + 1] : "50% 50%").split(/\s+/).map((v) => parseFloat(v) / 100);
 
+/** GET with patience: Wikimedia and others answer 429 or 5xx to bursts. */
+async function download(url, headers = {}) {
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(url, { headers: { "User-Agent": "epure-recipe-images/1.0", ...headers } });
+    if (res.ok) return Buffer.from(await res.arrayBuffer());
+    if ((res.status === 429 || res.status >= 500) && attempt < 6) {
+      const wait = Number(res.headers.get("retry-after")) || 5 * attempt;
+      console.warn(`${new URL(url).host} : HTTP ${res.status}, nouvel essai dans ${Math.min(wait, 60)} s`);
+      await new Promise((r) => setTimeout(r, Math.min(wait, 60) * 1000));
+      continue;
+    }
+    throw new Error(`${url} : HTTP ${res.status}`);
+  }
+}
+
 async function load(arg) {
   if (/^\d+$/.test(arg)) {
-    const url = `https://images.pexels.com/photos/${arg}/pexels-photo-${arg}.jpeg?auto=compress&cs=tinysrgb&w=2400&fm=jpg&q=92`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Pexels ${arg} : HTTP ${res.status}`);
-    return Buffer.from(await res.arrayBuffer());
+    return download(
+      `https://images.pexels.com/photos/${arg}/pexels-photo-${arg}.jpeg?auto=compress&cs=tinysrgb&w=2400&fm=jpg&q=92`,
+    );
   }
-  if (/^https?:\/\//.test(arg)) {
-    const res = await fetch(arg, { headers: { "User-Agent": "epure-recipe-images/1.0" } });
-    if (!res.ok) throw new Error(`${arg} : HTTP ${res.status}`);
-    return Buffer.from(await res.arrayBuffer());
-  }
+  if (/^https?:\/\//.test(arg)) return download(arg);
   if (!existsSync(arg)) throw new Error(`Fichier introuvable : ${arg}`);
   return readFileSync(arg);
 }
