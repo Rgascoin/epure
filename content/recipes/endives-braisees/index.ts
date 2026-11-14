@@ -165,14 +165,14 @@ export default defineRecipe({
   nutrition: { calories: 115, protein: 2.5, fat: 8.5, saturatedFat: 5.5, carbs: 7, sugar: 3, fiber: 3, sodium: 300 },
   annotations: { hero: "fondantes jusqu’au trognon", detail: "des pointes jaune pâle, pas vertes" },
   images: {
-    heroAlt:
-      "Trois endives braisées entières, brillantes de beurre, dans une assiette avec des rondelles de carotte et de courgette.",
+    heroAlt: "Demi-endives braisées, dorées et caramélisées sur la face coupée, servies dans une assiette blanche.",
     detailAlt: "Trois endives crues, blanches et serrées, aux pointes jaune pâle, posées dans une assiette blanche.",
     credits: {
       hero: {
-        photographer: "jpduretz",
-        url: "https://pixabay.com/photos/accompaniement-endives-chicory-1829673/",
-        source: "Pixabay",
+        photographer: "Lablascovegmenu from London",
+        url: "https://commons.wikimedia.org/wiki/File:Grilled_endives_with_oats_cream_-_Endibias_al_horno_con_crema_de_avena_(6809370460).jpg",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
       },
       detail: {
         photographer: "wortschaum",
@@ -191,6 +191,6 @@ export default defineRecipe({
     ink: "#76600C",
     tint: "#FAF4DE",
     deep: "#16130A",
-    focus: "45% 72%",
+    focus: "38% 45%",
   },
 });
