@@ -35,12 +35,7 @@ export default defineRecipe({
   cost: "€€",
   season: ["Hiver"],
   tags: ["noel"],
-  equipment: [
-    "un fouet et un bol à fond rond",
-    "un couteau d’office",
-    "un pinceau de cuisine",
-    "du papier absorbant",
-  ],
+  equipment: ["un fouet et un bol à fond rond", "un couteau d’office", "un pinceau de cuisine", "du papier absorbant"],
   ingredients: [
     {
       title: "La sauce cocktail",

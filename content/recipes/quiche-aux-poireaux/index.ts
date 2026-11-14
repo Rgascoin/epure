@@ -187,8 +187,7 @@ export default defineRecipe({
   ],
   storage:
     "La quiche se garde 2 à 3 jours au réfrigérateur, couverte. Réchauffez-la 15 minutes au four à 160 °C plutôt qu’au micro-ondes, qui ramollit la pâte. Elle se congèle cuite et refroidie, 2 mois ; une fois décongelée, ne la recongelez pas.",
-  pairing:
-    "Une salade de mâche ou de jeunes pousses à l’huile de noix, et un blanc sec, un chablis ou un sancerre.",
+  pairing: "Une salade de mâche ou de jeunes pousses à l’huile de noix, et un blanc sec, un chablis ou un sancerre.",
   easy: {
     shortcut: "pâte brisée en rouleau du commerce",
     note: "On gagne la pâte, son repos et le passage au congélateur. Prenez une pâte pur beurre, sans huile de palme : elle a plus de goût et dore mieux. Elle est plus fine que la pâte maison, d’où une cuisson à blanc plus courte.",
@@ -196,7 +195,9 @@ export default defineRecipe({
     ingredients: [
       {
         title: "Le fond",
-        items: [{ qty: 1, unit: "rouleau", name: "pâte brisée pur beurre", note: "230 g environ", step: 1, fixed: true }],
+        items: [
+          { qty: 1, unit: "rouleau", name: "pâte brisée pur beurre", note: "230 g environ", step: 1, fixed: true },
+        ],
       },
       {
         title: "La garniture",
@@ -293,7 +294,10 @@ export default defineRecipe({
         source: "Wikimedia Commons",
         license: "CC BY-SA 2.0",
       },
-      detail: { photographer: "Larisa P.", url: "https://www.pexels.com/photo/fresh-organic-leeks-on-white-surface-4965038/" },
+      detail: {
+        photographer: "Larisa P.",
+        url: "https://www.pexels.com/photo/fresh-organic-leeks-on-white-surface-4965038/",
+      },
     },
   },
   datePublished: "2026-11-14",

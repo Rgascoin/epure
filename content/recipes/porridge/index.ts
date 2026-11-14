@@ -159,7 +159,10 @@ export default defineRecipe({
     },
   ],
   nutrition: { calories: 380, protein: 15, fat: 17, saturatedFat: 5.5, carbs: 42, sugar: 18, fiber: 10, sodium: 190 },
-  annotations: { hero: "framboises surgelées, posées au dernier moment", detail: "amandes effilées : des fruits à coque" },
+  annotations: {
+    hero: "framboises surgelées, posées au dernier moment",
+    detail: "amandes effilées : des fruits à coque",
+  },
   images: {
     heroAlt:
       "Bol de porridge crémeux vu du dessus, garni de framboises givrées, d’une cuillerée de yaourt et de graines de chia.",

@@ -37,12 +37,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Automne", "Hiver"],
   tags: ["hiver"],
-  equipment: [
-    "casserole de 3 l",
-    "casserole de 2 l avec couvercle pour le riz",
-    "petite poêle pour la tadka",
-    "fouet",
-  ],
+  equipment: ["casserole de 3 l", "casserole de 2 l avec couvercle pour le riz", "petite poêle pour la tadka", "fouet"],
   ingredients: [
     {
       title: "Le dal",
@@ -211,8 +206,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Dal de lentilles corail dans un plat en métal, nappé d’une tadka de cumin, de piments rouges frits et de coriandre.",
-    detailAlt:
-      "Dal de lentilles dans une casserole en cuivre, servi avec du riz basmati parsemé de coriandre fraîche.",
+    detailAlt: "Dal de lentilles dans une casserole en cuivre, servi avec du riz basmati parsemé de coriandre fraîche.",
     credits: {
       hero: {
         photographer: "Nosh Caterers",

@@ -183,8 +183,7 @@ export default defineRecipe({
   ],
   storage:
     "3 jours au réfrigérateur dans sa sauce, en boîte fermée, après l’avoir refroidi en moins de 2 h. 3 mois au congélateur, sans la gremolata. Réchauffez à couvert, à feu doux ou 30 minutes au four à 150 °C, jusqu’à ce que la sauce frémisse. Ne recongelez pas.",
-  pairing:
-    "Un rouge du Piémont peu tannique, comme un barbera, ou un blanc sec et ample du nord de l’Italie.",
+  pairing: "Un rouge du Piémont peu tannique, comme un barbera, ou un blanc sec et ample du nord de l’Italie.",
   faq: [
     {
       q: "Quel morceau de veau pour un osso buco ?",
