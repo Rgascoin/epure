@@ -37,10 +37,10 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `oeufs-cocotte` · **Œufs cocotte** · · jaune coulant, sécurité des œufs
 - [ ] `carpaccio-de-boeuf` · **Carpaccio de bœuf** · ete · viande crue : règles de fraîcheur
 - [x] `tartare-de-saumon` · **Tartare de saumon** · ete, nouvel-an · poisson cru : congelé 24 h à −20 °C
-- [ ] `avocat-crevettes` · **Avocats aux crevettes** · noel · sauce cocktail maison
+- [x] `avocat-crevettes` · **Avocats aux crevettes** · noel · sauce cocktail maison
 - [ ] `flan-de-courgettes` · **Flan de courgettes** · ete
 - [ ] `soupe-a-la-tomate` · **Soupe à la tomate** · ete, automne · tomates fraîches ou en conserve hors saison
-- [ ] `bouillon-de-volaille` · **Bouillon de volaille maison** · hiver · la base de beaucoup d’autres fiches
+- [x] `bouillon-de-volaille` · **Bouillon de volaille maison** · hiver · la base de beaucoup d’autres fiches
 
 ## Plats
 
@@ -52,21 +52,21 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `burger-maison` · **Burger maison** · barbecue, ete · cuisson du steak haché à cœur ; version facile aux pains du commerce
 - [x] `boeuf-carottes` · **Bœuf carottes** · hiver · plus simple que le bourguignon, sans vin
 - [ ] `navarin-d-agneau` · **Navarin d’agneau** · paques, printemps · légumes nouveaux
-- [ ] `osso-buco` · **Osso buco** · hiver · gremolata
+- [x] `osso-buco` · **Osso buco** · hiver · gremolata
 - [ ] `porc-au-caramel` · **Porc au caramel** · · cuisine vietnamienne, caramel amer
 - [ ] `filet-mignon-moutarde` · **Filet mignon à la moutarde** · · 63 °C à cœur
 - [ ] `roti-de-porc` · **Rôti de porc au four** · · temps par kilo, jus
 - [ ] `petit-sale-aux-lentilles` · **Petit salé aux lentilles** · hiver
 - [ ] `parmentier-de-canard` · **Parmentier de canard** · hiver · confit du commerce
-- [ ] `magret-de-canard` · **Magret de canard** · noel · quadrillage, cuisson côté peau
+- [x] `magret-de-canard` · **Magret de canard** · noel · quadrillage, cuisson côté peau
 - [ ] `poulet-creme-champignons` · **Poulet à la crème et aux champignons** · automne
 - [ ] `escalope-milanaise` · **Escalope milanaise** · · panure à l’anglaise
-- [ ] `quiche-aux-poireaux` · **Quiche aux poireaux** · hiver, printemps · version facile à la pâte du commerce
+- [x] `quiche-aux-poireaux` · **Quiche aux poireaux** · hiver, printemps · version facile à la pâte du commerce
 - [ ] `tarte-a-la-tomate` · **Tarte à la tomate et moutarde** · ete, pique-nique
 - [ ] `omelette` · **Omelette baveuse** · · le geste, en 5 minutes
 - [ ] `shakshuka` · **Shakshuka** · · œufs pochés dans la sauce tomate épicée
 - [ ] `chili-sin-carne` · **Chili sin carne** · hiver · végétalien
-- [ ] `dal-de-lentilles` · **Dal de lentilles corail** · hiver · végétarien
+- [x] `dal-de-lentilles` · **Dal de lentilles corail** · hiver · végétarien
 - [ ] `curry-de-legumes` · **Curry de légumes au lait de coco** · automne · végétalien
 - [ ] `cabillaud-en-papillote` · **Cabillaud en papillote** · printemps, ete
 - [ ] `brandade-de-morue` · **Brandade de morue** · hiver · dessalage
@@ -86,9 +86,9 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `gratin-de-courgettes` · **Gratin de courgettes** · ete · courgettes dégorgées
 - [x] `gratin-de-chou-fleur` · **Gratin de chou-fleur** · hiver · béchamel
 - [ ] `champignons-persillade` · **Champignons en persillade** · automne
-- [ ] `pommes-de-terre-sarladaises` · **Pommes de terre sarladaises** · automne · graisse de canard
+- [x] `pommes-de-terre-sarladaises` · **Pommes de terre sarladaises** · automne · graisse de canard
 - [ ] `puree-de-patate-douce` · **Purée de patate douce** · automne
-- [ ] `endives-braisees` · **Endives braisées** · hiver · amertume, caramélisation
+- [x] `endives-braisees` · **Endives braisées** · hiver · amertume, caramélisation
 - [ ] `poelee-de-legumes` · **Poêlée de légumes de saison** · · ordre de cuisson selon la dureté
 - [ ] `coleslaw` · **Coleslaw** · barbecue, pique-nique
 - [ ] `semoule-aux-legumes` · **Semoule aux légumes** · ete · gonflage à froid ou à chaud
@@ -106,7 +106,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `creme-au-chocolat` · **Crème dessert au chocolat** · · petits pots, sans œuf cru
 - [ ] `charlotte-aux-fraises` · **Charlotte aux fraises** · fete-des-meres, printemps
 - [ ] `fraisier` · **Fraisier** · fete-des-meres · exigeant
-- [ ] `poires-belle-helene` · **Poires belle-Hélène** · automne, hiver
+- [x] `poires-belle-helene` · **Poires belle-Hélène** · automne, hiver
 - [ ] `tarte-bourdaloue` · **Tarte bourdaloue aux poires** · automne · version facile à la pâte du commerce
 - [ ] `mousse-au-citron` · **Mousse au citron** · printemps · sécurité des œufs
 - [ ] `nid-de-paques` · **Nid de Pâques au chocolat** · paques · nourrit « Pâques »
@@ -124,7 +124,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `churros` · **Churros** · mardi-gras · friture 180 °C
 - [ ] `beignets` · **Beignets au sucre** · mardi-gras · pâte levée, friture
 - [ ] `granola` · **Granola maison** · · au four, en grappes
-- [ ] `porridge` · **Porridge** · hiver · flocons, proportions, garnitures
+- [x] `porridge` · **Porridge** · hiver · flocons, proportions, garnitures
 - [ ] `roses-des-sables` · **Roses des sables** · · sans cuisson, avec les enfants
 - [ ] `gateau-au-fromage-blanc` · **Gâteau au fromage blanc** · · à l’alsacienne
 - [ ] `kouign-amann` · **Kouign-amann** · · exigeant, pâte levée feuilletée
@@ -188,3 +188,8 @@ Cocher à la main une fois la photo changée (`pnpm recipes:photos`, puis `pnpm 
 - [ ] `choucroute` · grande poêle de marché avec un jarret absent de la recette
 - [ ] `tarte-au-potiron` · photo principale en 2000 × 1333, peu de profondeur
 - [ ] `terrine-de-campagne` · assiette de restaurant ; détail sur fond rouge vif
+- [ ] `endives-braisees` · photo amateur, endives grillées un peu brûlées ; chercher des endives braisées ambrées
+- [ ] `poires-belle-helene` · source en 1280 px, sans la boule de glace
+- [ ] `pommes-de-terre-sarladaises` · photo amateur, lumière plate
+- [ ] `quiche-aux-poireaux` · quiche poireaux, pommes de terre et lardons (variante), pas la quiche simple
+- [ ] `avocat-crevettes` · garniture avocat-tomate, sans la sauce cocktail rose
