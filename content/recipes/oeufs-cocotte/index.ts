@@ -12,8 +12,8 @@ export default defineRecipe({
   summary:
     "Pour 4 personnes, cassez 4 œufs dans des ramequins beurrés garnis de 120 g de crème fraîche épaisse, puis faites-les cuire au bain-marie 10 à 12 minutes dans un four à 180 °C. On les sort quand le blanc est pris et que le jaune tremble encore. Avec les mouillettes de pain grillé, il faut moins d’une demi-heure en tout, dont 12 minutes de four.",
   intro: [
-    "Un œuf, deux cuillerées de crème, un ramequin et un quart d’heure de four. Les œufs cocotte tiennent en une phrase, et c’est souvent l’entrée qu’on improvise un soir avec ce qui traîne au réfrigérateur.",
-    "Ce qui les rate, c’est la minute de trop. Le blanc doit être pris, le jaune encore liquide, et l’écart entre les deux est étroit. Le bain-marie l’élargit : l’eau ne dépasse pas 100 °C, le ramequin chauffe doucement et le blanc prend sans durcir sur les bords.",
+    "Un œuf, deux cuillerées de crème, un ramequin et une douzaine de minutes de four. Les œufs cocotte tiennent en une phrase, et c’est souvent l’entrée qu’on improvise un soir avec ce qui traîne au réfrigérateur.",
+    "La marge est mince : il faut un blanc pris et un jaune encore liquide, et une minute de trop suffit à tout figer. Le bain-marie l’élargit : l’eau ne dépasse pas 100 °C, le ramequin chauffe doucement et le blanc prend sans durcir sur les bords.",
     "Le repère se voit en secouant le plat : le blanc ne tremble plus qu’autour du jaune. Sortez-les à ce moment-là, ils finissent de cuire sur le chemin de la table.",
   ],
   category: "Entrée",
@@ -194,13 +194,13 @@ export default defineRecipe({
     detailAlt: "Mouillette de pain beurré trempée dans un œuf cocotte au jaune coulant, dans une mini-cocotte rouge",
     credits: {
       hero: {
-        photographer: "fred_v",
+        photographer: "Frédérique Voisin-Demery",
         url: "https://www.flickr.com/photos/8514720@N04/8058811599",
         source: "Flickr",
         license: "CC BY 2.0",
       },
       detail: {
-        photographer: "fred_v",
+        photographer: "Frédérique Voisin-Demery",
         url: "https://www.flickr.com/photos/8514720@N04/6931479585",
         source: "Flickr",
         license: "CC BY 2.0",
