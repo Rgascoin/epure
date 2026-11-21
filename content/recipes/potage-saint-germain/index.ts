@@ -247,6 +247,6 @@ export default defineRecipe({
     ink: "#4E5A12",
     tint: "#F3F5E2",
     deep: "#13160A",
-    focus: "42% 50%",
+    focus: "48% 50%",
   },
 });
