@@ -41,6 +41,10 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `flan-de-courgettes` · **Flan de courgettes** · ete
 - [x] `soupe-a-la-tomate` · **Soupe à la tomate** · ete, automne · tomates fraîches ou en conserve hors saison
 - [x] `bouillon-de-volaille` · **Bouillon de volaille maison** · hiver · la base de beaucoup d’autres fiches
+- [ ] `veloute-de-chou-fleur` · **Velouté de chou-fleur** · hiver
+- [ ] `saint-jacques-poelees` · **Saint-Jacques poêlées** · noel, nouvel-an · saisie, centre nacré
+- [ ] `salade-d-endives` · **Salade d’endives, noix et roquefort** · hiver
+- [ ] `potage-saint-germain` · **Potage Saint-Germain** · hiver · pois cassés
 
 ## Plats
 
@@ -77,6 +81,8 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `riz-cantonais` · **Riz cantonais** · · riz de la veille : règles de conservation du riz
 - [x] `gnocchis-maison` · **Gnocchis de pommes de terre** · automne · pommes de terre farineuses au four
 - [ ] `cote-de-boeuf` · **Côte de bœuf** · barbecue, fete-des-peres · cuisson inversée, températures à cœur
+- [ ] `endives-au-jambon` · **Endives au jambon** · hiver · endives bien égouttées
+- [ ] `potee-auvergnate` · **Potée auvergnate** · hiver · chou blanchi
 
 ## Accompagnements
 
@@ -92,6 +98,10 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `poelee-de-legumes` · **Poêlée de légumes de saison** · · ordre de cuisson selon la dureté
 - [ ] `coleslaw` · **Coleslaw** · barbecue, pique-nique
 - [ ] `semoule-aux-legumes` · **Semoule aux légumes** · ete · gonflage à froid ou à chaud
+- [ ] `aligot` · **Aligot** · montagne, hiver · tome fraîche, le ruban
+- [ ] `choux-de-bruxelles-rotis` · **Choux de Bruxelles rôtis** · hiver · face coupée caramélisée
+- [ ] `panais-rotis` · **Panais rôtis au miel** · hiver
+- [ ] `puree-de-celeri` · **Purée de céleri** · hiver
 
 ## Desserts
 
@@ -130,6 +140,9 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `kouign-amann` · **Kouign-amann** · · exigeant, pâte levée feuilletée
 
 ---
+
+- [ ] `chocolat-chaud` · **Chocolat chaud** · hiver · au vrai chocolat
+- [ ] `manalas` · **Manalas** · hiver, noel · Saint-Nicolas, brioche
 
 ## Catégories à créer
 
