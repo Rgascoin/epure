@@ -100,7 +100,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `semoule-aux-legumes` · **Semoule aux légumes** · ete · gonflage à froid ou à chaud
 - [ ] `aligot` · **Aligot** · montagne, hiver · tome fraîche, le ruban
 - [ ] `choux-de-bruxelles-rotis` · **Choux de Bruxelles rôtis** · hiver · face coupée caramélisée
-- [ ] `panais-rotis` · **Panais rôtis au miel** · hiver
+- [ ] `panais-rotis` · **Panais rôtis au miel** · hiver · écrite, en brouillon : il manque une photo libre de panais rôtis (la photo principale est provisoire)
 - [ ] `puree-de-celeri` · **Purée de céleri** · hiver
 
 ## Desserts
