@@ -12,7 +12,7 @@ export default defineRecipe({
   summary:
     "Pour 15 portions de 50 g, mélangez 300 g de flocons d’avoine, 150 g d’amandes et de noisettes, 80 g de graines et une pincée de sel avec 100 g de miel et 60 ml d’huile tiédis. Tassez le tout sur une plaque et faites cuire 35 minutes à 150 °C sans remuer. Laissez refroidir 45 minutes avant de casser en grappes, puis ajoutez 100 g de fruits secs. Comptez 1 h 35 en tout.",
   intro: [
-    "Un granola, ce sont des flocons d’avoine, des fruits à coque et des graines enrobés de miel et d’huile, puis dorés au four. Fait maison, il est moins sucré que la plupart de ceux du commerce, et on y met ce qu’on aime.",
+    "Un granola, ce sont des flocons d’avoine, des fruits à coque et des graines enrobés de miel et d’huile, puis dorés au four. Fait maison, on choisit soi-même la dose de miel, et on y met ce qu’on aime.",
     "Ce qu’on cherche, ce sont les grappes, ces gros morceaux qui craquent. Elles se forment quand on tasse le mélange sur la plaque et qu’on n’y touche plus : ni pendant la cuisson, ni pendant le refroidissement. Le miel durcit en refroidissant et soude les flocons entre eux.",
     "Les fruits secs n’arrivent qu’à la fin. Au four, ils sèchent et brûlent.",
   ],
