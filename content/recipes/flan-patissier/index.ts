@@ -161,7 +161,7 @@ export default defineRecipe({
   ],
   mistakes: [
     "Retirer la crème du feu dès qu’elle épaissit : sans la minute d’ébullition, le flan rend du liquide et se ramollit au froid. Une fois cuit, ça ne se rattrape plus.",
-    "Ne pas congeler le fond : les bords glissent dans le moule pendant la cuisson et la crème déborde sur la pâte.",
+    "Ne pas congeler le fond : la pâte ramollit avant d’avoir pris, les bords glissent dans le moule et s’affaissent dans la crème.",
     "Le couper tiède : la crème coule et les parts s’écrasent. Quatre heures de froid au minimum.",
     "Sortir un flan au dessus pâle : il a le goût d’une crème pâtissière. Un passage de 2 à 3 minutes sous le gril, en surveillant, lui donne sa couleur.",
   ],
