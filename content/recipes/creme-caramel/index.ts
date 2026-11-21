@@ -164,8 +164,7 @@ export default defineRecipe({
   ],
   storage:
     "Les crèmes caramel se gardent 3 jours au réfrigérateur, filmées, dans leur ramequin : démoulez-les au moment de servir. Elles ne se congèlent pas, la crème rend son eau et devient granuleuse.",
-  pairing:
-    "Elle se suffit à elle-même. Quelques tuiles aux amandes ou des sablés à côté, et un café serré.",
+  pairing: "Elle se suffit à elle-même. Quelques tuiles aux amandes ou des sablés à côté, et un café serré.",
   faq: [
     {
       q: "Quelle est la différence entre crème caramel et crème brûlée ?",
@@ -197,13 +196,17 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Crème caramel démoulée sur une assiette blanche, nappée d’un caramel ambré qui s’étale autour, avec une feuille de menthe",
-    detailAlt: "Une cuillère entame une crème caramel démoulée, entourée de sauce caramel, sur une assiette en céramique",
+    detailAlt:
+      "Une cuillère entame une crème caramel démoulée, entourée de sauce caramel, sur une assiette en céramique",
     credits: {
       hero: {
         photographer: "Võ Văn Tiến",
         url: "https://www.pexels.com/photo/delicious-vietnamese-flan-with-caramel-sauce-29819833/",
       },
-      detail: { photographer: "Gu Ko", url: "https://www.pexels.com/photo/delicious-caramel-flan-with-spoon-in-cafe-31872297/" },
+      detail: {
+        photographer: "Gu Ko",
+        url: "https://www.pexels.com/photo/delicious-caramel-flan-with-spoon-in-cafe-31872297/",
+      },
     },
   },
   datePublished: "2026-11-21",

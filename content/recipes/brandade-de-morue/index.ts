@@ -198,8 +198,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Brandade de morue gratinée dans un plat rond en terre cuite, entourée de tranches de pain grillé sur une nappe blanche",
-    detailAlt:
-      "Assiette de brandade de morue servie en quenelles avec des pommes de terre et des feuilles de persil",
+    detailAlt: "Assiette de brandade de morue servie en quenelles avec des pommes de terre et des feuilles de persil",
     credits: {
       hero: {
         photographer: "Mover el Bigote",

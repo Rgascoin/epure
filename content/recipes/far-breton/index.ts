@@ -46,7 +46,7 @@ export default defineRecipe({
       items: [
         { qty: 250, unit: "g", name: "farine", note: "type 55", step: 10 },
         { qty: 180, unit: "g", name: "sucre en poudre", step: 10 },
-        { qty: 1, unit: "pincée", name: "sel fin", fixed: true },
+        { qty: 1, unit: "pincee", name: "sel fin", fixed: true },
         { qty: 5, name: "œuf", plural: "œufs", step: 1 },
         { qty: 1, unit: "l", name: "lait entier", step: 0.1 },
         { qty: 40, unit: "g", name: "beurre demi-sel", note: "fondu et tiédi", step: 5 },

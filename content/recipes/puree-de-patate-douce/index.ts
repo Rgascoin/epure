@@ -36,11 +36,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Automne", "Hiver"],
   tags: ["automne"],
-  equipment: [
-    "plaque de cuisson et papier cuisson",
-    "fourchette, presse-purée ou mixeur plongeant",
-    "saladier",
-  ],
+  equipment: ["plaque de cuisson et papier cuisson", "fourchette, presse-purée ou mixeur plongeant", "saladier"],
   ingredients: [
     {
       items: [
@@ -182,8 +178,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Purée de patate douce orange vif dans un bol en grès sombre, une cuillère dorée plantée dedans et du poivre moulu",
-    detailAlt:
-      "Un bol de purée de patate douce avec une cuillère en bois sur une table de fête, entre d’autres plats",
+    detailAlt: "Un bol de purée de patate douce avec une cuillère en bois sur une table de fête, entre d’autres plats",
     credits: {
       hero: { photographer: "kaboompics", url: "https://www.pexels.com/photo/close-up-of-a-cream-in-a-bowl-5718130/" },
       detail: { photographer: "kaboompics", url: "https://www.pexels.com/photo/close-up-of-meals-on-a-table-5718107/" },

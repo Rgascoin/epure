@@ -255,8 +255,7 @@ export default defineRecipe({
   nutrition: { calories: 750, protein: 15, fat: 55, saturatedFat: 32, carbs: 49, sugar: 26, fiber: 5, sodium: 270 },
   annotations: { hero: "porte du four fermée jusqu’au bout", detail: "sauce chaude, glace froide, tout de suite" },
   images: {
-    heroAlt:
-      "Profiteroles sur une assiette bleue, nappées d’un filet de sauce au chocolat qui coule, sur fond sombre",
+    heroAlt: "Profiteroles sur une assiette bleue, nappées d’un filet de sauce au chocolat qui coule, sur fond sombre",
     detailAlt:
       "Gros plan sur une profiterole : glace à la vanille piquée de grains de vanille sous une sauce chocolat brillante",
     credits: {

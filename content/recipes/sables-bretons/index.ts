@@ -199,8 +199,7 @@ export default defineRecipe({
   },
   annotations: { hero: "des sillons croisés, à la fourchette", detail: "le cercle l’empêche de s’étaler" },
   images: {
-    heroAlt:
-      "Un sablé breton épais et doré, quadrillé de sillons de fourchette, posé seul sur une assiette en étain",
+    heroAlt: "Un sablé breton épais et doré, quadrillé de sillons de fourchette, posé seul sur une assiette en étain",
     detailAlt:
       "Disque de pâte à sablé breton dans un cercle en inox, nappé de jaune d’œuf et rayé en croix avant cuisson",
     credits: {

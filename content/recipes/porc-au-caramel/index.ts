@@ -194,8 +194,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Porc au caramel : cubes de poitrine de porc laqués dans une sauce ambrée et brillante, servis dans une assiette creuse",
-    detailAlt:
-      "Bol de porc au caramel avec un morceau de poitrine fondante et un œuf dur coloré par la sauce ambrée",
+    detailAlt: "Bol de porc au caramel avec un morceau de poitrine fondante et un œuf dur coloré par la sauce ambrée",
     credits: {
       hero: {
         photographer: "Vietnam Hidden Light",

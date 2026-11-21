@@ -163,7 +163,10 @@ export default defineRecipe({
         photographer: "Kaboompics.com",
         url: "https://www.pexels.com/photo/close-up-of-mushrooms-on-a-white-plate-5718129/",
       },
-      detail: { photographer: "Mateusz Feliksik", url: "https://www.pexels.com/photo/cooking-of-mushrooms-on-a-pan-13422401/" },
+      detail: {
+        photographer: "Mateusz Feliksik",
+        url: "https://www.pexels.com/photo/cooking-of-mushrooms-on-a-pan-13422401/",
+      },
     },
   },
   datePublished: "2026-11-21",

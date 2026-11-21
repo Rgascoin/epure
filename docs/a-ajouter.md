@@ -39,7 +39,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `tartare-de-saumon` · **Tartare de saumon** · ete, nouvel-an · poisson cru : congelé 24 h à −20 °C
 - [x] `avocat-crevettes` · **Avocats aux crevettes** · noel · sauce cocktail maison
 - [ ] `flan-de-courgettes` · **Flan de courgettes** · ete
-- [ ] `soupe-a-la-tomate` · **Soupe à la tomate** · ete, automne · tomates fraîches ou en conserve hors saison
+- [x] `soupe-a-la-tomate` · **Soupe à la tomate** · ete, automne · tomates fraîches ou en conserve hors saison
 - [x] `bouillon-de-volaille` · **Bouillon de volaille maison** · hiver · la base de beaucoup d’autres fiches
 
 ## Plats
@@ -53,11 +53,11 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `boeuf-carottes` · **Bœuf carottes** · hiver · plus simple que le bourguignon, sans vin
 - [ ] `navarin-d-agneau` · **Navarin d’agneau** · paques, printemps · légumes nouveaux
 - [x] `osso-buco` · **Osso buco** · hiver · gremolata
-- [ ] `porc-au-caramel` · **Porc au caramel** · · cuisine vietnamienne, caramel amer
-- [ ] `filet-mignon-moutarde` · **Filet mignon à la moutarde** · · 63 °C à cœur
+- [x] `porc-au-caramel` · **Porc au caramel** · · cuisine vietnamienne, caramel amer
+- [x] `filet-mignon-moutarde` · **Filet mignon à la moutarde** · · 63 °C à cœur
 - [ ] `roti-de-porc` · **Rôti de porc au four** · · temps par kilo, jus
 - [x] `petit-sale-aux-lentilles` · **Petit salé aux lentilles** · hiver
-- [ ] `parmentier-de-canard` · **Parmentier de canard** · hiver · confit du commerce
+- [x] `parmentier-de-canard` · **Parmentier de canard** · hiver · confit du commerce
 - [x] `magret-de-canard` · **Magret de canard** · noel · quadrillage, cuisson côté peau
 - [x] `poulet-creme-champignons` · **Poulet à la crème et aux champignons** · automne
 - [ ] `escalope-milanaise` · **Escalope milanaise** · · panure à l’anglaise
@@ -65,17 +65,17 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `tarte-a-la-tomate` · **Tarte à la tomate et moutarde** · ete, pique-nique
 - [ ] `omelette` · **Omelette baveuse** · · le geste, en 5 minutes
 - [ ] `shakshuka` · **Shakshuka** · · œufs pochés dans la sauce tomate épicée
-- [ ] `chili-sin-carne` · **Chili sin carne** · hiver · végétalien
+- [x] `chili-sin-carne` · **Chili sin carne** · hiver · végétalien
 - [x] `dal-de-lentilles` · **Dal de lentilles corail** · hiver · végétarien
 - [ ] `curry-de-legumes` · **Curry de légumes au lait de coco** · automne · végétalien
 - [ ] `cabillaud-en-papillote` · **Cabillaud en papillote** · printemps, ete
-- [ ] `brandade-de-morue` · **Brandade de morue** · hiver · dessalage
+- [x] `brandade-de-morue` · **Brandade de morue** · hiver · dessalage
 - [ ] `crevettes-a-l-ail` · **Crevettes à l’ail et au persil** · ete, apero
 - [ ] `poke-bowl` · **Poke bowl au saumon** · ete · poisson cru : règles
 - [ ] `bo-bun` · **Bo bun** · ete · bœuf sauté, nouilles de riz, nuoc-mâm
 - [ ] `pad-thai` · **Pad thaï** · · sauce tamarin
 - [ ] `riz-cantonais` · **Riz cantonais** · · riz de la veille : règles de conservation du riz
-- [ ] `gnocchis-maison` · **Gnocchis de pommes de terre** · automne · pommes de terre farineuses au four
+- [x] `gnocchis-maison` · **Gnocchis de pommes de terre** · automne · pommes de terre farineuses au four
 - [ ] `cote-de-boeuf` · **Côte de bœuf** · barbecue, fete-des-peres · cuisson inversée, températures à cœur
 
 ## Accompagnements
@@ -85,11 +85,11 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `haricots-verts` · **Haricots verts à l’ail** · ete · blanchir, rafraîchir
 - [ ] `gratin-de-courgettes` · **Gratin de courgettes** · ete · courgettes dégorgées
 - [x] `gratin-de-chou-fleur` · **Gratin de chou-fleur** · hiver · béchamel
-- [ ] `champignons-persillade` · **Champignons en persillade** · automne
+- [x] `champignons-persillade` · **Champignons en persillade** · automne
 - [x] `pommes-de-terre-sarladaises` · **Pommes de terre sarladaises** · automne · graisse de canard
-- [ ] `puree-de-patate-douce` · **Purée de patate douce** · automne
+- [x] `puree-de-patate-douce` · **Purée de patate douce** · automne
 - [x] `endives-braisees` · **Endives braisées** · hiver · amertume, caramélisation
-- [ ] `poelee-de-legumes` · **Poêlée de légumes de saison** · · ordre de cuisson selon la dureté
+- [x] `poelee-de-legumes` · **Poêlée de légumes de saison** · · ordre de cuisson selon la dureté
 - [ ] `coleslaw` · **Coleslaw** · barbecue, pique-nique
 - [ ] `semoule-aux-legumes` · **Semoule aux légumes** · ete · gonflage à froid ou à chaud
 
@@ -97,12 +97,12 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 
 - [x] `tarte-au-chocolat` · **Tarte au chocolat** · saint-valentin · version facile à la pâte du commerce
 - [x] `fondant-au-chocolat` · **Fondant au chocolat cœur coulant** · saint-valentin · différent du gâteau au chocolat : individuel, 10 minutes de four
-- [ ] `profiteroles` · **Profiteroles** · · pâte à choux, sauce chocolat
+- [x] `profiteroles` · **Profiteroles** · · pâte à choux, sauce chocolat
 - [ ] `eclairs-au-chocolat` · **Éclairs au chocolat** · · exigeant
 - [x] `panna-cotta` · **Panna cotta** · printemps · gélatine, coulis
 - [ ] `flan-patissier` · **Flan pâtissier** · · version facile sans pâte
-- [ ] `far-breton` · **Far breton** · · pruneaux
-- [ ] `creme-caramel` · **Crème caramel** · fete-des-grands-meres · bain-marie
+- [x] `far-breton` · **Far breton** · · pruneaux
+- [x] `creme-caramel` · **Crème caramel** · fete-des-grands-meres · bain-marie
 - [ ] `creme-au-chocolat` · **Crème dessert au chocolat** · · petits pots, sans œuf cru
 - [ ] `charlotte-aux-fraises` · **Charlotte aux fraises** · fete-des-meres, printemps
 - [ ] `fraisier` · **Fraisier** · fete-des-meres · exigeant
@@ -120,10 +120,10 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `financiers` · **Financiers** · · beurre noisette, blancs
 - [x] `canneles` · **Cannelés** · · moules, repos 24 h, cuisson en deux temps
 - [ ] `chouquettes` · **Chouquettes** · · pâte à choux, sucre perlé
-- [ ] `sables-bretons` · **Sablés bretons** · · beurre demi-sel
+- [x] `sables-bretons` · **Sablés bretons** · · beurre demi-sel
 - [ ] `churros` · **Churros** · mardi-gras · friture 180 °C
 - [ ] `beignets` · **Beignets au sucre** · mardi-gras · pâte levée, friture
-- [ ] `granola` · **Granola maison** · · au four, en grappes
+- [x] `granola` · **Granola maison** · · au four, en grappes
 - [x] `porridge` · **Porridge** · hiver · flocons, proportions, garnitures
 - [ ] `roses-des-sables` · **Roses des sables** · · sans cuisson, avec les enfants
 - [ ] `gateau-au-fromage-blanc` · **Gâteau au fromage blanc** · · à l’alsacienne
@@ -195,3 +195,8 @@ Cocher à la main une fois la photo changée (`pnpm recipes:photos`, puis `pnpm 
 - [ ] `avocat-crevettes` · garniture avocat-tomate, sans la sauce cocktail rose
 - [ ] `petit-sale-aux-lentilles` · deux vues presque identiques, surtout de la saucisse, 1024 px
 - [ ] `oeufs-cocotte` · sources Flickr en 1024 px (originaux bloqués au téléchargement)
+- [ ] `filet-mignon-moutarde` · boîte à lunch et fourchette en plastique, médaillons ; détail tiré de la même photo
+- [ ] `poelee-de-legumes` · mélange façon surgelé (maïs, carottes cannelées), pas la combinaison d’hiver
+- [ ] `parmentier-de-canard` · photos correctes sans plus ; détail = parmentier de restaurant en cercle
+- [ ] `brandade-de-morue` · photo de téléphone, un peu molle
+- [ ] `far-breton` · far en vitrine, reflets
