@@ -105,7 +105,7 @@ export default defineRecipe({
       text: "Une endive coupée brunit pour la même raison qu’une pomme : les cellules tranchées libèrent une enzyme, la polyphénol oxydase, qui oxyde leurs polyphénols au contact de l’air. L’acidité de la vinaigrette freine la réaction sans l’arrêter, d’où la coupe au tout dernier moment.",
     },
     {
-      title: "D’où vient l’amertume",
+      title: "Une amertume logée dans le trognon",
       text: "Elle vient de lactones sesquiterpéniques, dont la lactucopicrine, présentes dans toutes les chicorées et plus abondantes vers la base. Le sel, le gras du fromage et le sucre de la poire ne les retirent pas, mais ils atténuent leur perception en bouche.",
     },
     {

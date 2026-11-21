@@ -28,7 +28,7 @@ export default defineRecipe({
     "aligot saucisse",
     "aligot mozzarella",
   ],
-  diet: ["vegetarian", "glutenFree"],
+  diet: ["glutenFree"],
   servings: 6,
   servingsLabel: { one: "personne", other: "personnes" },
   times: { prep: 20, cook: 40 },
