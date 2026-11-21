@@ -35,12 +35,7 @@ export default defineRecipe({
   cost: "€€",
   season: ["Automne", "Hiver"],
   tags: ["automne"],
-  equipment: [
-    "grande poêle ou sauteuse de 28 cm",
-    "thermomètre de cuisson",
-    "spatule en bois",
-    "planche à découper",
-  ],
+  equipment: ["grande poêle ou sauteuse de 28 cm", "thermomètre de cuisson", "spatule en bois", "planche à découper"],
   ingredients: [
     {
       title: "Les champignons",

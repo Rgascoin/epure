@@ -48,7 +48,13 @@ export default defineRecipe({
       title: "Les œufs",
       items: [
         { qty: 10, unit: "g", name: "beurre", note: "mou, pour les ramequins", step: 5 },
-        { qty: 120, unit: "g", name: "crème fraîche épaisse", note: "entière, environ 30 % de matière grasse", step: 10 },
+        {
+          qty: 120,
+          unit: "g",
+          name: "crème fraîche épaisse",
+          note: "entière, environ 30 % de matière grasse",
+          step: 10,
+        },
         { name: "sel fin" },
         { name: "poivre noir du moulin" },
         { qty: 4, name: "œuf", plural: "œufs", note: "extra-frais, à température ambiante", step: 1 },

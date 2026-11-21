@@ -197,10 +197,8 @@ export default defineRecipe({
   nutrition: { calories: 155, protein: 3, fat: 6, saturatedFat: 3, carbs: 22, sugar: 17, fiber: 0, sodium: 25 },
   annotations: { hero: "brun acajou, pas blond", detail: "la croûte doit craquer sous la dent" },
   images: {
-    heroAlt:
-      "Cannelés bordelais à la croûte brun foncé et au dessus caramélisé, posés sur du papier cuisson",
-    detailAlt:
-      "Gros plan sur des cannelés bordelais brillants, aux cannelures caramélisées et à la croûte épaisse",
+    heroAlt: "Cannelés bordelais à la croûte brun foncé et au dessus caramélisé, posés sur du papier cuisson",
+    detailAlt: "Gros plan sur des cannelés bordelais brillants, aux cannelures caramélisées et à la croûte épaisse",
     credits: {
       hero: {
         photographer: "Geraud pfeiffer",

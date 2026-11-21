@@ -160,8 +160,7 @@ export default defineRecipe({
   ],
   storage:
     "Laissez tiédir, puis mettez au réfrigérateur dans les 2 heures, viande et lentilles ensemble dans une boîte fermée, avec un peu de bouillon pour qu’elles ne sèchent pas. Le petit salé se garde 2 à 3 jours. Réchauffez à feu doux, à couvert, avec une louche d’eau ou de bouillon, jusqu’à ce que ce soit bien chaud au cœur. Il se congèle 3 mois ; une fois décongelé, ne le recongelez pas.",
-  pairing:
-    "Un rouge léger et fruité, comme un beaujolais ou un saint-pourçain, ou simplement un cidre brut.",
+  pairing: "Un rouge léger et fruité, comme un beaujolais ou un saint-pourçain, ou simplement un cidre brut.",
   faq: [
     {
       q: "Faut-il dessaler le petit salé ?",
@@ -202,7 +201,8 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Petit salé aux lentilles dans un plat en terre vernissée : lentilles vertes, carottes, oignon, tranches de porc et rondelles de saucisse",
-    detailAlt: "Gros plan sur le petit salé : lentilles vertes, carottes, oignon fondu et tranches de porc dans leur jus",
+    detailAlt:
+      "Gros plan sur le petit salé : lentilles vertes, carottes, oignon fondu et tranches de porc dans leur jus",
     credits: {
       hero: {
         photographer: "Arnaud 25",

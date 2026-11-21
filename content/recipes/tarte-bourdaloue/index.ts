@@ -203,7 +203,13 @@ export default defineRecipe({
       {
         title: "La base",
         items: [
-          { qty: 1, unit: "rouleau", name: "pâte sucrée", note: "ou pâte brisée, pur beurre, environ 230 g", fixed: true },
+          {
+            qty: 1,
+            unit: "rouleau",
+            name: "pâte sucrée",
+            note: "ou pâte brisée, pur beurre, environ 230 g",
+            fixed: true,
+          },
           {
             qty: 820,
             unit: "g",

@@ -34,7 +34,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `salade-de-chevre-chaud` · **Salade de chèvre chaud** · automne, hiver
 - [x] `poireaux-vinaigrette` · **Poireaux vinaigrette** · printemps, hiver
 - [x] `terrine-de-campagne` · **Terrine de campagne** · pique-nique · cuisson à cœur 70 °C, repos 2 jours
-- [ ] `oeufs-cocotte` · **Œufs cocotte** · · jaune coulant, sécurité des œufs
+- [x] `oeufs-cocotte` · **Œufs cocotte** · · jaune coulant, sécurité des œufs
 - [ ] `carpaccio-de-boeuf` · **Carpaccio de bœuf** · ete · viande crue : règles de fraîcheur
 - [x] `tartare-de-saumon` · **Tartare de saumon** · ete, nouvel-an · poisson cru : congelé 24 h à −20 °C
 - [x] `avocat-crevettes` · **Avocats aux crevettes** · noel · sauce cocktail maison
@@ -56,10 +56,10 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `porc-au-caramel` · **Porc au caramel** · · cuisine vietnamienne, caramel amer
 - [ ] `filet-mignon-moutarde` · **Filet mignon à la moutarde** · · 63 °C à cœur
 - [ ] `roti-de-porc` · **Rôti de porc au four** · · temps par kilo, jus
-- [ ] `petit-sale-aux-lentilles` · **Petit salé aux lentilles** · hiver
+- [x] `petit-sale-aux-lentilles` · **Petit salé aux lentilles** · hiver
 - [ ] `parmentier-de-canard` · **Parmentier de canard** · hiver · confit du commerce
 - [x] `magret-de-canard` · **Magret de canard** · noel · quadrillage, cuisson côté peau
-- [ ] `poulet-creme-champignons` · **Poulet à la crème et aux champignons** · automne
+- [x] `poulet-creme-champignons` · **Poulet à la crème et aux champignons** · automne
 - [ ] `escalope-milanaise` · **Escalope milanaise** · · panure à l’anglaise
 - [x] `quiche-aux-poireaux` · **Quiche aux poireaux** · hiver, printemps · version facile à la pâte du commerce
 - [ ] `tarte-a-la-tomate` · **Tarte à la tomate et moutarde** · ete, pique-nique
@@ -107,7 +107,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `charlotte-aux-fraises` · **Charlotte aux fraises** · fete-des-meres, printemps
 - [ ] `fraisier` · **Fraisier** · fete-des-meres · exigeant
 - [x] `poires-belle-helene` · **Poires belle-Hélène** · automne, hiver
-- [ ] `tarte-bourdaloue` · **Tarte bourdaloue aux poires** · automne · version facile à la pâte du commerce
+- [x] `tarte-bourdaloue` · **Tarte bourdaloue aux poires** · automne · version facile à la pâte du commerce
 - [ ] `mousse-au-citron` · **Mousse au citron** · printemps · sécurité des œufs
 - [ ] `nid-de-paques` · **Nid de Pâques au chocolat** · paques · nourrit « Pâques »
 - [ ] `salade-de-fruits` · **Salade de fruits frais** · ete · sirop léger, découpe
@@ -118,7 +118,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `muffins-aux-myrtilles` · **Muffins aux myrtilles** · · méthode des muffins : on ne mélange pas trop
 - [x] `cake-marbre` · **Cake marbré** · fete-des-grands-meres
 - [x] `financiers` · **Financiers** · · beurre noisette, blancs
-- [ ] `canneles` · **Cannelés** · · moules, repos 24 h, cuisson en deux temps
+- [x] `canneles` · **Cannelés** · · moules, repos 24 h, cuisson en deux temps
 - [ ] `chouquettes` · **Chouquettes** · · pâte à choux, sucre perlé
 - [ ] `sables-bretons` · **Sablés bretons** · · beurre demi-sel
 - [ ] `churros` · **Churros** · mardi-gras · friture 180 °C
@@ -193,3 +193,5 @@ Cocher à la main une fois la photo changée (`pnpm recipes:photos`, puis `pnpm 
 - [ ] `pommes-de-terre-sarladaises` · photo amateur, lumière plate
 - [ ] `quiche-aux-poireaux` · quiche poireaux, pommes de terre et lardons (variante), pas la quiche simple
 - [ ] `avocat-crevettes` · garniture avocat-tomate, sans la sauce cocktail rose
+- [ ] `petit-sale-aux-lentilles` · deux vues presque identiques, surtout de la saucisse, 1024 px
+- [ ] `oeufs-cocotte` · sources Flickr en 1024 px (originaux bloqués au téléchargement)
