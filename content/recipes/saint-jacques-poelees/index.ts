@@ -161,8 +161,7 @@ export default defineRecipe({
   ],
   storage:
     "Elles se mangent dès la sortie de la poêle : réchauffées, elles durcissent. Les noix crues se gardent 24 h au frigo, à cuire le jour même si elles ont été décongelées, et ne se recongèlent jamais. La fondue de poireaux tient 2 jours au frais.",
-  pairing:
-    "Un blanc sec et vif : un muscadet sur lie, un chablis ou un pouilly-fumé.",
+  pairing: "Un blanc sec et vif : un muscadet sur lie, un chablis ou un pouilly-fumé.",
   faq: [
     {
       q: "Combien de Saint-Jacques par personne ?",

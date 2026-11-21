@@ -36,12 +36,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Toute l’année"],
   tags: [],
-  equipment: [
-    "poêle antiadhésive de 20 à 22 cm",
-    "bol et fourchette",
-    "spatule souple en silicone",
-    "assiette chaude",
-  ],
+  equipment: ["poêle antiadhésive de 20 à 22 cm", "bol et fourchette", "spatule souple en silicone", "assiette chaude"],
   ingredients: [
     {
       items: [
@@ -132,8 +127,7 @@ export default defineRecipe({
   ],
   storage:
     "Elle se mange dès qu’elle est roulée : une omelette baveuse ne se garde pas et ne se réchauffe pas. Une omelette cuite à cœur se conserve 24 h au frigo, dans une boîte fermée, et se mange froide.",
-  pairing:
-    "Une salade verte à la vinaigrette moutardée et une tranche de pain de campagne grillé.",
+  pairing: "Une salade verte à la vinaigrette moutardée et une tranche de pain de campagne grillé.",
   faq: [
     {
       q: "Combien d’œufs faut-il pour une omelette ?",

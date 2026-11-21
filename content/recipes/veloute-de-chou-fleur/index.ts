@@ -35,12 +35,7 @@ export default defineRecipe({
   cost: "€",
   season: ["Automne", "Hiver"],
   tags: ["hiver"],
-  equipment: [
-    "casserole de 3 l avec couvercle",
-    "blender ou mixeur plongeant",
-    "plaque de cuisson",
-    "petite poêle",
-  ],
+  equipment: ["casserole de 3 l avec couvercle", "blender ou mixeur plongeant", "plaque de cuisson", "petite poêle"],
   ingredients: [
     {
       title: "Le velouté",
@@ -218,7 +213,10 @@ export default defineRecipe({
       "Deux bols de velouté de chou-fleur garnis d’éclats de jambon cru, de persil et d’un filet d’huile d’olive",
     detailAlt: "Mains tenant un bol noir de velouté de chou-fleur bien blanc, garni de bouquets rôtis et de persil",
     credits: {
-      hero: { photographer: "Zehra Yılmaz", url: "https://www.pexels.com/photo/two-bowls-of-cauliflower-soup-19367737/" },
+      hero: {
+        photographer: "Zehra Yılmaz",
+        url: "https://www.pexels.com/photo/two-bowls-of-cauliflower-soup-19367737/",
+      },
       detail: {
         photographer: "Lionel Ntasano",
         url: "https://www.pexels.com/photo/hands-holding-creamy-cauliflower-soup-in-black-bowl-37099928/",

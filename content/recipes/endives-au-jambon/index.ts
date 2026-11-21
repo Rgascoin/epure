@@ -208,8 +208,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Plat d’endives au jambon gratinées, deux rangées de rouleaux dorés sous le fromage fondu, assiettes autour",
-    detailAlt:
-      "Portion d’endives au jambon dans un plat ovale individuel, béchamel gratinée dorée et frites à côté",
+    detailAlt: "Portion d’endives au jambon dans un plat ovale individuel, béchamel gratinée dorée et frites à côté",
     credits: {
       hero: {
         photographer: "Vincent van Zeijst",

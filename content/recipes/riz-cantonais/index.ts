@@ -178,8 +178,7 @@ export default defineRecipe({
   ],
   storage:
     "Le riz cuit se garde 24 heures au plus au réfrigérateur, mis au frais dans les 2 heures après la cuisson. Le riz cantonais, lui, se mange à la sortie du wok : le riz a déjà été réchauffé une fois, ne le réchauffez pas une seconde. Préparez la bonne quantité et jetez les restes.",
-  pairing:
-    "Il fait un plat complet à lui seul, ou accompagne un porc au caramel ou des brochettes de poulet.",
+  pairing: "Il fait un plat complet à lui seul, ou accompagne un porc au caramel ou des brochettes de poulet.",
   faq: [
     {
       q: "Pourquoi faut-il du riz de la veille pour le riz cantonais ?",
@@ -218,10 +217,8 @@ export default defineRecipe({
   },
   annotations: { hero: "grains séparés, pas de paquets", detail: "jambon en dés, pas en lanières" },
   images: {
-    heroAlt:
-      "Bol de riz cantonais aux grains bien séparés, avec petits pois, dés de carotte et morceaux d’omelette",
-    detailAlt:
-      "Assiette de riz cantonais avec dés de jambon, petits pois, carotte et œuf brouillé mêlés au riz blanc",
+    heroAlt: "Bol de riz cantonais aux grains bien séparés, avec petits pois, dés de carotte et morceaux d’omelette",
+    detailAlt: "Assiette de riz cantonais avec dés de jambon, petits pois, carotte et œuf brouillé mêlés au riz blanc",
     credits: {
       hero: {
         photographer: "Guilhem Vellut",

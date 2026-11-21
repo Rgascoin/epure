@@ -175,7 +175,8 @@ export default defineRecipe({
   ],
   storage:
     "Le rôti cuit se garde 2 à 3 jours au réfrigérateur, entier et bien emballé, le jus à part dans une boîte fermée. Tranché froid le lendemain, avec de la moutarde et des cornichons, il est aussi bon que chaud. Il se congèle 2 mois en tranches couvertes de jus ; ne recongelez jamais une viande décongelée.",
-  pairing: "Un rouge souple et fruité, comme un saumur-champigny ou un beaujolais-villages, ou un riesling sec d’Alsace.",
+  pairing:
+    "Un rouge souple et fruité, comme un saumur-champigny ou un beaujolais-villages, ou un riesling sec d’Alsace.",
   faq: [
     {
       q: "Quel morceau choisir pour un rôti de porc ?",

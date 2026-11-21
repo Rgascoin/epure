@@ -179,8 +179,7 @@ export default defineRecipe({
   ],
   storage:
     "Ils se gardent 2 jours à température ambiante, dans une boîte hermétique ou un sac bien fermé. Au-delà, congelez-les emballés un par un, 2 mois au plus. Décongelez-les 2 h à température ambiante, puis passez-les 5 minutes au four à 150 °C.",
-  pairing:
-    "Un chocolat chaud au goûter, ou un café au lait le matin, avec une clémentine.",
+  pairing: "Un chocolat chaud au goûter, ou un café au lait le matin, avec une clémentine.",
   faq: [
     {
       q: "Quand mange-t-on les manalas ?",

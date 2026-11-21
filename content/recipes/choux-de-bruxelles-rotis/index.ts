@@ -144,8 +144,7 @@ export default defineRecipe({
   ],
   storage:
     "Ils se gardent 2 à 3 jours au frigo dans une boîte fermée, mais perdent leur croustillant. Réchauffez-les 8 minutes au four à 200 °C plutôt qu’au micro-ondes, qui les ramollit. Une fois rôtis, ils ne se congèlent pas bien.",
-  pairing:
-    "Un poulet rôti, un rôti de porc ou un magret de canard, et une purée de pommes de terre à côté.",
+  pairing: "Un poulet rôti, un rôti de porc ou un magret de canard, et une purée de pommes de terre à côté.",
   faq: [
     {
       q: "Comment enlever l’amertume des choux de Bruxelles ?",

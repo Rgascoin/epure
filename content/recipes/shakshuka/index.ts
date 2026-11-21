@@ -51,7 +51,13 @@ export default defineRecipe({
         { qty: 3, unit: "gousse", name: "ail", note: "haché", step: 1 },
         { qty: 1, unit: "cac", name: "cumin moulu", step: 0.5 },
         { qty: 2, unit: "cac", name: "paprika doux", step: 0.5 },
-        { qty: 0.5, unit: "cac", name: "piment en poudre", note: "cayenne, ou piment d’Espelette pour moins de force", step: 0.25 },
+        {
+          qty: 0.5,
+          unit: "cac",
+          name: "piment en poudre",
+          note: "cayenne, ou piment d’Espelette pour moins de force",
+          step: 0.25,
+        },
         {
           qty: 800,
           unit: "g",

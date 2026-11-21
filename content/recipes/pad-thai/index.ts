@@ -166,8 +166,7 @@ export default defineRecipe({
   ],
   storage:
     "Le pad thaï se mange à la sortie du wok. Les restes se mettent au réfrigérateur dans les 2 heures, dans une boîte fermée, et se gardent 24 heures au plus ; réchauffez-les au wok avec une cuillerée d’eau jusqu’à ce que tout soit brûlant. Ne le congelez pas, les nouilles se brisent. La sauce seule se garde une semaine au réfrigérateur, en bocal.",
-  pairing:
-    "Une bière blonde bien fraîche, ou un riesling sec dont l’acidité répond à celle du tamarin.",
+  pairing: "Une bière blonde bien fraîche, ou un riesling sec dont l’acidité répond à celle du tamarin.",
   faq: [
     {
       q: "Faut-il faire cuire les nouilles de riz pour un pad thaï ?",

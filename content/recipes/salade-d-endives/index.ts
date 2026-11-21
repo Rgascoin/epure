@@ -58,7 +58,13 @@ export default defineRecipe({
     {
       title: "La salade",
       items: [
-        { qty: 4, name: "endive", plural: "endives", note: "bien fermes, blanches ou en partie rouges (500 g)", step: 1 },
+        {
+          qty: 4,
+          name: "endive",
+          plural: "endives",
+          note: "bien fermes, blanches ou en partie rouges (500 g)",
+          step: 1,
+        },
         { qty: 1, name: "poire", plural: "poires", note: "ferme, type conférence, ou une pomme acidulée", step: 1 },
         { qty: 6, unit: "brin", name: "ciboulette", step: 1 },
       ],
@@ -187,8 +193,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Salade d’endives rouges et blanches avec noix caramélisées, morceaux de bleu et lamelles de poire sur une assiette blanche",
-    detailAlt:
-      "Feuilles d’endive rouge détachées dans un bol, à côté d’un couteau et des trognons coniques retirés",
+    detailAlt: "Feuilles d’endive rouge détachées dans un bol, à côté d’un couteau et des trognons coniques retirés",
     credits: {
       hero: {
         photographer: "Neil Conway from Oakland, USA",

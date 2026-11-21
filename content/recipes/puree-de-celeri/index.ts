@@ -193,8 +193,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Deux dômes de purée de céleri poivrés sur une assiette bleue, à côté de ramequins d’œufs cocotte aux herbes",
-    detailAlt:
-      "Céleris-raves entiers avec leurs tiges et leurs feuilles vertes, empilés dans un panier en osier",
+    detailAlt: "Céleris-raves entiers avec leurs tiges et leurs feuilles vertes, empilés dans un panier en osier",
     credits: {
       hero: {
         photographer: "Isabelle Hurbain-Palatin",

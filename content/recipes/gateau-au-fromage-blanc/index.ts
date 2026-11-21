@@ -46,7 +46,9 @@ export default defineRecipe({
   ingredients: [
     {
       title: "Le fromage blanc",
-      items: [{ qty: 750, unit: "g", name: "fromage blanc entier", note: "au lait entier, en faisselle ou lisse", step: 50 }],
+      items: [
+        { qty: 750, unit: "g", name: "fromage blanc entier", note: "au lait entier, en faisselle ou lisse", step: 50 },
+      ],
     },
     {
       title: "La pâte sucrée",
@@ -192,7 +194,13 @@ export default defineRecipe({
         items: [
           { qty: 600, unit: "g", name: "fromage blanc entier", step: 50 },
           { qty: 3, name: "œuf", plural: "œufs", note: "à température ambiante", step: 1 },
-          { qty: 120, unit: "g", name: "sucre en poudre", note: "80 g pour les jaunes, 40 g pour les blancs", step: 10 },
+          {
+            qty: 120,
+            unit: "g",
+            name: "sucre en poudre",
+            note: "80 g pour les jaunes, 40 g pour les blancs",
+            step: 10,
+          },
           { qty: 40, unit: "g", name: "fécule de maïs", step: 5 },
           { qty: 150, unit: "g", name: "crème fraîche épaisse", note: "entière", step: 10 },
           { qty: 1, name: "citron non traité", plural: "citrons non traités", note: "le zeste finement râpé", step: 1 },

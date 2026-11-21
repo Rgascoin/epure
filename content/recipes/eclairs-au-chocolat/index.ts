@@ -240,8 +240,7 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Éclairs au chocolat maison sur un plat blanc, couverts d’un glaçage brillant et d’un trait de sucre glace.",
-    detailAlt:
-      "Un éclair au chocolat seul, nappé d’un glaçage lisse et brillant parsemé d’éclats de fèves de cacao.",
+    detailAlt: "Un éclair au chocolat seul, nappé d’un glaçage lisse et brillant parsemé d’éclats de fèves de cacao.",
     credits: {
       hero: {
         photographer: "Frank Schrader",
