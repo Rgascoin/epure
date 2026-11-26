@@ -207,9 +207,13 @@ export default defineRecipe({
   images: {
     heroAlt:
       "Mendiants au chocolat blanc et au lait garnis d’amandes, de pistaches, de raisins et d’orange confite, sur papier cuisson",
-    detailAlt: "Gros plan sur des mendiants au chocolat noir garnis d’amandes, de cranberries séchées et de raisins secs",
+    detailAlt:
+      "Gros plan sur des mendiants au chocolat noir garnis d’amandes, de cranberries séchées et de raisins secs",
     credits: {
-      hero: { photographer: "Pinklime Foody", url: "https://www.pexels.com/photo/flat-lay-shot-of-chocolate-candy-11074275/" },
+      hero: {
+        photographer: "Pinklime Foody",
+        url: "https://www.pexels.com/photo/flat-lay-shot-of-chocolate-candy-11074275/",
+      },
       detail: {
         photographer: "Steven Depolo",
         url: "https://commons.wikimedia.org/wiki/File:Chocolate_Mendiants_12-20-09_--_20091220_0312jpg_(4201735363).jpg",

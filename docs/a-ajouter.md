@@ -45,7 +45,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `saint-jacques-poelees` · **Saint-Jacques poêlées** · noel, nouvel-an · saisie, centre nacré
 - [x] `salade-d-endives` · **Salade d’endives, noix et roquefort** · hiver
 - [x] `potage-saint-germain` · **Potage Saint-Germain** · hiver · pois cassés
-- [ ] `saumon-gravlax` · **Saumon gravlax** · noel, nouvel-an · poisson cru : congélation
+- [x] `saumon-gravlax` · **Saumon gravlax** · noel, nouvel-an · poisson cru : congélation
 
 ## Plats
 
@@ -84,7 +84,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `cote-de-boeuf` · **Côte de bœuf** · barbecue, fete-des-peres · cuisson inversée, températures à cœur
 - [x] `endives-au-jambon` · **Endives au jambon** · hiver · endives bien égouttées
 - [x] `potee-auvergnate` · **Potée auvergnate** · hiver · chou blanchi
-- [ ] `pintade-aux-marrons` · **Pintade aux marrons** · noel · 74 °C à cœur
+- [x] `pintade-aux-marrons` · **Pintade aux marrons** · noel · 74 °C à cœur
 
 ## Accompagnements
 
@@ -104,7 +104,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [x] `choux-de-bruxelles-rotis` · **Choux de Bruxelles rôtis** · hiver · face coupée caramélisée
 - [ ] `panais-rotis` · **Panais rôtis au miel** · hiver · écrite, en brouillon : il manque une photo libre de panais rôtis (la photo principale est provisoire)
 - [x] `puree-de-celeri` · **Purée de céleri** · hiver
-- [ ] `pommes-de-terre-duchesse` · **Pommes de terre duchesse** · noel · purée sèche, rosaces
+- [x] `pommes-de-terre-duchesse` · **Pommes de terre duchesse** · noel · purée sèche, rosaces
 
 ## Desserts
 
@@ -125,7 +125,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 - [ ] `nid-de-paques` · **Nid de Pâques au chocolat** · paques · nourrit « Pâques »
 - [ ] `salade-de-fruits` · **Salade de fruits frais** · ete · sirop léger, découpe
 - [x] `soufle-au-chocolat` · **Soufflé au chocolat** · saint-valentin · exigeant
-- [ ] `mont-blanc` · **Mont-Blanc** · hiver, noel · version facile aux meringues du commerce
+- [x] `mont-blanc` · **Mont-Blanc** · hiver, noel · version facile aux meringues du commerce
 
 ## Goûters & petits-déjeuners
 
@@ -147,7 +147,7 @@ Pour les fêtes de fin d’année et l’hiver, à publier 4 à 8 semaines avant
 
 - [x] `chocolat-chaud` · **Chocolat chaud** · hiver · au vrai chocolat
 - [x] `manalas` · **Manalas** · hiver, noel · Saint-Nicolas, brioche
-- [ ] `mendiants` · **Mendiants au chocolat** · noel · tempérage simple
+- [x] `mendiants` · **Mendiants au chocolat** · noel · tempérage simple
 
 ## Catégories à créer
 
@@ -224,3 +224,5 @@ Cocher à la main une fois la photo changée (`pnpm recipes:photos`, puis `pnpm 
 - [ ] `salade-d-endives` · photo de restaurant un peu douce, endives rouges
 - [ ] `creme-au-chocolat` · principale et détail tirés de la même photo
 - [ ] `chouquettes` · photo au flash, tons chauds
+- [ ] `pintade-aux-marrons` · pintade rôtie aux légumes, sans marrons ; détail tiré de la même photo
+- [ ] `mendiants` · principale au chocolat blanc et au lait (la recette est au noir)

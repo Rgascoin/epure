@@ -215,7 +215,10 @@ export default defineRecipe({
         source: "Wikimedia Commons",
         license: "CC BY-SA 4.0",
       },
-      detail: { photographer: "Mateusz Feliksik", url: "https://www.pexels.com/photo/potatoes-and-a-potato-ricer-13422423/" },
+      detail: {
+        photographer: "Mateusz Feliksik",
+        url: "https://www.pexels.com/photo/potatoes-and-a-potato-ricer-13422423/",
+      },
     },
   },
   datePublished: "2026-11-26",
