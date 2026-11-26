@@ -64,10 +64,10 @@ export default defineRecipe({
       title: "Les marrons et le jus",
       items: [
         { qty: 6, name: "échalote", plural: "échalotes", note: "pelées, coupées en deux", step: 1 },
+        { qty: 25, unit: "cl", name: "bouillon de volaille", step: 5 },
         { qty: 400, unit: "g", name: "marrons cuits sous vide", step: 50 },
         { qty: 20, unit: "g", name: "beurre doux", step: 5 },
         { qty: 10, unit: "cl", name: "vin blanc sec", step: 1 },
-        { qty: 20, unit: "cl", name: "bouillon de volaille", step: 5 },
       ],
     },
   ],
@@ -91,7 +91,7 @@ export default defineRecipe({
         },
         {
           title: "Enfourner avec les échalotes",
-          text: "Posez la pintade sur le dos, blancs vers le haut, et répartissez les échalotes autour. Versez 5 cl d’eau au fond pour que les sucs ne brûlent pas. Enfournez sans couvercle pour 30 minutes, en arrosant la pintade avec le jus du fond au bout de 15 minutes.",
+          text: "Posez la pintade sur le dos, blancs vers le haut, et répartissez les échalotes autour. Versez 5 cl de bouillon au fond pour que les sucs ne brûlent pas. Enfournez sans couvercle pour 30 minutes, en arrosant la pintade avec le jus du fond au bout de 15 minutes.",
           timer: { minutes: 30, label: "Rôtir, 1re étape" },
         },
         {
@@ -123,7 +123,7 @@ export default defineRecipe({
         },
         {
           title: "Déglacer le jus",
-          text: "Retirez à la cuillère l’excès de gras. Versez le vin blanc, grattez les sucs du fond et laissez réduire de moitié, 2 minutes. Ajoutez le bouillon et le jus rendu par la pintade sur la planche, puis faites réduire 5 minutes, jusqu’à ce que le jus nappe légèrement une cuillère. Goûtez, salez si besoin.",
+          text: "Retirez à la cuillère l’excès de gras. Versez le vin blanc, grattez les sucs du fond et laissez réduire de moitié, 2 minutes. Ajoutez le reste du bouillon et le jus rendu par la pintade sur la planche, puis faites réduire 5 minutes, jusqu’à ce que le jus nappe légèrement une cuillère. Goûtez, salez si besoin.",
           timer: { minutes: 7, label: "Réduire le jus" },
         },
         {
@@ -212,13 +212,25 @@ export default defineRecipe({
     fiber: 6,
     sodium: 700,
   },
-  annotations: { hero: "74 °C dans la cuisse, pas ailleurs", detail: "À ÉCRIRE" },
+  annotations: { hero: "74 °C dans la cuisse, pas ailleurs", detail: "peau blonde, pas brûlée : feu moyen" },
   images: {
-    heroAlt: "À ÉCRIRE",
-    detailAlt: "À ÉCRIRE",
+    heroAlt:
+      "Pintade rôtie entière à la peau dorée, posée sur un plat blanc parmi des légumes rôtis, une carafe de vin rouge derrière.",
+    detailAlt:
+      "Gros plan sur la cuisse d’une pintade rôtie, peau dorée et brillante, entourée de pommes de terre et de choux de Bruxelles.",
     credits: {
-      hero: { photographer: "À ÉCRIRE", url: "https://www.pexels.com/photo/0/" },
-      detail: { photographer: "À ÉCRIRE", url: "https://www.pexels.com/photo/0/" },
+      hero: {
+        photographer: "Jeremy Keith",
+        url: "https://commons.wikimedia.org/w/index.php?curid=39555444",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
+      detail: {
+        photographer: "Jeremy Keith",
+        url: "https://commons.wikimedia.org/w/index.php?curid=39555444",
+        source: "Wikimedia Commons",
+        license: "CC BY 2.0",
+      },
     },
   },
   datePublished: "2026-11-26",
@@ -231,6 +243,6 @@ export default defineRecipe({
     ink: "#8A4317",
     tint: "#F9EEE4",
     deep: "#1B0F08",
-    focus: "50% 50%",
+    focus: "55% 50%",
   },
 });

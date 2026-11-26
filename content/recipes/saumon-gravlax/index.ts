@@ -216,7 +216,7 @@ export default defineRecipe({
     },
     {
       q: "Peut-on utiliser du sel fin pour un gravlax ?",
-      a: "Oui, au même poids : 80 g pour 1 kg de filet. Le sel fin fond plus vite et se répartit moins bien sur les parties épaisses, alors étalez-le avec soin. Le gros sel reste plus facile à doser à l’œil sur la chair.",
+      a: "Oui, au même poids : 80 g pour 1 kg de filet. Pesez-le plutôt que de le mesurer à la cuillère, car à volume égal le sel fin pèse plus lourd que le gros sel. Étalez-le ensuite de façon régulière sur toute la chair.",
     },
   ],
   nutrition: {
